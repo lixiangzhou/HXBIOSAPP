@@ -71,7 +71,7 @@ extension HXBNetworkManager {
         if let baseUrl = requestApi.baseUrl {
             urlString = baseUrl + requestUrl
         } else {
-            urlString = NetworkConfig.baseUrl + requestUrl
+            urlString = HXBNetworkConfig.baseUrl + requestUrl
         }
         
         return URL(string: urlString)

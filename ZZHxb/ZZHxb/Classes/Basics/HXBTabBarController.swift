@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZZLib
 
 class HXBTabBarController: UITabBarController {
 
@@ -56,7 +57,9 @@ extension HXBTabBarController {
 // MARK: - UI
 extension HXBTabBarController {
     fileprivate func addChildControllers() {
-        
+        add(childController: HXBHomeController(), title: "首页", imageName: "tabbar_home")
+        add(childController: HXBInvestController(), title: "投资", imageName: "tabbar_investment")
+        add(childController: HXBMineController(), title: "我的", imageName: "tabbar_mine")
     }
     
     fileprivate func setUI() {
@@ -65,7 +68,12 @@ extension HXBTabBarController {
     
     private func add(childController: HXBViewController, title: String, imageName: String) {
         childController.title = title
+        
+        childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.mostImport], for: .selected)
+        childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.light], for: .selected)
+        
         childController.tabBarItem.image = UIImage(named: imageName)
+        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
         let navVC = HXBNavigationController(rootViewController: childController)
         addChildViewController(navVC)

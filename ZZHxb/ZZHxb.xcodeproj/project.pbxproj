@@ -20,8 +20,18 @@
 		8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */; };
 		8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */; };
 		8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */; };
-		8D3E62441FDFE7B0008C8E67 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62431FDFE7B0008C8E67 /* NetworkConfig.swift */; };
 		8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */; };
+		8D3E624E1FE0F4DF008C8E67 /* tabbar_home.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62481FE0F4DF008C8E67 /* tabbar_home.svg */; };
+		8D3E624F1FE0F4DF008C8E67 /* tabbar_home_selected.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62491FE0F4DF008C8E67 /* tabbar_home_selected.svg */; };
+		8D3E62501FE0F4DF008C8E67 /* tabbar_investment.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E624A1FE0F4DF008C8E67 /* tabbar_investment.svg */; };
+		8D3E62511FE0F4DF008C8E67 /* tabbar_investment_selected.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E624B1FE0F4DF008C8E67 /* tabbar_investment_selected.svg */; };
+		8D3E62521FE0F4DF008C8E67 /* tabbar_mine.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E624C1FE0F4DF008C8E67 /* tabbar_mine.svg */; };
+		8D3E62531FE0F4DF008C8E67 /* tabbar_mine_selected.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */; };
+		8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62561FE119AD008C8E67 /* HXBColorFontConfig.swift */; };
+		8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */; };
+		8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */; };
+		8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */; };
+		8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625E1FE12F24008C8E67 /* HXBPadding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +51,18 @@
 		8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRootVCManager.swift; sourceTree = "<group>"; };
 		8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkManager.swift; sourceTree = "<group>"; };
 		8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRequestApi.swift; sourceTree = "<group>"; };
-		8D3E62431FDFE7B0008C8E67 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBViewModel.swift; sourceTree = "<group>"; };
+		8D3E62481FE0F4DF008C8E67 /* tabbar_home.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_home.svg; sourceTree = "<group>"; };
+		8D3E62491FE0F4DF008C8E67 /* tabbar_home_selected.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_home_selected.svg; sourceTree = "<group>"; };
+		8D3E624A1FE0F4DF008C8E67 /* tabbar_investment.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_investment.svg; sourceTree = "<group>"; };
+		8D3E624B1FE0F4DF008C8E67 /* tabbar_investment_selected.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_investment_selected.svg; sourceTree = "<group>"; };
+		8D3E624C1FE0F4DF008C8E67 /* tabbar_mine.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_mine.svg; sourceTree = "<group>"; };
+		8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_mine_selected.svg; sourceTree = "<group>"; };
+		8D3E62561FE119AD008C8E67 /* HXBColorFontConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBColorFontConfig.swift; sourceTree = "<group>"; };
+		8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkConfig.swift; sourceTree = "<group>"; };
+		8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSVGUtil.swift; sourceTree = "<group>"; };
+		8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBOtherConfig.swift; sourceTree = "<group>"; };
+		8D3E625E1FE12F24008C8E67 /* HXBPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBPadding.swift; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +169,7 @@
 		8D3E62111FDF7BBF008C8E67 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8D3E62471FE0F4DF008C8E67 /* tabbar */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -156,7 +177,10 @@
 		8D3E62121FDF7BE1008C8E67 /* Configure */ = {
 			isa = PBXGroup;
 			children = (
-				8D3E62431FDFE7B0008C8E67 /* NetworkConfig.swift */,
+				8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */,
+				8D3E62561FE119AD008C8E67 /* HXBColorFontConfig.swift */,
+				8D3E625E1FE12F24008C8E67 /* HXBPadding.swift */,
+				8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */,
 			);
 			path = Configure;
 			sourceTree = "<group>";
@@ -295,8 +319,22 @@
 			isa = PBXGroup;
 			children = (
 				8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */,
+				8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8D3E62471FE0F4DF008C8E67 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				8D3E62481FE0F4DF008C8E67 /* tabbar_home.svg */,
+				8D3E62491FE0F4DF008C8E67 /* tabbar_home_selected.svg */,
+				8D3E624A1FE0F4DF008C8E67 /* tabbar_investment.svg */,
+				8D3E624B1FE0F4DF008C8E67 /* tabbar_investment_selected.svg */,
+				8D3E624C1FE0F4DF008C8E67 /* tabbar_mine.svg */,
+				8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */,
+			);
+			path = tabbar;
 			sourceTree = "<group>";
 		};
 		FA2C361CE3811993822F6BDF /* Frameworks */ = {
@@ -370,6 +408,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3E62011FDF79DE008C8E67 /* Assets.xcassets in Resources */,
+				8D3E624E1FE0F4DF008C8E67 /* tabbar_home.svg in Resources */,
+				8D3E62531FE0F4DF008C8E67 /* tabbar_mine_selected.svg in Resources */,
+				8D3E624F1FE0F4DF008C8E67 /* tabbar_home_selected.svg in Resources */,
+				8D3E62521FE0F4DF008C8E67 /* tabbar_mine.svg in Resources */,
+				8D3E62501FE0F4DF008C8E67 /* tabbar_investment.svg in Resources */,
+				8D3E62511FE0F4DF008C8E67 /* tabbar_investment_selected.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,12 +495,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
+				8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */,
 				8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */,
-				8D3E62441FDFE7B0008C8E67 /* NetworkConfig.swift in Sources */,
+				8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */,
+				8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
 				8D3E62191FDF7D8E008C8E67 /* HXBViewController.swift in Sources */,
 				8D3E621D1FDF7DFA008C8E67 /* HXBTabBarController.swift in Sources */,
+				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
+				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
 				8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
