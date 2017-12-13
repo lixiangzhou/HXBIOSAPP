@@ -17,6 +17,11 @@
 		8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62351FDF8016008C8E67 /* HXBInvestController.swift */; };
 		8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62381FDF8038008C8E67 /* HXBMineController.swift */; };
 		8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623A1FDF804C008C8E67 /* HXBHomeController.swift */; };
+		8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */; };
+		8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */; };
+		8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */; };
+		8D3E62441FDFE7B0008C8E67 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62431FDFE7B0008C8E67 /* NetworkConfig.swift */; };
+		8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		8D3E62351FDF8016008C8E67 /* HXBInvestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBInvestController.swift; sourceTree = "<group>"; };
 		8D3E62381FDF8038008C8E67 /* HXBMineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineController.swift; sourceTree = "<group>"; };
 		8D3E623A1FDF804C008C8E67 /* HXBHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHomeController.swift; sourceTree = "<group>"; };
+		8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRootVCManager.swift; sourceTree = "<group>"; };
+		8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkManager.swift; sourceTree = "<group>"; };
+		8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRequestApi.swift; sourceTree = "<group>"; };
+		8D3E62431FDFE7B0008C8E67 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBViewModel.swift; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +104,7 @@
 				8D3E621E1FDF7E45008C8E67 /* Network */,
 				8D3E62121FDF7BE1008C8E67 /* Configure */,
 				8D3E62101FDF7B9F008C8E67 /* Others */,
+				8D3E623C1FDFB84A008C8E67 /* Utils */,
 				8D3E62111FDF7BBF008C8E67 /* Resource */,
 				8D3E620F1FDF7B81008C8E67 /* Vender */,
 			);
@@ -106,6 +117,7 @@
 				8D3E62181FDF7D8E008C8E67 /* HXBViewController.swift */,
 				8D3E621A1FDF7DE6008C8E67 /* HXBNavigationController.swift */,
 				8D3E621C1FDF7DFA008C8E67 /* HXBTabBarController.swift */,
+				8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -144,6 +156,7 @@
 		8D3E62121FDF7BE1008C8E67 /* Configure */ = {
 			isa = PBXGroup;
 			children = (
+				8D3E62431FDFE7B0008C8E67 /* NetworkConfig.swift */,
 			);
 			path = Configure;
 			sourceTree = "<group>";
@@ -152,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */,
+				8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */,
+				8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -276,6 +291,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		8D3E623C1FDFB84A008C8E67 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FA2C361CE3811993822F6BDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,9 +415,28 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZZHxb/Pods-ZZHxb-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZZLib/ZZLib.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZZLib.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -410,10 +452,15 @@
 			files = (
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
 				8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */,
+				8D3E62441FDFE7B0008C8E67 /* NetworkConfig.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
 				8D3E62191FDF7D8E008C8E67 /* HXBViewController.swift in Sources */,
 				8D3E621D1FDF7DFA008C8E67 /* HXBTabBarController.swift in Sources */,
+				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
+				8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */,
+				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
+				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
 				8D3E621B1FDF7DE6008C8E67 /* HXBNavigationController.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 			);

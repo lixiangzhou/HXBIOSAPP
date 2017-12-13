@@ -7,4 +7,12 @@ target 'ZZHxb' do
 
   # Pods for ZZHxb
 
+pod 'Macaw'
+pod 'Alamofire'
+pod 'SnapKit'
+pod 'Kingfisher'
+pod 'ReactiveCocoa'
+
+pod 'ZZLib', :path =>'/Users/lxz/Documents/github_lib/ZZLib'
+
 end

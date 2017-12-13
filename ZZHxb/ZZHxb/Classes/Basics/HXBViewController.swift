@@ -9,6 +9,9 @@
 import UIKit
 
 class HXBViewController: UIViewController {
+    
+    let viewModel = HXBViewModel()
+    
 
     // MARK: - Life Cycle
     

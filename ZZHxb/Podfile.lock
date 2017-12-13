@@ -1,3 +1,40 @@
-PODFILE CHECKSUM: efd97642c7b9e763581b0fb9bb19d48b03201bb1
+PODS:
+  - Alamofire (4.5.1)
+  - Kingfisher (4.3.1)
+  - Macaw (0.9.0):
+    - SWXMLHash
+  - ReactiveCocoa (7.0.0):
+    - ReactiveSwift (~> 3.0)
+  - ReactiveSwift (3.0.0):
+    - Result (~> 3.2)
+  - Result (3.2.4)
+  - SnapKit (4.0.0)
+  - SWXMLHash (4.2.5)
+  - ZZLib (0.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - Macaw
+  - ReactiveCocoa
+  - SnapKit
+  - ZZLib (from `/Users/lxz/Documents/github_lib/ZZLib`)
+
+EXTERNAL SOURCES:
+  ZZLib:
+    :path: /Users/lxz/Documents/github_lib/ZZLib
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  Macaw: 6337ed621a73df10522eaab17f45c1ae0b753dc0
+  ReactiveCocoa: 06a54796a36dfc346f082498d08e7a8fb50c4e2f
+  ReactiveSwift: d9fe0db33c1aaabecb092e8de83cf52875c0de6f
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SWXMLHash: eb16013c6f654853980822e0a778c9d66e017dde
+  ZZLib: 4b247fef0fb1509d7028cfe69c43aa9bde7b9cbe
+
+PODFILE CHECKSUM: 7aaef4ab15518453b6fee4ecb1915344d95fbbd8
 
 COCOAPODS: 1.4.0.beta.2
