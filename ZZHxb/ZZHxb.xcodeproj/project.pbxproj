@@ -32,6 +32,14 @@
 		8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */; };
 		8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */; };
 		8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625E1FE12F24008C8E67 /* HXBPadding.swift */; };
+		8DE9140A1FE226DE00FAEE68 /* HXBSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */; };
+		8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */; };
+		8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */; };
+		8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */; };
+		8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */; };
+		8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */; };
+		8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */; };
+		8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914171FE2663200FAEE68 /* HXBTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +71,14 @@
 		8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSVGUtil.swift; sourceTree = "<group>"; };
 		8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBOtherConfig.swift; sourceTree = "<group>"; };
 		8D3E625E1FE12F24008C8E67 /* HXBPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBPadding.swift; sourceTree = "<group>"; };
+		8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSettingTableViewCell.swift; sourceTree = "<group>"; };
+		8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCell.swift; sourceTree = "<group>"; };
+		8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineViewModel.swift; sourceTree = "<group>"; };
+		8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCellModel.swift; sourceTree = "<group>"; };
+		8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HXB.swift"; sourceTree = "<group>"; };
+		8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineHeaderView.swift; sourceTree = "<group>"; };
+		8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+HXB.swift"; sourceTree = "<group>"; };
+		8DE914171FE2663200FAEE68 /* HXBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTableView.swift; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +154,8 @@
 				8D3E621A1FDF7DE6008C8E67 /* HXBNavigationController.swift */,
 				8D3E621C1FDF7DFA008C8E67 /* HXBTabBarController.swift */,
 				8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */,
+				8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */,
+				8DE914171FE2663200FAEE68 /* HXBTableView.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -145,9 +163,9 @@
 		8D3E620E1FDF7B53008C8E67 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8D3E62211FDF7EFD008C8E67 /* Home */,
 				8D3E62231FDF7F3A008C8E67 /* Invest */,
 				8D3E62221FDF7F34008C8E67 /* Mine */,
-				8D3E62211FDF7EFD008C8E67 /* Home */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -231,6 +249,8 @@
 		8D3E62291FDF7FAB008C8E67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8DE914081FE2266C00FAEE68 /* Cell */,
+				8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +266,7 @@
 		8D3E622B1FDF7FAB008C8E67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +274,7 @@
 		8D3E622C1FDF7FAB008C8E67 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -320,6 +342,8 @@
 			children = (
 				8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */,
 				8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */,
+				8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */,
+				8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -335,6 +359,14 @@
 				8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */,
 			);
 			path = tabbar;
+			sourceTree = "<group>";
+		};
+		8DE914081FE2266C00FAEE68 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FA2C361CE3811993822F6BDF /* Frameworks */ = {
@@ -495,19 +527,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
+				8DE9140A1FE226DE00FAEE68 /* HXBSettingTableViewCell.swift in Sources */,
 				8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */,
 				8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */,
+				8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */,
 				8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */,
 				8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */,
+				8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */,
+				8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
+				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
+				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
 				8D3E62191FDF7D8E008C8E67 /* HXBViewController.swift in Sources */,
 				8D3E621D1FDF7DFA008C8E67 /* HXBTabBarController.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
+				8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
 				8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
+				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
 				8D3E621B1FDF7DE6008C8E67 /* HXBNavigationController.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,

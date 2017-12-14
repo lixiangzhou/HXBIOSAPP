@@ -63,14 +63,14 @@ extension HXBTabBarController {
     }
     
     fileprivate func setUI() {
-        
+        view.backgroundColor = hxb.color.white
     }
     
     private func add(childController: HXBViewController, title: String, imageName: String) {
         childController.title = title
         
         childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.mostImport], for: .selected)
-        childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.light], for: .selected)
+        childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.light], for: .normal)
         
         childController.tabBarItem.image = UIImage(named: imageName)
         childController.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)

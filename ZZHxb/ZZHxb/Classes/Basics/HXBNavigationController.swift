@@ -55,7 +55,7 @@ extension HXBNavigationController {
 // MARK: - UI
 extension HXBNavigationController {
     fileprivate func setUI() {
-        
+        navigationBar.shadowImage = UIImage()
     }
 }
 

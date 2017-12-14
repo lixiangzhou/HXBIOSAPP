@@ -55,7 +55,7 @@ extension HXBHomeController {
 // MARK: - UI
 extension HXBHomeController {
     fileprivate func setUI() {
-        
+
     }
 }
 

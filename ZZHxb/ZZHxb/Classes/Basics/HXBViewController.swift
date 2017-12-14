@@ -10,9 +10,6 @@ import UIKit
 
 class HXBViewController: UIViewController {
     
-    let viewModel = HXBViewModel()
-    
-
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -22,10 +19,12 @@ class HXBViewController: UIViewController {
         addObservers()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(hideNavigationBar, animated: animated)
+    }
+//
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
 //    }
@@ -34,15 +33,22 @@ class HXBViewController: UIViewController {
 //        super.viewWillDisappear(animated)
 //    }
 //    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//    }
-//    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+//
 //    deinit {
 //        
 //    }
 
     // MARK: - Public Property
+    
+    let baseViewModel = HXBViewModel()
+    
+    /// 单独的隐藏导航栏
+    var hideNavigationBar = false
     
     // MARK: - Private Property
     
@@ -58,7 +64,13 @@ extension HXBViewController {
 // MARK: - UI
 extension HXBViewController {
     fileprivate func setUI() {
+        let navBackImage = UIImage.zz_gradientImage(fromColor: hxb.color.importantFill(hex: "fe654d"),
+                                                    toColor: hxb.color.importantFill(hex: "ff3d4f"),
+                                                    size: CGSize(width: UIScreen.zz_width, height: hxb.size.navigationHeight))
+        navigationController?.navigationBar.setBackgroundImage(navBackImage, for: UIBarMetrics.default)
         
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: hxb.font.navTitle,
+                                                                   NSAttributedStringKey.foregroundColor: hxb.color.white]
     }
 }
 
