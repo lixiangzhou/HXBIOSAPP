@@ -40,6 +40,7 @@
 		8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */; };
 		8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */; };
 		8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914171FE2663200FAEE68 /* HXBTableView.swift */; };
+		8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineHeaderView.swift; sourceTree = "<group>"; };
 		8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+HXB.swift"; sourceTree = "<group>"; };
 		8DE914171FE2663200FAEE68 /* HXBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTableView.swift; sourceTree = "<group>"; };
+		8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+HXB.swift"; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -344,6 +346,7 @@
 				8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */,
 				8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */,
 				8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */,
+				8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */,
 				8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
+				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
 				8D3E62191FDF7D8E008C8E67 /* HXBViewController.swift in Sources */,

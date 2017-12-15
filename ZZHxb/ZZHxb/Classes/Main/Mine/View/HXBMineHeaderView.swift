@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+import ReactiveCocoa
+import ReactiveSwift
+import Result
+ 
 class HXBMineHeaderView: UIView {
     
     // MARK: - Life Cycle
@@ -28,6 +31,11 @@ class HXBMineHeaderView: UIView {
     }
 
     // MARK: - Public Property
+    var viewModel: HXBMineViewModel? {
+        didSet {
+            
+        }
+    }
     
     // MARK: - Private Property
     fileprivate var backgroundView = UIImageView(image:
@@ -39,13 +47,15 @@ class HXBMineHeaderView: UIView {
     fileprivate var iconView = UIImageView(image: UIImage(named: "mine_account_center")!)
     
     fileprivate var holdMoneyTitleLabel = UILabel(text: "持有资产(元)", font: hxb.font.light, textColor: UIColor(white: 1, alpha: 0.6))
-    fileprivate var holdMoneyLabel = UILabel(text: "--", font: hxb.font.mostImportant, textColor: hxb.color.white)
+    fileprivate var holdMoneyLabel = UILabel(text: "0.00", font: hxb.font.mostImportant, textColor: hxb.color.white)
     
     fileprivate var availableMoneyTitleLabel = UILabel(text: "可用金额(元)", font: hxb.font.light, textColor: UIColor(white: 1, alpha: 0.6))
-    fileprivate var availableMoneyLabel = UILabel(text: "0.00", font: hxb.font.light, textColor: hxb.color.white)
+    fileprivate var availableMoneyLabel = UILabel(text: "0.00", font: hxb.font.firstClass, textColor: hxb.color.white)
     
     fileprivate var accumulatedMoneyTitleLabel = UILabel(text: "累计收益(元)", font: hxb.font.light, textColor: UIColor(white: 1, alpha: 0.6))
-    fileprivate var accumulatedMoneyLabel = UILabel(text: "0.00", font: hxb.font.light, textColor: hxb.color.white)
+    fileprivate var accumulatedMoneyLabel = UILabel(text: "0.00", font: hxb.font.firstClass, textColor: hxb.color.white)
+    fileprivate var eyeBtn = UIButton()//(image: UIImage("mine_eyes"), highlightedImage: UIImage("mine_eyes_colsed"))
+    
 }
 
 // MARK: - Observers
@@ -66,6 +76,21 @@ extension HXBMineHeaderView {
         backgroundView.addSubview(availableMoneyLabel)
         backgroundView.addSubview(accumulatedMoneyTitleLabel)
         backgroundView.addSubview(accumulatedMoneyLabel)
+        backgroundView.addSubview(eyeBtn)
+        
+        eyeBtn.setImage(UIImage("mine_eyes"), for: .normal)
+        eyeBtn.setImage(UIImage("mine_eyes_colsed"), for: .selected)
+        
+//        holdMoneyLabel.reactive.text <~ eyeBtn.reactive.signal(forKeyPath: "selected").filterMap({ Bool -> String? in
+//            // TODO:
+//            return "ddd"
+//        })
+        
+        eyeBtn.reactive.controlEvents(.touchUpInside).observeValues { btn in
+            let selectedValue = !btn.isSelected
+            btn.isSelected = selectedValue
+            // 根据值设置金额
+        }
         
         backgroundView.isUserInteractionEnabled = true
         
@@ -87,6 +112,12 @@ extension HXBMineHeaderView {
         holdMoneyLabel.snp.makeConstraints { (maker) in
             maker.left.equalTo(iconView)
             maker.centerY.equalToSuperview()
+        }
+        
+        eyeBtn.snp.makeConstraints { (maker) in
+            maker.right.equalTo(-hxb.size.edgeScreen)
+            maker.centerY.equalTo(holdMoneyLabel)
+            maker.size.equalTo(CGSize(width: 20, height: 20))
         }
         
         availableMoneyTitleLabel.snp.makeConstraints { (maker) in

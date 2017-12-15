@@ -42,7 +42,7 @@ class HXBMineController: HXBViewController {
     // MARK: - Public Property
     
     // MARK: - Private Property
-    fileprivate var tableView = HXBTableView(frame: .zero, style: .grouped)
+    fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
     fileprivate var viewModel = HXBMineViewModel()
 }
 
@@ -61,14 +61,10 @@ extension HXBMineController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(HXBMineCell.self, forCellReuseIdentifier: HXBMineCell.identifier)
-        tableView.separatorStyle = .none
         tableView.rowHeight = HXBMineCell.cellHeight
-        tableView.backgroundColor = hxb.color.background
+        
         tableView.tableHeaderView = HXBMineHeaderView()
-        if #available(iOS 11.0, *) {
-        } else {
-            // Fallback on earlier versions
-        }
+
         view.addSubview(tableView)
         
         tableView.frame = view.frame

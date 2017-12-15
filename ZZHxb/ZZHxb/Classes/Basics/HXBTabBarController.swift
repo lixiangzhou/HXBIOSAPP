@@ -72,8 +72,8 @@ extension HXBTabBarController {
         childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.mostImport], for: .selected)
         childController.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: hxb.color.light], for: .normal)
         
-        childController.tabBarItem.image = UIImage(named: imageName)
-        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        childController.tabBarItem.image = UIImage(imageName)
+        childController.tabBarItem.selectedImage = UIImage(imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         
         let navVC = HXBNavigationController(rootViewController: childController)
         addChildViewController(navVC)
