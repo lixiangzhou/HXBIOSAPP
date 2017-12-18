@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// 以750 * 1334 为基准计算
+/// 以750 * 1334 为基准计算，宽度适配
 func adaptDecimal(_ num: CGFloat) -> CGFloat {
     return UIScreen.zz_width * num / 375
 }
@@ -46,14 +46,14 @@ extension hxb {
         /// 分割线线高 【0.5】
         static let sepLineHeight: CGFloat = 0.5
         
-        /// 导航栏高度
+        /// 导航栏高度 【iPhone X：88、其他：64】
         static let navigationHeight: CGFloat = UIScreen.zz_width == 812 ? 88 : 64
         
-        /// 状态栏高度
-        static let statusBarHeight: CGFloat = 0
+        /// 状态栏高度 【iPhone X：44、其他：20】
+        static let statusBarHeight: CGFloat = UIScreen.zz_width == 812 ? 44 : 20
         
         /// 隐藏导航栏时距离顶部的距离
-        static let hideNavagionBar2TopHeight: CGFloat = 0//UIScreen.zz_width == 812 ? 44 : 20
+//        static let hideNavagionBar2TopHeight: CGFloat = 0//UIScreen.zz_width == 812 ? 44 : 20
     }
 }
 

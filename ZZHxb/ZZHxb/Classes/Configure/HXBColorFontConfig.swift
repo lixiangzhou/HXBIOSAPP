@@ -40,10 +40,10 @@ struct hxb {
         /// 用于分割线 【dddddd】
         static let sepLine = UIColor(stringHexValue: "dddddd")!
         
-        /// 白色
+        /// 白色 【UIColor.white】
         static let white = UIColor.white
         
-        /// 背景色
+        /// 背景色 【f5f5f9】
         static let background = UIColor(stringHexValue: "f5f5f9")!
     }
 }
