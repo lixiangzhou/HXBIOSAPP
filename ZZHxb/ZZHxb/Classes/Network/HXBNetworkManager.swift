@@ -42,11 +42,12 @@ class HXBNetworkManager {
             originRequest.httpMethod = requestApi.requestMethod.rawValue
             originRequest.allHTTPHeaderFields = requestApi.requestHeaderFields
             originRequest.timeoutInterval = requestApi.timeout
+            originRequest.httpShouldHandleCookies = false
+            originRequest.allHTTPHeaderFields = getHeaderFields(requestApi: requestApi)
             
             let encodedRequest = try encoding.encode(originRequest, with: requestApi.params)
             
             requestApi.request = encodedRequest
-            
             
             if let adaptedRequest = requestApi.adapter?(encodedRequest) {
                 requestApi.request = adaptedRequest
@@ -112,5 +113,16 @@ extension HXBNetworkManager {
         }
         
         return URL(string: urlString)
+    }
+    
+    fileprivate func getHeaderFields(requestApi: HXBRequestApi) -> HXBRequestHeader {
+        var baseHeaderFields = HXBNetworkConfig.baseHeaderFields
+        guard let headerFields = requestApi.requestHeaderFields else {
+            return baseHeaderFields
+        }
+        for (key, value) in headerFields {
+            baseHeaderFields[key] = value
+        }
+        return baseHeaderFields
     }
 }

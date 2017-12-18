@@ -11,7 +11,14 @@ import KeychainAccess
 
 let HXBKeychain = HXBKeychainClass.shared
 
-
+extension hxb {
+    struct keychain {
+        struct key {
+            static let token = "token"
+            static let phone = "phone"
+        }
+    }
+}
 
 struct HXBKeychainClass {
     
