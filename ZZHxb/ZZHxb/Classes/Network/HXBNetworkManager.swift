@@ -53,7 +53,7 @@ class HXBNetworkManager {
                 requestApi.request = adaptedRequest
             }
             
-            requestApi.showProgress()
+            requestApi.showProgress(type: requestApi.hudShowProgressType)
             HXBNetActivityManager.sendRequest()
             
             guard let request = requestApi.request else {
@@ -62,7 +62,7 @@ class HXBNetworkManager {
             }
             
             sessionManager.request(request).responseJSON { responseData in
-                requestApi.hideProgress()
+                requestApi.hideProgress(type: requestApi.hudShowProgressType)
                 HXBNetActivityManager.finishRequest()
                 
                 requestApi.httpResponse = responseData.response

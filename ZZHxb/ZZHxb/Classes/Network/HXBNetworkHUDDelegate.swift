@@ -8,8 +8,14 @@
 
 import Foundation
 
+enum HXBHudContainerType {
+    case window     /// 显示在window上
+    case view       /// 显示在view上
+    case none       /// 不显示
+}
+
 protocol HXBNetworkHUDDelegate: NSObjectProtocol {
-    func showProgress()
-    func hideProgress()
-    func show(toast: String)
+    func showProgress(type: HXBHudContainerType)
+    func hideProgress(type: HXBHudContainerType)
+    func show(toast: String, type: HXBHudContainerType)
 }

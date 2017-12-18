@@ -45,6 +45,7 @@
 		8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */; };
 		8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */; };
 		8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */; };
+		8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkHUDDelegate.swift; sourceTree = "<group>"; };
 		8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetActivityManager.swift; sourceTree = "<group>"; };
 		8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBKeyChain.swift; sourceTree = "<group>"; };
+		8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZZHud+HXB.swift"; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -359,6 +361,7 @@
 				8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */,
 				8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */,
 				8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */,
+				8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,
+				8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
 				8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,

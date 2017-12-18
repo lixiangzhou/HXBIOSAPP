@@ -56,13 +56,12 @@ class HXBRequestApi {
     
     /// Toast 和 Progress 的代理
     weak var hudDelegate: HXBNetworkHUDDelegate?
+    /// Toast 显示容器类型
+    var hudShowToastType: HXBHudContainerType = .view
+    /// Progress 显示容器类型
+    var hudShowProgressType: HXBHudContainerType = .view
     
-    /// 是否显示 Toast
-    var hudShowToast = true
-    
-    /// 是否显示 Progress
-    var hudShowHUDProgress = true
-    
+    /// 请求适配器
     var adapter: HXBRequestAdapter?
 }
 
@@ -70,26 +69,20 @@ class HXBRequestApi {
 extension HXBRequestApi {
     
     /// 显示 Progress
-    func showProgress() {
-        if hudShowHUDProgress {
-            hudDelegate?.showProgress()
-        }
+    func showProgress(type: HXBHudContainerType) {
+        hudDelegate?.showProgress(type: type)
     }
     
     /// 隐藏 Progress
-    func hideProgress() {
-        if hudShowHUDProgress {
-            hudDelegate?.hideProgress()
-        }
+    func hideProgress(type: HXBHudContainerType) {
+        hudDelegate?.hideProgress(type: type)
     }
     
     /// 显示 Toast
     ///
     /// - Parameter toast: toast
-    func show(toast: String) {
-        if hudShowToast {
-            hudDelegate?.show(toast: toast)
-        }
+    func show(toast: String, type: HXBHudContainerType) {
+        hudDelegate?.show(toast: toast, type: type)
     }
 }
 
