@@ -14,11 +14,15 @@ typealias HXBRequestHeader = HTTPHeaders
 typealias HXBResponseObject = [String: Any]
 typealias HXBHttpMethod = HTTPMethod
 typealias HXBRequestCallBack = (Bool, HXBRequestApi, HXBResponseObject?, Error?) -> ()
+/// 主要用于控制 HUD
+typealias HXBRequestConfigClosrue = (HXBRequestApi) -> ()
+typealias HXBRequestAdapter = (URLRequest) -> URLRequest?
 
 class HXBNetworkManager {
     
     /// 单例
     static let shared = HXBNetworkManager()
+    
     /// 参数编码
     private let encoding = URLEncoding.default
     /// session
@@ -28,7 +32,7 @@ class HXBNetworkManager {
     
     func send(requestApi: HXBRequestApi) {
         guard let url = getUrl(requestApi: requestApi) else {
-            // URL错误
+            requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.requestUrlNil)
             return
         }
         
@@ -43,7 +47,23 @@ class HXBNetworkManager {
             
             requestApi.request = encodedRequest
             
-            sessionManager.request(encodedRequest).responseJSON { responseData in
+            
+            if let adaptedRequest = requestApi.adapter?(encodedRequest) {
+                requestApi.request = adaptedRequest
+            }
+            
+            requestApi.showProgress()
+            HXBNetActivityManager.sendRequest()
+            
+            guard let request = requestApi.request else {
+                requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.requestAdaptReturnNil)
+                return
+            }
+            
+            sessionManager.request(request).responseJSON { responseData in
+                requestApi.hideProgress()
+                HXBNetActivityManager.finishRequest()
+                
                 requestApi.httpResponse = responseData.response
 
                 if responseData.result.isSuccess {
@@ -52,11 +72,28 @@ class HXBNetworkManager {
                     requestApi.error = responseData.error
                 }
                 
-                requestApi.finishCallback?(responseData.result.isSuccess, requestApi, requestApi.responseObject, responseData.error)
+                requestApi.completeCallback?(responseData.result.isSuccess, requestApi, requestApi.responseObject, responseData.error)
             }
         } catch {
-            // 编码出错
+            requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.encodingFailed(error: error))
+            
         }
+    }
+}
+
+extension HXBNetworkManager {
+    static func request(url: String, params: HXBRequestParam, method: HXBHttpMethod = .get, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCallBack) {
+        let requestApi = HXBRequestApi()
+        requestApi.requestUrl = url
+        requestApi.params = params
+        requestApi.requestMethod = .get
+        configProgressAndToast?(requestApi)
+        self.request(requestApi: requestApi, completionBlock: completionBlock)
+    }
+    
+    static func request(requestApi: HXBRequestApi, completionBlock: @escaping HXBRequestCallBack) {
+        requestApi.completeCallback = completionBlock
+        HXBNetworkManager.shared.send(requestApi: requestApi)
     }
 }
 

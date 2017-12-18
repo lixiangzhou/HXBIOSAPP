@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - KeychainAccess (3.1.0)
   - Kingfisher (4.3.1)
   - Macaw (0.9.0):
     - SWXMLHash
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - KeychainAccess
   - Kingfisher
   - Macaw
   - ReactiveCocoa
@@ -26,6 +28,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
   Macaw: 6337ed621a73df10522eaab17f45c1ae0b753dc0
   ReactiveCocoa: 06a54796a36dfc346f082498d08e7a8fb50c4e2f
@@ -35,6 +38,6 @@ SPEC CHECKSUMS:
   SWXMLHash: eb16013c6f654853980822e0a778c9d66e017dde
   ZZLib: 4b247fef0fb1509d7028cfe69c43aa9bde7b9cbe
 
-PODFILE CHECKSUM: 7aaef4ab15518453b6fee4ecb1915344d95fbbd8
+PODFILE CHECKSUM: f3051146fd43bf915d7c0ddba976281a72f1bddd
 
 COCOAPODS: 1.4.0.beta.2

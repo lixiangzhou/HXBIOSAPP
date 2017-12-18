@@ -20,7 +20,7 @@ class HXBRequestApi {
     /// 请求url
     var requestUrl: String?
     /// 请求baseUrl
-    var baseUrl: String?
+    var baseUrl: String? = "http://api.hoomxb.com"
     /// 请求参数
     var params: HXBRequestParam?
     /// 请求超时
@@ -50,5 +50,46 @@ class HXBRequestApi {
     var dataTask: URLSessionDataTask?
     
     // MARK: - Callback
-    var finishCallback: HXBRequestCallBack?
+    var completeCallback: HXBRequestCallBack?
+    
+    // MARK: - HUD
+    
+    /// Toast 和 Progress 的代理
+    weak var hudDelegate: HXBNetworkHUDDelegate?
+    
+    /// 是否显示 Toast
+    var hudShowToast = true
+    
+    /// 是否显示 Progress
+    var hudShowHUDProgress = true
+    
+    var adapter: HXBRequestAdapter?
 }
+
+// MARK: - HUD Method
+extension HXBRequestApi {
+    
+    /// 显示 Progress
+    func showProgress() {
+        if hudShowHUDProgress {
+            hudDelegate?.showProgress()
+        }
+    }
+    
+    /// 隐藏 Progress
+    func hideProgress() {
+        if hudShowHUDProgress {
+            hudDelegate?.hideProgress()
+        }
+    }
+    
+    /// 显示 Toast
+    ///
+    /// - Parameter toast: toast
+    func show(toast: String) {
+        if hudShowToast {
+            hudDelegate?.show(toast: toast)
+        }
+    }
+}
+

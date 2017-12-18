@@ -41,6 +41,10 @@
 		8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */; };
 		8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914171FE2663200FAEE68 /* HXBTableView.swift */; };
 		8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */; };
+		8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9141D1FE3C97E00FAEE68 /* HXBNetworkError.swift */; };
+		8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */; };
+		8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */; };
+		8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +85,10 @@
 		8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+HXB.swift"; sourceTree = "<group>"; };
 		8DE914171FE2663200FAEE68 /* HXBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTableView.swift; sourceTree = "<group>"; };
 		8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+HXB.swift"; sourceTree = "<group>"; };
+		8DE9141D1FE3C97E00FAEE68 /* HXBNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkError.swift; sourceTree = "<group>"; };
+		8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkHUDDelegate.swift; sourceTree = "<group>"; };
+		8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetActivityManager.swift; sourceTree = "<group>"; };
+		8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBKeyChain.swift; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +219,9 @@
 				8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */,
 				8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */,
 				8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */,
+				8DE9141D1FE3C97E00FAEE68 /* HXBNetworkError.swift */,
+				8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */,
+				8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -342,6 +353,7 @@
 		8D3E623C1FDFB84A008C8E67 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */,
 				8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */,
 				8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */,
 				8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */,
@@ -496,6 +508,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZZHxb/Pods-ZZHxb-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
@@ -508,6 +521,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
@@ -530,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
+				8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */,
 				8DE9140A1FE226DE00FAEE68 /* HXBSettingTableViewCell.swift in Sources */,
 				8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */,
 				8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */,
@@ -539,6 +554,7 @@
 				8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */,
 				8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
+				8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */,
 				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
@@ -554,6 +570,8 @@
 				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
 				8D3E621B1FDF7DE6008C8E67 /* HXBNavigationController.swift in Sources */,
+				8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */,
+				8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
