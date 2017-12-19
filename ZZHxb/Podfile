@@ -14,7 +14,7 @@ pod 'Kingfisher'
 pod 'ReactiveCocoa'
 pod 'KeychainAccess'
 pod 'SwiftyBeaver'
-pod 'HandyJSON'
+pod 'HandyJSON','~>4.0.0-beta.1'
 
 #pod 'ZZLib', :path =>'/Users/lxz/Documents/github_lib/ZZLib'
 

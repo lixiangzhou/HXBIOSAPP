@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
-  - HandyJSON (1.8.0)
+  - HandyJSON (4.0.0-beta.1)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.3.1)
   - Macaw (0.9.0):
@@ -16,7 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - HandyJSON
+  - HandyJSON (~> 4.0.0-beta.1)
   - KeychainAccess
   - Kingfisher
   - Macaw
@@ -26,7 +26,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  HandyJSON: edaaa3278bf4c4c96d6f7382b80d6b91c88d3bf5
+  HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
   Macaw: 6337ed621a73df10522eaab17f45c1ae0b753dc0
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: e10b1668e0512229c36c34769b97eed3dfae2ca3
   SWXMLHash: eb16013c6f654853980822e0a778c9d66e017dde
 
-PODFILE CHECKSUM: d3bf3287c71f07c11bdf08d3faa52b9ed9d0c942
+PODFILE CHECKSUM: 633434e0d0fa88587e44ba35d57ba26b99853973
 
 COCOAPODS: 1.4.0.beta.2

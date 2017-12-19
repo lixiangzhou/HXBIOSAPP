@@ -68,8 +68,10 @@ class HXBNetworkManager {
                 requestApi.httpResponse = responseData.response
 
                 if responseData.result.isSuccess {
+                    log.info(responseData.result.value!)
                     requestApi.responseObject = responseData.result.value as? HXBResponseObject
                 } else {
+                    log.error(responseData.error!)
                     requestApi.error = responseData.error
                 }
                 
@@ -81,6 +83,8 @@ class HXBNetworkManager {
     }
 }
 
+
+// MARK: - Public
 extension HXBNetworkManager {
     static func request(url: String, params: HXBRequestParam?, method: HXBHttpMethod = .get, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCompletionCallBack) {
         let requestApi = HXBRequestApi()
