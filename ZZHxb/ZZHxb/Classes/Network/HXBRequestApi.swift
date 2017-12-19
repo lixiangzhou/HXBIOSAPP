@@ -20,7 +20,7 @@ class HXBRequestApi {
     /// 请求url
     var requestUrl: String?
     /// 请求baseUrl
-    var baseUrl: String? = "http://192.168.1.26:3100"
+    var baseUrl: String?
     /// 请求参数
     var params: HXBRequestParam?
     /// 请求超时

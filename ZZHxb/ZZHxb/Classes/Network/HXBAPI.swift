@@ -10,6 +10,8 @@ import Foundation
 
 extension hxb {
     struct api {
+        /// 获取token 【/token】
+        static let token = "/token"
         
         /// 闪屏 【/splash】
         static let slash = "/splash"

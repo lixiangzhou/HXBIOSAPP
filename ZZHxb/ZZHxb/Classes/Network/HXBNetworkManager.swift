@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 typealias HXBRequestParam = Parameters
 typealias HXBRequestHeader = HTTPHeaders
@@ -37,31 +38,34 @@ class HXBNetworkManager {
         }
         
         do {
+            // 构建请求
             var originRequest = URLRequest(url: url)
             
             originRequest.httpMethod = requestApi.requestMethod.rawValue
-            originRequest.allHTTPHeaderFields = requestApi.requestHeaderFields
             originRequest.timeoutInterval = requestApi.timeout
             originRequest.httpShouldHandleCookies = false
             originRequest.allHTTPHeaderFields = getHeaderFields(requestApi: requestApi)
             
+            // 请求参数编码
             let encodedRequest = try encoding.encode(originRequest, with: requestApi.params)
-            
             requestApi.request = encodedRequest
             
+            // 适配请求
             if let adaptedRequest = requestApi.adapter?(encodedRequest) {
                 requestApi.request = adaptedRequest
             }
-            
-            requestApi.showProgress()
-            HXBNetActivityManager.sendRequest()
-            
             guard let request = requestApi.request else {
                 requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.requestAdaptReturnNil)
                 return
             }
             
+            // HUD
+            requestApi.showProgress()
+            HXBNetActivityManager.sendRequest()
+            
+            // 发送请求
             sessionManager.request(request).responseJSON { responseData in
+                // HUD
                 requestApi.hideProgress()
                 HXBNetActivityManager.finishRequest()
                 
@@ -70,12 +74,14 @@ class HXBNetworkManager {
                 if responseData.result.isSuccess {
                     log.info(responseData.result.value!)
                     requestApi.responseObject = responseData.result.value as? HXBResponseObject
+                    
+                    self.successProcess(requestApi: requestApi)
                 } else {
                     log.error(responseData.error!)
                     requestApi.error = responseData.error
+                    
+                    self.errorProcess(requestApi: requestApi)
                 }
-                
-                requestApi.completeCallback?(responseData.result.isSuccess, requestApi, requestApi.responseObject, responseData.error)
             }
         } catch {
             requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.encodingFailed(error: error))
@@ -120,6 +126,7 @@ extension HXBNetworkManager {
     
     fileprivate func getHeaderFields(requestApi: HXBRequestApi) -> HXBRequestHeader {
         var baseHeaderFields = HXBNetworkConfig.baseHeaderFields
+        baseHeaderFields[HXBNetworkConfig.tokenKey] = HXBKeychain[hxb.keychain.key.token] ?? ""
         guard let headerFields = requestApi.requestHeaderFields else {
             return baseHeaderFields
         }
@@ -127,5 +134,45 @@ extension HXBNetworkManager {
             baseHeaderFields[key] = value
         }
         return baseHeaderFields
+    }
+}
+
+// MARK: - Result Process
+extension HXBNetworkManager {
+    fileprivate func errorProcess(requestApi: HXBRequestApi) {
+        if requestApi.statusCode == hxb.code.tokenInvalid { // token 失效，重新请求 token，
+            self.tokenRequest(completion: { isSuccess in
+                if isSuccess {  // 成功后重新发送请求
+                    self.send(requestApi: requestApi)
+                } else {    // 失败就调用回调
+                    requestApi.completeCallback?(false, requestApi, nil, requestApi.error)
+                }
+            })
+        } else if requestApi.statusCode == hxb.code.notLogin {  // 未登录
+            hxb.notification.notLogin.post()
+            requestApi.completeCallback?(false, requestApi, nil, requestApi.error)
+        } else {
+            requestApi.completeCallback?(false, requestApi, nil, requestApi.error)
+        }
+    }
+    
+    fileprivate func successProcess(requestApi: HXBRequestApi) {
+        requestApi.completeCallback?(true, requestApi, requestApi.responseObject, nil)
+    }
+}
+
+// MARK: - Token & Single Login
+extension HXBNetworkManager {
+    fileprivate func tokenRequest(completion: @escaping (Bool) -> ()) {
+        Alamofire.request(HXBNetworkConfig.baseUrl + hxb.api.token, method: .get, parameters: nil).responseJSON { responseObject in
+            if responseObject.result.isSuccess {
+                let json = JSON(responseObject.result.value as! HXBResponseObject)
+                let token = json["data"]["token"].stringValue
+                HXBKeychain[hxb.keychain.key.token] = token
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
     }
 }
