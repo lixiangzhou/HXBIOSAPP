@@ -24,6 +24,16 @@ class HXBMineViewModel: HXBViewModel {
                 HXBMineCellModel(title: "交易记录", rightAccessoryString: "0.00元"),
                 ])
         ]
-        
+    }
+    
+    func getAccountData(completion: @escaping (Bool) -> ()) {
+        HXBNetwork.getAccountData { (isSuccess, requestApi, responseObj, error) in
+            completion(true)
+            if isSuccess {
+                
+            } else {
+                
+            }
+        }
     }
 }

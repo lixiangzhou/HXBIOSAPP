@@ -20,7 +20,7 @@ class HXBRequestApi {
     /// 请求url
     var requestUrl: String?
     /// 请求baseUrl
-    var baseUrl: String? = "http://api.hoomxb.com"
+    var baseUrl: String? = "http://192.168.1.26:3100"
     /// 请求参数
     var params: HXBRequestParam?
     /// 请求超时
@@ -50,7 +50,7 @@ class HXBRequestApi {
     var dataTask: URLSessionDataTask?
     
     // MARK: - Callback
-    var completeCallback: HXBRequestCallBack?
+    var completeCallback: HXBRequestCompletionCallBack?
     
     // MARK: - HUD
     
@@ -69,20 +69,20 @@ class HXBRequestApi {
 extension HXBRequestApi {
     
     /// 显示 Progress
-    func showProgress(type: HXBHudContainerType) {
-        hudDelegate?.showProgress(type: type)
+    func showProgress() {
+        hudDelegate?.showProgress(type: hudShowProgressType)
     }
     
     /// 隐藏 Progress
-    func hideProgress(type: HXBHudContainerType) {
-        hudDelegate?.hideProgress(type: type)
+    func hideProgress() {
+        hudDelegate?.hideProgress(type: hudShowProgressType)
     }
     
     /// 显示 Toast
     ///
     /// - Parameter toast: toast
-    func show(toast: String, type: HXBHudContainerType) {
-        hudDelegate?.show(toast: toast, type: type)
+    func show(toast: String) {
+        hudDelegate?.show(toast: toast, type: hudShowToastType)
     }
 }
 

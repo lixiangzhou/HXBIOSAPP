@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ZZLib
 
 class HXBTabBarController: UITabBarController {
 

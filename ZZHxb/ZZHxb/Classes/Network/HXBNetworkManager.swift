@@ -13,7 +13,7 @@ typealias HXBRequestParam = Parameters
 typealias HXBRequestHeader = HTTPHeaders
 typealias HXBResponseObject = [String: Any]
 typealias HXBHttpMethod = HTTPMethod
-typealias HXBRequestCallBack = (Bool, HXBRequestApi, HXBResponseObject?, Error?) -> ()
+typealias HXBRequestCompletionCallBack = (Bool, HXBRequestApi, HXBResponseObject?, Error?) -> ()
 /// 主要用于控制 HUD
 typealias HXBRequestConfigClosrue = (HXBRequestApi) -> ()
 typealias HXBRequestAdapter = (URLRequest) -> URLRequest?
@@ -53,7 +53,7 @@ class HXBNetworkManager {
                 requestApi.request = adaptedRequest
             }
             
-            requestApi.showProgress(type: requestApi.hudShowProgressType)
+            requestApi.showProgress()
             HXBNetActivityManager.sendRequest()
             
             guard let request = requestApi.request else {
@@ -62,7 +62,7 @@ class HXBNetworkManager {
             }
             
             sessionManager.request(request).responseJSON { responseData in
-                requestApi.hideProgress(type: requestApi.hudShowProgressType)
+                requestApi.hideProgress()
                 HXBNetActivityManager.finishRequest()
                 
                 requestApi.httpResponse = responseData.response
@@ -77,13 +77,12 @@ class HXBNetworkManager {
             }
         } catch {
             requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.encodingFailed(error: error))
-            
         }
     }
 }
 
 extension HXBNetworkManager {
-    static func request(url: String, params: HXBRequestParam, method: HXBHttpMethod = .get, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCallBack) {
+    static func request(url: String, params: HXBRequestParam?, method: HXBHttpMethod = .get, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCompletionCallBack) {
         let requestApi = HXBRequestApi()
         requestApi.requestUrl = url
         requestApi.params = params
@@ -92,7 +91,7 @@ extension HXBNetworkManager {
         self.request(requestApi: requestApi, completionBlock: completionBlock)
     }
     
-    static func request(requestApi: HXBRequestApi, completionBlock: @escaping HXBRequestCallBack) {
+    static func request(requestApi: HXBRequestApi, completionBlock: @escaping HXBRequestCompletionCallBack) {
         requestApi.completeCallback = completionBlock
         HXBNetworkManager.shared.send(requestApi: requestApi)
     }

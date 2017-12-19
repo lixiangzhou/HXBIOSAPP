@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - HandyJSON (1.8.0)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.3.1)
   - Macaw (0.9.0):
@@ -10,24 +11,22 @@ PODS:
     - Result (~> 3.2)
   - Result (3.2.4)
   - SnapKit (4.0.0)
+  - SwiftyBeaver (1.4.3)
   - SWXMLHash (4.2.5)
-  - ZZLib (0.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - HandyJSON
   - KeychainAccess
   - Kingfisher
   - Macaw
   - ReactiveCocoa
   - SnapKit
-  - ZZLib (from `/Users/lxz/Documents/github_lib/ZZLib`)
-
-EXTERNAL SOURCES:
-  ZZLib:
-    :path: /Users/lxz/Documents/github_lib/ZZLib
+  - SwiftyBeaver
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  HandyJSON: edaaa3278bf4c4c96d6f7382b80d6b91c88d3bf5
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
   Macaw: 6337ed621a73df10522eaab17f45c1ae0b753dc0
@@ -35,9 +34,9 @@ SPEC CHECKSUMS:
   ReactiveSwift: d9fe0db33c1aaabecb092e8de83cf52875c0de6f
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftyBeaver: e10b1668e0512229c36c34769b97eed3dfae2ca3
   SWXMLHash: eb16013c6f654853980822e0a778c9d66e017dde
-  ZZLib: 4b247fef0fb1509d7028cfe69c43aa9bde7b9cbe
 
-PODFILE CHECKSUM: f3051146fd43bf915d7c0ddba976281a72f1bddd
+PODFILE CHECKSUM: d3bf3287c71f07c11bdf08d3faa52b9ed9d0c942
 
 COCOAPODS: 1.4.0.beta.2

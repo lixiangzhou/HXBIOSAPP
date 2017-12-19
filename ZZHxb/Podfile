@@ -13,7 +13,9 @@ pod 'SnapKit'
 pod 'Kingfisher'
 pod 'ReactiveCocoa'
 pod 'KeychainAccess'
+pod 'SwiftyBeaver'
+pod 'HandyJSON'
 
-pod 'ZZLib', :path =>'/Users/lxz/Documents/github_lib/ZZLib'
+#pod 'ZZLib', :path =>'/Users/lxz/Documents/github_lib/ZZLib'
 
 end

@@ -45,7 +45,7 @@ class HXBMineController: HXBViewController {
     fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
     fileprivate var viewModel = HXBMineViewModel()
 }
-
+@objc
 // MARK: - Observers
 extension HXBMineController {
     fileprivate func addObservers() {
@@ -68,12 +68,18 @@ extension HXBMineController {
         view.addSubview(tableView)
         
         tableView.frame = view.frame
+        
+        tableView.header = ZZRefreshHeader(target: self, action: #selector(getAccountData))
     }
 }
 
 // MARK: - Action
 extension HXBMineController {
-    
+    @objc fileprivate func getAccountData() {
+        viewModel.getAccountData { [weak self] _ in
+            self?.tableView.header?.endRefreshing()
+        }
+    }
 }
 
 // MARK: - Network
