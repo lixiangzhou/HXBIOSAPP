@@ -10,8 +10,13 @@ import UIKit
 
 extension hxb {
     struct notification {
+        
+        struct name {
+            static let notLogin = Notification.Name("notLogin")
+        }
+        
         /// 没有登录
-        static let notLogin = Notification(name: Notification.Name("notLogin"))
+        static let notLogin = Notification(name: name.notLogin)
     }
 }
 

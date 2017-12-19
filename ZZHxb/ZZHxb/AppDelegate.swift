@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         
+        for i in 0..<1000 {
+            print(arc4random())
+        }
+        
         return true
     }
 }

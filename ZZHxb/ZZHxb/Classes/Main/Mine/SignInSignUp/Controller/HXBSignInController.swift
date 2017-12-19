@@ -1,14 +1,14 @@
 //
-//  HXBHomeController.swift
+//  HXBSignInController.swift
 //  ZZHxb
 //
-//  Created by lxz on 2017/12/12.
+//  Created by lxz on 2017/12/19.
 //Copyright © 2017年 lixiangzhou. All rights reserved.
 //
 
 import UIKit
 
-class HXBHomeController: HXBViewController {
+class HXBSignInController: HXBViewController {
 
     // MARK: - Life Cycle
     
@@ -46,27 +46,32 @@ class HXBHomeController: HXBViewController {
 }
 
 // MARK: - Observers
-extension HXBHomeController {
+extension HXBSignInController {
     fileprivate func addObservers() {
         
     }
 }
 
 // MARK: - UI
-extension HXBHomeController {
+extension HXBSignInController {
     fileprivate func setUI() {
-        let v = HXBWaveView(frame: CGRect(x: 20, y: 100, width: 300, height: 60))
-        view.addSubview(v)
+        title = "注册"
+        
+        hideNavigationBar = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        let waveView = HXBTopWaveView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 111))
+        view.addSubview(waveView)
     }
 }
 
 // MARK: - Action
-extension HXBHomeController {
+extension HXBSignInController {
     
 }
 
 // MARK: - Network
-extension HXBHomeController {
+extension HXBSignInController {
     
 }
 
@@ -79,17 +84,17 @@ extension HXBHomeController {
 // MARK: -
 
 // MARK: - Helper
-extension HXBHomeController {
+extension HXBSignInController {
     
 }
 
 // MARK: - Other
-extension HXBHomeController {
+extension HXBSignInController {
     
 }
 
 // MARK: - Public
-extension HXBHomeController {
+extension HXBSignInController {
     
 }
 

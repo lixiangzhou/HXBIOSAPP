@@ -49,7 +49,9 @@ class HXBTabBarController: UITabBarController {
 // MARK: - Observers
 extension HXBTabBarController {
     fileprivate func addObservers() {
-        
+        NotificationCenter.default.reactive.notifications(forName: hxb.notification.name.notLogin).observeValues { notification in
+            HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
+        }
     }
 }
 
