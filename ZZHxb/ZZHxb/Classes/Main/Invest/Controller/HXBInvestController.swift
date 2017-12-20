@@ -16,20 +16,12 @@ class HXBInvestController: HXBViewController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
     }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
     
-}
-
-// MARK: - Observers
-extension HXBInvestController {
-    fileprivate func addObservers() {
-        
-    }
 }
 
 // MARK: - UI

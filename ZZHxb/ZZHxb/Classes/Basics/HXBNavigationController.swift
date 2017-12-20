@@ -16,20 +16,12 @@ class HXBNavigationController: UINavigationController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
     }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
     
-}
-
-// MARK: - Observers
-extension HXBNavigationController {
-    fileprivate func addObservers() {
-        
-    }
 }
 
 // MARK: - UI

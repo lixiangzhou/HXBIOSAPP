@@ -16,7 +16,6 @@ class HXBMineController: HXBViewController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
     }
 
     // MARK: - Public Property
@@ -24,13 +23,6 @@ class HXBMineController: HXBViewController {
     // MARK: - Private Property
     fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
     fileprivate var viewModel = HXBMineViewModel()
-}
-@objc
-// MARK: - Observers
-extension HXBMineController {
-    fileprivate func addObservers() {
-        
-    }
 }
 
 // MARK: - UI

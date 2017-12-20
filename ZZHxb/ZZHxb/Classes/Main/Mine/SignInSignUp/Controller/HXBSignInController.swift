@@ -18,38 +18,11 @@ class HXBSignInController: HXBViewController {
         setUI()
         addObservers()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
-//    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//    }
-//    
-//    deinit {
-//        
-//    }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
     
-}
-
-// MARK: - Observers
-extension HXBSignInController {
-    fileprivate func addObservers() {
-        
-    }
 }
 
 // MARK: - UI

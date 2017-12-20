@@ -16,7 +16,6 @@ class HXBViewController: UIViewController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +52,6 @@ class HXBViewController: UIViewController {
     
 }
 
-// MARK: - Observers
-extension HXBViewController {
-    fileprivate func addObservers() {
-        
-    }
-}
-
 // MARK: - UI
 extension HXBViewController {
     fileprivate func setUI() {
@@ -77,7 +69,9 @@ extension HXBViewController {
 
 // MARK: - Action
 extension HXBViewController {
-    
+    @objc func back() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - Delegate Internal
@@ -100,8 +94,6 @@ extension HXBViewController {
 
 // MARK: - Public
 extension HXBViewController {
-    @objc func back() {
-        navigationController?.popViewController(animated: true)
-    }
+    
 }
 

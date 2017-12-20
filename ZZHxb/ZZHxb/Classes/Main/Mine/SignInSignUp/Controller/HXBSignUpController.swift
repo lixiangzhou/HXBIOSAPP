@@ -16,14 +16,6 @@ class HXBSignUpController: HXBViewController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
-    }
-}
-
-// MARK: - Observers
-extension HXBSignUpController {
-    fileprivate func addObservers() {
-        
     }
 }
 

@@ -16,20 +16,12 @@ class HXBHomeController: HXBViewController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
     }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
     
-}
-
-// MARK: - Observers
-extension HXBHomeController {
-    fileprivate func addObservers() {
-        
-    }
 }
 
 // MARK: - UI
