@@ -18,26 +18,6 @@ class HXBHomeController: HXBViewController {
         setUI()
         addObservers()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
-//    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//    }
-//    
-//    deinit {
-//        
-//    }
 
     // MARK: - Public Property
     
@@ -55,8 +35,7 @@ extension HXBHomeController {
 // MARK: - UI
 extension HXBHomeController {
     fileprivate func setUI() {
-        let v = HXBWaveView(frame: CGRect(x: 20, y: 100, width: 300, height: 60))
-        view.addSubview(v)
+        
     }
 }
 

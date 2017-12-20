@@ -24,24 +24,12 @@ class HXBViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(hideNavigationBar, animated: animated)
     }
-//
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
-//    
+  
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-//
-//    deinit {
-//        
-//    }
 
     // MARK: - Public Property
     
@@ -49,6 +37,17 @@ class HXBViewController: UIViewController {
     
     /// 单独的隐藏导航栏
     var hideNavigationBar = false
+    
+    /// 显示左边的返回按钮
+    var showBack: Bool {
+        set {
+            let backItem = UIBarButtonItem(image: UIImage("navigation_back")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(back))
+            navigationItem.leftBarButtonItem = newValue ? backItem : nil
+        }
+        get {
+            return navigationItem.leftBarButtonItem == nil
+        }
+    }
     
     // MARK: - Private Property
     
@@ -71,6 +70,8 @@ extension HXBViewController {
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: hxb.font.navTitle,
                                                                    NSAttributedStringKey.foregroundColor: hxb.color.white]
+        
+        view.backgroundColor = hxb.color.white
     }
 }
 
@@ -99,6 +100,8 @@ extension HXBViewController {
 
 // MARK: - Public
 extension HXBViewController {
-    
+    @objc func back() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 

@@ -16,7 +16,7 @@ class HXBWaveView: UIView {
         super.init(frame: frame)
         
         let random = Double(arc4random()).truncatingRemainder(dividingBy: Double(5))
-        speed = (random / 10 + 0.5) * 0.01
+        speed = (random / 10 + 0.5) * 0.03
         offsetX = speed * Double(bounds.width * 0.2)
         
 

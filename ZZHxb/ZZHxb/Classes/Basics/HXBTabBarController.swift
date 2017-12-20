@@ -19,26 +19,6 @@ class HXBTabBarController: UITabBarController {
         setUI()
         addObservers()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
-//    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//    }
-//    
-//    deinit {
-//        
-//    }
 
     // MARK: - Public Property
     
@@ -50,7 +30,7 @@ class HXBTabBarController: UITabBarController {
 extension HXBTabBarController {
     fileprivate func addObservers() {
         NotificationCenter.default.reactive.notifications(forName: hxb.notification.name.notLogin).observeValues { notification in
-            HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
+            HXBNavigationController(rootViewController: HXBSignUpController()).presentFrom(controller: self, animated: true)
         }
     }
 }

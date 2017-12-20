@@ -76,6 +76,7 @@
 		8DCC1D9D1FE900E900FEA8EF /* HXBWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9C1FE900E900FEA8EF /* HXBWaveView.swift */; };
 		8DCC1D9F1FE91E9300FEA8EF /* UIViewController+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */; };
 		8DCC1DA11FE9223300FEA8EF /* HXBTopWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA01FE9223300FEA8EF /* HXBTopWaveView.swift */; };
+		8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */; };
 		8DE9140A1FE226DE00FAEE68 /* HXBSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */; };
 		8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */; };
 		8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */; };
@@ -165,6 +166,7 @@
 		8DCC1D9C1FE900E900FEA8EF /* HXBWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBWaveView.swift; sourceTree = "<group>"; };
 		8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HXB.swift"; sourceTree = "<group>"; };
 		8DCC1DA01FE9223300FEA8EF /* HXBTopWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTopWaveView.swift; sourceTree = "<group>"; };
+		8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpController.swift; sourceTree = "<group>"; };
 		8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSettingTableViewCell.swift; sourceTree = "<group>"; };
 		8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCell.swift; sourceTree = "<group>"; };
 		8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineViewModel.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */,
+				8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8D800B021FE7CA4000694864 /* DateFormatter+ZZExtension.swift in Sources */,
+				8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */,
 				8D800B011FE7CA4000694864 /* Date+ZZExtension.swift in Sources */,
 				8D800AF81FE7CA4000694864 /* UIScrollView+ZZRefresh.swift in Sources */,
 				8D800B0F1FE7CA4000694864 /* UIImageView+ZZExtension.swift in Sources */,

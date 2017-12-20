@@ -18,26 +18,6 @@ class HXBNavigationController: UINavigationController {
         setUI()
         addObservers()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//    }
-//    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
-//    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(animated)
-//    }
-//    
-//    deinit {
-//        
-//    }
 
     // MARK: - Public Property
     
@@ -84,7 +64,12 @@ extension HXBNavigationController {
 
 // MARK: - Other
 extension HXBNavigationController {
-    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if childViewControllers.count == 0 {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage("navigation_back")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(popViewController(animated:)))
+        }
+        super.pushViewController(viewController, animated: animated)
+    }
 }
 
 // MARK: - Public
