@@ -29,19 +29,19 @@ extension hxb {
         static let wideButtonEdgeScreen: CGFloat = adaptDecimal(20)
         
         /// 宽按钮高度 【41】
-        static let wideButton: CGFloat = adaptDecimal(41)
+        static let wideButtonHeight: CGFloat = adaptDecimal(41)
         
         /// 宽按钮圆角 【4】
         static let wideButtonCornerRadius: CGFloat = adaptDecimal(4)
         
         /// 一般按钮的宽 【85】
-        static let wormalButtonWidth: CGFloat = adaptDecimal(85)
+        static let normalButtonWidth: CGFloat = adaptDecimal(85)
         
         /// 一般按钮的高 【30】
-        static let wormalButtonHeight: CGFloat = adaptDecimal(30)
+        static let normalButtonHeight: CGFloat = adaptDecimal(30)
         
         /// 一般按钮的圆角 【2】
-        static let wormalButtonCornerRadius: CGFloat = adaptDecimal(2)
+        static let normalButtonCornerRadius: CGFloat = adaptDecimal(2)
         
         /// 分割线线高 【0.5】
         static let sepLineHeight: CGFloat = 0.5

@@ -15,8 +15,8 @@ extension UIViewController {
         navigationController?.popViewController(animated: animated)
     }
     /// 导航栏控制器 push
-    func push(animated: Bool) {
-        navigationController?.pushViewController(self, animated: animated)
+    func pushFrom(controller: UIViewController, animated: Bool) {
+        controller.navigationController?.pushViewController(self, animated: animated)
     }
     
     

@@ -79,6 +79,9 @@
 		8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */; };
 		8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DB01FEA087600FEA8EF /* HXBViewModel.swift */; };
 		8DCC1DB91FEA087700FEA8EF /* HXBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DB21FEA087600FEA8EF /* HXBModel.swift */; };
+		8DCC1DBB1FEA08FF00FEA8EF /* HXBInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DBA1FEA08FF00FEA8EF /* HXBInputFieldView.swift */; };
+		8DCC1DBF1FEA0A0400FEA8EF /* UIImageView+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DBE1FEA0A0400FEA8EF /* UIImageView+HXB.swift */; };
+		8DCC1DC11FEA3F5900FEA8EF /* UIButton+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DC01FEA3F5900FEA8EF /* UIButton+HXB.swift */; };
 		8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */; };
 		8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */; };
 		8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */; };
@@ -169,6 +172,9 @@
 		8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBTableView.swift; sourceTree = "<group>"; };
 		8DCC1DB01FEA087600FEA8EF /* HXBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBViewModel.swift; sourceTree = "<group>"; };
 		8DCC1DB21FEA087600FEA8EF /* HXBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBModel.swift; sourceTree = "<group>"; };
+		8DCC1DBA1FEA08FF00FEA8EF /* HXBInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBInputFieldView.swift; sourceTree = "<group>"; };
+		8DCC1DBE1FEA0A0400FEA8EF /* UIImageView+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+HXB.swift"; sourceTree = "<group>"; };
+		8DCC1DC01FEA3F5900FEA8EF /* UIButton+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+HXB.swift"; sourceTree = "<group>"; };
 		8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCell.swift; sourceTree = "<group>"; };
 		8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineViewModel.swift; sourceTree = "<group>"; };
 		8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCellModel.swift; sourceTree = "<group>"; };
@@ -454,6 +460,8 @@
 				8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */,
 				8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */,
 				8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */,
+				8DCC1DBE1FEA0A0400FEA8EF /* UIImageView+HXB.swift */,
+				8DCC1DC01FEA3F5900FEA8EF /* UIButton+HXB.swift */,
 				8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */,
 				8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */,
 			);
@@ -616,6 +624,7 @@
 			children = (
 				8DCC1DAD1FEA087600FEA8EF /* HXBSettingTableViewCell.swift */,
 				8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */,
+				8DCC1DBA1FEA08FF00FEA8EF /* HXBInputFieldView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -814,6 +823,7 @@
 				8D800B0B1FE7CA4000694864 /* UIColor+ZZExtension.swift in Sources */,
 				8D800B0D1FE7CA4000694864 /* UIFont+ZZExtension.swift in Sources */,
 				8D800B161FE7CA4000694864 /* ZZCollection.swift in Sources */,
+				8DCC1DBF1FEA0A0400FEA8EF /* UIImageView+HXB.swift in Sources */,
 				8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */,
 				8D800B0A1FE7CA4000694864 /* UIButton+ZZExtension.swift in Sources */,
 				8D800AF61FE7CA4000694864 /* ZZHud.swift in Sources */,
@@ -878,7 +888,9 @@
 				8D800AFA1FE7CA4000694864 /* ZZRefreshFooter.swift in Sources */,
 				8D800B071FE7CA4000694864 /* String+ZZExtension.swift in Sources */,
 				8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */,
+				8DCC1DC11FEA3F5900FEA8EF /* UIButton+HXB.swift in Sources */,
 				8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */,
+				8DCC1DBB1FEA08FF00FEA8EF /* HXBInputFieldView.swift in Sources */,
 				8D800AFE1FE7CA4000694864 /* Calendar+ZZExtension.swift in Sources */,
 				8D800B131FE7CA4000694864 /* UITableView+ZZExtension.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,

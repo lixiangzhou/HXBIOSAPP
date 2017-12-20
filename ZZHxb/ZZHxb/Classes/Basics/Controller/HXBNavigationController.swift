@@ -16,6 +16,7 @@ class HXBNavigationController: UINavigationController {
         super.viewDidLoad()
 
         setUI()
+        setFullScreenBackGesture()
     }
 
     // MARK: - Public Property
@@ -36,11 +37,6 @@ extension HXBNavigationController {
     
 }
 
-// MARK: - Network
-extension HXBNavigationController {
-    
-}
-
 // MARK: - Delegate Internal
 
 // MARK: -
@@ -51,16 +47,24 @@ extension HXBNavigationController {
 
 // MARK: - Helper
 extension HXBNavigationController {
-    
 }
 
 // MARK: - Other
 extension HXBNavigationController {
+    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if childViewControllers.count == 0 {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage("navigation_back")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(popViewController(animated:)))
-        }
         super.pushViewController(viewController, animated: animated)
+        if childViewControllers.count > 0 {
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage("navigation_back")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(popViewController(animated:)))
+        }
+    }
+    
+    fileprivate func setFullScreenBackGesture() {
+        let target = interactivePopGestureRecognizer?.delegate
+        let sel = Selector(("handleNavigationTransition:"))
+        let gesture = UIPanGestureRecognizer(target: target, action: sel)
+        view.addGestureRecognizer(gesture)
+        interactivePopGestureRecognizer?.isEnabled = false
     }
 }
 

@@ -29,6 +29,10 @@ extension HXBHomeController {
     fileprivate func setUI() {
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        HXBNavigationController(rootViewController: HXBSignUpController()).presentFrom(controller: self, animated: true)
+    }
 }
 
 // MARK: - Action
