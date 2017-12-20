@@ -46,6 +46,9 @@ extension hxb {
         /// 分割线线高 【0.5】
         static let sepLineHeight: CGFloat = 0.5
         
+        /// HXBInputFieldView 常用高度
+        static let fieldCommonHeight: CGFloat = 60
+        
         /// 导航栏高度 【iPhone X：88、其他：64】
         static let navigationHeight: CGFloat = UIScreen.zz_width == 812 ? 88 : 64
         

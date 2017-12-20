@@ -66,7 +66,7 @@ extension HXBSignUpController {
             maker.top.equalTo(waveView.snp.bottom).offset(adaptDecimal(40))
             maker.left.equalTo(hxb.size.edgeScreen)
             maker.right.equalTo(-hxb.size.edgeScreen)
-            maker.height.equalTo(60)
+            maker.height.equalTo(hxb.size.fieldCommonHeight)
         }
         
         pwdField.snp.makeConstraints { (maker) in

@@ -36,5 +36,7 @@ extension UIButton {
                   action: action)
         
         titleLabel?.font = font
+        
+        sizeToFit()
     }
 }

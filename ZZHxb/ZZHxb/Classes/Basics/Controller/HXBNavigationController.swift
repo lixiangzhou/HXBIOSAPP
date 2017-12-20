@@ -39,7 +39,12 @@ extension HXBNavigationController {
 
 // MARK: - Delegate Internal
 
-// MARK: -
+// MARK: - UIGestureRecognizerDelegate
+extension HXBNavigationController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return childViewControllers.count != 1 && value(forKey: "_isTransitioning") as! Bool == false
+    }
+}
 
 // MARK: - Delegate External
 
@@ -63,6 +68,7 @@ extension HXBNavigationController {
         let target = interactivePopGestureRecognizer?.delegate
         let sel = Selector(("handleNavigationTransition:"))
         let gesture = UIPanGestureRecognizer(target: target, action: sel)
+        gesture.delegate = self
         view.addGestureRecognizer(gesture)
         interactivePopGestureRecognizer?.isEnabled = false
     }

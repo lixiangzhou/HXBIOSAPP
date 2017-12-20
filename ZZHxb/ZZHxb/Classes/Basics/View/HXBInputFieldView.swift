@@ -270,12 +270,15 @@ extension HXBInputFieldView {
         return fieldView
     }
     
-    static func commonFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?) -> HXBInputFieldView {
+    static func commonFieldView(leftImage: UIImage?, text: String? = nil, font: UIFont = hxb.font.mainContent, placeholder: String?) -> HXBInputFieldView {
         let fieldView = HXBInputFieldView()
         fieldView.leftImage = leftImage
         fieldView.text = text
+        fieldView.textFont = font
         fieldView.attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: hxb.color.light])
         fieldView.hasRightView = false
+        
+        
         return fieldView
     }
 }
