@@ -10,9 +10,6 @@
 		69D0B5B06B7F6E33C7590971 /* Pods_ZZHxb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */; };
 		8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */; };
 		8D3E62011FDF79DE008C8E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62001FDF79DE008C8E67 /* Assets.xcassets */; };
-		8D3E62191FDF7D8E008C8E67 /* HXBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62181FDF7D8E008C8E67 /* HXBViewController.swift */; };
-		8D3E621B1FDF7DE6008C8E67 /* HXBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E621A1FDF7DE6008C8E67 /* HXBNavigationController.swift */; };
-		8D3E621D1FDF7DFA008C8E67 /* HXBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E621C1FDF7DFA008C8E67 /* HXBTabBarController.swift */; };
 		8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */; };
 		8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62351FDF8016008C8E67 /* HXBInvestController.swift */; };
 		8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62381FDF8038008C8E67 /* HXBMineController.swift */; };
@@ -20,7 +17,6 @@
 		8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */; };
 		8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */; };
 		8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */; };
-		8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */; };
 		8D3E624E1FE0F4DF008C8E67 /* tabbar_home.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62481FE0F4DF008C8E67 /* tabbar_home.svg */; };
 		8D3E624F1FE0F4DF008C8E67 /* tabbar_home_selected.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62491FE0F4DF008C8E67 /* tabbar_home_selected.svg */; };
 		8D3E62501FE0F4DF008C8E67 /* tabbar_investment.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E624A1FE0F4DF008C8E67 /* tabbar_investment.svg */; };
@@ -70,21 +66,25 @@
 		8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AF01FE7CA4000694864 /* UITextField+ZZExtension.swift */; };
 		8D800B151FE7CA4000694864 /* UIView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AF11FE7CA4000694864 /* UIView+ZZExtension.swift */; };
 		8D800B161FE7CA4000694864 /* ZZCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AF21FE7CA4000694864 /* ZZCollection.swift */; };
-		8DCC1D901FE8AB1D00FEA8EF /* HXBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D8F1FE8AB1D00FEA8EF /* HXBModel.swift */; };
 		8DCC1D941FE8FB9200FEA8EF /* HXBNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D931FE8FB9200FEA8EF /* HXBNotification.swift */; };
 		8DCC1D9B1FE9002E00FEA8EF /* HXBSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */; };
-		8DCC1D9D1FE900E900FEA8EF /* HXBWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9C1FE900E900FEA8EF /* HXBWaveView.swift */; };
 		8DCC1D9F1FE91E9300FEA8EF /* UIViewController+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */; };
-		8DCC1DA11FE9223300FEA8EF /* HXBTopWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA01FE9223300FEA8EF /* HXBTopWaveView.swift */; };
 		8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */; };
-		8DE9140A1FE226DE00FAEE68 /* HXBSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */; };
+		8DCC1DA51FEA065800FEA8EF /* HXBSingleWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA41FEA065800FEA8EF /* HXBSingleWaveView.swift */; };
+		8DCC1DA71FEA06B200FEA8EF /* HXBNavWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA61FEA06B200FEA8EF /* HXBNavWaveView.swift */; };
+		8DCC1DB31FEA087700FEA8EF /* HXBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA91FEA087500FEA8EF /* HXBNavigationController.swift */; };
+		8DCC1DB41FEA087700FEA8EF /* HXBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DAA1FEA087500FEA8EF /* HXBTabBarController.swift */; };
+		8DCC1DB51FEA087700FEA8EF /* HXBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DAB1FEA087500FEA8EF /* HXBViewController.swift */; };
+		8DCC1DB61FEA087700FEA8EF /* HXBSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DAD1FEA087600FEA8EF /* HXBSettingTableViewCell.swift */; };
+		8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */; };
+		8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DB01FEA087600FEA8EF /* HXBViewModel.swift */; };
+		8DCC1DB91FEA087700FEA8EF /* HXBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DB21FEA087600FEA8EF /* HXBModel.swift */; };
 		8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */; };
 		8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */; };
 		8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */; };
 		8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */; };
 		8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */; };
 		8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */; };
-		8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914171FE2663200FAEE68 /* HXBTableView.swift */; };
 		8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */; };
 		8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9141D1FE3C97E00FAEE68 /* HXBNetworkError.swift */; };
 		8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */; };
@@ -100,9 +100,6 @@
 		8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3E62001FDF79DE008C8E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D3E62051FDF79DE008C8E67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D3E62181FDF7D8E008C8E67 /* HXBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBViewController.swift; sourceTree = "<group>"; };
-		8D3E621A1FDF7DE6008C8E67 /* HXBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNavigationController.swift; sourceTree = "<group>"; };
-		8D3E621C1FDF7DFA008C8E67 /* HXBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTabBarController.swift; sourceTree = "<group>"; };
 		8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAPI.swift; sourceTree = "<group>"; };
 		8D3E62351FDF8016008C8E67 /* HXBInvestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBInvestController.swift; sourceTree = "<group>"; };
 		8D3E62381FDF8038008C8E67 /* HXBMineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineController.swift; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRootVCManager.swift; sourceTree = "<group>"; };
 		8D3E623F1FDFB8B8008C8E67 /* HXBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkManager.swift; sourceTree = "<group>"; };
 		8D3E62411FDFB909008C8E67 /* HXBRequestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRequestApi.swift; sourceTree = "<group>"; };
-		8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBViewModel.swift; sourceTree = "<group>"; };
 		8D3E62481FE0F4DF008C8E67 /* tabbar_home.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_home.svg; sourceTree = "<group>"; };
 		8D3E62491FE0F4DF008C8E67 /* tabbar_home_selected.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_home_selected.svg; sourceTree = "<group>"; };
 		8D3E624A1FE0F4DF008C8E67 /* tabbar_investment.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_investment.svg; sourceTree = "<group>"; };
@@ -160,21 +156,25 @@
 		8D800AF01FE7CA4000694864 /* UITextField+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+ZZExtension.swift"; sourceTree = "<group>"; };
 		8D800AF11FE7CA4000694864 /* UIView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ZZExtension.swift"; sourceTree = "<group>"; };
 		8D800AF21FE7CA4000694864 /* ZZCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZCollection.swift; path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZCollection.swift; sourceTree = "<group>"; };
-		8DCC1D8F1FE8AB1D00FEA8EF /* HXBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBModel.swift; sourceTree = "<group>"; };
 		8DCC1D931FE8FB9200FEA8EF /* HXBNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNotification.swift; sourceTree = "<group>"; };
 		8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignInController.swift; sourceTree = "<group>"; };
-		8DCC1D9C1FE900E900FEA8EF /* HXBWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBWaveView.swift; sourceTree = "<group>"; };
 		8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HXB.swift"; sourceTree = "<group>"; };
-		8DCC1DA01FE9223300FEA8EF /* HXBTopWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTopWaveView.swift; sourceTree = "<group>"; };
 		8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpController.swift; sourceTree = "<group>"; };
-		8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSettingTableViewCell.swift; sourceTree = "<group>"; };
+		8DCC1DA41FEA065800FEA8EF /* HXBSingleWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSingleWaveView.swift; sourceTree = "<group>"; };
+		8DCC1DA61FEA06B200FEA8EF /* HXBNavWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNavWaveView.swift; sourceTree = "<group>"; };
+		8DCC1DA91FEA087500FEA8EF /* HXBNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBNavigationController.swift; sourceTree = "<group>"; };
+		8DCC1DAA1FEA087500FEA8EF /* HXBTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBTabBarController.swift; sourceTree = "<group>"; };
+		8DCC1DAB1FEA087500FEA8EF /* HXBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBViewController.swift; sourceTree = "<group>"; };
+		8DCC1DAD1FEA087600FEA8EF /* HXBSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBSettingTableViewCell.swift; sourceTree = "<group>"; };
+		8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBTableView.swift; sourceTree = "<group>"; };
+		8DCC1DB01FEA087600FEA8EF /* HXBViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBViewModel.swift; sourceTree = "<group>"; };
+		8DCC1DB21FEA087600FEA8EF /* HXBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBModel.swift; sourceTree = "<group>"; };
 		8DE9140B1FE22B9D00FAEE68 /* HXBMineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCell.swift; sourceTree = "<group>"; };
 		8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineViewModel.swift; sourceTree = "<group>"; };
 		8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineCellModel.swift; sourceTree = "<group>"; };
 		8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+HXB.swift"; sourceTree = "<group>"; };
 		8DE914131FE24CF700FAEE68 /* HXBMineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMineHeaderView.swift; sourceTree = "<group>"; };
 		8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+HXB.swift"; sourceTree = "<group>"; };
-		8DE914171FE2663200FAEE68 /* HXBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTableView.swift; sourceTree = "<group>"; };
 		8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+HXB.swift"; sourceTree = "<group>"; };
 		8DE9141D1FE3C97E00FAEE68 /* HXBNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkError.swift; sourceTree = "<group>"; };
 		8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkHUDDelegate.swift; sourceTree = "<group>"; };
@@ -252,13 +252,10 @@
 		8D3E620C1FDF7B3B008C8E67 /* Basics */ = {
 			isa = PBXGroup;
 			children = (
-				8D3E62181FDF7D8E008C8E67 /* HXBViewController.swift */,
-				8D3E621A1FDF7DE6008C8E67 /* HXBNavigationController.swift */,
-				8D3E621C1FDF7DFA008C8E67 /* HXBTabBarController.swift */,
-				8D3E62451FE0D8B2008C8E67 /* HXBViewModel.swift */,
-				8DE914091FE226DE00FAEE68 /* HXBSettingTableViewCell.swift */,
-				8DE914171FE2663200FAEE68 /* HXBTableView.swift */,
-				8DCC1D8F1FE8AB1D00FEA8EF /* HXBModel.swift */,
+				8DCC1DA81FEA087500FEA8EF /* Controller */,
+				8DCC1DB11FEA087600FEA8EF /* Model */,
+				8DCC1DAC1FEA087600FEA8EF /* View */,
+				8DCC1DAF1FEA087600FEA8EF /* ViewModel */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -575,8 +572,8 @@
 		8DCC1D961FE8FFCD00FEA8EF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8DCC1D9C1FE900E900FEA8EF /* HXBWaveView.swift */,
-				8DCC1DA01FE9223300FEA8EF /* HXBTopWaveView.swift */,
+				8DCC1DA61FEA06B200FEA8EF /* HXBNavWaveView.swift */,
+				8DCC1DA41FEA065800FEA8EF /* HXBSingleWaveView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -602,6 +599,41 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8DCC1DA81FEA087500FEA8EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8DCC1DA91FEA087500FEA8EF /* HXBNavigationController.swift */,
+				8DCC1DAA1FEA087500FEA8EF /* HXBTabBarController.swift */,
+				8DCC1DAB1FEA087500FEA8EF /* HXBViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8DCC1DAC1FEA087600FEA8EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8DCC1DAD1FEA087600FEA8EF /* HXBSettingTableViewCell.swift */,
+				8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8DCC1DAF1FEA087600FEA8EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8DCC1DB01FEA087600FEA8EF /* HXBViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8DCC1DB11FEA087600FEA8EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DCC1DB21FEA087600FEA8EF /* HXBModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8DE914081FE2266C00FAEE68 /* Cell */ = {
@@ -778,9 +810,9 @@
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
 				8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */,
 				8D800B001FE7CA4000694864 /* Data+ZZExtension.swift in Sources */,
+				8DCC1DB51FEA087700FEA8EF /* HXBViewController.swift in Sources */,
 				8D800B0B1FE7CA4000694864 /* UIColor+ZZExtension.swift in Sources */,
 				8D800B0D1FE7CA4000694864 /* UIFont+ZZExtension.swift in Sources */,
-				8DE9140A1FE226DE00FAEE68 /* HXBSettingTableViewCell.swift in Sources */,
 				8D800B161FE7CA4000694864 /* ZZCollection.swift in Sources */,
 				8D3E625F1FE12F24008C8E67 /* HXBPadding.swift in Sources */,
 				8D800B0A1FE7CA4000694864 /* UIButton+ZZExtension.swift in Sources */,
@@ -799,6 +831,7 @@
 				8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */,
 				8D800AFD1FE7CA4000694864 /* ZZLib.swift in Sources */,
 				8DCC1D9F1FE91E9300FEA8EF /* UIViewController+HXB.swift in Sources */,
+				8DCC1DB61FEA087700FEA8EF /* HXBSettingTableViewCell.swift in Sources */,
 				8D800B031FE7CA4000694864 /* DispatchQueue+ZZExtension.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
 				8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */,
@@ -807,35 +840,35 @@
 				8D800B061FE7CA4000694864 /* NSObject+ZZExtension.swift in Sources */,
 				8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
-				8D3E62191FDF7D8E008C8E67 /* HXBViewController.swift in Sources */,
 				8D800B111FE7CA4000694864 /* UISceen+ZZExtension.swift in Sources */,
-				8D3E621D1FDF7DFA008C8E67 /* HXBTabBarController.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
 				8D800AFB1FE7CA4000694864 /* ZZRefreshHeader.swift in Sources */,
-				8DE914181FE2663200FAEE68 /* HXBTableView.swift in Sources */,
+				8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8D800B021FE7CA4000694864 /* DateFormatter+ZZExtension.swift in Sources */,
 				8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */,
 				8D800B011FE7CA4000694864 /* Date+ZZExtension.swift in Sources */,
 				8D800AF81FE7CA4000694864 /* UIScrollView+ZZRefresh.swift in Sources */,
 				8D800B0F1FE7CA4000694864 /* UIImageView+ZZExtension.swift in Sources */,
+				8DCC1DB31FEA087700FEA8EF /* HXBNavigationController.swift in Sources */,
+				8DCC1DB41FEA087700FEA8EF /* HXBTabBarController.swift in Sources */,
+				8DCC1DA51FEA065800FEA8EF /* HXBSingleWaveView.swift in Sources */,
 				8D800B081FE7CA4000694864 /* UIAlertController+ZZExtension.swift in Sources */,
 				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,
+				8DCC1DB91FEA087700FEA8EF /* HXBModel.swift in Sources */,
 				8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */,
+				8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */,
 				8D800B0E1FE7CA4000694864 /* UIImage+ZZExtension.swift in Sources */,
 				8DCC1D941FE8FB9200FEA8EF /* HXBNotification.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
+				8DCC1DA71FEA06B200FEA8EF /* HXBNavWaveView.swift in Sources */,
 				8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */,
 				8D800AF91FE7CA4000694864 /* ZZRefresh.swift in Sources */,
-				8DCC1DA11FE9223300FEA8EF /* HXBTopWaveView.swift in Sources */,
 				8D800B0C1FE7CA4000694864 /* UIDevice+ZZExtension.swift in Sources */,
-				8DCC1D9D1FE900E900FEA8EF /* HXBWaveView.swift in Sources */,
-				8D3E62461FE0D8B2008C8E67 /* HXBViewModel.swift in Sources */,
 				8D800B091FE7CA4000694864 /* UIApplication+ZZExtension.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
 				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
-				8DCC1D901FE8AB1D00FEA8EF /* HXBModel.swift in Sources */,
 				8D800B101FE7CA4000694864 /* UILabel+ZZExtension.swift in Sources */,
 				8D800AF71FE7CA4000694864 /* ZZProgressHud.swift in Sources */,
 				8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */,
@@ -843,7 +876,6 @@
 				8D800B051FE7CA4000694864 /* NSNumber+ZZExtension.swift in Sources */,
 				8D800AF51FE7CA4000694864 /* ZZCircleProgressView.swift in Sources */,
 				8D800AFA1FE7CA4000694864 /* ZZRefreshFooter.swift in Sources */,
-				8D3E621B1FDF7DE6008C8E67 /* HXBNavigationController.swift in Sources */,
 				8D800B071FE7CA4000694864 /* String+ZZExtension.swift in Sources */,
 				8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */,
 				8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */,

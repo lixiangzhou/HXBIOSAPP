@@ -16,7 +16,6 @@ class HXBSignInController: HXBViewController {
         super.viewDidLoad()
 
         setUI()
-        addObservers()
     }
 
     // MARK: - Public Property
@@ -33,7 +32,7 @@ extension HXBSignInController {
         hideNavigationBar = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
-        let waveView = HXBTopWaveView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 111))
+        let waveView = HXBNavWaveView()
         view.addSubview(waveView)
     }
 }

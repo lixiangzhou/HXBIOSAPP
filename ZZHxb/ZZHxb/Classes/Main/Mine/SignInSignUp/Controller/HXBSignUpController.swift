@@ -29,14 +29,16 @@ extension HXBSignUpController {
         
         showBack = true
         
-        let waveView = HXBTopWaveView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 111))
+        let waveView = HXBNavWaveView()
         view.addSubview(waveView)
     }
 }
 
 // MARK: - Action
 extension HXBSignUpController {
-    
+    override func back() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - Network
