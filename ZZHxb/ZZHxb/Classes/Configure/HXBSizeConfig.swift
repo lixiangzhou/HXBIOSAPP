@@ -1,8 +1,8 @@
 //
-//  HXBPadding.swift
+//  HXBSizeConfig.swift
 //  ZZHxb
 //
-//  Created by lxz on 2017/12/13.
+//  Created by lxz on 2017/12/29.
 //  Copyright © 2017年 lixiangzhou. All rights reserved.
 //
 
@@ -56,7 +56,6 @@ extension hxb {
         static let statusBarHeight: CGFloat = UIScreen.zz_width == 812 ? 44 : 20
         
         /// 隐藏导航栏时距离顶部的距离
-//        static let hideNavagionBar2TopHeight: CGFloat = 0//UIScreen.zz_width == 812 ? 44 : 20
+        //        static let hideNavagionBar2TopHeight: CGFloat = 0//UIScreen.zz_width == 812 ? 44 : 20
     }
 }
-

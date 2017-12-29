@@ -1,9 +1,9 @@
 //
-//  HXBNotification.swift
+//  HXBNotificationConfig.swift
 //  ZZHxb
 //
-//  Created by lxz on 2017/12/19.
-//Copyright © 2017年 lixiangzhou. All rights reserved.
+//  Created by lxz on 2017/12/29.
+//  Copyright © 2017年 lixiangzhou. All rights reserved.
 //
 
 import UIKit
