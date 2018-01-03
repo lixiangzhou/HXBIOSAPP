@@ -14,4 +14,5 @@ extension HXBNetwork {
     static func getAccountData(completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.account, params: nil, completionBlock: completion)
     }
+    
 }

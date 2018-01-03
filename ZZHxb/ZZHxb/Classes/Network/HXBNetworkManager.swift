@@ -14,7 +14,7 @@ typealias HXBRequestParam = Parameters
 typealias HXBRequestHeader = HTTPHeaders
 typealias HXBResponseObject = [String: Any]
 typealias HXBHttpMethod = HTTPMethod
-typealias HXBRequestCompletionCallBack = (Bool, HXBRequestApi, HXBResponseObject?, Error?) -> ()
+typealias HXBRequestCompletionCallBack = (Bool, HXBRequestApi) -> ()
 /// 主要用于控制 HUD
 typealias HXBRequestConfigClosrue = (HXBRequestApi) -> ()
 typealias HXBRequestAdapter = (URLRequest) -> URLRequest?
@@ -33,7 +33,8 @@ class HXBNetworkManager {
     
     func send(requestApi: HXBRequestApi) {
         guard let url = getUrl(requestApi: requestApi) else {
-            requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.requestUrlNil)
+            requestApi.error = HXBNetworkError.requestUrlNil
+            requestApi.completeCallback?(false, requestApi)
             return
         }
         
@@ -55,7 +56,8 @@ class HXBNetworkManager {
                 requestApi.request = adaptedRequest
             }
             guard let request = requestApi.request else {
-                requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.requestAdaptReturnNil)
+                requestApi.error = HXBNetworkError.requestAdaptReturnNil
+                requestApi.completeCallback?(false, requestApi)
                 return
             }
             
@@ -63,28 +65,52 @@ class HXBNetworkManager {
             requestApi.showProgress()
             HXBNetActivityManager.sendRequest()
             
-            // 发送请求
-            sessionManager.request(request).responseJSON { responseData in
-                // HUD
-                requestApi.hideProgress()
-                HXBNetActivityManager.finishRequest()
-                
-                requestApi.httpResponse = responseData.response
-
-                if responseData.result.isSuccess {
-                    log.info(responseData.result.value!)
-                    requestApi.responseObject = responseData.result.value as? HXBResponseObject
+            if requestApi.responseSerializeType == .json {
+                // 发送请求
+                sessionManager.request(request).responseJSON { responseData in
+                    // HUD
+                    requestApi.hideProgress()
+                    HXBNetActivityManager.finishRequest()
                     
-                    self.successProcess(requestApi: requestApi)
-                } else {
-                    log.error(responseData.error!)
-                    requestApi.error = responseData.error
+                    requestApi.httpResponse = responseData.response
                     
-                    self.errorProcess(requestApi: requestApi)
+                    if responseData.result.isSuccess {
+                        log.info(responseData.result.value!)
+                        requestApi.responseObject = responseData.result.value as? HXBResponseObject
+                        
+                        self.successProcess(requestApi: requestApi)
+                    } else {
+                        log.error(responseData.error!)
+                        requestApi.error = responseData.error
+                        
+                        self.errorProcess(requestApi: requestApi)
+                    }
                 }
+            } else if requestApi.responseSerializeType == .data {
+                sessionManager.request(request).responseData(completionHandler: { responseData in
+                    // HUD
+                    requestApi.hideProgress()
+                    HXBNetActivityManager.finishRequest()
+                    
+                    requestApi.httpResponse = responseData.response
+                    
+                    if responseData.result.isSuccess {
+                        log.info(responseData.result.value!)
+                        requestApi.responseData = responseData.result.value
+                        
+                        self.successProcess(requestApi: requestApi)
+                    } else {
+                        log.error(responseData.error!)
+                        requestApi.error = responseData.error
+                        
+                        self.errorProcess(requestApi: requestApi)
+                    }
+                })
             }
+            
         } catch {
-            requestApi.completeCallback?(false, requestApi, nil, HXBNetworkError.encodingFailed(error: error))
+            requestApi.error = HXBNetworkError.encodingFailed(error: error)
+            requestApi.completeCallback?(false, requestApi)
         }
     }
 }
@@ -92,11 +118,12 @@ class HXBNetworkManager {
 
 // MARK: - Public
 extension HXBNetworkManager {
-    static func request(url: String, params: HXBRequestParam?, method: HXBHttpMethod = .get, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCompletionCallBack) {
+    static func request(url: String, params: HXBRequestParam? = nil, method: HXBHttpMethod = .get, responseSerializeType: HXBRequestApi.ResponseSerializeType = .json, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCompletionCallBack) {
         let requestApi = HXBRequestApi()
         requestApi.requestUrl = url
         requestApi.params = params
-        requestApi.requestMethod = .get
+        requestApi.requestMethod = method
+        requestApi.responseSerializeType = responseSerializeType
         configProgressAndToast?(requestApi)
         self.request(requestApi: requestApi, completionBlock: completionBlock)
     }
@@ -145,19 +172,19 @@ extension HXBNetworkManager {
                 if isSuccess {  // 成功后重新发送请求
                     self.send(requestApi: requestApi)
                 } else {    // 失败就调用回调
-                    requestApi.completeCallback?(false, requestApi, nil, requestApi.error)
+                    requestApi.completeCallback?(false, requestApi)
                 }
             })
         } else if requestApi.statusCode == hxb.code.notLogin {  // 未登录
             hxb.notification.notLogin.post()
-            requestApi.completeCallback?(false, requestApi, nil, requestApi.error)
+            requestApi.completeCallback?(false, requestApi)
         } else {
-            requestApi.completeCallback?(false, requestApi, nil, requestApi.error)
+            requestApi.completeCallback?(false, requestApi)
         }
     }
     
     fileprivate func successProcess(requestApi: HXBRequestApi) {
-        requestApi.completeCallback?(true, requestApi, requestApi.responseObject, nil)
+        requestApi.completeCallback?(true, requestApi)
     }
 }
 

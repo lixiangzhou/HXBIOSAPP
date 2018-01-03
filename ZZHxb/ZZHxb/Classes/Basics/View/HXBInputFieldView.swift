@@ -1,4 +1,4 @@
- //
+//
 //  HXBInputFieldView.swift
 //  ZZHxb
 //
@@ -21,7 +21,7 @@ class HXBInputFieldView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - Public Property
     var hideTopLine = true {
         didSet {
@@ -190,12 +190,16 @@ class HXBInputFieldView: UIView {
         }
     }
     
+    var inputLengthLimit = Int.max
+    
+    var inputViewChangeClosure:((UITextField) -> Void)?
+    
     // MARK: - Private Property
     fileprivate let leftView = UIImageView()
     let rightView = UIImageView()
     
     fileprivate let textField = UITextField()
-//    fileprivate let deleteView = UIImageView()
+    //    fileprivate let deleteView = UIImageView()
     
     fileprivate let topLine = UIView.sepLine()
     fileprivate let bottomLine = UIView.sepLine()
@@ -204,10 +208,17 @@ class HXBInputFieldView: UIView {
 // MARK: - UI
 extension HXBInputFieldView {
     fileprivate func setUI() {
+        textField.delegate = self
+        textField.reactive.controlEvents(.editingChanged).observeResult { result in
+            if let field = result.value {
+                self.inputViewChangeClosure?(field)
+            }
+        }
+        
         addSubview(textField)
         addSubview(leftView)
         addSubview(rightView)
-//        addSubview(deleteView)
+        //        addSubview(deleteView)
         addSubview(topLine)
         addSubview(bottomLine)
         
@@ -266,6 +277,24 @@ extension HXBInputFieldView {
 // MARK: - Helper
 extension HXBInputFieldView {
     
+}
+
+// MARK: - Delegate
+extension HXBInputFieldView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if range.length > 0 && string.isEmpty { // 删除
+            
+        } else {    // 输入文字
+            var text = textField.text ?? ""
+            text += string
+            if text.count > inputLengthLimit {
+                return false
+            }
+        }
+        
+        return true
+    }
 }
 
 // MARK: - Other

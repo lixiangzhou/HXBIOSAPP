@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 class HXBRequestApi {
     init() { }
     
@@ -42,14 +44,17 @@ class HXBRequestApi {
     }
     /// 响应错误
     var error: Error?
-    /// 响应结果
+    /// 响应结果 responseSerializeType 是 .json时有效
     var responseObject: HXBResponseObject?
+    /// 响应结果 responseSerializeType 是 .data时有效
+    var responseData: Data?
     
     // MARK: -
     /// 请求任务
     var dataTask: URLSessionDataTask?
     
     // MARK: - Callback
+    /// 正常的回调，返回JSON
     var completeCallback: HXBRequestCompletionCallBack?
     
     // MARK: - HUD
@@ -63,6 +68,15 @@ class HXBRequestApi {
     
     /// 请求适配器
     var adapter: HXBRequestAdapter?
+    
+    /// 响应结果的序列号方式
+    var responseSerializeType = ResponseSerializeType.json
+}
+
+extension HXBRequestApi {
+    enum ResponseSerializeType {
+        case json, data
+    }
 }
 
 // MARK: - HUD Method

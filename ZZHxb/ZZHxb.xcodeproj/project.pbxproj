@@ -11,6 +11,7 @@
 		8D352B6D1FF5DD1D003E5507 /* HXBSizeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B6C1FF5DD1D003E5507 /* HXBSizeConfig.swift */; };
 		8D352B6F1FF5DD46003E5507 /* HXBNotificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */; };
 		8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */; };
+		8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */; };
 		8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */; };
 		8D3E62011FDF79DE008C8E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62001FDF79DE008C8E67 /* Assets.xcassets */; };
 		8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */; };
@@ -95,6 +96,8 @@
 		8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */; };
 		8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */; };
 		8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */; };
+		8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */; };
+		8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +106,7 @@
 		8D352B6C1FF5DD1D003E5507 /* HXBSizeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSizeConfig.swift; sourceTree = "<group>"; };
 		8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNotificationConfig.swift; sourceTree = "<group>"; };
 		8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBStartSignUpController.swift; sourceTree = "<group>"; };
+		8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpViewModel.swift; sourceTree = "<group>"; };
 		8D3E61F61FDF79DE008C8E67 /* ZZHxb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZHxb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3E62001FDF79DE008C8E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 		8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetActivityManager.swift; sourceTree = "<group>"; };
 		8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBKeyChain.swift; sourceTree = "<group>"; };
 		8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZZHud+HXB.swift"; sourceTree = "<group>"; };
+		8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+HXB.swift"; sourceTree = "<group>"; };
+		8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+SignInSignUp.swift"; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -324,6 +330,7 @@
 				8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */,
 				8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */,
 				8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */,
+				8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -466,6 +473,7 @@
 				8DCC1DC01FEA3F5900FEA8EF /* UIButton+HXB.swift */,
 				8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */,
 				8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */,
+				8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -608,6 +616,7 @@
 		8DCC1D991FE8FFCD00FEA8EF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -851,9 +860,11 @@
 				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
 				8D800B061FE7CA4000694864 /* NSObject+ZZExtension.swift in Sources */,
+				8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */,
 				8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */,
 				8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
+				8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */,
 				8D800B111FE7CA4000694864 /* UISceen+ZZExtension.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
 				8D800AFB1FE7CA4000694864 /* ZZRefreshHeader.swift in Sources */,
@@ -875,6 +886,7 @@
 				8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */,
 				8D800B0E1FE7CA4000694864 /* UIImage+ZZExtension.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
+				8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */,
 				8DCC1DA71FEA06B200FEA8EF /* HXBNavWaveView.swift in Sources */,
 				8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */,
 				8D800AF91FE7CA4000694864 /* ZZRefresh.swift in Sources */,

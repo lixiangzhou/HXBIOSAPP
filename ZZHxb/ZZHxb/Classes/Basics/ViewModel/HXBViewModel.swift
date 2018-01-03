@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class HXBViewModel: NSObject {
     weak var progressContainerView: UIView?

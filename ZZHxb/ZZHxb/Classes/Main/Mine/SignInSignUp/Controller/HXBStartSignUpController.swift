@@ -9,19 +9,20 @@
 import UIKit
 
 class HXBStartSignUpController: HXBViewController {
-
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
-
+    
     // MARK: - Public Property
     
     // MARK: - Private Property
     fileprivate var phoneField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), text: nil, placeholder: "请输入常用的手机号")
+    fileprivate var viewModel = HXBSignUpViewModel()
 }
 
 // MARK: - UI
@@ -36,6 +37,19 @@ extension HXBStartSignUpController {
         view.addSubview(waveView)
         
         phoneField.keyboardType = .numberPad
+        phoneField.inputLengthLimit = hxb.size.phoneLength
+        phoneField.inputViewChangeClosure = { field in
+            let text = field.text ?? ""
+            if text.count == hxb.size.phoneLength {
+                self.viewModel.checkMobile(text) { (isSuccess, toast) in
+                    if isSuccess == false {
+                        if let toast = toast {
+                            ZZProgressHud.show(text: toast)
+                        }
+                    }
+                }
+            }
+        }
         view.addSubview(phoneField)
         
         let toSignUpBtn = UIButton(title: "下一步", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(toSignUp))
@@ -70,9 +84,12 @@ extension HXBStartSignUpController {
 // MARK: - Action
 extension HXBStartSignUpController {
     @objc fileprivate func toSignUp() {
-        let signUpVC = HXBSignUpController()
-        signUpVC.phoneNo = phoneField.text ?? ""
-        signUpVC.pushFrom(controller: self, animated: true)
+        viewModel.getCaptcha { (isSuccess, data) in
+            
+        }
+//        let signUpVC = HXBSignUpController()
+//        signUpVC.phoneNo = self.phoneField.text ?? ""
+//        signUpVC.pushFrom(controller: self, animated: true)
     }
     
     @objc fileprivate func toSignIn() {

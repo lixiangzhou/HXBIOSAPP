@@ -28,6 +28,8 @@ extension hxb {
         static let requestOverRun = 412
         /// 图形验证码不能为空 【102】
         static let captchaCantEmpty = 102
+        /// 普通错误状态码
+        static let commonError = 1
     }
 }
 

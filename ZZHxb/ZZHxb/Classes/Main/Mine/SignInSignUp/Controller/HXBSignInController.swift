@@ -38,6 +38,7 @@ extension HXBSignInController {
         view.addSubview(waveView)
         
         let phoneField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), placeholder: "手机号")
+        phoneField.inputLengthLimit = hxb.size.phoneLength
         phoneField.keyboardType = .numberPad
         let pwdField = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码")
         

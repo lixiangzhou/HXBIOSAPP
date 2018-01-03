@@ -28,6 +28,8 @@ extension hxb {
         static let signup = "/user/signup"
         /// 忘记密码 【/forgot】
         static let forgetPwd = "/forgot"
+        /// 获取图验 【/captcha】
+        static let captcha = "/captcha"
         /// 校验图片验证码 【/checkCaptcha】
         static let check_captcha = "/checkCaptcha"
         /// 发送短信接口 【/send/smscode】

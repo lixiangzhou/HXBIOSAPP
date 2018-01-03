@@ -27,8 +27,7 @@ class HXBMineViewModel: HXBViewModel {
     }
     
     func getAccountData(completion: @escaping (Bool) -> ()) {
-        HXBNetwork.getAccountData { (isSuccess, requestApi, responseObj, error) in
-            completion(true)
+        HXBNetwork.getAccountData { (isSuccess, requestApi) in
             if isSuccess {
                 
             } else {
