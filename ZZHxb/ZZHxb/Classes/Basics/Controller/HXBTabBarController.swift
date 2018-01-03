@@ -30,7 +30,7 @@ class HXBTabBarController: UITabBarController {
 extension HXBTabBarController {
     fileprivate func addObservers() {
         NotificationCenter.default.reactive.notifications(forName: hxb.notification.name.notLogin).observeValues { notification in
-            HXBNavigationController(rootViewController: HXBSignUpController()).presentFrom(controller: self, animated: true)
+            HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
         }
     }
 }

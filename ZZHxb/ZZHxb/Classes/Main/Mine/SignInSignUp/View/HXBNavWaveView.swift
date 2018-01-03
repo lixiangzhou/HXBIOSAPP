@@ -13,15 +13,16 @@ import UIKit
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 111))
+        let maxHeight: CGFloat = 25
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: hxb.size.navigationHeight + HXBSingleWaveView.waveHeight + maxHeight))
         
-        let waveView1 = HXBSingleWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 120))
+        let waveView1 = HXBSingleWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: zz_height))
         waveView1.alpha = 0.65
         
-        let waveView2 = HXBSingleWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 105))
+        let waveView2 = HXBSingleWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: zz_height - 15))
         waveView2.alpha = 0.75
         
-        let waveView3 = HXBSingleWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 90))
+        let waveView3 = HXBSingleWaveView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: zz_height - 25))
         waveView3.alpha = 0.85
         
         addSubview(waveView1)

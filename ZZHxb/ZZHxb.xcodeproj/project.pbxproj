@@ -10,6 +10,7 @@
 		69D0B5B06B7F6E33C7590971 /* Pods_ZZHxb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */; };
 		8D352B6D1FF5DD1D003E5507 /* HXBSizeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B6C1FF5DD1D003E5507 /* HXBSizeConfig.swift */; };
 		8D352B6F1FF5DD46003E5507 /* HXBNotificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */; };
+		8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */; };
 		8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */; };
 		8D3E62011FDF79DE008C8E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62001FDF79DE008C8E67 /* Assets.xcassets */; };
 		8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */; };
@@ -101,6 +102,7 @@
 		867F36994E02F68D827A3BCC /* Pods-ZZHxb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZZHxb.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZZHxb/Pods-ZZHxb.debug.xcconfig"; sourceTree = "<group>"; };
 		8D352B6C1FF5DD1D003E5507 /* HXBSizeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSizeConfig.swift; sourceTree = "<group>"; };
 		8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNotificationConfig.swift; sourceTree = "<group>"; };
+		8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBStartSignUpController.swift; sourceTree = "<group>"; };
 		8D3E61F61FDF79DE008C8E67 /* ZZHxb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZHxb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3E62001FDF79DE008C8E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -590,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */,
+				8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */,
 				8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */,
 			);
 			path = Controller;
@@ -849,6 +852,7 @@
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
 				8D800B061FE7CA4000694864 /* NSObject+ZZExtension.swift in Sources */,
 				8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */,
+				8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
 				8D800B111FE7CA4000694864 /* UISceen+ZZExtension.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,

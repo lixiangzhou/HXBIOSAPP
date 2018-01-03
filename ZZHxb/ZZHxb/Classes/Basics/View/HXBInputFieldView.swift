@@ -35,9 +35,24 @@ class HXBInputFieldView: UIView {
         }
     }
     
-    var text: String? = nil {
+    var topLineColor = UIColor.clear {
         didSet {
+            topLine.backgroundColor = topLineColor
+        }
+    }
+    
+    var bottomLineColor = UIColor.clear {
+        didSet {
+            bottomLine.backgroundColor = bottomLineColor
+        }
+    }
+    
+    var text: String? {
+        set {
             textField.text = text
+        }
+        get {
+            return textField.text
         }
     }
     
@@ -68,6 +83,12 @@ class HXBInputFieldView: UIView {
     var keyboardType: UIKeyboardType = .default {
         didSet {
             textField.keyboardType = keyboardType
+        }
+    }
+    
+    var isSecureTextEntry: Bool = true {
+        didSet {
+            textField.isSecureTextEntry = isSecureTextEntry
         }
     }
     
@@ -196,6 +217,8 @@ extension HXBInputFieldView {
         
         topLine.isHidden = hideTopLine
         bottomLine.isHidden = hideBottomLine
+        topLine.backgroundColor = topLineColor
+        bottomLine.backgroundColor = bottomLineColor
         textField.textColor = textColor
         textField.text = text
         textField.placeholder = placeholder
@@ -249,7 +272,7 @@ extension HXBInputFieldView {
 extension HXBInputFieldView {
     @objc private func tapEye() {
         rightView.isHighlighted = !rightView.isHighlighted
-        textField.isSecureTextEntry = rightView.isHighlighted
+        self.isSecureTextEntry = rightView.isHighlighted
     }
 }
 
@@ -264,6 +287,7 @@ extension HXBInputFieldView {
         fieldView.rightSelectedImage = UIImage("input_eye_closed")
         fieldView.rightPadding = 0
         fieldView.right2InputViewPadding = 10
+        fieldView.isSecureTextEntry = true
         
         fieldView.rightView.addGestureRecognizer(UITapGestureRecognizer(target: fieldView, action: #selector(tapEye)))
         
@@ -277,8 +301,30 @@ extension HXBInputFieldView {
         fieldView.textFont = font
         fieldView.attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: hxb.color.light])
         fieldView.hasRightView = false
-        
+        fieldView.bottomLineColor = hxb.color.mostImport
         
         return fieldView
+    }
+    
+    static func smsOrVoiceValidFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?) -> (HXBInputFieldView, UIButton) {
+        let voiceBtn = UIButton(title: "语音验证码", font: hxb.font.transaction, titleColor: hxb.color.mostImport)
+        voiceBtn.layer.borderColor = hxb.color.mostImport.cgColor
+        voiceBtn.layer.borderWidth = hxb.size.sepLineHeight
+        voiceBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
+        voiceBtn.frame = CGRect(origin: .zero, size: CGSize(width: 80, height: 30))
+        
+        let fieldView = HXBInputFieldView.commonFieldView(leftImage: leftImage, text: text, placeholder: placeholder)
+        
+        fieldView.hasRightView = true
+        fieldView.rightView.isUserInteractionEnabled = true
+        fieldView.rightViewSize = voiceBtn.zz_size
+        fieldView.rightPadding = 0
+        fieldView.right2InputViewPadding = 10
+        
+        fieldView.rightView .addSubview(voiceBtn)
+        
+        fieldView.rightView.addGestureRecognizer(UITapGestureRecognizer(target: fieldView, action: #selector(tapEye)))
+        
+        return (fieldView, voiceBtn)
     }
 }

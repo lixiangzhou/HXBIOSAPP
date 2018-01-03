@@ -7,8 +7,11 @@
 //
 
 import UIKit
-
+ 
  class HXBSingleWaveView: UIView {
+    
+    /// 波浪的高度 【默认40】
+    static var waveHeight = CGFloat(40)
     
     // MARK: - Life Cycle
     
@@ -47,7 +50,7 @@ import UIKit
         
         offsetX -= speed
         
-        let A = CGFloat(20)
+        let A = HXBSingleWaveView.waveHeight * 0.5
         let ω = Double.pi / Double(bounds.width) * 2
         let k = bounds.height - A * 2
         let φ = offsetX

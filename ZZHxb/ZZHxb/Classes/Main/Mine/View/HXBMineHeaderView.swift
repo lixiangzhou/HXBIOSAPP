@@ -16,7 +16,7 @@ class HXBMineHeaderView: UIView {
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: adaptDecimal(265)))
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 265))
         
         setUI()
         addObservers()
@@ -100,12 +100,12 @@ extension HXBMineHeaderView {
         }
         
         iconView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(adaptDecimal(35))
+            maker.top.equalTo(35)
             maker.left.equalTo(hxb.size.edgeScreen)
         }
         
         holdMoneyTitleLabel.snp.makeConstraints { (maker) in
-            maker.top.equalTo(iconView.snp.bottom).offset(adaptDecimal(18))
+            maker.top.equalTo(iconView.snp.bottom).offset(18)
             maker.left.equalTo(iconView)
         }
         
@@ -122,7 +122,7 @@ extension HXBMineHeaderView {
         
         availableMoneyTitleLabel.snp.makeConstraints { (maker) in
             maker.left.equalTo(iconView)
-            maker.top.equalTo(holdMoneyLabel.snp.bottom).offset(adaptDecimal(32))
+            maker.top.equalTo(holdMoneyLabel.snp.bottom).offset(32)
         }
         
         availableMoneyLabel.snp.makeConstraints { (maker) in
