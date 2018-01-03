@@ -99,6 +99,7 @@
 		8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */; };
 		8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */; };
 		8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */; };
+		8DFF64DA1FFCEDDE007D462D /* HXBNetwork+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D91FFCEDDE007D462D /* HXBNetwork+Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +198,7 @@
 		8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+HXB.swift"; sourceTree = "<group>"; };
 		8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+SignInSignUp.swift"; sourceTree = "<group>"; };
 		8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBCaptchaValidateView.swift; sourceTree = "<group>"; };
+		8DFF64D91FFCEDDE007D462D /* HXBNetwork+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Common.swift"; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -333,6 +335,7 @@
 				8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */,
 				8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */,
 				8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */,
+				8DFF64D91FFCEDDE007D462D /* HXBNetwork+Common.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
 				8D800B101FE7CA4000694864 /* UILabel+ZZExtension.swift in Sources */,
 				8D800AF71FE7CA4000694864 /* ZZProgressHud.swift in Sources */,
+				8DFF64DA1FFCEDDE007D462D /* HXBNetwork+Common.swift in Sources */,
 				8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */,
 				8D800AFF1FE7CA4000694864 /* CGRect+ZZExtension.swift in Sources */,
 				8D800B051FE7CA4000694864 /* NSNumber+ZZExtension.swift in Sources */,

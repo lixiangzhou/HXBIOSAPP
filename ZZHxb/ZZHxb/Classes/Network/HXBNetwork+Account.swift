@@ -12,7 +12,7 @@ extension HXBNetwork {
     
     /// 获取账户内数据
     static func getAccountData(completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.account, params: nil, completionBlock: completion)
+        HXBNetworkManager.request(url: hxb.api.account, completionClosure: completion)
     }
     
 }

@@ -118,18 +118,18 @@ class HXBNetworkManager {
 
 // MARK: - Public
 extension HXBNetworkManager {
-    static func request(url: String, params: HXBRequestParam? = nil, method: HXBHttpMethod = .get, responseSerializeType: HXBRequestApi.ResponseSerializeType = .json, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionBlock: @escaping HXBRequestCompletionCallBack) {
+    static func request(url: String, params: HXBRequestParam? = nil, method: HXBHttpMethod = .get, responseSerializeType: HXBRequestApi.ResponseSerializeType = .json, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
         let requestApi = HXBRequestApi()
         requestApi.requestUrl = url
         requestApi.params = params
         requestApi.requestMethod = method
         requestApi.responseSerializeType = responseSerializeType
         configProgressAndToast?(requestApi)
-        self.request(requestApi: requestApi, completionBlock: completionBlock)
+        self.request(requestApi: requestApi, completionClosure: completionClosure)
     }
     
-    static func request(requestApi: HXBRequestApi, completionBlock: @escaping HXBRequestCompletionCallBack) {
-        requestApi.completeCallback = completionBlock
+    static func request(requestApi: HXBRequestApi, completionClosure: @escaping HXBRequestCompletionCallBack) {
+        requestApi.completeCallback = completionClosure
         HXBNetworkManager.shared.send(requestApi: requestApi)
     }
 }

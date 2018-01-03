@@ -11,14 +11,14 @@ import Foundation
 extension HXBNetwork {
     /// 检查手机号
     static func checkMobile(_ mobile: String, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.check_mobile, params: ["mobile": mobile], method: .post, completionBlock: completion)
+        HXBNetworkManager.request(url: hxb.api.check_mobile, params: ["mobile": mobile], method: .post, completionClosure: completion)
     }
     
     static func getCaptcha(completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.captcha, responseSerializeType: .data, completionBlock: completion)
+        HXBNetworkManager.request(url: hxb.api.captcha, responseSerializeType: .data, completionClosure: completion)
     }
     
     static func validateCaptcha(_ captcha: String, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.check_captcha, completionBlock: completion)
+        HXBNetworkManager.request(url: hxb.api.check_captcha, completionClosure: completion)
     }
 }
