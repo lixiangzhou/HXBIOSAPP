@@ -32,4 +32,12 @@ class HXBSignUpViewModel: HXBViewModel {
             completion(isSuccess, requestApi.responseData)
         }
     }
+    
+    func validateCaptcha(_ captcha: String, completion: @escaping (Bool) -> Void) {
+        HXBNetwork.validateCaptcha(captcha) { (isSuccess, requestApi) in
+            completion(isSuccess)
+        }
+    }
+    
+    
 }

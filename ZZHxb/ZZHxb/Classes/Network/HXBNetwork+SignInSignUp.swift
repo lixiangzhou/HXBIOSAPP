@@ -17,4 +17,8 @@ extension HXBNetwork {
     static func getCaptcha(completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.captcha, responseSerializeType: .data, completionBlock: completion)
     }
+    
+    static func validateCaptcha(_ captcha: String, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.check_captcha, completionBlock: completion)
+    }
 }

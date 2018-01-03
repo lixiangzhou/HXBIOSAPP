@@ -98,6 +98,7 @@
 		8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */; };
 		8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */; };
 		8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */; };
+		8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -195,6 +196,7 @@
 		8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZZHud+HXB.swift"; sourceTree = "<group>"; };
 		8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+HXB.swift"; sourceTree = "<group>"; };
 		8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+SignInSignUp.swift"; sourceTree = "<group>"; };
+		8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBCaptchaValidateView.swift; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -592,6 +594,7 @@
 			children = (
 				8DCC1DA61FEA06B200FEA8EF /* HXBNavWaveView.swift */,
 				8DCC1DA41FEA065800FEA8EF /* HXBSingleWaveView.swift */,
+				8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 			files = (
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
 				8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */,
+				8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */,
 				8D800B001FE7CA4000694864 /* Data+ZZExtension.swift in Sources */,
 				8DCC1DB51FEA087700FEA8EF /* HXBViewController.swift in Sources */,
 				8D800B0B1FE7CA4000694864 /* UIColor+ZZExtension.swift in Sources */,
