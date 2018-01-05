@@ -31,8 +31,8 @@ extension HXBHomeController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
-        HXBHUD.show(toast: "代码错误❎")
+        HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
+//        HXBHUD.show(toast: "代码错误❎")
     }
 }
 

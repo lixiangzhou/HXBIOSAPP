@@ -1,4 +1,4 @@
- //
+//
 //  HXBSingleWaveView.swift
 //  ZZHxb
 //
@@ -7,8 +7,8 @@
 //
 
 import UIKit
- 
- class HXBSingleWaveView: UIView {
+
+class HXBSingleWaveView: UIView {
     
     /// 波浪的高度 【默认40】
     static var waveHeight = CGFloat(40)
@@ -39,9 +39,9 @@ import UIKit
     fileprivate let waveLayer = CAShapeLayer()
     fileprivate var speed: Double = 0
     fileprivate var offsetX: Double = 0
- }
- 
- extension HXBSingleWaveView {
+}
+
+extension HXBSingleWaveView {
     
     @objc fileprivate func updateWave() {
         
@@ -65,4 +65,4 @@ import UIKit
         
         waveLayer.path = path.cgPath
     }
- }
+}

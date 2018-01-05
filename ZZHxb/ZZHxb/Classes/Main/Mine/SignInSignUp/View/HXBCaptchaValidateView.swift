@@ -1,4 +1,4 @@
- //
+//
 //  HXBCaptchaValidateView.swift
 //  ZZHxb
 //
@@ -35,7 +35,7 @@ class HXBCaptchaValidateView: UIView {
     fileprivate let inputField = UITextField()
     fileprivate let captchaView = UIImageView()
     fileprivate let confirmBtn = UIButton(title: "确定", font: hxb.font.mainContent, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport)
-    fileprivate let cancelBtn = UIButton(imageName: "alert_close", hilightedImageName: "alert_close", backgroundColor: hxb.color.white)
+    fileprivate let cancelBtn = UIButton(title: "取消", font: hxb.font.mainContent, titleColor: hxb.color.light, backgroundColor: hxb.color.alertCancelBtn)
     
     fileprivate var confirmClosure: ((String?) -> Void)?
     private let viewModel = HXBSignUpViewModel()
@@ -50,33 +50,27 @@ extension HXBCaptchaValidateView {
         containerView.layer.masksToBounds = true
         containerView.backgroundColor = hxb.color.white
         
-        confirmBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
-        confirmBtn.layer.masksToBounds = true
-        
-        cancelBtn.layer.cornerRadius = 25 * 0.5
-        cancelBtn.layer.masksToBounds = true
-        
         captchaView.contentMode = .scaleAspectFit
         captchaView.isUserInteractionEnabled = true
         captchaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(getCaptcha)))
         
         inputField.clearButtonMode = .whileEditing
-        inputField.borderStyle = .roundedRect
+        inputField.delegate = self
+        
+        let lineView = UIView()
+        lineView.backgroundColor = hxb.color.mostImport
         
         let centerView = UIView()
         centerView.addSubview(inputField)
         centerView.addSubview(captchaView)
+        centerView.addSubview(lineView)
         
         containerView.addSubview(titleLabel)
         containerView.addSubview(centerView)
+        containerView.addSubview(cancelBtn)
         containerView.addSubview(confirmBtn)
         
-        let sepLine = UIView()
-        sepLine.backgroundColor = hxb.color.white
-        
-        addSubview(sepLine)
         addSubview(containerView)
-        addSubview(cancelBtn)
         
         cancelBtn.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         confirmBtn.addTarget(self, action: #selector(confirm), for: .touchUpInside)
@@ -88,19 +82,6 @@ extension HXBCaptchaValidateView {
             maker.height.equalTo(adaptDecimal(200))
         }
         
-        cancelBtn.snp.makeConstraints { maker in
-            maker.right.equalTo(containerView)
-            maker.bottom.equalTo(containerView.snp.top).offset(-35)
-            maker.width.height.equalTo(25)
-        }
-        
-        sepLine.snp.makeConstraints { maker in
-            maker.top.equalTo(cancelBtn.snp.bottom).offset(-5)
-            maker.bottom.equalTo(containerView.snp.top).offset(5)
-            maker.centerX.equalTo(cancelBtn)
-            maker.width.equalTo(1)
-        }
-        
         titleLabel.snp.makeConstraints { maker in
             maker.top.equalTo(hxb.size.edgeScreen * 2)
             maker.right.left.equalToSuperview()
@@ -110,17 +91,26 @@ extension HXBCaptchaValidateView {
             maker.center.equalToSuperview()
         }
         
+        cancelBtn.snp.makeConstraints { maker in
+            maker.left.bottom.equalToSuperview()
+            maker.height.equalTo(hxb.size.wideButtonHeight)
+        }
+        
         confirmBtn.snp.makeConstraints { maker in
-            maker.left.equalTo(hxb.size.edgeScreen)
-            maker.right.equalTo(-hxb.size.edgeScreen)
-            maker.bottom.equalTo(-hxb.size.edgeScreen * 2)
-            maker.height.equalTo(hxb.size.normalButtonHeight)
+            maker.right.bottom.equalToSuperview()
+            maker.left.equalTo(cancelBtn.snp.right)
+            maker.height.width.equalTo(cancelBtn)
         }
         
         inputField.snp.makeConstraints { maker in
             maker.left.centerY.equalToSuperview()
-            maker.width.equalTo(90)
+            maker.width.equalTo(80)
             maker.height.equalTo(hxb.size.normalButtonHeight)
+        }
+        
+        lineView.snp.makeConstraints { maker in
+            maker.right.left.bottom.equalTo(inputField)
+            maker.height.equalTo(hxb.size.sepLineHeight)
         }
         
         captchaView.snp.makeConstraints { maker in
@@ -152,9 +142,21 @@ extension HXBCaptchaValidateView {
     }
 }
 
-// MARK: - Helper
-extension HXBCaptchaValidateView {
-    
+// MARK: - Delegate
+ extension HXBCaptchaValidateView: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if range.length > 0 && string.isEmpty { // 删除
+            
+        } else {    // 输入文字
+            var text = textField.text ?? ""
+            text += string
+            if text.count > 4 {
+                return false
+            }
+        }
+        
+        return true
+    }
 }
 
 // MARK: - Other

@@ -1,4 +1,4 @@
- //
+//
 //  HXBNavWaveView.swift
 //  ZZHxb
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
- class HXBNavWaveView: UIView {
+class HXBNavWaveView: UIView {
     
     // MARK: - Life Cycle
     

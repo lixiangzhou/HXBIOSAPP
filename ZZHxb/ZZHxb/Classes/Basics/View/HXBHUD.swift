@@ -13,7 +13,7 @@ struct HXBHUD {
         ZZHud.show(message: toast,
                    font: hxb.font.light,
                    color: hxb.color.white,
-                   backgroundColor: hxb.color.hudBackgroundColor,
+                   backgroundColor: hxb.color.hudBackground,
                    cornerRadius: hxb.size.hudCornerRadius,
                    showDuration: 1,
                    toView: view)
@@ -30,7 +30,7 @@ struct HXBHUD {
                    loadingId: NSNotFound,
                    toView: toView,
                    hudCornerRadius: hxb.size.hudCornerRadius,
-                   hudBackgroundColor: hxb.color.hudBackgroundColor,
+                   hudBackgroundColor: hxb.color.hudBackground,
                    hudAlpha: 1,
                    contentInset: UIEdgeInsetsMake(0, 0, 0, 0),
                    position: .center,
