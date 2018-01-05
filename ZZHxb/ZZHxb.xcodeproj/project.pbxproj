@@ -31,6 +31,7 @@
 		8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */; };
 		8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */; };
 		8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */; };
+		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
 		8D800AF31FE7CA4000694864 /* ZZAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACB1FE7CA3F00694864 /* ZZAudioTool.swift */; };
@@ -95,7 +96,6 @@
 		8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */; };
 		8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */; };
 		8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */; };
-		8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */; };
 		8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */; };
 		8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */; };
 		8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */; };
@@ -130,6 +130,7 @@
 		8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkConfig.swift; sourceTree = "<group>"; };
 		8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSVGUtil.swift; sourceTree = "<group>"; };
 		8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBOtherConfig.swift; sourceTree = "<group>"; };
+		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
 		8D800ACB1FE7CA3F00694864 /* ZZAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAudioTool.swift; sourceTree = "<group>"; };
@@ -194,7 +195,6 @@
 		8DE9141F1FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkHUDDelegate.swift; sourceTree = "<group>"; };
 		8DE914211FE3D59D00FAEE68 /* HXBNetActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetActivityManager.swift; sourceTree = "<group>"; };
 		8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HXBKeyChain.swift; sourceTree = "<group>"; };
-		8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZZHud+HXB.swift"; sourceTree = "<group>"; };
 		8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+HXB.swift"; sourceTree = "<group>"; };
 		8DFF64D51FFCC582007D462D /* HXBNetwork+SignInSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+SignInSignUp.swift"; sourceTree = "<group>"; };
 		8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBCaptchaValidateView.swift; sourceTree = "<group>"; };
@@ -476,7 +476,6 @@
 				8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */,
 				8DCC1DBE1FEA0A0400FEA8EF /* UIImageView+HXB.swift */,
 				8DCC1DC01FEA3F5900FEA8EF /* UIButton+HXB.swift */,
-				8DE9142A1FE79BBD00FAEE68 /* ZZHud+HXB.swift */,
 				8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */,
 				8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */,
 			);
@@ -643,6 +642,7 @@
 				8DCC1DAD1FEA087600FEA8EF /* HXBSettingTableViewCell.swift */,
 				8DCC1DAE1FEA087600FEA8EF /* HXBTableView.swift */,
 				8DCC1DBA1FEA08FF00FEA8EF /* HXBInputFieldView.swift */,
+				8D69F7231FFDFC5B001A731A /* HXBHUD.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -848,6 +848,7 @@
 				8D800AF61FE7CA4000694864 /* ZZHud.swift in Sources */,
 				8DCC1D9B1FE9002E00FEA8EF /* HXBSignInController.swift in Sources */,
 				8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */,
+				8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */,
 				8D800B041FE7CA4000694864 /* Locale+ZZExtension.swift in Sources */,
 				8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */,
 				8D800B151FE7CA4000694864 /* UIView+ZZExtension.swift in Sources */,
@@ -889,7 +890,6 @@
 				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,
 				8D352B6D1FF5DD1D003E5507 /* HXBSizeConfig.swift in Sources */,
 				8DCC1DB91FEA087700FEA8EF /* HXBModel.swift in Sources */,
-				8DE9142B1FE79BBD00FAEE68 /* ZZHud+HXB.swift in Sources */,
 				8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */,
 				8D800B0E1FE7CA4000694864 /* UIImage+ZZExtension.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,

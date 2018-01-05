@@ -17,19 +17,19 @@ class HXBViewModel: NSObject {
 extension HXBViewModel: HXBNetworkHUDDelegate {
     func showProgress(type: HXBHudContainerType) {
         hudProgress(type: type) { toView in
-            ZZHud.shared.show(loading: UIView(), loadingId: NSNotFound, toView: toView)
+            HXBHUD.showLoding(toView: toView)
         }
     }
     
     func hideProgress(type: HXBHudContainerType) {
         hudProgress(type: type) { toView in
-            ZZHud.shared.hideLoading(for: toView)
+            HXBHUD.hideLoding(forView: toView)
         }
     }
     
     func show(toast: String, type: HXBHudContainerType) {
         if let toView = hudToastView(type: type) {
-            ZZHud.shared.show(message: toast, font: hxb.font.light, color: hxb.color.important, toView: toView)
+            HXBHUD.show(toast: toast, in: toView)
         }
     }
 }

@@ -17,4 +17,8 @@ extension JSON {
     var message: String {
         return self["message"].stringValue
     }
+    
+    var isSuccess: Bool {
+        return statusCode == hxb.code.success
+    }
 }

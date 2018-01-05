@@ -107,7 +107,6 @@ class HXBNetworkManager {
                     }
                 })
             }
-            
         } catch {
             requestApi.error = HXBNetworkError.encodingFailed(error: error)
             requestApi.completeCallback?(false, requestApi)

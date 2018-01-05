@@ -44,7 +44,7 @@ extension HXBStartSignUpController {
                 self.viewModel.checkMobile(text) { (isSuccess, toast) in
                     if isSuccess == false {
                         if let toast = toast {
-                            ZZProgressHud.show(text: toast)
+                            HXBHUD.show(toast: toast, in: self.view)
                         }
                     }
                 }
@@ -85,11 +85,19 @@ extension HXBStartSignUpController {
 extension HXBStartSignUpController {
     @objc fileprivate func toSignUp() {
         HXBCaptchaValidateView.showFrom(view: view) { captcha in
-            
+            let phone = self.phoneField.text ?? ""
+            self.viewModel.getSmsCode(phone: phone, captcha: captcha ?? "", completion: { (isSuccess, toast) in
+                if isSuccess {
+                    let signUpVC = HXBSignUpController()
+                    signUpVC.phoneNo = phone
+                    signUpVC.pushFrom(controller: self, animated: true)
+                } else {
+                    if let toast = toast {
+                        HXBHUD.show(toast: toast, in: self.view)
+                    }
+                }
+            })
         }
-//        let signUpVC = HXBSignUpController()
-//        signUpVC.phoneNo = self.phoneField.text ?? ""
-//        signUpVC.pushFrom(controller: self, animated: true)
     }
     
     @objc fileprivate func toSignIn() {

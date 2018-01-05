@@ -69,6 +69,7 @@ extension hxb {
         /// 手机号长度 【11】
         static let phoneLength = 11
         
-        
+        /// HUD 的 cornerRadius 【5】
+        static let hudCornerRadius: CGFloat = 5
     }
 }

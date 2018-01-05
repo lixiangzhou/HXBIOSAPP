@@ -45,6 +45,9 @@ struct hxb {
         
         /// 背景色 【f5f5f9】
         static let background = UIColor(stringHexValue: "f5f5f9")!
+        
+        /// HUD 背景色 【UIColor(white: 0.2, alpha: 0.8)】
+        static let hudBackgroundColor = UIColor(white: 0.2, alpha: 0.8)
     }
 }
 

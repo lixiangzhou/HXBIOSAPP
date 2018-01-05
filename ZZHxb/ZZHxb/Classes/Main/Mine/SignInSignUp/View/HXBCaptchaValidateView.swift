@@ -60,6 +60,9 @@ extension HXBCaptchaValidateView {
         captchaView.isUserInteractionEnabled = true
         captchaView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(getCaptcha)))
         
+        inputField.clearButtonMode = .whileEditing
+        inputField.borderStyle = .roundedRect
+        
         let centerView = UIView()
         centerView.addSubview(inputField)
         centerView.addSubview(captchaView)
@@ -80,7 +83,7 @@ extension HXBCaptchaValidateView {
         
         containerView.snp.makeConstraints { maker in
             maker.centerX.equalToSuperview()
-            maker.centerY.equalToSuperview().offset(-40)
+            maker.centerY.equalToSuperview().offset(-60)
             maker.width.equalTo(adaptDecimal(280))
             maker.height.equalTo(adaptDecimal(200))
         }
@@ -115,15 +118,16 @@ extension HXBCaptchaValidateView {
         }
         
         inputField.snp.makeConstraints { maker in
-            maker.top.left.bottom.equalToSuperview()
-            maker.width.equalTo(80)
-            maker.height.equalTo(hxb.size.normalButtonHeight * 2)
+            maker.left.centerY.equalToSuperview()
+            maker.width.equalTo(90)
+            maker.height.equalTo(hxb.size.normalButtonHeight)
         }
         
         captchaView.snp.makeConstraints { maker in
             maker.top.right.bottom.equalToSuperview()
             maker.width.equalTo(inputField)
             maker.left.equalTo(inputField.snp.right).offset(hxb.size.view2View)
+            maker.height.equalTo(hxb.size.normalButtonHeight * 2.4)
         }
         
     }

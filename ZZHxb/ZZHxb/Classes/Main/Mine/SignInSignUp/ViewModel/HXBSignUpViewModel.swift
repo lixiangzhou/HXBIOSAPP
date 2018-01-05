@@ -14,7 +14,7 @@ class HXBSignUpViewModel: HXBViewModel {
         HXBNetwork.checkMobile(mobile) { (isSuccess, requestApi) in
             if isSuccess {
                 let json = JSON(requestApi.responseObject!)
-                if json.statusCode == hxb.code.success {
+                if json.isSuccess {
                     completion(true, nil)
                 } else if json.statusCode == hxb.code.formProcessFailed {
                     completion(false, "请输入正确的手机号")
@@ -39,5 +39,19 @@ class HXBSignUpViewModel: HXBViewModel {
         }
     }
     
+    func getSmsCode(phone: String, captcha: String, completion: @escaping (Bool, String?) -> Void) {
+        HXBNetwork.getSmsCode(phone: phone, captcha: captcha) { (isSuccess, requestApi) in
+            if isSuccess {
+                let json = JSON(requestApi.responseObject!)
+                if json.isSuccess {
+                    completion(true, nil)
+                } else {
+                    completion(false, json.message)
+                }
+            } else {
+                completion(false, "获取验证码失败")
+            }
+        }
+    }
     
 }
