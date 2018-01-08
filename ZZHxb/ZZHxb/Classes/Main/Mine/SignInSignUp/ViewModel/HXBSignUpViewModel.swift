@@ -41,16 +41,13 @@ class HXBSignUpViewModel: HXBViewModel {
     
     func getSmsCode(phone: String, captcha: String, completion: @escaping (Bool, String?) -> Void) {
         HXBNetwork.getSmsCode(phone: phone, captcha: captcha) { (isSuccess, requestApi) in
-            if isSuccess {
-                let json = JSON(requestApi.responseObject!)
-                if json.isSuccess {
-                    completion(true, nil)
-                } else {
-                    completion(false, json.message)
-                }
-            } else {
-                completion(false, "获取验证码失败")
-            }
+            self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败", completion: completion)
+        }
+    }
+    
+    func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, completion: @escaping (Bool, String?) -> Void) {
+        HXBNetwork.signup(mobile: mobile, smsCode: smsCode, password: password, inviteCode: inviteCode) { (isSuccess, requestApi) in
+            self.requestResult(isSuccess, requestApi, errorToast: "注册失败", completion: completion)
         }
     }
     

@@ -63,3 +63,18 @@ extension HXBViewModel {
         }
     }
 }
+
+extension HXBViewModel {
+    func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String?, completion: @escaping (Bool, String?) -> Void) {
+        if isSuccess {
+            let json = JSON(requestApi.responseObject!)
+            if json.isSuccess {
+                completion(true, nil)
+            } else {
+                completion(false, json.message)
+            }
+        } else {
+            completion(false, errorToast)
+        }
+    }
+}

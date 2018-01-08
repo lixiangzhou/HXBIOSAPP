@@ -38,7 +38,6 @@
 		8D800AF41FE7CA4000694864 /* ZZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACC1FE7CA3F00694864 /* ZZButton.swift */; };
 		8D800AF51FE7CA4000694864 /* ZZCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACD1FE7CA3F00694864 /* ZZCircleProgressView.swift */; };
 		8D800AF61FE7CA4000694864 /* ZZHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACE1FE7CA3F00694864 /* ZZHud.swift */; };
-		8D800AF71FE7CA4000694864 /* ZZProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACF1FE7CA3F00694864 /* ZZProgressHud.swift */; };
 		8D800AF81FE7CA4000694864 /* UIScrollView+ZZRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD11FE7CA3F00694864 /* UIScrollView+ZZRefresh.swift */; };
 		8D800AF91FE7CA4000694864 /* ZZRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD21FE7CA3F00694864 /* ZZRefresh.swift */; };
 		8D800AFA1FE7CA4000694864 /* ZZRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD31FE7CA3F00694864 /* ZZRefreshFooter.swift */; };
@@ -137,7 +136,6 @@
 		8D800ACC1FE7CA3F00694864 /* ZZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZButton.swift; sourceTree = "<group>"; };
 		8D800ACD1FE7CA3F00694864 /* ZZCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCircleProgressView.swift; sourceTree = "<group>"; };
 		8D800ACE1FE7CA3F00694864 /* ZZHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHud.swift; sourceTree = "<group>"; };
-		8D800ACF1FE7CA3F00694864 /* ZZProgressHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZProgressHud.swift; sourceTree = "<group>"; };
 		8D800AD11FE7CA3F00694864 /* UIScrollView+ZZRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZZRefresh.swift"; sourceTree = "<group>"; };
 		8D800AD21FE7CA3F00694864 /* ZZRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefresh.swift; sourceTree = "<group>"; };
 		8D800AD31FE7CA3F00694864 /* ZZRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshFooter.swift; sourceTree = "<group>"; };
@@ -513,7 +511,6 @@
 				8D800ACC1FE7CA3F00694864 /* ZZButton.swift */,
 				8D800ACD1FE7CA3F00694864 /* ZZCircleProgressView.swift */,
 				8D800ACE1FE7CA3F00694864 /* ZZHud.swift */,
-				8D800ACF1FE7CA3F00694864 /* ZZProgressHud.swift */,
 				8D800AD01FE7CA3F00694864 /* ZZRefresh */,
 			);
 			name = ZZCustom;
@@ -799,6 +796,7 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
+				"${BUILT_PRODUCTS_DIR}/Neon/Neon.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -814,6 +812,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Neon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -903,7 +902,6 @@
 				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
 				8D800B101FE7CA4000694864 /* UILabel+ZZExtension.swift in Sources */,
-				8D800AF71FE7CA4000694864 /* ZZProgressHud.swift in Sources */,
 				8DFF64DA1FFCEDDE007D462D /* HXBNetwork+Common.swift in Sources */,
 				8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */,
 				8D800AFF1FE7CA4000694864 /* CGRect+ZZExtension.swift in Sources */,

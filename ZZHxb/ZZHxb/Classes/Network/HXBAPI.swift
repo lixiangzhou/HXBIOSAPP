@@ -26,6 +26,8 @@ extension hxb.api {
     static let check_captcha = "/checkCaptcha"
     /// 校验手机号 【/checkMobile】
     static let check_mobile = "/checkMobile"
+    /// 用户注册接口
+    static let signup = "/user/signup"
 }
 
 extension hxb.api {

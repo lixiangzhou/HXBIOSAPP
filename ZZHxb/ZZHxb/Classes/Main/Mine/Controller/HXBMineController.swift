@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neon
 
 class HXBMineController: HXBViewController {
 
@@ -39,7 +40,11 @@ extension HXBMineController {
 
         view.addSubview(tableView)
         
-        tableView.frame = view.frame
+        tableView.snp.makeConstraints { maker in
+            maker.top.equalToSuperview().offset(view.safeAreaInsets.top)
+            maker.left.right.equalToSuperview()
+            maker.bottom.equalToSuperview().offset(view.safeAreaInsets.bottom)
+        }
         
         tableView.header = ZZRefreshHeader(target: self, action: #selector(getAccountData))
     }

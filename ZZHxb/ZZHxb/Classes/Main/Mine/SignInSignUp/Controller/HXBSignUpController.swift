@@ -14,7 +14,7 @@ class HXBSignUpController: HXBViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
     // MARK: - Public Property
@@ -39,6 +39,10 @@ extension HXBSignUpController {
         let (smsOrVoiceValidField, voiceBtn) = HXBInputFieldView.smsOrVoiceValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入验证码")
         let pwdField = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码为8-20位数字与字母的组合")
         let inviteCodeField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码")
+        
+        smsOrVoiceValidField.inputLengthLimit = 6
+        pwdField.inputLengthLimit = 20
+        inviteCodeField.inputLengthLimit = 6
         
         voiceBtn.addTarget(self, action: #selector(getVoiceCode), for: .touchUpInside)
         

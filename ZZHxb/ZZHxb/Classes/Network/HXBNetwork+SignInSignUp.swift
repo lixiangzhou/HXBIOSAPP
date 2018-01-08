@@ -28,4 +28,13 @@ extension HXBNetwork {
     static func getSmsCode(phone: String, captcha: String, completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.verifyCode, params: ["captcha": captcha, "action": "signup", "mobile": phone], method: .post, completionClosure: completion)
     }
+    
+    /// 注册
+    static func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, completion: @escaping HXBRequestCompletionCallBack) {
+        var param = ["mobile": mobile, "smscode": smsCode, "password": password]
+        if let inviteCode = inviteCode {
+            param["inviteCode"] = inviteCode
+        }
+        HXBNetworkManager.request(url: hxb.api.signup, params: param, method: .post, completionClosure: completion)
+    }
 }
