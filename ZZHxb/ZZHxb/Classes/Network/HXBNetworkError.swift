@@ -36,7 +36,6 @@ extension hxb {
 enum HXBNetworkError: Error {
     case requestUrlNil
     case encodingFailed(error: Error)
-    case requestAdaptReturnNil
 }
 
 

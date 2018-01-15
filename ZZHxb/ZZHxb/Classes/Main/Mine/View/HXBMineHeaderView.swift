@@ -16,7 +16,7 @@ class HXBMineHeaderView: UIView {
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 265))
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 265 + hxb.size.topAddtionHeight))
         
         setUI()
         addObservers()
@@ -100,7 +100,7 @@ extension HXBMineHeaderView {
         }
         
         iconView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(35)
+            maker.top.equalTo(35 + hxb.size.topAddtionHeight)
             maker.left.equalTo(hxb.size.edgeScreen)
         }
         

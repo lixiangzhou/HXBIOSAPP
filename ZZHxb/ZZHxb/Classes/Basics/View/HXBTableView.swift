@@ -13,11 +13,11 @@ class HXBTableView: UITableView {
         super.init(frame: frame, style: style)
         
         separatorStyle = .none
-//        if #available(iOS 11.0, *) {
-//            self.contentInsetAdjustmentBehavior = .never
-//        } else {
-//
-//        }
+        if #available(iOS 11.0, *) {
+            self.contentInsetAdjustmentBehavior = .never
+        } else {
+
+        }
     }
     
     convenience init(frame: CGRect = .zero, style: UITableViewStyle = .plain, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {

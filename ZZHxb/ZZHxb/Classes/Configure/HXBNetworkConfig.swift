@@ -10,7 +10,7 @@ import UIKit
 import AdSupport
 
 struct HXBNetworkConfig {
-    static let baseUrl = "http://192.168.1.26:3100"
+    static let baseUrl = "http://192.168.1.36:3100"
 
     static let tokenKey = "X-Hxb-Auth-Token"
     static let baseHeaderFields = ["X-Request-Id": UIDevice.current.identifierForVendor?.uuidString ?? "",

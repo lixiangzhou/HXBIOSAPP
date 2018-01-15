@@ -10,7 +10,9 @@ import UIKit
 import SwiftyJSON
 
 class HXBViewModel: NSObject {
+    /// 设置了此属性，并且设置了 RequestApi 的 hudDelegate，并且 HXBHudContainerType != .none，才有hud
     weak var progressContainerView: UIView?
+    /// 设置了此属性，并且设置了 RequestApi 的 hudDelegate，并且 HXBHudContainerType != .none，才有toast
     weak var toastContainerView: UIView?
 }
 
@@ -65,7 +67,7 @@ extension HXBViewModel {
 }
 
 extension HXBViewModel {
-    func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String?, completion: @escaping (Bool, String?) -> Void) {
+    func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String? = nil, completion: @escaping (Bool, String?) -> Void) {
         if isSuccess {
             let json = JSON(requestApi.responseObject!)
             if json.isSuccess {

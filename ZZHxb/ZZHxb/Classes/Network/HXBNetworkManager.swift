@@ -55,11 +55,6 @@ class HXBNetworkManager {
             if let adaptedRequest = requestApi.adapter?(encodedRequest) {
                 requestApi.request = adaptedRequest
             }
-            guard let request = requestApi.request else {
-                requestApi.error = HXBNetworkError.requestAdaptReturnNil
-                requestApi.completeCallback?(false, requestApi)
-                return
-            }
             
             // HUD
             requestApi.showProgress()
@@ -67,7 +62,7 @@ class HXBNetworkManager {
             
             if requestApi.responseSerializeType == .json {
                 // 发送请求
-                sessionManager.request(request).responseJSON { responseData in
+                sessionManager.request(requestApi.request!).responseJSON { responseData in
                     // HUD
                     requestApi.hideProgress()
                     HXBNetActivityManager.finishRequest()
@@ -87,7 +82,7 @@ class HXBNetworkManager {
                     }
                 }
             } else if requestApi.responseSerializeType == .data {
-                sessionManager.request(request).responseData(completionHandler: { responseData in
+                sessionManager.request(requestApi.request!).responseData(completionHandler: { responseData in
                     // HUD
                     requestApi.hideProgress()
                     HXBNetActivityManager.finishRequest()
@@ -171,6 +166,7 @@ extension HXBNetworkManager {
                 if isSuccess {  // 成功后重新发送请求
                     self.send(requestApi: requestApi)
                 } else {    // 失败就调用回调
+                    hxb.notification.notLogin.post()
                     requestApi.completeCallback?(false, requestApi)
                 }
             })
