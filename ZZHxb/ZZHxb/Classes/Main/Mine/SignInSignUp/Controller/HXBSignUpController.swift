@@ -19,6 +19,11 @@ class HXBSignUpController: HXBViewController {
     }
     // MARK: - Public Property
     var phoneNo = ""
+    var smsCodeView: HXBInputFieldView!
+    var pwdView: HXBInputFieldView!
+    var inviteCodeView: HXBInputFieldView!
+    
+    fileprivate var viewModel = HXBSignUpViewModel()
 }
 
 // MARK: - UI
@@ -36,20 +41,21 @@ extension HXBSignUpController {
         tipLabel.attributedText = getTipString(phone: self.phoneNo)
         
         
-        let (smsOrVoiceValidField, voiceBtn) = HXBInputFieldView.smsOrVoiceValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入验证码")
-        let pwdField = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码为8-20位数字与字母的组合")
-        let inviteCodeField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码")
+        let (smsOrVoiceValidView, voiceBtn) = HXBInputFieldView.smsOrVoiceValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入验证码")
+        pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码为8-20位数字与字母的组合")
+        inviteCodeView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码")
         
-        smsOrVoiceValidField.inputLengthLimit = 6
-        pwdField.inputLengthLimit = 20
-        inviteCodeField.inputLengthLimit = 6
+        smsCodeView = smsOrVoiceValidView
+        smsOrVoiceValidView.inputLengthLimit = 6
+        pwdView.inputLengthLimit = 20
+        inviteCodeView.inputLengthLimit = 6
         
         voiceBtn.addTarget(self, action: #selector(getVoiceCode), for: .touchUpInside)
         
         view.addSubview(tipLabel)
-        view.addSubview(smsOrVoiceValidField)
-        view.addSubview(pwdField)
-        view.addSubview(inviteCodeField)
+        view.addSubview(smsOrVoiceValidView)
+        view.addSubview(pwdView)
+        view.addSubview(inviteCodeView)
         
         let signUpBtn = UIButton(title: "注册", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(signUp))
         
@@ -62,25 +68,25 @@ extension HXBSignUpController {
             maker.centerX.equalTo(view)
         }
         
-        smsOrVoiceValidField.snp.makeConstraints { maker in
+        smsOrVoiceValidView.snp.makeConstraints { maker in
             maker.left.equalTo(hxb.size.edgeScreen)
             maker.top.equalTo(tipLabel.snp.bottom).offset(hxb.size.view2View)
             maker.right.equalTo(-hxb.size.edgeScreen)
             maker.height.equalTo(hxb.size.fieldCommonHeight)
         }
         
-        pwdField.snp.makeConstraints { maker in
-            maker.left.right.height.equalTo(smsOrVoiceValidField)
-            maker.top.equalTo(smsOrVoiceValidField.snp.bottom)
+        pwdView.snp.makeConstraints { maker in
+            maker.left.right.height.equalTo(smsOrVoiceValidView)
+            maker.top.equalTo(smsOrVoiceValidView.snp.bottom)
         }
         
-        inviteCodeField.snp.makeConstraints { maker in
-            maker.left.right.height.equalTo(smsOrVoiceValidField)
-            maker.top.equalTo(pwdField.snp.bottom)
+        inviteCodeView.snp.makeConstraints { maker in
+            maker.left.right.height.equalTo(smsOrVoiceValidView)
+            maker.top.equalTo(pwdView.snp.bottom)
         }
         
         signUpBtn.snp.makeConstraints { (maker) in
-            maker.top.equalTo(inviteCodeField.snp.bottom).offset(50)
+            maker.top.equalTo(inviteCodeView.snp.bottom).offset(50)
             maker.left.equalTo(hxb.size.wideButtonEdgeScreen)
             maker.right.equalTo(-hxb.size.wideButtonEdgeScreen)
             maker.height.equalTo(hxb.size.wideButtonHeight)
@@ -95,7 +101,31 @@ extension HXBSignUpController {
     }
     
     @objc fileprivate func signUp() {
+        guard let smsCode = smsCodeView.text else {
+            HXBHUD.show(toast: "请输入验证码", in: view)
+            return
+        }
+        guard smsCode.count == 6 else {
+            HXBHUD.show(toast: "请输入6位验证码", in: view)
+            return
+        }
+        guard let pwd = pwdView.text else {
+            HXBHUD.show(toast: "请输入密码", in: view)
+            return
+        }
+        guard pwd.count >= 8 && pwd.count <= 20 else {
+            HXBHUD.show(toast: "请输入8-20位数字与字母的组合", in: view)
+            return
+        }
         
+        viewModel.signup(mobile: phoneNo, smsCode: smsCode, password: pwd, inviteCode: inviteCodeView.text) { (isSuccess, toast) in
+            if isSuccess {
+                HXBKeychain[hxb.keychain.key.phone] = self.phoneNo
+                self.dismiss(animated: true, completion: nil)
+            } else if let toast = toast {
+                HXBHUD.show(toast: toast, in: self.view)
+            }
+        }
     }
     
 }

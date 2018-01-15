@@ -21,7 +21,10 @@ class HXBSignInController: HXBViewController {
     // MARK: - Public Property
     
     // MARK: - Private Property
+    fileprivate let viewModel = HXBSignUpViewModel()
     
+    fileprivate let phoneView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), placeholder: "手机号")
+    fileprivate let pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码")
 }
 
 // MARK: - UI
@@ -37,13 +40,11 @@ extension HXBSignInController {
         let waveView = HXBNavWaveView()
         view.addSubview(waveView)
         
-        let phoneField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), placeholder: "手机号")
-        phoneField.inputLengthLimit = hxb.size.phoneLength
-        phoneField.keyboardType = .numberPad
-        let pwdField = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码")
+        phoneView.inputLengthLimit = hxb.size.phoneLength
+        phoneView.keyboardType = .numberPad
         
-        view.addSubview(phoneField)
-        view.addSubview(pwdField)
+        view.addSubview(phoneView)
+        view.addSubview(pwdView)
         
         let signInBtn = UIButton(title: "同意用户协议并登录", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(signIn))
         signInBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
@@ -69,20 +70,20 @@ extension HXBSignInController {
         bottomView.addSubview(forgetPwdBtn)
         bottomView.addSubview(sepLine)
         
-        phoneField.snp.makeConstraints { (maker) in
+        phoneView.snp.makeConstraints { (maker) in
             maker.top.equalTo(waveView.snp.bottom).offset(40)
             maker.left.equalTo(hxb.size.edgeScreen)
             maker.right.equalTo(-hxb.size.edgeScreen)
             maker.height.equalTo(hxb.size.fieldCommonHeight)
         }
         
-        pwdField.snp.makeConstraints { (maker) in
-            maker.left.right.height.equalTo(phoneField)
-            maker.top.equalTo(phoneField.snp.bottom)
+        pwdView.snp.makeConstraints { (maker) in
+            maker.left.right.height.equalTo(phoneView)
+            maker.top.equalTo(phoneView.snp.bottom)
         }
         
         signInBtn.snp.makeConstraints { (maker) in
-            maker.top.equalTo(pwdField.snp.bottom).offset(50)
+            maker.top.equalTo(pwdView.snp.bottom).offset(50)
             maker.left.equalTo(hxb.size.wideButtonEdgeScreen)
             maker.right.equalTo(-hxb.size.wideButtonEdgeScreen)
             maker.height.equalTo(hxb.size.wideButtonHeight)
@@ -132,7 +133,26 @@ extension HXBSignInController {
     }
     
     @objc fileprivate func signIn() {
+        guard let phone = phoneView.text else {
+            HXBHUD.show(toast: "请输入准确的手机号", in: view)
+            return
+        }
         
+        guard let pwd = pwdView.text else {
+            HXBHUD.show(toast: "请输入密码", in: view)
+            return
+        }
+        guard pwd.count >= 8 && pwd.count <= 20 else {
+            HXBHUD.show(toast: "请输入8-20位数字与字母的组合", in: view)
+            return
+        }
+        viewModel.signin(mobile: phone, password: pwd, captcha: nil) { (isSuccess, toast) in
+            if isSuccess {
+                self.dismiss(animated: true, completion: nil)
+            } else if let toast = toast {
+                HXBHUD.show(toast: toast, in: self.view)
+            }
+        }
     }
     
     @objc fileprivate func toSignUp() {

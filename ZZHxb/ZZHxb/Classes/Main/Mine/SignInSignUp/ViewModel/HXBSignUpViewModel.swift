@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 
 class HXBSignUpViewModel: HXBViewModel {
+    
     func checkMobile(_ mobile: String, completion: @escaping (Bool, String?) -> Void) {
         HXBNetwork.checkMobile(mobile) { (isSuccess, requestApi) in
             if isSuccess {
@@ -47,8 +48,28 @@ class HXBSignUpViewModel: HXBViewModel {
     
     func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, completion: @escaping (Bool, String?) -> Void) {
         HXBNetwork.signup(mobile: mobile, smsCode: smsCode, password: password, inviteCode: inviteCode) { (isSuccess, requestApi) in
-            self.requestResult(isSuccess, requestApi, errorToast: "注册失败", completion: completion)
+            self.requestResult(isSuccess, requestApi, errorToast: "注册失败") { (_, toast) in
+                if isSuccess {
+                    let json = JSON(requestApi.responseObject!)
+                    if json.isSuccess {
+                        HXBKeychain[hxb.keychain.key.userId] = json["data"]["userId"].stringValue
+                        HXBKeychain[hxb.keychain.key.username] = json["data"]["username"].stringValue
+                    }
+                }
+                completion(isSuccess, toast)
+            }
         }
     }
+    
+    func signin(mobile: String, password: String, captcha: String?, completion: @escaping (Bool, String?) -> Void) {
+        HXBNetwork.signin(mobile: mobile, password: password, captcha: captcha) { (isSuccess, requestApi) in
+            self.requestResult(isSuccess, requestApi, errorToast: nil) { (_, toast) in
+                self.requestResult(isSuccess, requestApi, errorToast: "登录失败", completion: completion)
+            }
+        }
+    }
+}
+
+extension HXBSignUpViewModel {
     
 }

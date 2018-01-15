@@ -37,4 +37,14 @@ extension HXBNetwork {
         }
         HXBNetworkManager.request(url: hxb.api.signup, params: param, method: .post, completionClosure: completion)
     }
+    
+    /// 登录
+    static func signin(mobile: String, password: String, captcha: String?, completion: @escaping HXBRequestCompletionCallBack) {
+        var param = ["mobile": mobile, "password": password]
+        if let captcha = captcha {
+            param["captcha"] = captcha
+        }
+        
+        HXBNetworkManager.request(url: hxb.api.signin, completionClosure: completion)
+    }
 }

@@ -10,6 +10,8 @@ import UIKit
 import AdSupport
 
 struct HXBNetworkConfig {
+    // https://api.hongxiaobao.com
+    // http://192.168.1.36:3100
     static let baseUrl = "http://192.168.1.36:3100"
 
     static let tokenKey = "X-Hxb-Auth-Token"

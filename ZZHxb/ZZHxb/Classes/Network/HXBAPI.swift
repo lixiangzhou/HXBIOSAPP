@@ -28,6 +28,8 @@ extension hxb.api {
     static let check_mobile = "/checkMobile"
     /// 用户注册接口
     static let signup = "/user/signup"
+    /// 登录
+    static let signin = "/user/login"
 }
 
 extension hxb.api {

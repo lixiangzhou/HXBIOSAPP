@@ -16,6 +16,8 @@ extension hxb {
         struct key {
             static let token = "token"
             static let phone = "phone"
+            static let username = "username"
+            static let userId = "userId"
         }
     }
 }
@@ -23,7 +25,7 @@ extension hxb {
 struct HXBKeychainClass {
     
     static let shared: Keychain = {
-        return Keychain(service: "www.hoomxb.com")
+        return Keychain(service: HXBNetworkConfig.baseUrl)
             .synchronizable(true)
             .accessibility(.afterFirstUnlock)
     }()
