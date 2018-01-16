@@ -14,7 +14,7 @@ class HXBInvestController: HXBViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
 
@@ -27,7 +27,7 @@ class HXBInvestController: HXBViewController {
 // MARK: - UI
 extension HXBInvestController {
     fileprivate func setUI() {
-        
+        showBack = false
     }
 }
 

@@ -16,8 +16,6 @@ extension hxb {
         struct key {
             static let token = "token"
             static let phone = "phone"
-            static let username = "username"
-            static let userId = "userId"
         }
     }
 }

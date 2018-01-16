@@ -15,7 +15,7 @@ class HXBMineController: HXBViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
 
@@ -29,6 +29,7 @@ class HXBMineController: HXBViewController {
 // MARK: - UI
 extension HXBMineController {
     fileprivate func setUI() {
+        showBack = false
         hideNavigationBar = true
         
         tableView.dataSource = self
@@ -38,6 +39,9 @@ extension HXBMineController {
         
         let headerView = HXBMineHeaderView()
         headerView.viewModel = viewModel
+        headerView.iconClick = {
+            HXBAccountMainController().pushFrom(controller: self, animated: true)
+        }
         tableView.tableHeaderView = headerView
 
         view.addSubview(tableView)

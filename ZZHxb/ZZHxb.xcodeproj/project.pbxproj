@@ -33,6 +33,10 @@
 		8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */; };
 		8D3EFE34200CC14500A54B1D /* HXBUserAssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */; };
 		8D3EFE3A200DF17300A54B1D /* NumberFormatter+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */; };
+		8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE40200DFFF300A54B1D /* HXBAccountMainController.swift */; };
+		8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE42200E009300A54B1D /* HXBAccountMainViewModel.swift */; };
+		8D3EFE45200E018E00A54B1D /* HXBAccountMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */; };
+		8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */; };
 		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
@@ -133,6 +137,10 @@
 		8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBOtherConfig.swift; sourceTree = "<group>"; };
 		8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBUserAssetsModel.swift; sourceTree = "<group>"; };
 		8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+HXB.swift"; sourceTree = "<group>"; };
+		8D3EFE40200DFFF300A54B1D /* HXBAccountMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainController.swift; sourceTree = "<group>"; };
+		8D3EFE42200E009300A54B1D /* HXBAccountMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainViewModel.swift; sourceTree = "<group>"; };
+		8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCell.swift; sourceTree = "<group>"; };
+		8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCellViewModel.swift; sourceTree = "<group>"; };
 		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
@@ -356,6 +364,7 @@
 		8D3E62221FDF7F34008C8E67 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				8D3EFE3B200DFF8400A54B1D /* Account */,
 				8DCC1D951FE8FF9100FEA8EF /* SignInSignUp */,
 				8D3E622A1FDF7FAB008C8E67 /* Controller */,
 				8D3E622B1FDF7FAB008C8E67 /* Model */,
@@ -497,6 +506,49 @@
 				8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */,
 			);
 			path = tabbar;
+			sourceTree = "<group>";
+		};
+		8D3EFE3B200DFF8400A54B1D /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				8D3EFE3F200DFFC100A54B1D /* ViewModel */,
+				8D3EFE3E200DFFBD00A54B1D /* Model */,
+				8D3EFE3D200DFFB500A54B1D /* Controller */,
+				8D3EFE3C200DFFA300A54B1D /* View */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		8D3EFE3C200DFFA300A54B1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D3EFE3D200DFFB500A54B1D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D3EFE40200DFFF300A54B1D /* HXBAccountMainController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D3EFE3E200DFFBD00A54B1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D3EFE3F200DFFC100A54B1D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8D3EFE42200E009300A54B1D /* HXBAccountMainViewModel.swift */,
+				8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8D800AC91FE7CA3600694864 /* ZZLib */ = {
@@ -711,6 +763,7 @@
 		8D3E61EE1FDF79DE008C8E67 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HXB;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = lixiangzhou;
@@ -879,6 +932,7 @@
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
 				8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */,
 				8D800B111FE7CA4000694864 /* UISceen+ZZExtension.swift in Sources */,
+				8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
 				8D800AFB1FE7CA4000694864 /* ZZRefreshHeader.swift in Sources */,
 				8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */,
@@ -914,17 +968,20 @@
 				8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */,
 				8D800AFF1FE7CA4000694864 /* CGRect+ZZExtension.swift in Sources */,
 				8D800B051FE7CA4000694864 /* NSNumber+ZZExtension.swift in Sources */,
+				8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */,
 				8D800AF51FE7CA4000694864 /* ZZCircleProgressView.swift in Sources */,
 				8D800AFA1FE7CA4000694864 /* ZZRefreshFooter.swift in Sources */,
 				8D800B071FE7CA4000694864 /* String+ZZExtension.swift in Sources */,
 				8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */,
 				8DCC1DC11FEA3F5900FEA8EF /* UIButton+HXB.swift in Sources */,
+				8D3EFE45200E018E00A54B1D /* HXBAccountMainCell.swift in Sources */,
 				8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */,
 				8DCC1DBB1FEA08FF00FEA8EF /* HXBInputFieldView.swift in Sources */,
 				8D800AFE1FE7CA4000694864 /* Calendar+ZZExtension.swift in Sources */,
 				8D800B131FE7CA4000694864 /* UITableView+ZZExtension.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 				8D800AFC1FE7CA4000694864 /* ZZRefreshView.swift in Sources */,
+				8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

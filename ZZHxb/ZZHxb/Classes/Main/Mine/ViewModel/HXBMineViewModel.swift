@@ -46,7 +46,6 @@ class HXBMineViewModel: HXBViewModel {
                 ])
             ]
         
-        
         holdingTotalAssetsProducer = holdingTotalAssetsProperty.map { $0.moneyString }.producer
         availablePointProducer = availablePointProperty.map { $0.moneyString }.producer
         earnTotalProducer = earnTotalProperty.map { $0.moneyString }.producer

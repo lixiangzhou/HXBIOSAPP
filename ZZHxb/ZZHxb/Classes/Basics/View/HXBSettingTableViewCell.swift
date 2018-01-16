@@ -19,15 +19,10 @@ class HXBSettingTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         setUI()
-        addObservers()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    deinit {
-        
     }
     
     // MARK: - Public Property
@@ -52,13 +47,6 @@ class HXBSettingTableViewCell: UITableViewCell {
     
     // MARK: - Private Property
     
-}
-
-// MARK: - Observers
-extension HXBSettingTableViewCell {
-    fileprivate func addObservers() {
-        
-    }
 }
 
 // MARK: - UI
@@ -89,24 +77,4 @@ extension HXBSettingTableViewCell {
         }
         
     }
-}
-
-// MARK: - Action
-extension HXBSettingTableViewCell {
-    
-}
-
-// MARK: - Helper
-extension HXBSettingTableViewCell {
-    
-}
-
-// MARK: - Other
-extension HXBSettingTableViewCell {
-    
-}
-
-// MARK: - Public
-extension HXBSettingTableViewCell {
-    
 }

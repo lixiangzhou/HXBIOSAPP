@@ -48,16 +48,7 @@ class HXBSignUpViewModel: HXBViewModel {
     
     func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, completion: @escaping (Bool, String?) -> Void) {
         HXBNetwork.signup(mobile: mobile, smsCode: smsCode, password: password, inviteCode: inviteCode) { (isSuccess, requestApi) in
-            self.requestResult(isSuccess, requestApi, errorToast: "注册失败") { (_, toast) in
-                if isSuccess {
-                    let json = JSON(requestApi.responseObject!)
-                    if json.isSuccess {
-                        HXBKeychain[hxb.keychain.key.userId] = json["data"]["userId"].stringValue
-                        HXBKeychain[hxb.keychain.key.username] = json["data"]["username"].stringValue
-                    }
-                }
-                completion(isSuccess, toast)
-            }
+            self.requestResult(isSuccess, requestApi, errorToast: "注册失败",completion: completion)
         }
     }
     

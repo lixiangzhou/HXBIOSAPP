@@ -19,17 +19,11 @@ class HXBMineHeaderView: UIView {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 265 + hxb.size.topAddtionHeight))
         
         setUI()
-        addObservers()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    deinit {
-        
-    }
-    
 
     // MARK: - Public Property
     var viewModel: HXBMineViewModel? {
@@ -45,6 +39,8 @@ class HXBMineHeaderView: UIView {
             accumulatedMoneyLabel.reactive.text <~ viewModel.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
         }
     }
+    
+    var iconClick: (() -> ())?
     
     // MARK: - Private Property
     fileprivate var backgroundView = UIImageView(image:
@@ -67,13 +63,6 @@ class HXBMineHeaderView: UIView {
     
 }
 
-// MARK: - Observers
-extension HXBMineHeaderView {
-    fileprivate func addObservers() {
-        
-    }
-}
-
 // MARK: - UI
 extension HXBMineHeaderView {
     fileprivate func setUI() {
@@ -86,6 +75,9 @@ extension HXBMineHeaderView {
         backgroundView.addSubview(accumulatedMoneyTitleLabel)
         backgroundView.addSubview(accumulatedMoneyLabel)
         backgroundView.addSubview(eyeBtn)
+        
+        iconView.isUserInteractionEnabled = true
+        iconView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(iconTap)))
         
         eyeBtn.imageView?.contentMode = .scaleAspectFit
         eyeBtn.setImage(UIImage("mine_eyes"), for: .normal)
@@ -142,13 +134,14 @@ extension HXBMineHeaderView {
             maker.left.equalTo(accumulatedMoneyTitleLabel)
             maker.centerY.equalTo(availableMoneyLabel)
         }
-        
     }
 }
 
 // MARK: - Action
 extension HXBMineHeaderView {
-    
+    @objc fileprivate func iconTap() {
+        iconClick?()
+    }
 }
 
 // MARK: - Helper

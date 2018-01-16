@@ -58,10 +58,12 @@ extension HXBNavigationController {
 extension HXBNavigationController {
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        super.pushViewController(viewController, animated: animated)
+        
         if childViewControllers.count > 0 {
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage("navigation_back")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(popViewController(animated:)))
+            viewController.hidesBottomBarWhenPushed = true
         }
+        super.pushViewController(viewController, animated: animated)
+        
     }
     
     fileprivate func setFullScreenBackGesture() {

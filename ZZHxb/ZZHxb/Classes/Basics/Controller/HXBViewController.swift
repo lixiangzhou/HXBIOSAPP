@@ -14,7 +14,7 @@ class HXBViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUI()
     }
     
@@ -55,6 +55,8 @@ class HXBViewController: UIViewController {
 // MARK: - UI
 extension HXBViewController {
     fileprivate func setUI() {
+        showBack = true
+        
         let navBackImage = UIImage.zz_gradientImage(fromColor: hxb.color.importantFill(hex: "fe654d"),
                                                     toColor: hxb.color.importantFill(hex: "ff3d4f"),
                                                     size: CGSize(width: UIScreen.zz_width, height: hxb.size.navigationHeight))
