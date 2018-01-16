@@ -31,6 +31,8 @@
 		8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */; };
 		8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */; };
 		8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */; };
+		8D3EFE34200CC14500A54B1D /* HXBUserAssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */; };
+		8D3EFE3A200DF17300A54B1D /* NumberFormatter+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */; };
 		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
@@ -129,6 +131,8 @@
 		8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkConfig.swift; sourceTree = "<group>"; };
 		8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSVGUtil.swift; sourceTree = "<group>"; };
 		8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBOtherConfig.swift; sourceTree = "<group>"; };
+		8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBUserAssetsModel.swift; sourceTree = "<group>"; };
+		8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+HXB.swift"; sourceTree = "<group>"; };
 		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
@@ -393,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */,
+				8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 				8DCC1DC01FEA3F5900FEA8EF /* UIButton+HXB.swift */,
 				8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */,
 				8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */,
+				8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -878,6 +884,7 @@
 				8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8D800B021FE7CA4000694864 /* DateFormatter+ZZExtension.swift in Sources */,
+				8D3EFE34200CC14500A54B1D /* HXBUserAssetsModel.swift in Sources */,
 				8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */,
 				8D800B011FE7CA4000694864 /* Date+ZZExtension.swift in Sources */,
 				8D800AF81FE7CA4000694864 /* UIScrollView+ZZRefresh.swift in Sources */,
@@ -892,6 +899,7 @@
 				8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */,
 				8D800B0E1FE7CA4000694864 /* UIImage+ZZExtension.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
+				8D3EFE3A200DF17300A54B1D /* NumberFormatter+HXB.swift in Sources */,
 				8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */,
 				8DCC1DA71FEA06B200FEA8EF /* HXBNavWaveView.swift in Sources */,
 				8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */,

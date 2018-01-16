@@ -29,11 +29,20 @@ class HXBMineHeaderView: UIView {
     deinit {
         
     }
+    
 
     // MARK: - Public Property
     var viewModel: HXBMineViewModel? {
         didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
             
+            let eyeSignal = eyeBtn.reactive.controlEvents(.touchUpInside)
+            
+            holdMoneyLabel.reactive.text <~ viewModel.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
+            availableMoneyLabel.reactive.text <~ viewModel.availablePointProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
+            accumulatedMoneyLabel.reactive.text <~ viewModel.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
         }
     }
     
@@ -78,18 +87,12 @@ extension HXBMineHeaderView {
         backgroundView.addSubview(accumulatedMoneyLabel)
         backgroundView.addSubview(eyeBtn)
         
+        eyeBtn.imageView?.contentMode = .scaleAspectFit
         eyeBtn.setImage(UIImage("mine_eyes"), for: .normal)
         eyeBtn.setImage(UIImage("mine_eyes_colsed"), for: .selected)
         
-//        holdMoneyLabel.reactive.text <~ eyeBtn.reactive.signal(forKeyPath: "selected").filterMap({ Bool -> String? in
-//            // TODO:
-//            return "ddd"
-//        })
-        
         eyeBtn.reactive.controlEvents(.touchUpInside).observeValues { btn in
-            let selectedValue = !btn.isSelected
-            btn.isSelected = selectedValue
-            // 根据值设置金额
+            btn.isSelected = !btn.isSelected
         }
         
         backgroundView.isUserInteractionEnabled = true

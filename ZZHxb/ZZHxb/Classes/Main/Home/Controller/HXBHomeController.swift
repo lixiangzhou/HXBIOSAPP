@@ -15,6 +15,12 @@ class HXBHomeController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let format = NumberFormatter()
+        format.usesGroupingSeparator = true
+        format.groupingSize = 3
+        format.minimumFractionDigits = 2
+        format.string(from: NSNumber(value: 1000000000))
+        
         setUI()
     }
 

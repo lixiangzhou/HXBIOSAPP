@@ -8,4 +8,9 @@
 
 import UIKit
 
-
+extension hxb {
+    struct string {
+        /// 钱 闭上眼睛的时候显示 【****】
+        static let moneySecure = "****"
+    }
+}

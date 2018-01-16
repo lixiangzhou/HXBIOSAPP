@@ -36,7 +36,9 @@ extension HXBMineController {
         tableView.register(HXBMineCell.self, forCellReuseIdentifier: HXBMineCell.identifier)
         tableView.rowHeight = HXBMineCell.cellHeight
         
-        tableView.tableHeaderView = HXBMineHeaderView()
+        let headerView = HXBMineHeaderView()
+        headerView.viewModel = viewModel
+        tableView.tableHeaderView = headerView
 
         view.addSubview(tableView)
         
