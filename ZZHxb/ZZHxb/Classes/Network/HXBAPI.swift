@@ -30,6 +30,9 @@ extension hxb.api {
     static let signup = "/user/signup"
     /// 登录
     static let signin = "/user/login"
+    /// 登出
+    static let signout = "/logout"
+    
 }
 
 extension hxb.api {

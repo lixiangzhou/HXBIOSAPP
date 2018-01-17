@@ -25,6 +25,8 @@ class HXBSignInController: HXBViewController {
     
     fileprivate let phoneView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), placeholder: "手机号")
     fileprivate let pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码")
+    
+    fileprivate var captcha: String?
 }
 
 // MARK: - UI
@@ -146,9 +148,15 @@ extension HXBSignInController {
             HXBHUD.show(toast: "请输入8-20位数字与字母的组合", in: view)
             return
         }
-        viewModel.signin(mobile: phone, password: pwd, captcha: nil) { (isSuccess, toast) in
+        viewModel.signin(mobile: phone, password: pwd, captcha: captcha) { (isSuccess, toast, needCaptcha) in
             if isSuccess {
                 self.dismiss(animated: true, completion: nil)
+            } else if needCaptcha {
+                self.captcha = nil
+                HXBCaptchaValidateView.showFrom(view: self.view) { captcha in
+                    self.captcha = captcha
+                    self.signIn()
+                }
             } else if let toast = toast {
                 HXBHUD.show(toast: toast, in: self.view)
             }

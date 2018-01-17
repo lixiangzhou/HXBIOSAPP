@@ -37,6 +37,7 @@
 		8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE42200E009300A54B1D /* HXBAccountMainViewModel.swift */; };
 		8D3EFE45200E018E00A54B1D /* HXBAccountMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */; };
 		8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */; };
+		8D3EFE5B200F262600A54B1D /* HXBAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */; };
 		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
@@ -141,6 +142,7 @@
 		8D3EFE42200E009300A54B1D /* HXBAccountMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainViewModel.swift; sourceTree = "<group>"; };
 		8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCell.swift; sourceTree = "<group>"; };
 		8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCellViewModel.swift; sourceTree = "<group>"; };
+		8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAlertController.swift; sourceTree = "<group>"; };
 		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
@@ -687,6 +689,7 @@
 				8DCC1DA91FEA087500FEA8EF /* HXBNavigationController.swift */,
 				8DCC1DAA1FEA087500FEA8EF /* HXBTabBarController.swift */,
 				8DCC1DAB1FEA087500FEA8EF /* HXBViewController.swift */,
+				8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				8D3EFE45200E018E00A54B1D /* HXBAccountMainCell.swift in Sources */,
 				8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */,
 				8DCC1DBB1FEA08FF00FEA8EF /* HXBInputFieldView.swift in Sources */,
+				8D3EFE5B200F262600A54B1D /* HXBAlertController.swift in Sources */,
 				8D800AFE1FE7CA4000694864 /* Calendar+ZZExtension.swift in Sources */,
 				8D800B131FE7CA4000694864 /* UITableView+ZZExtension.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,

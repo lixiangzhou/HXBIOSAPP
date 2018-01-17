@@ -45,6 +45,11 @@ extension HXBNetwork {
             param["captcha"] = captcha
         }
         
-        HXBNetworkManager.request(url: hxb.api.signin, completionClosure: completion)
+        HXBNetworkManager.request(url: hxb.api.signin, params: param, method: .post, completionClosure: completion)
+    }
+    
+    /// 登出
+    static func signout(completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.signout, method: .post, completionClosure: completion)
     }
 }

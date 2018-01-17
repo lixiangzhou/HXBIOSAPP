@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
+import Result
 
 class HXBAccountMainCellViewModel: HXBViewModel {
     var title: String?
     var rightAccessoryString: String?
+    var imageName: String?
     
-    init(title: String?, rightAccessoryString: String?) {
+    var rightProducer: SignalProducer<NSAttributedString, NoError>?
+    
+    init(title: String?, rightAccessoryString: String?, imageName: String?) {
         self.title = title
         self.rightAccessoryString = rightAccessoryString
+        self.imageName = imageName
+        
+        
     }
 }

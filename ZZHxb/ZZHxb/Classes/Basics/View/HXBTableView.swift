@@ -20,7 +20,7 @@ class HXBTableView: UITableView {
         }
     }
     
-    convenience init(frame: CGRect = .zero, style: UITableViewStyle = .plain, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
+    convenience init(frame: CGRect = .zero, style: UITableViewStyle = .grouped, dataSource: UITableViewDataSource?, delegate: UITableViewDelegate?) {
         self.init(frame: frame, style: style)
         self.dataSource = dataSource
         self.delegate = delegate

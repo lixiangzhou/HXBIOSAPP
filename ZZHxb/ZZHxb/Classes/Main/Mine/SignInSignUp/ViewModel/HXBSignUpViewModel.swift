@@ -52,10 +52,19 @@ class HXBSignUpViewModel: HXBViewModel {
         }
     }
     
-    func signin(mobile: String, password: String, captcha: String?, completion: @escaping (Bool, String?) -> Void) {
+    func signin(mobile: String, password: String, captcha: String?, completion: @escaping (Bool, String?, Bool) -> Void) {
         HXBNetwork.signin(mobile: mobile, password: password, captcha: captcha) { (isSuccess, requestApi) in
-            self.requestResult(isSuccess, requestApi, errorToast: nil) { (_, toast) in
-                self.requestResult(isSuccess, requestApi, errorToast: "登录失败", completion: completion)
+            if isSuccess {
+                let json = JSON(requestApi.responseObject!)
+                if json.isSuccess {
+                    completion(true, nil, false)
+                } else if json.statusCode == hxb.code.captchaCantEmpty {
+                    completion(false, nil, true)
+                } else {
+                    completion(false, json.message, false)
+                }
+            } else {
+                completion(false, "登录失败", false)
             }
         }
     }
