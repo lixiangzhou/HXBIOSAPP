@@ -86,7 +86,9 @@ extension HXBTabBarController {
 
 // MARK: - Other
 extension HXBTabBarController {
-    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        HXBShakeConfigUrlView.show()
+    }
 }
 
 // MARK: - Public

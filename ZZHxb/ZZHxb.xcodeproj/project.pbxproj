@@ -41,41 +41,43 @@
 		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
-		8D800AF31FE7CA4000694864 /* ZZAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACB1FE7CA3F00694864 /* ZZAudioTool.swift */; };
-		8D800AF41FE7CA4000694864 /* ZZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACC1FE7CA3F00694864 /* ZZButton.swift */; };
-		8D800AF51FE7CA4000694864 /* ZZCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACD1FE7CA3F00694864 /* ZZCircleProgressView.swift */; };
-		8D800AF61FE7CA4000694864 /* ZZHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ACE1FE7CA3F00694864 /* ZZHud.swift */; };
-		8D800AF81FE7CA4000694864 /* UIScrollView+ZZRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD11FE7CA3F00694864 /* UIScrollView+ZZRefresh.swift */; };
-		8D800AF91FE7CA4000694864 /* ZZRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD21FE7CA3F00694864 /* ZZRefresh.swift */; };
-		8D800AFA1FE7CA4000694864 /* ZZRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD31FE7CA3F00694864 /* ZZRefreshFooter.swift */; };
-		8D800AFB1FE7CA4000694864 /* ZZRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD41FE7CA3F00694864 /* ZZRefreshHeader.swift */; };
-		8D800AFC1FE7CA4000694864 /* ZZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD51FE7CA3F00694864 /* ZZRefreshView.swift */; };
-		8D800AFD1FE7CA4000694864 /* ZZLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD61FE7CA3F00694864 /* ZZLib.swift */; };
-		8D800AFE1FE7CA4000694864 /* Calendar+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AD91FE7CA4000694864 /* Calendar+ZZExtension.swift */; };
-		8D800AFF1FE7CA4000694864 /* CGRect+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ADA1FE7CA4000694864 /* CGRect+ZZExtension.swift */; };
-		8D800B001FE7CA4000694864 /* Data+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ADB1FE7CA4000694864 /* Data+ZZExtension.swift */; };
-		8D800B011FE7CA4000694864 /* Date+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ADC1FE7CA4000694864 /* Date+ZZExtension.swift */; };
-		8D800B021FE7CA4000694864 /* DateFormatter+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ADD1FE7CA4000694864 /* DateFormatter+ZZExtension.swift */; };
-		8D800B031FE7CA4000694864 /* DispatchQueue+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ADE1FE7CA4000694864 /* DispatchQueue+ZZExtension.swift */; };
-		8D800B041FE7CA4000694864 /* Locale+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800ADF1FE7CA4000694864 /* Locale+ZZExtension.swift */; };
-		8D800B051FE7CA4000694864 /* NSNumber+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE01FE7CA4000694864 /* NSNumber+ZZExtension.swift */; };
-		8D800B061FE7CA4000694864 /* NSObject+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE11FE7CA4000694864 /* NSObject+ZZExtension.swift */; };
-		8D800B071FE7CA4000694864 /* String+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE21FE7CA4000694864 /* String+ZZExtension.swift */; };
-		8D800B081FE7CA4000694864 /* UIAlertController+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE41FE7CA4000694864 /* UIAlertController+ZZExtension.swift */; };
-		8D800B091FE7CA4000694864 /* UIApplication+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE51FE7CA4000694864 /* UIApplication+ZZExtension.swift */; };
-		8D800B0A1FE7CA4000694864 /* UIButton+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE61FE7CA4000694864 /* UIButton+ZZExtension.swift */; };
-		8D800B0B1FE7CA4000694864 /* UIColor+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE71FE7CA4000694864 /* UIColor+ZZExtension.swift */; };
-		8D800B0C1FE7CA4000694864 /* UIDevice+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE81FE7CA4000694864 /* UIDevice+ZZExtension.swift */; };
-		8D800B0D1FE7CA4000694864 /* UIFont+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AE91FE7CA4000694864 /* UIFont+ZZExtension.swift */; };
-		8D800B0E1FE7CA4000694864 /* UIImage+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AEA1FE7CA4000694864 /* UIImage+ZZExtension.swift */; };
-		8D800B0F1FE7CA4000694864 /* UIImageView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AEB1FE7CA4000694864 /* UIImageView+ZZExtension.swift */; };
-		8D800B101FE7CA4000694864 /* UILabel+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AEC1FE7CA4000694864 /* UILabel+ZZExtension.swift */; };
-		8D800B111FE7CA4000694864 /* UISceen+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AED1FE7CA4000694864 /* UISceen+ZZExtension.swift */; };
-		8D800B121FE7CA4000694864 /* UIScrollView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AEE1FE7CA4000694864 /* UIScrollView+ZZExtension.swift */; };
-		8D800B131FE7CA4000694864 /* UITableView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AEF1FE7CA4000694864 /* UITableView+ZZExtension.swift */; };
-		8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AF01FE7CA4000694864 /* UITextField+ZZExtension.swift */; };
-		8D800B151FE7CA4000694864 /* UIView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AF11FE7CA4000694864 /* UIView+ZZExtension.swift */; };
-		8D800B161FE7CA4000694864 /* ZZCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D800AF21FE7CA4000694864 /* ZZCollection.swift */; };
+		8DA8FCDD2021C8B100C018F4 /* ZZAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */; };
+		8DA8FCDE2021C8B100C018F4 /* ZZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB62021C8B100C018F4 /* ZZButton.swift */; };
+		8DA8FCDF2021C8B100C018F4 /* ZZCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB72021C8B100C018F4 /* ZZCircleProgressView.swift */; };
+		8DA8FCE02021C8B100C018F4 /* ZZCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB82021C8B100C018F4 /* ZZCycleView.swift */; };
+		8DA8FCE12021C8B100C018F4 /* ZZHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB92021C8B100C018F4 /* ZZHud.swift */; };
+		8DA8FCE22021C8B100C018F4 /* UIScrollView+ZZRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCBB2021C8B100C018F4 /* UIScrollView+ZZRefresh.swift */; };
+		8DA8FCE32021C8B100C018F4 /* ZZRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCBC2021C8B100C018F4 /* ZZRefresh.swift */; };
+		8DA8FCE42021C8B100C018F4 /* ZZRefreshFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCBD2021C8B100C018F4 /* ZZRefreshFooter.swift */; };
+		8DA8FCE52021C8B100C018F4 /* ZZRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCBE2021C8B100C018F4 /* ZZRefreshHeader.swift */; };
+		8DA8FCE62021C8B100C018F4 /* ZZRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCBF2021C8B100C018F4 /* ZZRefreshView.swift */; };
+		8DA8FCE72021C8B100C018F4 /* ZZLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC02021C8B100C018F4 /* ZZLib.swift */; };
+		8DA8FCE82021C8B100C018F4 /* Calendar+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC32021C8B100C018F4 /* Calendar+ZZExtension.swift */; };
+		8DA8FCE92021C8B100C018F4 /* CGRect+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC42021C8B100C018F4 /* CGRect+ZZExtension.swift */; };
+		8DA8FCEA2021C8B100C018F4 /* Data+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC52021C8B100C018F4 /* Data+ZZExtension.swift */; };
+		8DA8FCEB2021C8B100C018F4 /* Date+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC62021C8B100C018F4 /* Date+ZZExtension.swift */; };
+		8DA8FCEC2021C8B100C018F4 /* DateFormatter+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC72021C8B100C018F4 /* DateFormatter+ZZExtension.swift */; };
+		8DA8FCED2021C8B100C018F4 /* DispatchQueue+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC82021C8B100C018F4 /* DispatchQueue+ZZExtension.swift */; };
+		8DA8FCEE2021C8B100C018F4 /* Locale+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCC92021C8B100C018F4 /* Locale+ZZExtension.swift */; };
+		8DA8FCEF2021C8B100C018F4 /* NSNumber+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCCA2021C8B100C018F4 /* NSNumber+ZZExtension.swift */; };
+		8DA8FCF02021C8B100C018F4 /* NSObject+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCCB2021C8B100C018F4 /* NSObject+ZZExtension.swift */; };
+		8DA8FCF12021C8B100C018F4 /* String+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCCC2021C8B100C018F4 /* String+ZZExtension.swift */; };
+		8DA8FCF22021C8B100C018F4 /* UIAlertController+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCCE2021C8B100C018F4 /* UIAlertController+ZZExtension.swift */; };
+		8DA8FCF32021C8B100C018F4 /* UIApplication+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCCF2021C8B100C018F4 /* UIApplication+ZZExtension.swift */; };
+		8DA8FCF42021C8B100C018F4 /* UIButton+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD02021C8B100C018F4 /* UIButton+ZZExtension.swift */; };
+		8DA8FCF52021C8B100C018F4 /* UIColor+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD12021C8B100C018F4 /* UIColor+ZZExtension.swift */; };
+		8DA8FCF62021C8B100C018F4 /* UIDevice+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD22021C8B100C018F4 /* UIDevice+ZZExtension.swift */; };
+		8DA8FCF72021C8B100C018F4 /* UIFont+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD32021C8B100C018F4 /* UIFont+ZZExtension.swift */; };
+		8DA8FCF82021C8B100C018F4 /* UIImage+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD42021C8B100C018F4 /* UIImage+ZZExtension.swift */; };
+		8DA8FCF92021C8B100C018F4 /* UIImageView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD52021C8B100C018F4 /* UIImageView+ZZExtension.swift */; };
+		8DA8FCFA2021C8B100C018F4 /* UILabel+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD62021C8B100C018F4 /* UILabel+ZZExtension.swift */; };
+		8DA8FCFB2021C8B100C018F4 /* UISceen+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD72021C8B100C018F4 /* UISceen+ZZExtension.swift */; };
+		8DA8FCFC2021C8B100C018F4 /* UIScrollView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD82021C8B100C018F4 /* UIScrollView+ZZExtension.swift */; };
+		8DA8FCFD2021C8B100C018F4 /* UITableView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCD92021C8B100C018F4 /* UITableView+ZZExtension.swift */; };
+		8DA8FCFE2021C8B100C018F4 /* UITextField+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCDA2021C8B100C018F4 /* UITextField+ZZExtension.swift */; };
+		8DA8FCFF2021C8B100C018F4 /* UIView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCDB2021C8B100C018F4 /* UIView+ZZExtension.swift */; };
+		8DA8FD002021C8B100C018F4 /* ZZCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCDC2021C8B100C018F4 /* ZZCollection.swift */; };
+		8DA8FD032021C95100C018F4 /* HXBShakeConfigUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FD022021C95100C018F4 /* HXBShakeConfigUrlView.swift */; };
 		8DCC1D9B1FE9002E00FEA8EF /* HXBSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */; };
 		8DCC1D9F1FE91E9300FEA8EF /* UIViewController+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */; };
 		8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */; };
@@ -146,41 +148,43 @@
 		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
-		8D800ACB1FE7CA3F00694864 /* ZZAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAudioTool.swift; sourceTree = "<group>"; };
-		8D800ACC1FE7CA3F00694864 /* ZZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZButton.swift; sourceTree = "<group>"; };
-		8D800ACD1FE7CA3F00694864 /* ZZCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCircleProgressView.swift; sourceTree = "<group>"; };
-		8D800ACE1FE7CA3F00694864 /* ZZHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHud.swift; sourceTree = "<group>"; };
-		8D800AD11FE7CA3F00694864 /* UIScrollView+ZZRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZZRefresh.swift"; sourceTree = "<group>"; };
-		8D800AD21FE7CA3F00694864 /* ZZRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefresh.swift; sourceTree = "<group>"; };
-		8D800AD31FE7CA3F00694864 /* ZZRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshFooter.swift; sourceTree = "<group>"; };
-		8D800AD41FE7CA3F00694864 /* ZZRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshHeader.swift; sourceTree = "<group>"; };
-		8D800AD51FE7CA3F00694864 /* ZZRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshView.swift; sourceTree = "<group>"; };
-		8D800AD61FE7CA3F00694864 /* ZZLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZLib.swift; path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZLib.swift; sourceTree = "<group>"; };
-		8D800AD91FE7CA4000694864 /* Calendar+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800ADA1FE7CA4000694864 /* CGRect+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800ADB1FE7CA4000694864 /* Data+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800ADC1FE7CA4000694864 /* Date+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800ADD1FE7CA4000694864 /* DateFormatter+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800ADE1FE7CA4000694864 /* DispatchQueue+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800ADF1FE7CA4000694864 /* Locale+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE01FE7CA4000694864 /* NSNumber+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE11FE7CA4000694864 /* NSObject+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE21FE7CA4000694864 /* String+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE41FE7CA4000694864 /* UIAlertController+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE51FE7CA4000694864 /* UIApplication+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE61FE7CA4000694864 /* UIButton+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE71FE7CA4000694864 /* UIColor+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE81FE7CA4000694864 /* UIDevice+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AE91FE7CA4000694864 /* UIFont+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AEA1FE7CA4000694864 /* UIImage+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AEB1FE7CA4000694864 /* UIImageView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AEC1FE7CA4000694864 /* UILabel+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AED1FE7CA4000694864 /* UISceen+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISceen+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AEE1FE7CA4000694864 /* UIScrollView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AEF1FE7CA4000694864 /* UITableView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AF01FE7CA4000694864 /* UITextField+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AF11FE7CA4000694864 /* UIView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ZZExtension.swift"; sourceTree = "<group>"; };
-		8D800AF21FE7CA4000694864 /* ZZCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZCollection.swift; path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZCollection.swift; sourceTree = "<group>"; };
+		8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAudioTool.swift; sourceTree = "<group>"; };
+		8DA8FCB62021C8B100C018F4 /* ZZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZButton.swift; sourceTree = "<group>"; };
+		8DA8FCB72021C8B100C018F4 /* ZZCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCircleProgressView.swift; sourceTree = "<group>"; };
+		8DA8FCB82021C8B100C018F4 /* ZZCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCycleView.swift; sourceTree = "<group>"; };
+		8DA8FCB92021C8B100C018F4 /* ZZHud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZHud.swift; sourceTree = "<group>"; };
+		8DA8FCBB2021C8B100C018F4 /* UIScrollView+ZZRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZZRefresh.swift"; sourceTree = "<group>"; };
+		8DA8FCBC2021C8B100C018F4 /* ZZRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefresh.swift; sourceTree = "<group>"; };
+		8DA8FCBD2021C8B100C018F4 /* ZZRefreshFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshFooter.swift; sourceTree = "<group>"; };
+		8DA8FCBE2021C8B100C018F4 /* ZZRefreshHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshHeader.swift; sourceTree = "<group>"; };
+		8DA8FCBF2021C8B100C018F4 /* ZZRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZRefreshView.swift; sourceTree = "<group>"; };
+		8DA8FCC02021C8B100C018F4 /* ZZLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZLib.swift; path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZLib.swift; sourceTree = "<group>"; };
+		8DA8FCC32021C8B100C018F4 /* Calendar+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Calendar+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCC42021C8B100C018F4 /* CGRect+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCC52021C8B100C018F4 /* Data+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCC62021C8B100C018F4 /* Date+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCC72021C8B100C018F4 /* DateFormatter+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCC82021C8B100C018F4 /* DispatchQueue+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCC92021C8B100C018F4 /* Locale+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Locale+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCCA2021C8B100C018F4 /* NSNumber+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCCB2021C8B100C018F4 /* NSObject+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCCC2021C8B100C018F4 /* String+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCCE2021C8B100C018F4 /* UIAlertController+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCCF2021C8B100C018F4 /* UIApplication+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD02021C8B100C018F4 /* UIButton+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD12021C8B100C018F4 /* UIColor+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD22021C8B100C018F4 /* UIDevice+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD32021C8B100C018F4 /* UIFont+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD42021C8B100C018F4 /* UIImage+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD52021C8B100C018F4 /* UIImageView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD62021C8B100C018F4 /* UILabel+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD72021C8B100C018F4 /* UISceen+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISceen+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD82021C8B100C018F4 /* UIScrollView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCD92021C8B100C018F4 /* UITableView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCDA2021C8B100C018F4 /* UITextField+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCDB2021C8B100C018F4 /* UIView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ZZExtension.swift"; sourceTree = "<group>"; };
+		8DA8FCDC2021C8B100C018F4 /* ZZCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZCollection.swift; path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZCollection.swift; sourceTree = "<group>"; };
+		8DA8FD022021C95100C018F4 /* HXBShakeConfigUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBShakeConfigUrlView.swift; sourceTree = "<group>"; };
 		8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignInController.swift; sourceTree = "<group>"; };
 		8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HXB.swift"; sourceTree = "<group>"; };
 		8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpController.swift; sourceTree = "<group>"; };
@@ -270,11 +274,11 @@
 				8D3E620E1FDF7B53008C8E67 /* Main */,
 				8D3E620C1FDF7B3B008C8E67 /* Basics */,
 				8D3E621E1FDF7E45008C8E67 /* Network */,
+				8DA8FD012021C8FD00C018F4 /* Other */,
 				8D3E62121FDF7BE1008C8E67 /* Configure */,
-				8D3E62101FDF7B9F008C8E67 /* Others */,
 				8D3E623C1FDFB84A008C8E67 /* Utils */,
 				8D3E62111FDF7BBF008C8E67 /* Resource */,
-				8D3E620F1FDF7B81008C8E67 /* Vender */,
+				8DA8FCB22021C85000C018F4 /* Vender */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -298,21 +302,6 @@
 				8D3E62221FDF7F34008C8E67 /* Mine */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		8D3E620F1FDF7B81008C8E67 /* Vender */ = {
-			isa = PBXGroup;
-			children = (
-				8D800AC91FE7CA3600694864 /* ZZLib */,
-			);
-			path = Vender;
-			sourceTree = "<group>";
-		};
-		8D3E62101FDF7B9F008C8E67 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		8D3E62111FDF7BBF008C8E67 /* Resource */ = {
@@ -553,88 +542,105 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		8D800AC91FE7CA3600694864 /* ZZLib */ = {
+		8DA8FCB22021C85000C018F4 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				8D800AF21FE7CA4000694864 /* ZZCollection.swift */,
-				8D800ACA1FE7CA3F00694864 /* ZZCustom */,
-				8D800AD71FE7CA4000694864 /* ZZExtension */,
-				8D800AD61FE7CA3F00694864 /* ZZLib.swift */,
+				8DA8FCB32021C89D00C018F4 /* ZZLib */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		8DA8FCB32021C89D00C018F4 /* ZZLib */ = {
+			isa = PBXGroup;
+			children = (
+				8DA8FCDC2021C8B100C018F4 /* ZZCollection.swift */,
+				8DA8FCB42021C8B100C018F4 /* ZZCustom */,
+				8DA8FCC12021C8B100C018F4 /* ZZExtension */,
+				8DA8FCC02021C8B100C018F4 /* ZZLib.swift */,
 			);
 			path = ZZLib;
 			sourceTree = "<group>";
 		};
-		8D800ACA1FE7CA3F00694864 /* ZZCustom */ = {
+		8DA8FCB42021C8B100C018F4 /* ZZCustom */ = {
 			isa = PBXGroup;
 			children = (
-				8D800ACB1FE7CA3F00694864 /* ZZAudioTool.swift */,
-				8D800ACC1FE7CA3F00694864 /* ZZButton.swift */,
-				8D800ACD1FE7CA3F00694864 /* ZZCircleProgressView.swift */,
-				8D800ACE1FE7CA3F00694864 /* ZZHud.swift */,
-				8D800AD01FE7CA3F00694864 /* ZZRefresh */,
+				8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */,
+				8DA8FCB62021C8B100C018F4 /* ZZButton.swift */,
+				8DA8FCB72021C8B100C018F4 /* ZZCircleProgressView.swift */,
+				8DA8FCB82021C8B100C018F4 /* ZZCycleView.swift */,
+				8DA8FCB92021C8B100C018F4 /* ZZHud.swift */,
+				8DA8FCBA2021C8B100C018F4 /* ZZRefresh */,
 			);
 			name = ZZCustom;
 			path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZCustom;
 			sourceTree = "<group>";
 		};
-		8D800AD01FE7CA3F00694864 /* ZZRefresh */ = {
+		8DA8FCBA2021C8B100C018F4 /* ZZRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				8D800AD11FE7CA3F00694864 /* UIScrollView+ZZRefresh.swift */,
-				8D800AD21FE7CA3F00694864 /* ZZRefresh.swift */,
-				8D800AD31FE7CA3F00694864 /* ZZRefreshFooter.swift */,
-				8D800AD41FE7CA3F00694864 /* ZZRefreshHeader.swift */,
-				8D800AD51FE7CA3F00694864 /* ZZRefreshView.swift */,
+				8DA8FCBB2021C8B100C018F4 /* UIScrollView+ZZRefresh.swift */,
+				8DA8FCBC2021C8B100C018F4 /* ZZRefresh.swift */,
+				8DA8FCBD2021C8B100C018F4 /* ZZRefreshFooter.swift */,
+				8DA8FCBE2021C8B100C018F4 /* ZZRefreshHeader.swift */,
+				8DA8FCBF2021C8B100C018F4 /* ZZRefreshView.swift */,
 			);
 			path = ZZRefresh;
 			sourceTree = "<group>";
 		};
-		8D800AD71FE7CA4000694864 /* ZZExtension */ = {
+		8DA8FCC12021C8B100C018F4 /* ZZExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8D800AD81FE7CA4000694864 /* ZZNSExtension */,
-				8D800AE31FE7CA4000694864 /* ZZUIExtension */,
+				8DA8FCC22021C8B100C018F4 /* ZZNSExtension */,
+				8DA8FCCD2021C8B100C018F4 /* ZZUIExtension */,
 			);
 			name = ZZExtension;
 			path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZExtension;
 			sourceTree = "<group>";
 		};
-		8D800AD81FE7CA4000694864 /* ZZNSExtension */ = {
+		8DA8FCC22021C8B100C018F4 /* ZZNSExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8D800AD91FE7CA4000694864 /* Calendar+ZZExtension.swift */,
-				8D800ADA1FE7CA4000694864 /* CGRect+ZZExtension.swift */,
-				8D800ADB1FE7CA4000694864 /* Data+ZZExtension.swift */,
-				8D800ADC1FE7CA4000694864 /* Date+ZZExtension.swift */,
-				8D800ADD1FE7CA4000694864 /* DateFormatter+ZZExtension.swift */,
-				8D800ADE1FE7CA4000694864 /* DispatchQueue+ZZExtension.swift */,
-				8D800ADF1FE7CA4000694864 /* Locale+ZZExtension.swift */,
-				8D800AE01FE7CA4000694864 /* NSNumber+ZZExtension.swift */,
-				8D800AE11FE7CA4000694864 /* NSObject+ZZExtension.swift */,
-				8D800AE21FE7CA4000694864 /* String+ZZExtension.swift */,
+				8DA8FCC32021C8B100C018F4 /* Calendar+ZZExtension.swift */,
+				8DA8FCC42021C8B100C018F4 /* CGRect+ZZExtension.swift */,
+				8DA8FCC52021C8B100C018F4 /* Data+ZZExtension.swift */,
+				8DA8FCC62021C8B100C018F4 /* Date+ZZExtension.swift */,
+				8DA8FCC72021C8B100C018F4 /* DateFormatter+ZZExtension.swift */,
+				8DA8FCC82021C8B100C018F4 /* DispatchQueue+ZZExtension.swift */,
+				8DA8FCC92021C8B100C018F4 /* Locale+ZZExtension.swift */,
+				8DA8FCCA2021C8B100C018F4 /* NSNumber+ZZExtension.swift */,
+				8DA8FCCB2021C8B100C018F4 /* NSObject+ZZExtension.swift */,
+				8DA8FCCC2021C8B100C018F4 /* String+ZZExtension.swift */,
 			);
 			path = ZZNSExtension;
 			sourceTree = "<group>";
 		};
-		8D800AE31FE7CA4000694864 /* ZZUIExtension */ = {
+		8DA8FCCD2021C8B100C018F4 /* ZZUIExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8D800AE41FE7CA4000694864 /* UIAlertController+ZZExtension.swift */,
-				8D800AE51FE7CA4000694864 /* UIApplication+ZZExtension.swift */,
-				8D800AE61FE7CA4000694864 /* UIButton+ZZExtension.swift */,
-				8D800AE71FE7CA4000694864 /* UIColor+ZZExtension.swift */,
-				8D800AE81FE7CA4000694864 /* UIDevice+ZZExtension.swift */,
-				8D800AE91FE7CA4000694864 /* UIFont+ZZExtension.swift */,
-				8D800AEA1FE7CA4000694864 /* UIImage+ZZExtension.swift */,
-				8D800AEB1FE7CA4000694864 /* UIImageView+ZZExtension.swift */,
-				8D800AEC1FE7CA4000694864 /* UILabel+ZZExtension.swift */,
-				8D800AED1FE7CA4000694864 /* UISceen+ZZExtension.swift */,
-				8D800AEE1FE7CA4000694864 /* UIScrollView+ZZExtension.swift */,
-				8D800AEF1FE7CA4000694864 /* UITableView+ZZExtension.swift */,
-				8D800AF01FE7CA4000694864 /* UITextField+ZZExtension.swift */,
-				8D800AF11FE7CA4000694864 /* UIView+ZZExtension.swift */,
+				8DA8FCCE2021C8B100C018F4 /* UIAlertController+ZZExtension.swift */,
+				8DA8FCCF2021C8B100C018F4 /* UIApplication+ZZExtension.swift */,
+				8DA8FCD02021C8B100C018F4 /* UIButton+ZZExtension.swift */,
+				8DA8FCD12021C8B100C018F4 /* UIColor+ZZExtension.swift */,
+				8DA8FCD22021C8B100C018F4 /* UIDevice+ZZExtension.swift */,
+				8DA8FCD32021C8B100C018F4 /* UIFont+ZZExtension.swift */,
+				8DA8FCD42021C8B100C018F4 /* UIImage+ZZExtension.swift */,
+				8DA8FCD52021C8B100C018F4 /* UIImageView+ZZExtension.swift */,
+				8DA8FCD62021C8B100C018F4 /* UILabel+ZZExtension.swift */,
+				8DA8FCD72021C8B100C018F4 /* UISceen+ZZExtension.swift */,
+				8DA8FCD82021C8B100C018F4 /* UIScrollView+ZZExtension.swift */,
+				8DA8FCD92021C8B100C018F4 /* UITableView+ZZExtension.swift */,
+				8DA8FCDA2021C8B100C018F4 /* UITextField+ZZExtension.swift */,
+				8DA8FCDB2021C8B100C018F4 /* UIView+ZZExtension.swift */,
 			);
 			path = ZZUIExtension;
+			sourceTree = "<group>";
+		};
+		8DA8FD012021C8FD00C018F4 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				8DA8FD022021C95100C018F4 /* HXBShakeConfigUrlView.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		8DCC1D951FE8FF9100FEA8EF /* SignInSignUp */ = {
@@ -898,93 +904,95 @@
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
 				8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */,
 				8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */,
-				8D800B001FE7CA4000694864 /* Data+ZZExtension.swift in Sources */,
 				8DCC1DB51FEA087700FEA8EF /* HXBViewController.swift in Sources */,
-				8D800B0B1FE7CA4000694864 /* UIColor+ZZExtension.swift in Sources */,
 				8D352B6F1FF5DD46003E5507 /* HXBNotificationConfig.swift in Sources */,
-				8D800B0D1FE7CA4000694864 /* UIFont+ZZExtension.swift in Sources */,
-				8D800B161FE7CA4000694864 /* ZZCollection.swift in Sources */,
+				8DA8FCEA2021C8B100C018F4 /* Data+ZZExtension.swift in Sources */,
 				8DCC1DBF1FEA0A0400FEA8EF /* UIImageView+HXB.swift in Sources */,
-				8D800B0A1FE7CA4000694864 /* UIButton+ZZExtension.swift in Sources */,
-				8D800AF61FE7CA4000694864 /* ZZHud.swift in Sources */,
 				8DCC1D9B1FE9002E00FEA8EF /* HXBSignInController.swift in Sources */,
+				8DA8FCFA2021C8B100C018F4 /* UILabel+ZZExtension.swift in Sources */,
 				8D3E623B1FDF804C008C8E67 /* HXBHomeController.swift in Sources */,
 				8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */,
-				8D800B041FE7CA4000694864 /* Locale+ZZExtension.swift in Sources */,
 				8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */,
-				8D800B151FE7CA4000694864 /* UIView+ZZExtension.swift in Sources */,
-				8D800AF41FE7CA4000694864 /* ZZButton.swift in Sources */,
-				8D800AF31FE7CA4000694864 /* ZZAudioTool.swift in Sources */,
 				8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */,
+				8DA8FCE52021C8B100C018F4 /* ZZRefreshHeader.swift in Sources */,
 				8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */,
 				8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */,
-				8D800B121FE7CA4000694864 /* UIScrollView+ZZExtension.swift in Sources */,
+				8DA8FCF12021C8B100C018F4 /* String+ZZExtension.swift in Sources */,
+				8DA8FCE92021C8B100C018F4 /* CGRect+ZZExtension.swift in Sources */,
 				8DE914121FE2478A00FAEE68 /* UIView+HXB.swift in Sources */,
-				8D800AFD1FE7CA4000694864 /* ZZLib.swift in Sources */,
 				8DCC1D9F1FE91E9300FEA8EF /* UIViewController+HXB.swift in Sources */,
+				8DA8FCEB2021C8B100C018F4 /* Date+ZZExtension.swift in Sources */,
+				8DA8FCE12021C8B100C018F4 /* ZZHud.swift in Sources */,
+				8DA8FCED2021C8B100C018F4 /* DispatchQueue+ZZExtension.swift in Sources */,
 				8DCC1DB61FEA087700FEA8EF /* HXBSettingTableViewCell.swift in Sources */,
-				8D800B031FE7CA4000694864 /* DispatchQueue+ZZExtension.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
 				8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */,
 				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
+				8DA8FCEE2021C8B100C018F4 /* Locale+ZZExtension.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
-				8D800B061FE7CA4000694864 /* NSObject+ZZExtension.swift in Sources */,
+				8DA8FD002021C8B100C018F4 /* ZZCollection.swift in Sources */,
+				8DA8FCFB2021C8B100C018F4 /* UISceen+ZZExtension.swift in Sources */,
 				8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */,
 				8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */,
+				8DA8FCF32021C8B100C018F4 /* UIApplication+ZZExtension.swift in Sources */,
+				8DA8FCE22021C8B100C018F4 /* UIScrollView+ZZRefresh.swift in Sources */,
 				8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */,
+				8DA8FCDF2021C8B100C018F4 /* ZZCircleProgressView.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
 				8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */,
-				8D800B111FE7CA4000694864 /* UISceen+ZZExtension.swift in Sources */,
 				8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */,
+				8DA8FCF52021C8B100C018F4 /* UIColor+ZZExtension.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
-				8D800AFB1FE7CA4000694864 /* ZZRefreshHeader.swift in Sources */,
+				8DA8FD032021C95100C018F4 /* HXBShakeConfigUrlView.swift in Sources */,
 				8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
-				8D800B021FE7CA4000694864 /* DateFormatter+ZZExtension.swift in Sources */,
+				8DA8FCEF2021C8B100C018F4 /* NSNumber+ZZExtension.swift in Sources */,
 				8D3EFE34200CC14500A54B1D /* HXBUserAssetsModel.swift in Sources */,
 				8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */,
-				8D800B011FE7CA4000694864 /* Date+ZZExtension.swift in Sources */,
-				8D800AF81FE7CA4000694864 /* UIScrollView+ZZRefresh.swift in Sources */,
-				8D800B0F1FE7CA4000694864 /* UIImageView+ZZExtension.swift in Sources */,
+				8DA8FCFD2021C8B100C018F4 /* UITableView+ZZExtension.swift in Sources */,
+				8DA8FCF42021C8B100C018F4 /* UIButton+ZZExtension.swift in Sources */,
+				8DA8FCF82021C8B100C018F4 /* UIImage+ZZExtension.swift in Sources */,
+				8DA8FCF62021C8B100C018F4 /* UIDevice+ZZExtension.swift in Sources */,
+				8DA8FCE42021C8B100C018F4 /* ZZRefreshFooter.swift in Sources */,
 				8DCC1DB31FEA087700FEA8EF /* HXBNavigationController.swift in Sources */,
+				8DA8FCF92021C8B100C018F4 /* UIImageView+ZZExtension.swift in Sources */,
 				8DCC1DB41FEA087700FEA8EF /* HXBTabBarController.swift in Sources */,
+				8DA8FCE32021C8B100C018F4 /* ZZRefresh.swift in Sources */,
+				8DA8FCE82021C8B100C018F4 /* Calendar+ZZExtension.swift in Sources */,
 				8DCC1DA51FEA065800FEA8EF /* HXBSingleWaveView.swift in Sources */,
-				8D800B081FE7CA4000694864 /* UIAlertController+ZZExtension.swift in Sources */,
 				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,
 				8D352B6D1FF5DD1D003E5507 /* HXBSizeConfig.swift in Sources */,
 				8DCC1DB91FEA087700FEA8EF /* HXBModel.swift in Sources */,
 				8DCC1DB71FEA087700FEA8EF /* HXBTableView.swift in Sources */,
-				8D800B0E1FE7CA4000694864 /* UIImage+ZZExtension.swift in Sources */,
+				8DA8FCFE2021C8B100C018F4 /* UITextField+ZZExtension.swift in Sources */,
+				8DA8FCDD2021C8B100C018F4 /* ZZAudioTool.swift in Sources */,
+				8DA8FCFC2021C8B100C018F4 /* UIScrollView+ZZExtension.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
 				8D3EFE3A200DF17300A54B1D /* NumberFormatter+HXB.swift in Sources */,
 				8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */,
+				8DA8FCE02021C8B100C018F4 /* ZZCycleView.swift in Sources */,
 				8DCC1DA71FEA06B200FEA8EF /* HXBNavWaveView.swift in Sources */,
+				8DA8FCE62021C8B100C018F4 /* ZZRefreshView.swift in Sources */,
 				8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */,
-				8D800AF91FE7CA4000694864 /* ZZRefresh.swift in Sources */,
-				8D800B0C1FE7CA4000694864 /* UIDevice+ZZExtension.swift in Sources */,
-				8D800B091FE7CA4000694864 /* UIApplication+ZZExtension.swift in Sources */,
+				8DA8FCEC2021C8B100C018F4 /* DateFormatter+ZZExtension.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
+				8DA8FCFF2021C8B100C018F4 /* UIView+ZZExtension.swift in Sources */,
+				8DA8FCDE2021C8B100C018F4 /* ZZButton.swift in Sources */,
 				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
-				8D800B101FE7CA4000694864 /* UILabel+ZZExtension.swift in Sources */,
 				8DFF64DA1FFCEDDE007D462D /* HXBNetwork+Common.swift in Sources */,
-				8D800B141FE7CA4000694864 /* UITextField+ZZExtension.swift in Sources */,
-				8D800AFF1FE7CA4000694864 /* CGRect+ZZExtension.swift in Sources */,
-				8D800B051FE7CA4000694864 /* NSNumber+ZZExtension.swift in Sources */,
+				8DA8FCF22021C8B100C018F4 /* UIAlertController+ZZExtension.swift in Sources */,
 				8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */,
-				8D800AF51FE7CA4000694864 /* ZZCircleProgressView.swift in Sources */,
-				8D800AFA1FE7CA4000694864 /* ZZRefreshFooter.swift in Sources */,
-				8D800B071FE7CA4000694864 /* String+ZZExtension.swift in Sources */,
+				8DA8FCF72021C8B100C018F4 /* UIFont+ZZExtension.swift in Sources */,
 				8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */,
 				8DCC1DC11FEA3F5900FEA8EF /* UIButton+HXB.swift in Sources */,
 				8D3EFE45200E018E00A54B1D /* HXBAccountMainCell.swift in Sources */,
 				8DE914291FE76E2100FAEE68 /* HXBKeyChain.swift in Sources */,
+				8DA8FCE72021C8B100C018F4 /* ZZLib.swift in Sources */,
 				8DCC1DBB1FEA08FF00FEA8EF /* HXBInputFieldView.swift in Sources */,
 				8D3EFE5B200F262600A54B1D /* HXBAlertController.swift in Sources */,
-				8D800AFE1FE7CA4000694864 /* Calendar+ZZExtension.swift in Sources */,
-				8D800B131FE7CA4000694864 /* UITableView+ZZExtension.swift in Sources */,
+				8DA8FCF02021C8B100C018F4 /* NSObject+ZZExtension.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
-				8D800AFC1FE7CA4000694864 /* ZZRefreshView.swift in Sources */,
 				8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

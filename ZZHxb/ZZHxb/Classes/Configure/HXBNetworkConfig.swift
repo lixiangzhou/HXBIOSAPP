@@ -9,11 +9,17 @@
 import UIKit
 import AdSupport
 
-struct HXBNetworkConfig {
+class HXBNetworkConfig {
     // https://api.hongxiaobao.com
     // http://192.168.1.36:3100
-    static let baseUrl = "http://192.168.1.36:3100"
-
+    static let shared = HXBNetworkConfig()
+    private init() {}
+    
+    var baseUrl = "http://192.168.1.36:3100"
+    
+    static var baseUrl: String = {
+        return HXBNetworkConfig.shared.baseUrl
+    }()
     static let tokenKey = "X-Hxb-Auth-Token"
     static let baseHeaderFields = ["X-Request-Id": UIDevice.current.identifierForVendor?.uuidString ?? "",
                                    "X-Hxb-Auth-Timestamp": Double(Date().timeIntervalSince1970 * 1000).description,
