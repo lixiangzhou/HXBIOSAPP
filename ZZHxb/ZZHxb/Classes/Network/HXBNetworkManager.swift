@@ -139,7 +139,7 @@ extension HXBNetworkManager {
         if let baseUrl = requestApi.baseUrl {
             urlString = baseUrl + requestUrl
         } else {
-            urlString = HXBNetworkConfig.baseUrl + requestUrl
+            urlString = HXBNetworkConfig.shared.baseUrl + requestUrl
         }
         
         return URL(string: urlString)
@@ -186,7 +186,7 @@ extension HXBNetworkManager {
 // MARK: - Token & Single Login
 extension HXBNetworkManager {
     fileprivate func tokenRequest(completion: @escaping (Bool) -> ()) {
-        Alamofire.request(HXBNetworkConfig.baseUrl + hxb.api.token, method: .get, parameters: nil).responseJSON { responseObject in
+        Alamofire.request(HXBNetworkConfig.shared.baseUrl + hxb.api.token, method: .get, parameters: nil).responseJSON { responseObject in
             if responseObject.result.isSuccess {
                 let json = JSON(responseObject.result.value as! HXBResponseObject)
                 let token = json["data"]["token"].stringValue

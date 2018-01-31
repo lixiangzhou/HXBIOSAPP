@@ -34,11 +34,12 @@ class HXBShakeConfigUrlView: UIView {
 extension HXBShakeConfigUrlView {
     fileprivate func setUI() {
         backgroundColor = UIColor.white
-        fieldView.placeholder = "请输入url, 例如:\(HXBNetworkConfig.baseUrl)"
+        fieldView.placeholder = "请输入url, 例如:\(HXBNetworkConfig.shared.baseUrl)"
         fieldView.font = hxb.font.mainContent
         fieldView.borderStyle = .roundedRect
-        fieldView.text = HXBNetworkConfig.baseUrl
-        button.reactive.controlEvents(.touchUpInside).observeValues { [weak self] _ in
+        fieldView.text = HXBNetworkConfig.shared.baseUrl
+        button.reactive.controlEvents(.touchUpInside).observeValues { [weak self, weak fieldView] _ in
+            HXBNetworkConfig.shared.baseUrl = fieldView?.text ?? ""
             self?.alpha = 1
             UIView.animate(withDuration: HXBShakeConfigUrlView.animateDuration, animations: {
                 self?.alpha = 0

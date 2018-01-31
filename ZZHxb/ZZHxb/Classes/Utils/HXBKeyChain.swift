@@ -23,7 +23,7 @@ extension hxb {
 struct HXBKeychainClass {
     
     static let shared: Keychain = {
-        return Keychain(service: HXBNetworkConfig.baseUrl)
+        return Keychain(service: HXBNetworkConfig.shared.baseUrl)
             .synchronizable(true)
             .accessibility(.afterFirstUnlock)
     }()
