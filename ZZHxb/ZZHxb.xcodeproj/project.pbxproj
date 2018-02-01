@@ -78,6 +78,8 @@
 		8DA8FCFF2021C8B100C018F4 /* UIView+ZZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCDB2021C8B100C018F4 /* UIView+ZZExtension.swift */; };
 		8DA8FD002021C8B100C018F4 /* ZZCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCDC2021C8B100C018F4 /* ZZCollection.swift */; };
 		8DA8FD032021C95100C018F4 /* HXBShakeConfigUrlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FD022021C95100C018F4 /* HXBShakeConfigUrlView.swift */; };
+		8DA8FD0C2022FA6B00C018F4 /* HXBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FD0B2022FA6B00C018F4 /* HXBUser.swift */; };
+		8DA8FD0E2022FAF100C018F4 /* HXBUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FD0D2022FAF100C018F4 /* HXBUserViewModel.swift */; };
 		8DCC1D9B1FE9002E00FEA8EF /* HXBSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */; };
 		8DCC1D9F1FE91E9300FEA8EF /* UIViewController+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */; };
 		8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */; };
@@ -185,6 +187,8 @@
 		8DA8FCDB2021C8B100C018F4 /* UIView+ZZExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ZZExtension.swift"; sourceTree = "<group>"; };
 		8DA8FCDC2021C8B100C018F4 /* ZZCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZZCollection.swift; path = ../../../../../../../../../Documents/github_lib/ZZLib/Source/ZZCollection.swift; sourceTree = "<group>"; };
 		8DA8FD022021C95100C018F4 /* HXBShakeConfigUrlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBShakeConfigUrlView.swift; sourceTree = "<group>"; };
+		8DA8FD0B2022FA6B00C018F4 /* HXBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBUser.swift; sourceTree = "<group>"; };
+		8DA8FD0D2022FAF100C018F4 /* HXBUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBUserViewModel.swift; sourceTree = "<group>"; };
 		8DCC1D9A1FE9002E00FEA8EF /* HXBSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignInController.swift; sourceTree = "<group>"; };
 		8DCC1D9E1FE91E9300FEA8EF /* UIViewController+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HXB.swift"; sourceTree = "<group>"; };
 		8DCC1DA21FE9FC3900FEA8EF /* HXBSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpController.swift; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 		8D3E622B1FDF7FAB008C8E67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8DA8FD0B2022FA6B00C018F4 /* HXBUser.swift */,
 				8DE9140F1FE22F9C00FAEE68 /* HXBMineCellModel.swift */,
 				8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */,
 			);
@@ -406,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE9140D1FE22EF800FAEE68 /* HXBMineViewModel.swift */,
+				8DA8FD0D2022FAF100C018F4 /* HXBUserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -502,8 +508,8 @@
 		8D3EFE3B200DFF8400A54B1D /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				8DA8FD042022F81400C018F4 /* Model */,
 				8D3EFE3F200DFFC100A54B1D /* ViewModel */,
-				8D3EFE3E200DFFBD00A54B1D /* Model */,
 				8D3EFE3D200DFFB500A54B1D /* Controller */,
 				8D3EFE3C200DFFA300A54B1D /* View */,
 			);
@@ -524,13 +530,6 @@
 				8D3EFE40200DFFF300A54B1D /* HXBAccountMainController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8D3EFE3E200DFFBD00A54B1D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		8D3EFE3F200DFFC100A54B1D /* ViewModel */ = {
@@ -641,6 +640,13 @@
 				8DA8FD022021C95100C018F4 /* HXBShakeConfigUrlView.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		8DA8FD042022F81400C018F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8DCC1D951FE8FF9100FEA8EF /* SignInSignUp */ = {
@@ -904,6 +910,7 @@
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
 				8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */,
 				8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */,
+				8DA8FD0E2022FAF100C018F4 /* HXBUserViewModel.swift in Sources */,
 				8DCC1DB51FEA087700FEA8EF /* HXBViewController.swift in Sources */,
 				8D352B6F1FF5DD46003E5507 /* HXBNotificationConfig.swift in Sources */,
 				8DA8FCEA2021C8B100C018F4 /* Data+ZZExtension.swift in Sources */,
@@ -940,6 +947,7 @@
 				8DA8FCDF2021C8B100C018F4 /* ZZCircleProgressView.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
 				8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */,
+				8DA8FD0C2022FA6B00C018F4 /* HXBUser.swift in Sources */,
 				8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */,
 				8DA8FCF52021C8B100C018F4 /* UIColor+ZZExtension.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,

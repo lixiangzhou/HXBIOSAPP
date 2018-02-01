@@ -15,4 +15,7 @@ extension HXBNetwork {
         HXBNetworkManager.request(url: hxb.api.account, completionClosure: completion)
     }
     
+    static func updateUserInfo(completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.userinfo, completionClosure: completion)
+    }
 }

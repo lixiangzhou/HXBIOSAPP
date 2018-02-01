@@ -32,7 +32,8 @@ extension hxb.api {
     static let signin = "/user/login"
     /// 登出
     static let signout = "/logout"
-    
+    /// 获取用户信息
+    static let userinfo = "/user/info"
 }
 
 extension hxb.api {
