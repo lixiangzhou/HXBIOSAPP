@@ -100,6 +100,27 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return section == viewModel.dataSource.count - 1 ? hxb.size.view2View : 0.001
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cellViewModel = viewModel.dataSource[indexPath.section][indexPath.row]
+        switch cellViewModel.type {
+        case .depositoryAccount:
+            clickBankAccount()
+        case .bank:
+            clickBank()
+        case .risk:
+            clickRisk()
+        case .accountSecure:
+            clickAccountSecure()
+        case .advisor:
+            clickAdvisor()
+        case .about:
+            clickAbout()
+        case .username:
+            break
+        }
+    }
 }
 
 // MARK: - Delegate External
@@ -108,6 +129,32 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - Helper
 extension HXBAccountMainController {
+    fileprivate func clickBankAccount() {
+        HXBAccountViewModel.shared.updateUserInfoSuccess {
+            
+        }
+    }
+    
+    fileprivate func clickBank() {
+        
+    }
+    
+    fileprivate func clickRisk() {
+        
+    }
+    
+    fileprivate func clickAccountSecure() {
+        
+    }
+    
+    fileprivate func clickAdvisor() {
+        
+    }
+    
+    fileprivate func clickAbout() {
+        
+    }
+    
     
 }
 

@@ -15,21 +15,21 @@ class HXBAccountMainViewModel: HXBViewModel {
     override init() {
         super.init()
         
-        let headerViewModel = HXBAccountMainCellViewModel(title: HXBAccountModel.shared.userInfo.username)
+        let headerViewModel = HXBAccountMainCellViewModel(type: .username)
         
         headerViewModel.titleSignal = HXBAccountViewModel.shared.usernameSignal.combineLatest(with: HXBAccountViewModel.shared.avatarSignal).map({ (username, image) -> NSAttributedString in
             let attachment = NSTextAttachment()
             attachment.image = image
             attachment.bounds = CGRect(x: 0, y: -2, width: 32, height: 32)
             let attrTxt = NSMutableAttributedString(attributedString: NSAttributedString(attachment: attachment))
-            attrTxt.append(NSAttributedString(string: "  \(username)", attributes: [NSAttributedStringKey.baselineOffset: 8]))
+            attrTxt.append(NSAttributedString(string: "   \(username)", attributes: [NSAttributedStringKey.baselineOffset: 8]))
             return attrTxt
         })
 
-        let bankAccountViewModel = HXBAccountMainCellViewModel(title: "恒丰银行存管账户")
-        let bankViewModel = HXBAccountMainCellViewModel(title: "银行卡")
+        let depositoryAccountViewModel = HXBAccountMainCellViewModel(type: .depositoryAccount)
+        let bankViewModel = HXBAccountMainCellViewModel(type: .bank)
         
-        bankAccountViewModel.rightAccessoryStringSignal = HXBAccountViewModel.shared.bankOpenSignal.combineLatest(with: HXBAccountViewModel.shared.transitionPwdSignal)
+        depositoryAccountViewModel.rightAccessoryStringSignal = HXBAccountViewModel.shared.bankOpenSignal.combineLatest(with: HXBAccountViewModel.shared.transitionPwdSignal)
             .map { hasBank, hasTransitionPwd in return hasBank && hasTransitionPwd ? hxb.color.linkActivity : hxb.color.mostImport }
             .combineLatest(with: HXBAccountViewModel.shared.bankInfoStateSignal).map({ (color, string) -> NSAttributedString in
             return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor: color])
@@ -43,10 +43,10 @@ class HXBAccountMainViewModel: HXBViewModel {
             }
         }
         
-        let riskViewModel = HXBAccountMainCellViewModel(title: "风险评测")
-        let accountSecureViewModel = HXBAccountMainCellViewModel(title: "账户安全")
-        let advisorViewModel = HXBAccountMainCellViewModel(title: "我的财富顾问")
-        let aboutViewModel = HXBAccountMainCellViewModel(title: "关于我们")
+        let riskViewModel = HXBAccountMainCellViewModel(type: .risk)
+        let accountSecureViewModel = HXBAccountMainCellViewModel(type: .accountSecure)
+        let advisorViewModel = HXBAccountMainCellViewModel(type: .advisor)
+        let aboutViewModel = HXBAccountMainCellViewModel(type: .about)
         
         riskViewModel.rightAccessoryStringSignal = HXBAccountViewModel.shared.account.userInfo.reactive.producer(forKeyPath: "riskType").map { type in
             let typeString = type as! String
@@ -59,7 +59,7 @@ class HXBAccountMainViewModel: HXBViewModel {
         var group3: [HXBAccountMainCellViewModel]!
         
         HXBAccountViewModel.shared.bankOpenSignal.combineLatest(with: HXBAccountViewModel.shared.advisorSignal).startWithValues { [weak self] (hasBank, hasAdvisor) in
-            group2 = hasBank ? [bankAccountViewModel, bankViewModel] : [bankAccountViewModel]
+            group2 = hasBank ? [depositoryAccountViewModel, bankViewModel] : [depositoryAccountViewModel]
             group3 = hasAdvisor
                 ? [riskViewModel, accountSecureViewModel, advisorViewModel, aboutViewModel]
                 : [riskViewModel, accountSecureViewModel, aboutViewModel]

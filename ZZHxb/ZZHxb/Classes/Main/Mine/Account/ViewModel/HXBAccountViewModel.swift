@@ -93,6 +93,15 @@ class HXBAccountViewModel: HXBViewModel {
         }
     }
     
+    /// 成功了才执行回调，否则不执行
+    func updateUserInfoSuccess(_ completion: @escaping () -> ()) {
+        updateUserInfo { isSuccess in
+            if isSuccess {
+                completion()
+            }
+        }
+    }
+    
     func updateUserInfo() {
         updateUserInfo { (_) in
         }
