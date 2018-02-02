@@ -51,6 +51,9 @@ struct hxb {
         
         /// 弹框按钮取消背景色
         static let alertCancelBtn = UIColor(stringHexValue: "e5e6eb")
+        
+        /// 半透明背景 UIColor.init(white: 0.5, alpha: 0.8)
+        static let alphaBackgroundColor = UIColor.init(white: 0.5, alpha: 0.8)
     }
 }
 

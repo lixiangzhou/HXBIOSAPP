@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 账户信息页面
 class HXBAccountMainController: HXBViewController {
 
     // MARK: - Life Cycle
@@ -102,8 +103,8 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let cellViewModel = viewModel.dataSource[indexPath.section][indexPath.row]
+        
         switch cellViewModel.type {
         case .depositoryAccount:
             clickBankAccount()
@@ -131,7 +132,21 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 extension HXBAccountMainController {
     fileprivate func clickBankAccount() {
         HXBAccountViewModel.shared.updateUserInfoSuccess {
-            
+            if !HXBAccountViewModel.shared.isIdBinding {
+                HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
+                return
+            }
+            if !HXBAccountViewModel.shared.hasDepositoryOpen {
+                HXBDepositoryCheckViewController().presentFrom(controller: self, animated: false).openClosure = {
+                    HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
+                }
+            } else if HXBAccountViewModel.shared.hasBindCard {
+                
+            } else if HXBAccountViewModel.shared.hasTransitionPwd {
+                
+            } else {
+                
+            }
         }
     }
     

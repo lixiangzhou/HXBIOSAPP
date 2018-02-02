@@ -184,6 +184,22 @@ extension HXBAlertController {
     }
 }
 
+
+// MARK: - Helper
+extension HXBAlertController {
+    static func phoneCall(phone: String = hxb.string.servicePhone, title: String?, message: String?) {
+        let vc = HXBAlertController(title: title, messageText: message, leftActionName: "取消", rightActionName: "拨打")
+        vc.textAlignment = .center
+        vc.backClickDismissEnabled = false
+        vc.rightAction = {
+            UIApplication.shared.open(URL(string: "telprompt://\(phone)")!, options: [:], completionHandler: nil)
+        }
+        HXBRootVCManager.shared.rootVC .present(vc, animated: true, completion: nil)
+    }
+}
+
+
+// MARK: - 转场动画相关
 extension HXBAlertController: UIViewControllerTransitioningDelegate {
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresent = false

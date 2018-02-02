@@ -12,5 +12,8 @@ extension hxb {
     struct string {
         /// 钱 闭上眼睛的时候显示 【****】
         static let moneySecure = "****"
+        
+        /// 服务电话 【400-1552-888】
+        static let servicePhone = "400-1552-888"
     }
 }

@@ -16,16 +16,19 @@ class HXBAccountViewModel: HXBViewModel {
     
     private(set)var account = HXBAccountModel.shared
     
+    // MARK: - 信号
+    
+    /// 用户姓名
     let usernameSignal: SignalProducer<String, NoError>
     
     /// 头像信息
     let avatarSignal: SignalProducer<UIImage, NoError>
     
-    /// 银行信息状态
-    let bankInfoStateSignal: SignalProducer<String, NoError>
+    /// 银行存管信息状态
+    let depositoryStateInfoSignal: SignalProducer<String, NoError>
     
-    /// 银行是否开通
-    let bankOpenSignal: SignalProducer<Bool, NoError>
+    /// 银行存管是否开通
+    let depositoryOpenSignal: SignalProducer<Bool, NoError>
     
     /// 是否有交易密码
     let transitionPwdSignal: SignalProducer<Bool, NoError>
@@ -33,7 +36,35 @@ class HXBAccountViewModel: HXBViewModel {
     /// 是否绑定银行卡
     let bandCardSignal: SignalProducer<Bool, NoError>
     
+    /// 是否有理财顾问
     let advisorSignal: SignalProducer<Bool, NoError>
+    
+    // MARK: -
+    
+    /// 是否实名
+    var hasIdPassed: Bool {
+        return account.userInfo.isIdPassed  == "1"
+    }
+    
+    /// 开通存管账户
+    var hasDepositoryOpen: Bool {
+        return account.userInfo.isCreateEscrowAcc == "1"
+    }
+    
+    /// 是否绑定身份证
+    var isIdBinding: Bool {
+        return hasDepositoryOpen && hasIdPassed
+    }
+    
+    /// 是否绑定银行卡
+    var hasBindCard: Bool {
+        return account.userInfo.hasBindCard == "1"
+    }
+    
+    /// 是否有交易密码
+    var hasTransitionPwd: Bool {
+        return account.userInfo.isCashPasswordPassed == "1"
+    }
 
     private override init() {
         usernameSignal = account.userInfo.reactive.producer(forKeyPath: "username").map { $0 as! String }.skipRepeats()
@@ -51,11 +82,11 @@ class HXBAccountViewModel: HXBViewModel {
             }
         }.skipRepeats()
 
-        bankOpenSignal = account.userInfo.reactive.producer(forKeyPath: "isCreateEscrowAcc").map { $0 as! String == "1" }.skipRepeats()
+        depositoryOpenSignal = account.userInfo.reactive.producer(forKeyPath: "isCreateEscrowAcc").map { $0 as! String == "1" }.skipRepeats()
         
         transitionPwdSignal = account.userInfo.reactive.producer(forKeyPath: "isCashPasswordPassed").map { $0 as! String == "1" }.skipRepeats()
         
-        bankInfoStateSignal = bankOpenSignal.combineLatest(with: transitionPwdSignal).map { (openBank, hasTransitionPwd) -> String in
+        depositoryStateInfoSignal = depositoryOpenSignal.combineLatest(with: transitionPwdSignal).map { (openBank, hasTransitionPwd) -> String in
             if openBank {
                 return hasTransitionPwd ? "已开通" : "完善信息"
             } else {
@@ -65,13 +96,12 @@ class HXBAccountViewModel: HXBViewModel {
         
         bandCardSignal = account.userInfo.reactive.producer(forKeyPath: "hasBindCard").map { $0 as! String == "1" }.skipRepeats()
         
-//        account.userInfo.isDisplayAdvisor
-        
         advisorSignal = account.userInfo.reactive.producer(forKeyPath: "isDisplayAdvisor").map { $0 as! Bool }.skipRepeats()
         
         super.init()
     }
-    
+}
+extension HXBAccountViewModel {
     /// 更新用户信息
     ///
     /// - Parameter completion: 完成回调 Bool 是否完成

@@ -15,13 +15,17 @@ extension UIViewController {
         navigationController?.popViewController(animated: animated)
     }
     /// 导航栏控制器 push
-    func pushFrom(controller: UIViewController, animated: Bool) {
+    @discardableResult
+    func pushFrom(controller: UIViewController, animated: Bool) -> Self {
         controller.navigationController?.pushViewController(self, animated: animated)
+        return self
     }
     
     
     /// Present
-    func presentFrom(controller: UIViewController, animated: Bool, completion: (() -> ())? = nil) {
+    @discardableResult
+    func presentFrom(controller: UIViewController, animated: Bool, completion: (() -> ())? = nil) -> Self {
         controller.present(self, animated: animated, completion: completion)
+        return self
     }
 }

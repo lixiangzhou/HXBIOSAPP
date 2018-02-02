@@ -20,4 +20,8 @@ class HXBRootVCManager {
     var appDelegate: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
+    
+    var rootVC: UIViewController {
+        return UIApplication.shared.keyWindow?.rootViewController as! UIViewController
+    }
 }

@@ -29,9 +29,9 @@ class HXBAccountMainViewModel: HXBViewModel {
         let depositoryAccountViewModel = HXBAccountMainCellViewModel(type: .depositoryAccount)
         let bankViewModel = HXBAccountMainCellViewModel(type: .bank)
         
-        depositoryAccountViewModel.rightAccessoryStringSignal = HXBAccountViewModel.shared.bankOpenSignal.combineLatest(with: HXBAccountViewModel.shared.transitionPwdSignal)
+        depositoryAccountViewModel.rightAccessoryStringSignal = HXBAccountViewModel.shared.depositoryOpenSignal.combineLatest(with: HXBAccountViewModel.shared.transitionPwdSignal)
             .map { hasBank, hasTransitionPwd in return hasBank && hasTransitionPwd ? hxb.color.linkActivity : hxb.color.mostImport }
-            .combineLatest(with: HXBAccountViewModel.shared.bankInfoStateSignal).map({ (color, string) -> NSAttributedString in
+            .combineLatest(with: HXBAccountViewModel.shared.depositoryStateInfoSignal).map({ (color, string) -> NSAttributedString in
             return NSAttributedString(string: string, attributes: [NSAttributedStringKey.foregroundColor: color])
         })
         
@@ -58,7 +58,7 @@ class HXBAccountMainViewModel: HXBViewModel {
         var group2: [HXBAccountMainCellViewModel]!
         var group3: [HXBAccountMainCellViewModel]!
         
-        HXBAccountViewModel.shared.bankOpenSignal.combineLatest(with: HXBAccountViewModel.shared.advisorSignal).startWithValues { [weak self] (hasBank, hasAdvisor) in
+        HXBAccountViewModel.shared.depositoryOpenSignal.combineLatest(with: HXBAccountViewModel.shared.advisorSignal).startWithValues { [weak self] (hasBank, hasAdvisor) in
             group2 = hasBank ? [depositoryAccountViewModel, bankViewModel] : [depositoryAccountViewModel]
             group3 = hasAdvisor
                 ? [riskViewModel, accountSecureViewModel, advisorViewModel, aboutViewModel]

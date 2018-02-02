@@ -44,7 +44,7 @@ class HXBCaptchaValidateView: UIView {
 // MARK: - UI
 extension HXBCaptchaValidateView {
     fileprivate func setUI() {
-        backgroundColor = UIColor.init(white: 0.5, alpha: 0.8)
+        backgroundColor = hxb.color.alphaBackgroundColor
 
         containerView.layer.cornerRadius = 5
         containerView.layer.masksToBounds = true
