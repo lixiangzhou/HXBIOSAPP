@@ -11,6 +11,4 @@ import HandyJSON
 
 class HXBModel: NSObject, HandyJSON {
     override required init() { }
-    
-    
 }

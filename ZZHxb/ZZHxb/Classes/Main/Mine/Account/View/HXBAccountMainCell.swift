@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class HXBAccountMainCell: HXBSettingTableViewCell {
     
@@ -32,8 +33,17 @@ class HXBAccountMainCell: HXBSettingTableViewCell {
                 return
             }
             
-            leftLabel.text = viewModel.title
+            if let signal = viewModel.titleSignal {
+                leftLabel.reactive.attributedText <~ signal
+                rightIconView.isHidden = true
+            } else {
+                leftLabel.text = viewModel.title
+                rightIconView.isHidden = false
+            }
             
+            if let signal = viewModel.rightAccessoryStringSignal {
+                rightLabel.reactive.attributedText <~ signal
+            }
         }
     }
     

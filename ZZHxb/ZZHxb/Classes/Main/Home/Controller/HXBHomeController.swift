@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ReactiveSwift
+import Result
+
 
 class HXBHomeController: HXBViewController {
 
@@ -21,7 +24,6 @@ class HXBHomeController: HXBViewController {
     // MARK: - Public Property
     
     // MARK: - Private Property
-    
 }
 
 // MARK: - UI
@@ -32,9 +34,10 @@ extension HXBHomeController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
-        HXBUserViewModel.shared.updateUserInfo { (_) in
-            
-        }
+        
+        HXBAccountModel.shared.userInfo.zz_printPeopertyValues()
+        
+        HXBAccountViewModel.shared.updateUserInfo()
     }
 }
 

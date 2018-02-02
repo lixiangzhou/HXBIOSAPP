@@ -1,5 +1,5 @@
 //
-//  HXBUser.swift
+//  HXBAccount.swift
 //  ZZHxb
 //
 //  Created by lxz on 2018/2/1.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class HXBUserModel: HXBModel {
-    static let shared = HXBUserModel()
+class HXBAccountModel: HXBModel {
+    static let shared = HXBAccountModel()
+    
     var userAssets = HXBUserAssetsModel()
     var userInfo = HXBUserInfoModel()
 }
-
 class HXBUserInfoModel: HXBModel {
     @objc dynamic var unread: String = ""
     
@@ -75,6 +75,15 @@ class HXBUserInfoModel: HXBModel {
     
     /// 登录时间
     @objc dynamic var loginTime: String = ""
+    
+    /// 银行卡号
+    @objc dynamic var idNo: String = ""
+    
+    /// 性别：‘0’：男，‘1’：女
+    @objc dynamic var gender: String = ""
+    
+    /// 真实姓名
+    @objc dynamic var realName: String = ""
     
     /// 风险评测类型
     @objc dynamic var riskType = ""

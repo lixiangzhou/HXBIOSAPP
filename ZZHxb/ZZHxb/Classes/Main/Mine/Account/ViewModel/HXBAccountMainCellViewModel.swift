@@ -13,16 +13,13 @@ import Result
 
 class HXBAccountMainCellViewModel: HXBViewModel {
     var title: String?
-    var rightAccessoryString: String?
-    var imageName: String?
+//    var rightAccessoryString: String?
+//    var image: UIImage?
     
-    var rightProducer: SignalProducer<NSAttributedString, NoError>?
+    var titleSignal: SignalProducer<NSAttributedString, NoError>?
+    var rightAccessoryStringSignal: SignalProducer<NSAttributedString, NoError>?
     
-    init(title: String?, rightAccessoryString: String?, imageName: String?) {
+    init(title: String?) {
         self.title = title
-        self.rightAccessoryString = rightAccessoryString
-        self.imageName = imageName
-        
-        
     }
 }
