@@ -74,6 +74,7 @@ extension HXBDepositoryOpenOrModifyController {
         let btn = UIButton(title: "查看银行限额", font: hxb.font.transaction, titleColor: hxb.color.linkActivity, target: self, action: #selector(queryLimit))
         btn.frame.size = btn.currentTitle!.zz_size(withLimitSize: CGSize(width: 1000, height: 1000), fontSize: 14)
         bankView = HXBInputFieldView.rightClickViewFieldView(leftImage: UIImage("input_bank"), placeholder: "银行卡号", clickView: btn, leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
+        bankView.bankNoMode = true
 
 
         bottomBtn = UIButton(title: "开通恒丰银行存管账户", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: UIColor(red: 227, green: 191, blue: 128), target: self, action: #selector(createDepositoryAccount))
@@ -87,7 +88,7 @@ extension HXBDepositoryOpenOrModifyController {
         
         idcardView.inputLengthLimit = 18
         pwdView.inputLengthLimit = 6
-        bankView.inputLengthLimit = 20
+        bankView.inputLengthLimit = 24
         phoneView.inputLengthLimit = 11
         
         pwdView.rightView.isHighlighted = true

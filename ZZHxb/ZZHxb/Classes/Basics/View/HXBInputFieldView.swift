@@ -192,6 +192,8 @@ class HXBInputFieldView: UIView {
     
     var inputLengthLimit = Int.max
     
+    var bankNoMode = false
+    
     var inputViewChangeClosure:((UITextField) -> Void)?
     
     // MARK: - Private Property
@@ -276,20 +278,102 @@ extension HXBInputFieldView {
 
 // MARK: - Helper
 extension HXBInputFieldView {
-    
+    func formatToBankString(_ text: String) -> String {
+        var string = text.replacingOccurrences(of: " ", with: "")
+        if string.count > 4 {
+            string.insert(" ", at: string.index(string.startIndex, offsetBy: 4))
+        }
+        
+        if string.count > 9 {
+            string.insert(" ", at: string.index(string.startIndex, offsetBy: 9))
+        }
+        
+        if string.count > 14 {
+            string.insert(" ", at: string.index(string.startIndex, offsetBy: 14))
+        }
+        
+        if string.count > 19 {
+            string.insert(" ", at: string.index(string.startIndex, offsetBy: 19))
+        }
+        
+        if string.count > 24 {
+            string.insert(" ", at: string.index(string.startIndex, offsetBy: 24))
+        }
+        
+        return string
+    }
 }
 
 // MARK: - Delegate
 extension HXBInputFieldView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let emptyCharacter = Character(" ")
         
+        func resetPositin(offset: Int) {
+            let newPosition = textField.position(from: textField.beginningOfDocument, offset: offset)!
+            textField.selectedTextRange = textField.textRange(from: newPosition, to: newPosition)
+        }
+        
+        var text = textField.text ?? ""
         if range.length > 0 && string.isEmpty { // 删除
-            
-        } else {    // 输入文字
-            var text = textField.text ?? ""
-            text += string
-            if text.count > inputLengthLimit {
+            if range.length == 1 {  // 删除一位
+                let toDeleteCharacter = text[text.index(text.startIndex, offsetBy: range.location)]
+                // 最后一位是空格则多删除一位
+                if range.location == text.count - 1 {
+                    if toDeleteCharacter == emptyCharacter {
+                        textField.deleteBackward()
+                    }
+                    return true
+                } else {
+                    var offset = range.location
+                    if toDeleteCharacter == emptyCharacter {
+                        textField.deleteBackward()
+                        offset -= 1
+                    }
+                    textField.deleteBackward()
+                    textField.text = formatToBankString(textField.text!)
+                    resetPositin(offset: offset)
+                    return false
+                }
+            } else if range.length > 1 {
+                textField.deleteBackward()
+                textField.text = formatToBankString(textField.text!)
+                
+                var offset = range.location
+                if range.location == 4 || range.location == 9 || range.location == 14 || range.location == 19 || range.location == 24 {
+                    offset += 1
+                }
+                
+                if NSMaxRange(range) != text.count {    // 光标不是在最后
+                    resetPositin(offset: offset)
+                }
                 return false
+            } else {
+                return true
+            }
+        } else if string.count > 0 {    // 输入文字
+            if bankNoMode {
+                if (text + string).count > inputLengthLimit {   // 超过限制
+                    return false
+                }
+                if string.trimmingCharacters(in: CharacterSet.decimalDigits).count > 0 {    // 不是数字
+                    return false
+                }
+                
+                textField.insertText(string)
+                textField.text = formatToBankString(textField.text!)
+                
+                var offset = range.location + string.count
+                if range.location == 4 || range.location == 9 || range.location == 14 || range.location == 19 || range.location == 24 {
+                    offset += 1
+                }
+                resetPositin(offset: offset)
+                return false
+            } else {
+                text += string
+                if text.count > inputLengthLimit {
+                    return false
+                }
             }
         }
         

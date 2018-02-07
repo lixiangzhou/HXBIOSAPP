@@ -383,9 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				8D3E622F1FDF7FC8008C8E67 /* Controller */,
-				8D3E622D1FDF7FC7008C8E67 /* Model */,
-				8D3E622E1FDF7FC7008C8E67 /* View */,
-				8D3E62301FDF7FC8008C8E67 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -407,9 +404,6 @@
 			isa = PBXGroup;
 			children = (
 				8D3E62341FDF7FF4008C8E67 /* Controller */,
-				8D3E62311FDF7FF3008C8E67 /* Model */,
-				8D3E62331FDF7FF4008C8E67 /* View */,
-				8D3E62321FDF7FF3008C8E67 /* ViewModel */,
 			);
 			path = Invest;
 			sourceTree = "<group>";
@@ -448,54 +442,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		8D3E622D1FDF7FC7008C8E67 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8D3E622E1FDF7FC7008C8E67 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8D3E622F1FDF7FC8008C8E67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				8D3E623A1FDF804C008C8E67 /* HXBHomeController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		8D3E62301FDF7FC8008C8E67 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		8D3E62311FDF7FF3008C8E67 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8D3E62321FDF7FF3008C8E67 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		8D3E62331FDF7FF4008C8E67 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8D3E62341FDF7FF4008C8E67 /* Controller */ = {
