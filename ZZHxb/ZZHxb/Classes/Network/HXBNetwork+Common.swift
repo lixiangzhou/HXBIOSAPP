@@ -9,7 +9,8 @@
 import Foundation
 
 extension HXBNetwork {
-    static func sendVerifyCode(params: HXBRequestParam?, completionClosure: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.verifyCode, params: params, method: .post, completionClosure: completionClosure)
+    /// 发送验证码
+    static func sendVerifyCode(params: HXBRequestParam?, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.verifyCode, params: params, method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completionClosure)
     }
 }

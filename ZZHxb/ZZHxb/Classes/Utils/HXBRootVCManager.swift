@@ -22,6 +22,6 @@ class HXBRootVCManager {
     }
     
     var rootVC: UIViewController {
-        return UIApplication.shared.keyWindow?.rootViewController as! UIViewController
+        return UIApplication.shared.keyWindow!.rootViewController!
     }
 }

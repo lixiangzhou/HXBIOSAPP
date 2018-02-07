@@ -1,10 +1,9 @@
 PODS:
   - Alamofire (4.5.1)
   - HandyJSON (4.0.0-beta.1)
+  - IQKeyboardManagerSwift (5.0.7)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.3.1)
-  - Macaw (0.9.0):
-    - SWXMLHash
   - Neon (0.4.0)
   - ReactiveCocoa (7.0.0):
     - ReactiveSwift (~> 3.0)
@@ -14,14 +13,13 @@ PODS:
   - SnapKit (4.0.0)
   - SwiftyBeaver (1.4.3)
   - SwiftyJSON (4.0.0)
-  - SWXMLHash (4.2.5)
 
 DEPENDENCIES:
   - Alamofire
   - HandyJSON (~> 4.0.0-beta.1)
+  - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher
-  - Macaw
   - Neon
   - ReactiveCocoa
   - SnapKit
@@ -31,9 +29,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
+  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
-  Macaw: 6337ed621a73df10522eaab17f45c1ae0b753dc0
   Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
   ReactiveCocoa: 06a54796a36dfc346f082498d08e7a8fb50c4e2f
   ReactiveSwift: d9fe0db33c1aaabecb092e8de83cf52875c0de6f
@@ -41,8 +39,7 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyBeaver: e10b1668e0512229c36c34769b97eed3dfae2ca3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  SWXMLHash: eb16013c6f654853980822e0a778c9d66e017dde
 
-PODFILE CHECKSUM: b91e140167e0f0291aab796af1216c78aa26ec9e
+PODFILE CHECKSUM: 1ada7f861ed50b629c509236367d1f042edc534c
 
 COCOAPODS: 1.4.0.rc.1

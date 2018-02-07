@@ -26,17 +26,25 @@ extension hxb.api {
     static let check_captcha = "/checkCaptcha"
     /// 校验手机号 【/checkMobile】
     static let check_mobile = "/checkMobile"
-    /// 用户注册接口
+    /// 用户注册接口 【/user/signup】
     static let signup = "/user/signup"
-    /// 登录
+    /// 登录 【/user/login】
     static let signin = "/user/login"
-    /// 登出
+    /// 登出 【/logout】
     static let signout = "/logout"
-    /// 获取用户信息
+    /// 获取用户信息 【/user/info】
     static let userinfo = "/user/info"
 }
 
+// MARK: - 账户
 extension hxb.api {
     /// 账户内数据总览 【/account】
     static let account = "/account"
+    
+}
+
+extension hxb.api {
+    
+    /// 银行卡列表 【/banklist】
+    static let banklist = "/banklist"
 }

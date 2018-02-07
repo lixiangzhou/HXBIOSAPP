@@ -12,6 +12,11 @@
 		8D352B6F1FF5DD46003E5507 /* HXBNotificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */; };
 		8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */; };
 		8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */; };
+		8D3BA8E120286FEC006BF5F3 /* ActiveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DA20286FEC006BF5F3 /* ActiveBuilder.swift */; };
+		8D3BA8E220286FEC006BF5F3 /* ActiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DC20286FEC006BF5F3 /* ActiveLabel.swift */; };
+		8D3BA8E320286FEC006BF5F3 /* ActiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DD20286FEC006BF5F3 /* ActiveType.swift */; };
+		8D3BA8E520286FEC006BF5F3 /* RegexParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DF20286FEC006BF5F3 /* RegexParser.swift */; };
+		8D3BA8E620286FEC006BF5F3 /* StringTrimExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8E020286FEC006BF5F3 /* StringTrimExtension.swift */; };
 		8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */; };
 		8D3E62011FDF79DE008C8E67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E62001FDF79DE008C8E67 /* Assets.xcassets */; };
 		8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E621F1FDF7E62008C8E67 /* HXBAPI.swift */; };
@@ -29,7 +34,6 @@
 		8D3E62531FE0F4DF008C8E67 /* tabbar_mine_selected.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */; };
 		8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62561FE119AD008C8E67 /* HXBColorFontConfig.swift */; };
 		8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */; };
-		8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */; };
 		8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */; };
 		8D3EFE34200CC14500A54B1D /* HXBUserAssetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */; };
 		8D3EFE3A200DF17300A54B1D /* NumberFormatter+HXB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */; };
@@ -39,6 +43,10 @@
 		8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */; };
 		8D3EFE5B200F262600A54B1D /* HXBAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */; };
 		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
+		8D7187A6202986C50017E539 /* HXBBankListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187A5202986C50017E539 /* HXBBankListController.swift */; };
+		8D7187A8202987810017E539 /* HXBBankListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187A7202987810017E539 /* HXBBankListViewModel.swift */; };
+		8D7187AA20299E570017E539 /* HXBBankModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187A920299E570017E539 /* HXBBankModel.swift */; };
+		8D7187AC2029A4680017E539 /* HXBBankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187AB2029A4680017E539 /* HXBBankCell.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
 		8DA8FCDD2021C8B100C018F4 /* ZZAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */; };
@@ -122,6 +130,11 @@
 		8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNotificationConfig.swift; sourceTree = "<group>"; };
 		8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBStartSignUpController.swift; sourceTree = "<group>"; };
 		8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpViewModel.swift; sourceTree = "<group>"; };
+		8D3BA8DA20286FEC006BF5F3 /* ActiveBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBuilder.swift; sourceTree = "<group>"; };
+		8D3BA8DC20286FEC006BF5F3 /* ActiveLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveLabel.swift; sourceTree = "<group>"; };
+		8D3BA8DD20286FEC006BF5F3 /* ActiveType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveType.swift; sourceTree = "<group>"; };
+		8D3BA8DF20286FEC006BF5F3 /* RegexParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexParser.swift; sourceTree = "<group>"; };
+		8D3BA8E020286FEC006BF5F3 /* StringTrimExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTrimExtension.swift; sourceTree = "<group>"; };
 		8D3E61F61FDF79DE008C8E67 /* ZZHxb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZHxb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3E61F91FDF79DE008C8E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3E62001FDF79DE008C8E67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,7 +154,6 @@
 		8D3E624D1FE0F4DF008C8E67 /* tabbar_mine_selected.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tabbar_mine_selected.svg; sourceTree = "<group>"; };
 		8D3E62561FE119AD008C8E67 /* HXBColorFontConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBColorFontConfig.swift; sourceTree = "<group>"; };
 		8D3E62581FE123B6008C8E67 /* HXBNetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetworkConfig.swift; sourceTree = "<group>"; };
-		8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSVGUtil.swift; sourceTree = "<group>"; };
 		8D3E625C1FE12433008C8E67 /* HXBOtherConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBOtherConfig.swift; sourceTree = "<group>"; };
 		8D3EFE33200CC14500A54B1D /* HXBUserAssetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBUserAssetsModel.swift; sourceTree = "<group>"; };
 		8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+HXB.swift"; sourceTree = "<group>"; };
@@ -151,6 +163,10 @@
 		8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCellViewModel.swift; sourceTree = "<group>"; };
 		8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAlertController.swift; sourceTree = "<group>"; };
 		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
+		8D7187A5202986C50017E539 /* HXBBankListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankListController.swift; sourceTree = "<group>"; };
+		8D7187A7202987810017E539 /* HXBBankListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankListViewModel.swift; sourceTree = "<group>"; };
+		8D7187A920299E570017E539 /* HXBBankModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankModel.swift; sourceTree = "<group>"; };
+		8D7187AB2029A4680017E539 /* HXBBankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankCell.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
 		8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAudioTool.swift; sourceTree = "<group>"; };
@@ -247,6 +263,18 @@
 				46746D003AF7626FB602C0DA /* Pods-ZZHxb.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8D3BA8D920286FEC006BF5F3 /* ActiveLabel */ = {
+			isa = PBXGroup;
+			children = (
+				8D3BA8DA20286FEC006BF5F3 /* ActiveBuilder.swift */,
+				8D3BA8DC20286FEC006BF5F3 /* ActiveLabel.swift */,
+				8D3BA8DD20286FEC006BF5F3 /* ActiveType.swift */,
+				8D3BA8DF20286FEC006BF5F3 /* RegexParser.swift */,
+				8D3BA8E020286FEC006BF5F3 /* StringTrimExtension.swift */,
+			);
+			path = ActiveLabel;
 			sourceTree = "<group>";
 		};
 		8D3E61ED1FDF79DE008C8E67 = {
@@ -483,7 +511,6 @@
 			children = (
 				8DE914281FE76E2000FAEE68 /* HXBKeyChain.swift */,
 				8D3E623D1FDFB873008C8E67 /* HXBRootVCManager.swift */,
-				8D3E625A1FE123EF008C8E67 /* HXBSVGUtil.swift */,
 				8DE914111FE2478A00FAEE68 /* UIView+HXB.swift */,
 				8DE914151FE2527B00FAEE68 /* UILabel+HXB.swift */,
 				8DE914191FE3BECB00FAEE68 /* UIImage+HXB.swift */,
@@ -524,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */,
+				8D7187AB2029A4680017E539 /* HXBBankCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,6 +562,7 @@
 				8D3EFE40200DFFF300A54B1D /* HXBAccountMainController.swift */,
 				8DEDB13420245A74005DA05C /* HXBDepositoryCheckViewController.swift */,
 				8DEDB136202474A7005DA05C /* HXBDepositoryOpenOrModifyController.swift */,
+				8D7187A5202986C50017E539 /* HXBBankListController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -545,6 +574,7 @@
 				8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */,
 				8DA8FD1120231A6000C018F4 /* HXBAccountViewModel.swift */,
 				8DEDB13820247536005DA05C /* HXBHXBDepositoryOpenOrModifyViewModel.swift */,
+				8D7187A7202987810017E539 /* HXBBankListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -552,6 +582,7 @@
 		8DA8FCB22021C85000C018F4 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				8D3BA8D920286FEC006BF5F3 /* ActiveLabel */,
 				8DA8FCB32021C89D00C018F4 /* ZZLib */,
 			);
 			path = Vender;
@@ -654,6 +685,7 @@
 			isa = PBXGroup;
 			children = (
 				8DA8FD0F20231A1D00C018F4 /* HXBAccount.swift */,
+				8D7187A920299E570017E539 /* HXBBankModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -876,14 +908,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZZHxb/Pods-ZZHxb-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/Macaw/Macaw.framework",
 				"${BUILT_PRODUCTS_DIR}/Neon/Neon.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -892,14 +923,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Macaw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Neon.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -932,7 +962,6 @@
 				8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */,
 				8DA8FCE52021C8B100C018F4 /* ZZRefreshHeader.swift in Sources */,
 				8DA8FD1220231A6000C018F4 /* HXBAccountViewModel.swift in Sources */,
-				8D3E625B1FE123EF008C8E67 /* HXBSVGUtil.swift in Sources */,
 				8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */,
 				8DA8FCF12021C8B100C018F4 /* String+ZZExtension.swift in Sources */,
 				8DEDB13520245A74005DA05C /* HXBDepositoryCheckViewController.swift in Sources */,
@@ -960,7 +989,9 @@
 				8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */,
 				8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */,
 				8DA8FCF52021C8B100C018F4 /* UIColor+ZZExtension.swift in Sources */,
+				8D3BA8E520286FEC006BF5F3 /* RegexParser.swift in Sources */,
 				8D3E62571FE119AD008C8E67 /* HXBColorFontConfig.swift in Sources */,
+				8D7187A6202986C50017E539 /* HXBBankListController.swift in Sources */,
 				8DEDB13920247536005DA05C /* HXBHXBDepositoryOpenOrModifyViewModel.swift in Sources */,
 				8DA8FD032021C95100C018F4 /* HXBShakeConfigUrlView.swift in Sources */,
 				8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */,
@@ -974,6 +1005,8 @@
 				8DA8FCF62021C8B100C018F4 /* UIDevice+ZZExtension.swift in Sources */,
 				8DA8FCE42021C8B100C018F4 /* ZZRefreshFooter.swift in Sources */,
 				8DCC1DB31FEA087700FEA8EF /* HXBNavigationController.swift in Sources */,
+				8D7187A8202987810017E539 /* HXBBankListViewModel.swift in Sources */,
+				8D7187AC2029A4680017E539 /* HXBBankCell.swift in Sources */,
 				8DA8FCF92021C8B100C018F4 /* UIImageView+ZZExtension.swift in Sources */,
 				8DCC1DB41FEA087700FEA8EF /* HXBTabBarController.swift in Sources */,
 				8DA8FCE32021C8B100C018F4 /* ZZRefresh.swift in Sources */,
@@ -987,11 +1020,14 @@
 				8DA8FCDD2021C8B100C018F4 /* ZZAudioTool.swift in Sources */,
 				8DA8FCFC2021C8B100C018F4 /* UIScrollView+ZZExtension.swift in Sources */,
 				8D3E62391FDF8038008C8E67 /* HXBMineController.swift in Sources */,
+				8D3BA8E320286FEC006BF5F3 /* ActiveType.swift in Sources */,
 				8D3EFE3A200DF17300A54B1D /* NumberFormatter+HXB.swift in Sources */,
 				8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */,
 				8DA8FCE02021C8B100C018F4 /* ZZCycleView.swift in Sources */,
 				8DCC1DA71FEA06B200FEA8EF /* HXBNavWaveView.swift in Sources */,
+				8D3BA8E120286FEC006BF5F3 /* ActiveBuilder.swift in Sources */,
 				8DA8FCE62021C8B100C018F4 /* ZZRefreshView.swift in Sources */,
+				8D3BA8E620286FEC006BF5F3 /* StringTrimExtension.swift in Sources */,
 				8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */,
 				8DA8FCEC2021C8B100C018F4 /* DateFormatter+ZZExtension.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
@@ -1011,6 +1047,8 @@
 				8DA8FD1020231A1D00C018F4 /* HXBAccount.swift in Sources */,
 				8DCC1DBB1FEA08FF00FEA8EF /* HXBInputFieldView.swift in Sources */,
 				8D3EFE5B200F262600A54B1D /* HXBAlertController.swift in Sources */,
+				8D3BA8E220286FEC006BF5F3 /* ActiveLabel.swift in Sources */,
+				8D7187AA20299E570017E539 /* HXBBankModel.swift in Sources */,
 				8DA8FCF02021C8B100C018F4 /* NSObject+ZZExtension.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 				8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */,

@@ -54,12 +54,10 @@ extension HXBAccountMainController {
     @objc fileprivate func signOut() {
         let alertVC = HXBAlertController(title: "提示", messageText: "您确定要退出登录吗？", leftActionName: "取消", rightActionName: "确定")
         alertVC.rightAction = { [weak self] in
-            self?.viewModel.signOut(completion: { (isSuccess, toast) in
+            self?.viewModel.signOut(completion: { isSuccess in
                 if isSuccess {
                     self?.navigationController?.popToRootViewController(animated: false)
                     HXBRootVCManager.shared.tabBarController?.selectedIndex = 0
-                } else {
-                    HXBHUD.show(toast: toast!)
                 }
             })
         }
@@ -107,7 +105,7 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
         
         switch cellViewModel.type {
         case .depositoryAccount:
-            clickBankAccount()
+            clickDepositoryAccount()
         case .bank:
             clickBank()
         case .risk:
@@ -130,14 +128,16 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - Helper
 extension HXBAccountMainController {
-    fileprivate func clickBankAccount() {
+    fileprivate func clickDepositoryAccount() {
         HXBAccountViewModel.shared.updateUserInfoSuccess {
-            if !HXBAccountViewModel.shared.isIdBinding {
-                HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
-                return
-            }
+//            if !HXBAccountViewModel.shared.isIdBinding {
+//                HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
+//                return
+//            }
             if !HXBAccountViewModel.shared.hasDepositoryOpen {
-                HXBDepositoryCheckViewController().presentFrom(controller: self, animated: false).openClosure = {
+                let checkVC = HXBDepositoryCheckViewController()
+                checkVC.presentFrom(controller: self, animated: false).openClosure = { [weak checkVC] in
+                    checkVC?.dismiss(animated: false, completion: nil)
                     HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
                 }
             } else if HXBAccountViewModel.shared.hasBindCard {

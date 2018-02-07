@@ -68,11 +68,11 @@ class HXBAccountMainViewModel: HXBViewModel {
     }
     
     /// 登出账户
-    ///
-    /// - Parameter completion: 完成回调 Bool 是否完成, String toast
-    func signOut(completion: @escaping (Bool, String?) -> Void) {
-        HXBNetwork.signout { (isSuccess, requestApi) in
-            self.requestResult(isSuccess, requestApi, errorToast: "退出登录失败", completion: completion)
+    func signOut(completion: @escaping HXBCommonCompletion) {
+        HXBNetwork.signout(configProgressAndToast: { requestApi in
+            requestApi.hudDelegate = self
+        }) { (isSuccess, requestApi) in
+            self.requestResult(isSuccess, requestApi, completion: completion)
         }
     }
 }

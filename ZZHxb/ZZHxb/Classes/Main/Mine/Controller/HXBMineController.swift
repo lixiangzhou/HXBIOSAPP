@@ -16,6 +16,7 @@ class HXBMineController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = HXBMineViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
 
@@ -23,7 +24,7 @@ class HXBMineController: HXBViewController {
     
     // MARK: - Private Property
     fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
-    fileprivate var viewModel = HXBMineViewModel()
+    fileprivate var viewModel: HXBMineViewModel!
 }
 
 // MARK: - UI

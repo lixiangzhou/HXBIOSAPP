@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 准备注册
 class HXBStartSignUpController: HXBViewController {
     
     // MARK: - Life Cycle
@@ -15,6 +16,7 @@ class HXBStartSignUpController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = HXBSignUpViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
     
@@ -22,7 +24,7 @@ class HXBStartSignUpController: HXBViewController {
     
     // MARK: - Private Property
     fileprivate var phoneField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), text: nil, placeholder: "请输入常用的手机号")
-    fileprivate var viewModel = HXBSignUpViewModel()
+    fileprivate var viewModel: HXBSignUpViewModel!
 }
 
 // MARK: - UI
@@ -41,13 +43,7 @@ extension HXBStartSignUpController {
         phoneField.inputViewChangeClosure = { field in
             let text = field.text ?? ""
             if text.count == hxb.size.phoneLength {
-                self.viewModel.checkMobile(text) { (isSuccess, toast) in
-                    if isSuccess == false {
-                        if let toast = toast {
-                            HXBHUD.show(toast: toast, in: self.view)
-                        }
-                    }
-                }
+                self.viewModel.checkMobile(text)
             }
         }
         view.addSubview(phoneField)
@@ -86,15 +82,11 @@ extension HXBStartSignUpController {
     @objc fileprivate func toSignUp() {
         HXBCaptchaValidateView.showFrom(view: view) { captcha in
             let phone = self.phoneField.text ?? ""
-            self.viewModel.getSmsCode(phone: phone, captcha: captcha ?? "", completion: { (isSuccess, toast) in
+            self.viewModel.getSmsCode(phone: phone, captcha: captcha ?? "", completion: { isSuccess in
                 if isSuccess {
                     let signUpVC = HXBSignUpController()
                     signUpVC.phoneNo = phone
                     signUpVC.pushFrom(controller: self, animated: true)
-                } else {
-                    if let toast = toast {
-                        HXBHUD.show(toast: toast, in: self.view)
-                    }
                 }
             })
         }

@@ -138,7 +138,7 @@ class HXBInputFieldView: UIView {
         }
     }
     
-    var leftPadding = 0 {
+    var leftPadding: CGFloat = 0 {
         didSet {
             if leftView.superview != nil {
                 leftView.snp.updateConstraints({ (maker) in
@@ -169,7 +169,7 @@ class HXBInputFieldView: UIView {
         }
     }
     
-    var rightPadding = 0 {
+    var rightPadding: CGFloat = 0 {
         didSet {
             if rightView.superview != nil {
                 rightView.snp.updateConstraints({ (maker) in
@@ -307,14 +307,13 @@ extension HXBInputFieldView {
 
 // MARK: - Public
 extension HXBInputFieldView {
-    static func eyeFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?) -> HXBInputFieldView {
-        let fieldView = HXBInputFieldView.commonFieldView(leftImage: leftImage, text: text, placeholder: placeholder)
+    static func eyeFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> HXBInputFieldView {
+        let fieldView = HXBInputFieldView.commonFieldView(leftImage: leftImage, text: text, placeholder: placeholder, leftSpacing: leftSpacing, rightSpacing: rightSpacing, bottomLineColor: bottomLineColor)
         
         fieldView.hasRightView = true
         fieldView.rightView.isUserInteractionEnabled = true
         fieldView.rightImage = UIImage("input_eye_open")
         fieldView.rightSelectedImage = UIImage("input_eye_closed")
-        fieldView.rightPadding = 0
         fieldView.right2InputViewPadding = 10
         fieldView.isSecureTextEntry = true
         
@@ -323,37 +322,41 @@ extension HXBInputFieldView {
         return fieldView
     }
     
-    static func commonFieldView(leftImage: UIImage?, text: String? = nil, font: UIFont = hxb.font.mainContent, placeholder: String?) -> HXBInputFieldView {
+    static func commonFieldView(leftImage: UIImage?, text: String? = nil, font: UIFont = hxb.font.mainContent, placeholder: String?, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> HXBInputFieldView {
         let fieldView = HXBInputFieldView()
+        fieldView.backgroundColor = hxb.color.white
         fieldView.leftImage = leftImage
         fieldView.text = text
         fieldView.textFont = font
         fieldView.attributedPlaceholder = NSAttributedString(string: placeholder ?? "", attributes: [NSAttributedStringKey.foregroundColor: hxb.color.light])
         fieldView.hasRightView = false
-        fieldView.bottomLineColor = hxb.color.mostImport
+        fieldView.bottomLineColor = bottomLineColor
+        fieldView.leftPadding = leftSpacing
+        fieldView.rightPadding = -rightSpacing
         
         return fieldView
     }
     
-    static func smsOrVoiceValidFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?) -> (HXBInputFieldView, UIButton) {
+    static func smsOrVoiceValidFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> (HXBInputFieldView, UIButton) {
         let voiceBtn = UIButton(title: "语音验证码", font: hxb.font.transaction, titleColor: hxb.color.mostImport)
         voiceBtn.layer.borderColor = hxb.color.mostImport.cgColor
         voiceBtn.layer.borderWidth = hxb.size.sepLineHeight
         voiceBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
         voiceBtn.frame = CGRect(origin: .zero, size: CGSize(width: 80, height: 30))
         
-        let fieldView = HXBInputFieldView.commonFieldView(leftImage: leftImage, text: text, placeholder: placeholder)
+        let fieldView = HXBInputFieldView.rightClickViewFieldView(leftImage: leftImage, placeholder: placeholder, clickView: voiceBtn, leftSpacing: leftSpacing, rightSpacing: rightSpacing, bottomLineColor: bottomLineColor)
+        return (fieldView, voiceBtn)
+    }
+    
+    static func rightClickViewFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?, clickView: UIButton, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> HXBInputFieldView {
+        let fieldView = HXBInputFieldView.commonFieldView(leftImage: leftImage, text: text, placeholder: placeholder, leftSpacing: leftSpacing, rightSpacing: rightSpacing, bottomLineColor: bottomLineColor)
         
         fieldView.hasRightView = true
         fieldView.rightView.isUserInteractionEnabled = true
-        fieldView.rightViewSize = voiceBtn.zz_size
-        fieldView.rightPadding = 0
+        fieldView.rightViewSize = clickView.zz_size
         fieldView.right2InputViewPadding = 10
         
-        fieldView.rightView .addSubview(voiceBtn)
-        
-        fieldView.rightView.addGestureRecognizer(UITapGestureRecognizer(target: fieldView, action: #selector(tapEye)))
-        
-        return (fieldView, voiceBtn)
+        fieldView.rightView.addSubview(clickView)
+        return fieldView
     }
 }

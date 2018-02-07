@@ -14,6 +14,13 @@ class HXBViewModel: NSObject {
     weak var progressContainerView: UIView?
     /// 设置了此属性，并且设置了 RequestApi 的 hudDelegate，并且 HXBHudContainerType != .none，才有toast
     weak var toastContainerView: UIView?
+    
+    convenience init(progressContainerView: UIView? = nil, toastContainerView: UIView? = nil) {
+        self.init()
+        
+        self.progressContainerView = progressContainerView
+        self.toastContainerView = toastContainerView
+    }
 }
 
 extension HXBViewModel: HXBNetworkHUDDelegate {
@@ -67,16 +74,25 @@ extension HXBViewModel {
 }
 
 extension HXBViewModel {
-    func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String? = nil, completion: @escaping (Bool, String?) -> Void) {
+    func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String? = hxb.string.getdataErrorString, showToast: Bool = true, completion: @escaping (Bool) -> Void) {
+        
         if isSuccess {
             let json = JSON(requestApi.responseObject!)
             if json.isSuccess {
-                completion(true, nil)
+                completion(true)
             } else {
-                completion(false, json.message)
+                show(toast: json.message, canShow: showToast, requestApi: requestApi)
+                completion(false)
             }
         } else {
-            completion(false, errorToast)
+            show(toast: errorToast, canShow: showToast, requestApi: requestApi)
+            completion(false)
+        }
+    }
+    
+    func show(toast: String?, canShow: Bool, requestApi: HXBRequestApi) {
+        if canShow && toast != nil {
+            requestApi.show(toast: toast!)
         }
     }
 }

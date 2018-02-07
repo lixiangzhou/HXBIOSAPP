@@ -8,5 +8,8 @@
 
 import Foundation
 
+/// 完成回调 Bool 是否完成
+typealias HXBCommonCompletion = (Bool) -> Void
+
 struct HXBNetwork {
 }

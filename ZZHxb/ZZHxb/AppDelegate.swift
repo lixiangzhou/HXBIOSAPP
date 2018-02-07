@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyBeaver
+import IQKeyboardManagerSwift
+
 let log = SwiftyBeaver.self
 
 @UIApplicationMain
@@ -19,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let console = ConsoleDestination()
         console.format = "$DHH:mm:ss.SSS$d $C$L$c $N.$F$l: $M"
-        
         log.addDestination(console)
+        
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 30
         
         window = UIWindow()
         

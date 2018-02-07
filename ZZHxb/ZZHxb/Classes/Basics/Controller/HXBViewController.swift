@@ -21,7 +21,14 @@ class HXBViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.setBackgroundImage(navBgImage, for: UIBarMetrics.default)
         navigationController?.setNavigationBarHidden(hideNavigationBar, animated: animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.navigationBar.setBackgroundImage(navBgImage, for: UIBarMetrics.default)
     }
   
     override func viewDidDisappear(_ animated: Bool) {
@@ -33,6 +40,10 @@ class HXBViewController: UIViewController {
     // MARK: - Public Property
     
     let baseViewModel = HXBViewModel()
+    
+    var navBgImage = UIImage.zz_gradientImage(fromColor: hxb.color.importantFill(hex: "fe654d"),
+                                                  toColor: hxb.color.importantFill(hex: "ff3d4f"),
+                                                  size: CGSize(width: UIScreen.zz_width, height: hxb.size.navigationHeight))
     
     /// 单独的隐藏导航栏
     var hideNavigationBar = false
@@ -57,10 +68,7 @@ extension HXBViewController {
     fileprivate func setUI() {
         showBack = true
         
-        let navBackImage = UIImage.zz_gradientImage(fromColor: hxb.color.importantFill(hex: "fe654d"),
-                                                    toColor: hxb.color.importantFill(hex: "ff3d4f"),
-                                                    size: CGSize(width: UIScreen.zz_width, height: hxb.size.navigationHeight))
-        navigationController?.navigationBar.setBackgroundImage(navBackImage, for: UIBarMetrics.default)
+        navigationController?.navigationBar.setBackgroundImage(navBgImage, for: UIBarMetrics.default)
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: hxb.font.navTitle,
                                                                    NSAttributedStringKey.foregroundColor: hxb.color.white]

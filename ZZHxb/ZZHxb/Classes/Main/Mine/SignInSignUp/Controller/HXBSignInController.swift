@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 登录
 class HXBSignInController: HXBViewController {
 
     // MARK: - Life Cycle
@@ -15,13 +16,14 @@ class HXBSignInController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel = HXBSignUpViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
-    fileprivate let viewModel = HXBSignUpViewModel()
+    fileprivate var viewModel: HXBSignUpViewModel!
     
     fileprivate let phoneView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), placeholder: "手机号")
     fileprivate let pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码")
@@ -148,7 +150,7 @@ extension HXBSignInController {
             HXBHUD.show(toast: "请输入8-20位数字与字母的组合", in: view)
             return
         }
-        viewModel.signin(mobile: phone, password: pwd, captcha: captcha) { (isSuccess, toast, needCaptcha) in
+        viewModel.signin(mobile: phone, password: pwd, captcha: captcha) { (isSuccess, needCaptcha) in
             if isSuccess {
                 self.dismiss(animated: true, completion: nil)
             } else if needCaptcha {
@@ -157,8 +159,6 @@ extension HXBSignInController {
                     self.captcha = captcha
                     self.signIn()
                 }
-            } else if let toast = toast {
-                HXBHUD.show(toast: toast, in: self.view)
             }
         }
     }

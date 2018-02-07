@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 注册
 class HXBSignUpController: HXBViewController {
 
     // MARK: - Life Cycle
@@ -15,6 +16,7 @@ class HXBSignUpController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = HXBSignUpViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
     // MARK: - Public Property
@@ -23,7 +25,7 @@ class HXBSignUpController: HXBViewController {
     var pwdView: HXBInputFieldView!
     var inviteCodeView: HXBInputFieldView!
     
-    fileprivate var viewModel = HXBSignUpViewModel()
+    fileprivate var viewModel: HXBSignUpViewModel!
 }
 
 // MARK: - UI
@@ -118,12 +120,10 @@ extension HXBSignUpController {
             return
         }
         
-        viewModel.signup(mobile: phoneNo, smsCode: smsCode, password: pwd, inviteCode: inviteCodeView.text) { (isSuccess, toast) in
+        viewModel.signup(mobile: phoneNo, smsCode: smsCode, password: pwd, inviteCode: inviteCodeView.text) { isSuccess in
             if isSuccess {
                 HXBKeychain[hxb.keychain.key.phone] = self.phoneNo
                 self.dismiss(animated: true, completion: nil)
-            } else if let toast = toast {
-                HXBHUD.show(toast: toast, in: self.view)
             }
         }
     }

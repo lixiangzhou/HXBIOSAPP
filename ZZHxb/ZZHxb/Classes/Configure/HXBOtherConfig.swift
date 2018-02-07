@@ -15,5 +15,8 @@ extension hxb {
         
         /// 服务电话 【400-1552-888】
         static let servicePhone = "400-1552-888"
+        
+        /// 当从网络获取数据出错时提示 【网络出错，请检查网络】
+        static let getdataErrorString = "网络出错，请检查网络"
     }
 }

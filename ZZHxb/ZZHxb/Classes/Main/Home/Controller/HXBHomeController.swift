@@ -10,7 +10,6 @@ import UIKit
 import ReactiveSwift
 import Result
 
-
 class HXBHomeController: HXBViewController {
 
     // MARK: - Life Cycle
@@ -35,9 +34,11 @@ extension HXBHomeController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        HXBNavigationController(rootViewController: HXBSignInController()).presentFrom(controller: self, animated: true)
         
-        HXBAccountModel.shared.userInfo.zz_printPeopertyValues()
+        HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
         
-        HXBAccountViewModel.shared.updateUserInfo()
+//        HXBAccountModel.shared.userInfo.zz_printPropertyValues()
+//        
+//        HXBAccountViewModel.shared.updateUserInfo()
     }
 }
 

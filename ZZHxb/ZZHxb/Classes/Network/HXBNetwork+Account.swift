@@ -15,7 +15,13 @@ extension HXBNetwork {
         HXBNetworkManager.request(url: hxb.api.account, completionClosure: completion)
     }
     
+    /// 更新用户信息
     static func updateUserInfo(completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.userinfo, completionClosure: completion)
+    }
+    
+    /// 银行列表
+    static func getBankList(configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.banklist, configProgressAndToast: configProgressAndToast, completionClosure: completion)
     }
 }

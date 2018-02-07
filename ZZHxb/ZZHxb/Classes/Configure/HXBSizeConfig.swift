@@ -66,6 +66,9 @@ extension hxb {
         /// 隐藏导航栏时距离顶部的距离
         //        static let hideNavagionBar2TopHeight: CGFloat = 0//UIScreen.zz_width == 812 ? 44 : 20
         
+        /// tabbar 高度 【49】
+        static let tabbarHeight: CGFloat = 49
+        
         /// 手机号长度 【11】
         static let phoneLength = 11
         

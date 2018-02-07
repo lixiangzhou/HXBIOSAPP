@@ -15,6 +15,7 @@ typealias HXBRequestHeader = HTTPHeaders
 typealias HXBResponseObject = [String: Any]
 typealias HXBHttpMethod = HTTPMethod
 typealias HXBRequestCompletionCallBack = (Bool, HXBRequestApi) -> ()
+
 /// 主要用于控制 HUD
 typealias HXBRequestConfigClosrue = (HXBRequestApi) -> ()
 typealias HXBRequestAdapter = (URLRequest) -> URLRequest?

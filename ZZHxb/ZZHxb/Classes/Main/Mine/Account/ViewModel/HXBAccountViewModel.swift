@@ -103,9 +103,7 @@ class HXBAccountViewModel: HXBViewModel {
 }
 extension HXBAccountViewModel {
     /// 更新用户信息
-    ///
-    /// - Parameter completion: 完成回调 Bool 是否完成
-    func updateUserInfo(completion: @escaping (Bool) -> ()) {
+    func updateUserInfo(completion: @escaping HXBCommonCompletion) {
         HXBNetwork.updateUserInfo { (isSuccess, requestApi) in
             if isSuccess {
                 if let data = requestApi.responseObject?["data"] as? HXBResponseObject,
