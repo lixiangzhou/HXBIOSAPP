@@ -14,7 +14,7 @@ let HXBKeychain = HXBKeychainClass.shared
 extension hxb {
     struct keychain {
         struct key {
-            static let token = "token"
+            static let token = "token" + (HXBKeychain[hxb.keychain.key.phone] ?? "")
             static let phone = "phone"
         }
     }

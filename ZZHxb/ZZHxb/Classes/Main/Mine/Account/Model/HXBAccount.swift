@@ -76,7 +76,7 @@ class HXBUserInfoModel: HXBModel {
     /// 登录时间
     @objc dynamic var loginTime: String = ""
     
-    /// 银行卡号
+    /// 身份证
     @objc dynamic var idNo: String = ""
     
     /// 性别：‘0’：男，‘1’：女

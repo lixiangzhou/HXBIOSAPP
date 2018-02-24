@@ -47,4 +47,8 @@ extension hxb.api {
     
     /// 银行卡列表 【/banklist】
     static let banklist = "/banklist"
+    /// 银行卡校验 【/user/checkCardBin】
+    static let checkcardbin = "/user/checkCardBin"
+    /// 用户获取绑定银行卡信息
+    static let bandcard = "/account/bankcard"
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveSwift
+import Result
 
 class HXBInputFieldView: UIView {
     
@@ -49,7 +51,10 @@ class HXBInputFieldView: UIView {
     
     var text: String? {
         set {
-            textField.text = text
+            textField.text = newValue
+            if bankNoMode {
+                textField.text = formatToBankString(newValue ?? "")
+            }
         }
         get {
             return textField.text
@@ -194,7 +199,17 @@ class HXBInputFieldView: UIView {
     
     var bankNoMode = false
     
+    var editEnabled: Bool {
+        set {
+            textField.isUserInteractionEnabled = newValue
+        }
+        get {
+            return textField.isUserInteractionEnabled
+        }
+    }
+    
     var inputViewChangeClosure:((UITextField) -> Void)?
+    var inputFieldSignal: Signal<String, NoError>!
     
     // MARK: - Private Property
     fileprivate let leftView = UIImageView()
@@ -211,6 +226,9 @@ class HXBInputFieldView: UIView {
 extension HXBInputFieldView {
     fileprivate func setUI() {
         textField.delegate = self
+        
+//        inputFieldSignal = textField.reactive.textValues
+        inputFieldSignal = textField.reactive.controlEvents(.editingChanged).map { $0.text ?? "" }
         textField.reactive.controlEvents(.editingChanged).observeResult { result in
             if let field = result.value {
                 self.inputViewChangeClosure?(field)
@@ -417,6 +435,7 @@ extension HXBInputFieldView {
         fieldView.bottomLineColor = bottomLineColor
         fieldView.leftPadding = leftSpacing
         fieldView.rightPadding = -rightSpacing
+        fieldView.hideBottomLine = false
         
         return fieldView
     }
