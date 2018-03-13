@@ -71,7 +71,7 @@ extension HXBBankCell {
         
         lineView.snp.makeConstraints { maker in
             maker.left.right.bottom.equalToSuperview()
-            maker.height.equalTo(hxb.size.sepLineHeight)
+            maker.height.equalTo(hxb.size.sepLineWidth)
         }
     }
 }

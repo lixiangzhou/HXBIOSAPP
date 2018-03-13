@@ -21,6 +21,7 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "开通存管账户"
         setUI()
         setBindings()
         setData()
@@ -59,7 +60,6 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
 // MARK: - UI
 extension HXBDepositoryOpenOrModifyController {
     fileprivate func setUI() {
-        title = "开通存管账户"
         navBgImage = UIImage("navigation_blue")!
         
         scrollView.frame = view.bounds
@@ -334,9 +334,9 @@ extension HXBDepositoryOpenOrModifyController {
             label.handleCustomTap(for: customType) { string in
                 var url = ""
                 if string == protocolString1 {
-                    url = agrementUrl(hxb.api.authorize)
+                    url = hxb.api.authorize
                 } else if string == protocolString2 {
-                    url = agrementUrl(hxb.api.thirdpard)
+                    url = hxb.api.thirdpard
                 }
                 HXBWebController(urlString: url).pushFrom(controller: self, animated: true)
             }

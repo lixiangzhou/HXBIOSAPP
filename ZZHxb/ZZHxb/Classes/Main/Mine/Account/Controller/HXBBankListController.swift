@@ -16,6 +16,7 @@ class HXBBankListController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "银行卡列表"
         viewModel = HXBBankListViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
         getData()
@@ -34,7 +35,6 @@ class HXBBankListController: HXBViewController {
 // MARK: - UI
 extension HXBBankListController {
     fileprivate func setUI() {
-        title = "银行卡列表"
         navBgImage = UIImage("navigation_blue")!
         showBack = true
         

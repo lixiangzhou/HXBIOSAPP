@@ -16,7 +16,7 @@ class HXBMineHeaderView: UIView {
     // MARK: - Life Cycle
     
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 265 + hxb.size.topAddtionHeight))
+        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.zz_width, height: 309 + hxb.size.topAddtionHeight))
         
         setUI()
     }
@@ -41,6 +41,8 @@ class HXBMineHeaderView: UIView {
     }
     
     var iconClick: (() -> ())?
+    var chargeClick:(() -> ())?
+    var withDrawClick:(() -> ())?
     
     // MARK: - Private Property
     fileprivate var backgroundView = UIImageView(image:
@@ -66,6 +68,8 @@ class HXBMineHeaderView: UIView {
 // MARK: - UI
 extension HXBMineHeaderView {
     fileprivate func setUI() {
+        backgroundColor = hxb.color.white
+        
         addSubview(backgroundView)
         backgroundView.addSubview(iconView)
         backgroundView.addSubview(holdMoneyTitleLabel)
@@ -75,6 +79,26 @@ extension HXBMineHeaderView {
         backgroundView.addSubview(accumulatedMoneyTitleLabel)
         backgroundView.addSubview(accumulatedMoneyLabel)
         backgroundView.addSubview(eyeBtn)
+        
+        let bottomBgView = UIImageView(image: UIImage("mine_top_bottom"))
+        bottomBgView.isUserInteractionEnabled = true
+        addSubview(bottomBgView)
+        
+        let chargeBtn = UIButton(title: "充值", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_charge", target: self, action: #selector(charge))
+        let withDrawBtn = UIButton(title: "体现", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_withdraw", target: self, action: #selector(withDraw))
+        chargeBtn.imageEdgeInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
+        chargeBtn.imageView?.contentMode = .scaleAspectFit
+        
+        withDrawBtn.imageEdgeInsets = UIEdgeInsets(top: 13, left: 0, bottom: 13, right: 0)
+        withDrawBtn.imageView?.contentMode = .scaleAspectFit
+        
+        bottomBgView.addSubview(chargeBtn)
+        bottomBgView.addSubview(withDrawBtn)
+        
+        let sepLine = UIView()
+        sepLine.backgroundColor = hxb.color.mostImport
+        
+        bottomBgView.addSubview(sepLine)
         
         iconView.isUserInteractionEnabled = true
         iconView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(iconTap)))
@@ -91,7 +115,7 @@ extension HXBMineHeaderView {
         
         backgroundView.snp.makeConstraints { (maker) in
             maker.top.left.right.equalToSuperview()
-            maker.height.equalTo(self.zz_height)
+            maker.height.equalTo(self.zz_height - hxb.size.commonRowHeight)
         }
         
         iconView.snp.makeConstraints { (maker) in
@@ -134,6 +158,32 @@ extension HXBMineHeaderView {
             maker.left.equalTo(accumulatedMoneyTitleLabel)
             maker.centerY.equalTo(availableMoneyLabel)
         }
+        
+        bottomBgView.snp.makeConstraints { maker in
+            maker.centerX.equalToSuperview()
+            maker.width.equalTo(adaptDecimal(340))
+            maker.height.equalTo(hxb.size.commonRowHeight * 2 - 3)
+            maker.bottom.equalToSuperview()
+        }
+
+        chargeBtn.snp.makeConstraints { maker in
+            maker.right.equalTo(sepLine)
+            maker.centerY.equalTo(sepLine).offset(-3)
+            maker.width.equalTo(150)
+            maker.height.equalTo(hxb.size.commonRowHeight)
+        }
+
+        withDrawBtn.snp.makeConstraints { maker in
+            maker.left.equalTo(sepLine)
+            maker.centerY.equalTo(chargeBtn)
+            maker.size.equalTo(chargeBtn)
+        }
+
+        sepLine.snp.makeConstraints { maker in
+            maker.center.equalToSuperview()
+            maker.height.equalTo(hxb.size.commonRowHeight * 0.5)
+            maker.width.equalTo(hxb.size.sepLineWidth)
+        }
     }
 }
 
@@ -141,6 +191,14 @@ extension HXBMineHeaderView {
 extension HXBMineHeaderView {
     @objc fileprivate func iconTap() {
         iconClick?()
+    }
+    
+    @objc fileprivate func charge() {
+        chargeClick?()
+    }
+    
+    @objc fileprivate func withDraw() {
+        withDrawClick?()
     }
 }
 

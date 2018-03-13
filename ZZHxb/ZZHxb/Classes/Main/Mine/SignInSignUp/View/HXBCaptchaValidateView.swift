@@ -110,7 +110,7 @@ extension HXBCaptchaValidateView {
         
         lineView.snp.makeConstraints { maker in
             maker.right.left.bottom.equalTo(inputField)
-            maker.height.equalTo(hxb.size.sepLineHeight)
+            maker.height.equalTo(hxb.size.sepLineWidth)
         }
         
         captchaView.snp.makeConstraints { maker in

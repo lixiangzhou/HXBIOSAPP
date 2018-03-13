@@ -56,8 +56,8 @@ extension hxb.api {
 extension hxb.api {
     
     /// 《红小宝平台授权协议》 【/agreement/authorize】
-    static let authorize = "/agreement/authorize"
+    static let authorize = HXBNetworkConfig.shared.baseUrl + "/agreement/authorize"
     
     /// 《恒丰银行股份有限公司杭州分行网络交易资金账户三方协议》【/agreement/thirdpart】
-    static let thirdpard = "/agreement/thirdpart"
+    static let thirdpard = HXBNetworkConfig.shared.baseUrl + "/agreement/thirdpart"
 }

@@ -19,6 +19,11 @@ class HXBMineController: HXBViewController {
         viewModel = HXBMineViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        HXBAccountViewModel.shared.updateUserInfo()
+    }
 
     // MARK: - Public Property
     
@@ -40,9 +45,19 @@ extension HXBMineController {
         
         let headerView = HXBMineHeaderView()
         headerView.viewModel = viewModel
+        
         headerView.iconClick = {
             HXBAccountMainController().pushFrom(controller: self, animated: true)
         }
+        
+        headerView.chargeClick = {
+            HXBChargeController().pushFrom(controller: self, animated: true)
+        }
+        
+        headerView.withDrawClick = {
+            HXBWithDrawController().pushFrom(controller: self, animated: true)
+        }
+        
         tableView.tableHeaderView = headerView
 
         view.addSubview(tableView)
@@ -102,7 +117,7 @@ extension HXBMineController: UITableViewDelegate {
             view.addSubview(label)
             
             let bottomLine = UIView.sepLine()
-            bottomLine.frame = CGRect(x: 0, y: view.zz_height - hxb.size.sepLineHeight, width: view.zz_width, height: hxb.size.sepLineHeight)
+            bottomLine.frame = CGRect(x: 0, y: view.zz_height - hxb.size.sepLineWidth, width: view.zz_width, height: hxb.size.sepLineWidth)
             bottomLine.backgroundColor = hxb.color.background
             view.addSubview(bottomLine)
             

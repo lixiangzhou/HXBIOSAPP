@@ -73,7 +73,7 @@ extension HXBSettingTableViewCell {
         
         bottomLine.snp.makeConstraints { (maker) in
             maker.bottom.left.right.equalToSuperview()
-            maker.height.equalTo(hxb.size.sepLineHeight)
+            maker.height.equalTo(hxb.size.sepLineWidth)
         }
         
     }

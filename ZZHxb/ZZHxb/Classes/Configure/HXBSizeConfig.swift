@@ -46,11 +46,14 @@ extension hxb {
         /// 一般按钮的圆角 【2】
         static let normalButtonCornerRadius: CGFloat = 2
         
-        /// 分割线线高 【0.5】
-        static let sepLineHeight: CGFloat = 0.5
+        /// 分割线线宽 【0.5】
+        static let sepLineWidth: CGFloat = 0.5
         
         /// HXBInputFieldView 常用高度
         static let fieldCommonHeight: CGFloat = 60
+        
+        /// 通用行高 【44】
+        static let commonRowHeight: CGFloat = 44
         
         /// 导航栏高度 【iPhone X：88、其他：64】
         static let navigationHeight: CGFloat = isIPhoneX ? 88 : 64

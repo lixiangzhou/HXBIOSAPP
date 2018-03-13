@@ -16,6 +16,7 @@ class HXBAccountMainController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "账户信息"
         setUI()
     }
 
@@ -29,8 +30,6 @@ class HXBAccountMainController: HXBViewController {
 // MARK: - UI
 extension HXBAccountMainController {
     fileprivate func setUI() {
-        title = "账户信息"
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(HXBAccountMainCell.self, forCellReuseIdentifier: HXBAccountMainCell.identifier)

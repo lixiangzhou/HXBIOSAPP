@@ -279,12 +279,12 @@ extension HXBInputFieldView {
         
         topLine.snp.makeConstraints { (maker) in
             maker.top.left.right.equalToSuperview()
-            maker.height.equalTo(hxb.size.sepLineHeight)
+            maker.height.equalTo(hxb.size.sepLineWidth)
         }
         
         bottomLine.snp.makeConstraints { (maker) in
             maker.left.bottom.right.equalToSuperview()
-            maker.height.equalTo(hxb.size.sepLineHeight)
+            maker.height.equalTo(hxb.size.sepLineWidth)
         }
     }
 }
@@ -443,7 +443,7 @@ extension HXBInputFieldView {
     static func smsOrVoiceValidFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> (HXBInputFieldView, UIButton) {
         let voiceBtn = UIButton(title: "语音验证码", font: hxb.font.transaction, titleColor: hxb.color.mostImport)
         voiceBtn.layer.borderColor = hxb.color.mostImport.cgColor
-        voiceBtn.layer.borderWidth = hxb.size.sepLineHeight
+        voiceBtn.layer.borderWidth = hxb.size.sepLineWidth
         voiceBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
         voiceBtn.frame = CGRect(origin: .zero, size: CGSize(width: 80, height: 30))
         

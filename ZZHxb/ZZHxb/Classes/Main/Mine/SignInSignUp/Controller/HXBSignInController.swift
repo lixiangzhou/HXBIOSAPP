@@ -16,6 +16,7 @@ class HXBSignInController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "登录"
         viewModel = HXBSignUpViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
@@ -34,8 +35,6 @@ class HXBSignInController: HXBViewController {
 // MARK: - UI
 extension HXBSignInController {
     fileprivate func setUI() {
-        title = "登录"
-        
         hideNavigationBar = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         

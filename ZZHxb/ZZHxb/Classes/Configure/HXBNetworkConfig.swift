@@ -25,7 +25,3 @@ class HXBNetworkConfig {
                                    "IDFA": ASIdentifierManager.shared().advertisingIdentifier.uuidString,
                                    "X-Hxb-User-Agent": "\(UIDevice.current.zz_version)/IOS \(UIDevice.current.systemVersion)/v\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "") iphone"]
 }
-
-func agrementUrl(_ url: String) -> String {
-    return HXBNetworkConfig.shared.baseUrl + url
-}

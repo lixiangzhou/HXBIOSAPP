@@ -13,6 +13,8 @@
 		8D352B6F1FF5DD46003E5507 /* HXBNotificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */; };
 		8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */; };
 		8D352B771FFCA7AC003E5507 /* HXBSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */; };
+		8D3610A6205781BA009E8505 /* HXBChargeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3610A5205781BA009E8505 /* HXBChargeController.swift */; };
+		8D3610A8205781C7009E8505 /* HXBWithDrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3610A7205781C7009E8505 /* HXBWithDrawController.swift */; };
 		8D3BA8E120286FEC006BF5F3 /* ActiveBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DA20286FEC006BF5F3 /* ActiveBuilder.swift */; };
 		8D3BA8E220286FEC006BF5F3 /* ActiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DC20286FEC006BF5F3 /* ActiveLabel.swift */; };
 		8D3BA8E320286FEC006BF5F3 /* ActiveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BA8DD20286FEC006BF5F3 /* ActiveType.swift */; };
@@ -133,6 +135,8 @@
 		8D352B6E1FF5DD46003E5507 /* HXBNotificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNotificationConfig.swift; sourceTree = "<group>"; };
 		8D352B721FFC7E48003E5507 /* HXBStartSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBStartSignUpController.swift; sourceTree = "<group>"; };
 		8D352B761FFCA7AC003E5507 /* HXBSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignUpViewModel.swift; sourceTree = "<group>"; };
+		8D3610A5205781BA009E8505 /* HXBChargeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBChargeController.swift; sourceTree = "<group>"; };
+		8D3610A7205781C7009E8505 /* HXBWithDrawController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBWithDrawController.swift; sourceTree = "<group>"; };
 		8D3BA8DA20286FEC006BF5F3 /* ActiveBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveBuilder.swift; sourceTree = "<group>"; };
 		8D3BA8DC20286FEC006BF5F3 /* ActiveLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveLabel.swift; sourceTree = "<group>"; };
 		8D3BA8DD20286FEC006BF5F3 /* ActiveType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveType.swift; sourceTree = "<group>"; };
@@ -519,6 +523,8 @@
 				8DEDB13420245A74005DA05C /* HXBDepositoryCheckViewController.swift */,
 				8DEDB136202474A7005DA05C /* HXBDepositoryOpenOrModifyController.swift */,
 				8D7187A5202986C50017E539 /* HXBBankListController.swift */,
+				8D3610A5205781BA009E8505 /* HXBChargeController.swift */,
+				8D3610A7205781C7009E8505 /* HXBWithDrawController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -928,6 +934,7 @@
 				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
 				8DA8FCEE2021C8B100C018F4 /* Locale+ZZExtension.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
+				8D3610A8205781C7009E8505 /* HXBWithDrawController.swift in Sources */,
 				8DA8FD002021C8B100C018F4 /* ZZCollection.swift in Sources */,
 				8DA8FCFB2021C8B100C018F4 /* UISceen+ZZExtension.swift in Sources */,
 				8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */,
@@ -1004,6 +1011,7 @@
 				8DA8FCF02021C8B100C018F4 /* NSObject+ZZExtension.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 				8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */,
+				8D3610A6205781BA009E8505 /* HXBChargeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
