@@ -332,11 +332,13 @@ extension HXBDepositoryOpenOrModifyController {
             label.lineSpacing = 4
             label.customColor[customType] = hxb.color.linkActivity
             label.handleCustomTap(for: customType) { string in
+                var url = ""
                 if string == protocolString1 {
-                    
+                    url = agrementUrl(hxb.api.authorize)
                 } else if string == protocolString2 {
-                    
+                    url = agrementUrl(hxb.api.thirdpard)
                 }
+                HXBWebController(urlString: url).pushFrom(controller: self, animated: true)
             }
         }
         

@@ -39,7 +39,8 @@ extension HXBShakeConfigUrlView {
         fieldView.borderStyle = .roundedRect
         fieldView.text = HXBNetworkConfig.shared.baseUrl
         button.reactive.controlEvents(.touchUpInside).observeValues { [weak self, weak fieldView] _ in
-            HXBNetworkConfig.shared.baseUrl = fieldView?.text ?? ""
+            let url = fieldView?.text ?? ""
+            self?.saveUrl(url: url)
             self?.alpha = 1
             UIView.animate(withDuration: HXBShakeConfigUrlView.animateDuration, animations: {
                 self?.alpha = 0
@@ -74,7 +75,17 @@ extension HXBShakeConfigUrlView {
 
 // MARK: - Helper
 extension HXBShakeConfigUrlView {
-    
+    @discardableResult
+    fileprivate func saveUrl(url: String) -> Bool {
+        do {
+            try url.write(toFile: hxb.string.urlStorePath, atomically: true, encoding: .utf8)
+            HXBNetworkConfig.shared.baseUrl = url
+            HXBKeychain[hxb.keychain.key.url] = url
+            return true
+        } catch {
+            return false
+        }
+    }
 }
 
 // MARK: - Other

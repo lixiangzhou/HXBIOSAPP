@@ -16,6 +16,7 @@ extension hxb {
         struct key {
             static let token = "token" + (HXBKeychain[hxb.keychain.key.phone] ?? "")
             static let phone = "phone"
+            static let url = "url"
         }
     }
 }

@@ -43,6 +43,7 @@
 		8D3EFE45200E018E00A54B1D /* HXBAccountMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */; };
 		8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */; };
 		8D3EFE5B200F262600A54B1D /* HXBAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */; };
+		8D56C78C2041540C008C3F1C /* HXBWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C78B2041540C008C3F1C /* HXBWebController.swift */; };
 		8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69F7231FFDFC5B001A731A /* HXBHUD.swift */; };
 		8D7187A6202986C50017E539 /* HXBBankListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187A5202986C50017E539 /* HXBBankListController.swift */; };
 		8D7187A8202987810017E539 /* HXBBankListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187A7202987810017E539 /* HXBBankListViewModel.swift */; };
@@ -164,6 +165,7 @@
 		8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCell.swift; sourceTree = "<group>"; };
 		8D3EFE48200E049300A54B1D /* HXBAccountMainCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountMainCellViewModel.swift; sourceTree = "<group>"; };
 		8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAlertController.swift; sourceTree = "<group>"; };
+		8D56C78B2041540C008C3F1C /* HXBWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBWebController.swift; sourceTree = "<group>"; };
 		8D69F7231FFDFC5B001A731A /* HXBHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBHUD.swift; sourceTree = "<group>"; };
 		8D7187A5202986C50017E539 /* HXBBankListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankListController.swift; sourceTree = "<group>"; };
 		8D7187A7202987810017E539 /* HXBBankListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankListViewModel.swift; sourceTree = "<group>"; };
@@ -690,6 +692,7 @@
 				8DCC1DAA1FEA087500FEA8EF /* HXBTabBarController.swift */,
 				8DCC1DAB1FEA087500FEA8EF /* HXBViewController.swift */,
 				8D3EFE5A200F262600A54B1D /* HXBAlertController.swift */,
+				8D56C78B2041540C008C3F1C /* HXBWebController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				8DA8FCF92021C8B100C018F4 /* UIImageView+ZZExtension.swift in Sources */,
 				8DCC1DB41FEA087700FEA8EF /* HXBTabBarController.swift in Sources */,
 				8DA8FCE32021C8B100C018F4 /* ZZRefresh.swift in Sources */,
+				8D56C78C2041540C008C3F1C /* HXBWebController.swift in Sources */,
 				8DA8FCE82021C8B100C018F4 /* Calendar+ZZExtension.swift in Sources */,
 				8DCC1DA51FEA065800FEA8EF /* HXBSingleWaveView.swift in Sources */,
 				8D3E625D1FE12433008C8E67 /* HXBOtherConfig.swift in Sources */,

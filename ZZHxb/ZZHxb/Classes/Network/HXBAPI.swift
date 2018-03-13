@@ -52,3 +52,12 @@ extension hxb.api {
     /// 用户获取绑定银行卡信息
     static let bandcard = "/account/bankcard"
 }
+
+extension hxb.api {
+    
+    /// 《红小宝平台授权协议》 【/agreement/authorize】
+    static let authorize = "/agreement/authorize"
+    
+    /// 《恒丰银行股份有限公司杭州分行网络交易资金账户三方协议》【/agreement/thirdpart】
+    static let thirdpard = "/agreement/thirdpart"
+}
