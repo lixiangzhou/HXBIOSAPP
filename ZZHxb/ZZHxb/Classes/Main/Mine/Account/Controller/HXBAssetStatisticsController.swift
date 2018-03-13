@@ -1,5 +1,5 @@
 //
-//  HXBWithDrawController.swift
+//  HXBAssetStatisticsController.swift
 //  ZZHxb
 //
 //  Created by lxz on 2018/3/13.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class HXBWithDrawController: HXBViewController {
+class HXBAssetStatisticsController: HXBViewController {
 
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "提现"
+        title = "资产统计"
         setUI()
     }
 
@@ -26,19 +26,19 @@ class HXBWithDrawController: HXBViewController {
 }
 
 // MARK: - UI
-extension HXBWithDrawController {
+extension HXBAssetStatisticsController {
     fileprivate func setUI() {
         
     }
 }
 
 // MARK: - Action
-extension HXBWithDrawController {
+extension HXBAssetStatisticsController {
     
 }
 
 // MARK: - Network
-extension HXBWithDrawController {
+extension HXBAssetStatisticsController {
     
 }
 
@@ -51,17 +51,17 @@ extension HXBWithDrawController {
 // MARK: -
 
 // MARK: - Helper
-extension HXBWithDrawController {
+extension HXBAssetStatisticsController {
     
 }
 
 // MARK: - Other
-extension HXBWithDrawController {
+extension HXBAssetStatisticsController {
     
 }
 
 // MARK: - Public
-extension HXBWithDrawController {
+extension HXBAssetStatisticsController {
     
 }
 

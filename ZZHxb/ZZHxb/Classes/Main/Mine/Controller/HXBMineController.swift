@@ -50,6 +50,10 @@ extension HXBMineController {
             HXBAccountMainController().pushFrom(controller: self, animated: true)
         }
         
+        headerView.bgViewClick = {
+            HXBAssetStatisticsController().pushFrom(controller: self, animated: true)
+        }
+        
         headerView.chargeClick = {
             HXBChargeController().pushFrom(controller: self, animated: true)
         }

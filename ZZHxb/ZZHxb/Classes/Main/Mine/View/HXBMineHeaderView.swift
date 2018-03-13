@@ -41,6 +41,7 @@ class HXBMineHeaderView: UIView {
     }
     
     var iconClick: (() -> ())?
+    var bgViewClick: (() -> ())?
     var chargeClick:(() -> ())?
     var withDrawClick:(() -> ())?
     
@@ -84,8 +85,8 @@ extension HXBMineHeaderView {
         bottomBgView.isUserInteractionEnabled = true
         addSubview(bottomBgView)
         
-        let chargeBtn = UIButton(title: "充值", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_charge", target: self, action: #selector(charge))
-        let withDrawBtn = UIButton(title: "体现", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_withdraw", target: self, action: #selector(withDraw))
+        let chargeBtn = UIButton(title: "充值", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_charge", target:self, action: #selector(toCharge))
+        let withDrawBtn = UIButton(title: "提现", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_withdraw", target: self, action: #selector(toWithDraw))
         chargeBtn.imageEdgeInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
         chargeBtn.imageView?.contentMode = .scaleAspectFit
         
@@ -112,6 +113,7 @@ extension HXBMineHeaderView {
         }
         
         backgroundView.isUserInteractionEnabled = true
+        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(bgViewTap)))
         
         backgroundView.snp.makeConstraints { (maker) in
             maker.top.left.right.equalToSuperview()
@@ -193,11 +195,15 @@ extension HXBMineHeaderView {
         iconClick?()
     }
     
-    @objc fileprivate func charge() {
+    @objc fileprivate func bgViewTap() {
+        bgViewClick?()
+    }
+    
+    @objc fileprivate func toCharge() {
         chargeClick?()
     }
     
-    @objc fileprivate func withDraw() {
+    @objc fileprivate func toWithDraw() {
         withDrawClick?()
     }
 }
