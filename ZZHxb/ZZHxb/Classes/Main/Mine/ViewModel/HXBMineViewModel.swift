@@ -54,7 +54,7 @@ class HXBMineViewModel: HXBViewModel {
     
     
     func getAccountData(completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.getAccountData { (isSuccess, requestApi) in
+        HXBNetwork.getAccountData { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, completion: { isSuccess in
                 if isSuccess {
                     JSONDeserializer.update(object: &self.userAssets, from: requestApi.responseObject!)

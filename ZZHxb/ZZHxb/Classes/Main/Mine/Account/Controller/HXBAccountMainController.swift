@@ -129,10 +129,10 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 extension HXBAccountMainController {
     fileprivate func clickDepositoryAccount() {
         HXBAccountViewModel.shared.updateUserInfoSuccess {
-//            if !HXBAccountViewModel.shared.isIdBinding {
-//                HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
-//                return
-//            }
+            if !HXBAccountViewModel.shared.isIdBinding {
+                HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
+                return
+            }
             if !HXBAccountViewModel.shared.hasDepositoryOpen {
                 let checkVC = HXBDepositoryCheckViewController()
                 checkVC.presentFrom(controller: self, animated: false).openClosure = { [weak checkVC] in
@@ -140,7 +140,9 @@ extension HXBAccountMainController {
                     HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
                 }
             } else if HXBAccountViewModel.shared.hasBindCard {
-                
+                if HXBAccountViewModel.shared.hasTransitionPwd == false {
+                    HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
+                }
             } else if HXBAccountViewModel.shared.hasTransitionPwd {
                 
             } else {

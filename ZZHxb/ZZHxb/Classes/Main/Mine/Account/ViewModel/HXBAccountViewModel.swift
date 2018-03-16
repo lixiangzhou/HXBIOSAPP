@@ -104,7 +104,7 @@ class HXBAccountViewModel: HXBViewModel {
 extension HXBAccountViewModel {
     /// 更新用户信息
     func updateUserInfo(completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.updateUserInfo { (isSuccess, requestApi) in
+        HXBNetwork.updateUserInfo { isSuccess, requestApi in
             if isSuccess {
                 if let data = requestApi.responseObject?["data"] as? HXBResponseObject,
                     let userAssets = data["userAssets"] as? HXBResponseObject,

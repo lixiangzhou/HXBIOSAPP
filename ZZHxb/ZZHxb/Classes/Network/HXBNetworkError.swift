@@ -8,10 +8,6 @@
 
 import Foundation
 
-/*
-
- */
-
 extension hxb {
     struct code {
         /// 无token权限 【401】响应头
@@ -30,6 +26,8 @@ extension hxb {
         static let captchaCantEmpty = 102
         /// 普通错误状态码
         static let commonError = 1
+        /// 开户或绑卡超过次数
+        static let openCountOut = 5068
     }
 }
 

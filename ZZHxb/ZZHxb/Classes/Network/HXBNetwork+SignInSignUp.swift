@@ -10,46 +10,46 @@ import Foundation
 
 extension HXBNetwork {
     /// 检查手机号
-    static func checkMobile(_ mobile: String, configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.check_mobile, params: ["mobile": mobile], method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+    static func checkMobile(_ mobile: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.check_mobile, params: ["mobile": mobile], method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
     /// 获取图形验证码
-    static func getCaptcha(configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.captcha, responseSerializeType: .data, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+    static func getCaptcha(configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.captcha, responseSerializeType: .data, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
     /// 获取验证码
-    static func validateCaptcha(_ captcha: String, configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.check_captcha, params: ["captcha": captcha], method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+    static func validateCaptcha(_ captcha: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.check_captcha, params: ["captcha": captcha], method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
     /// 获取短信验证码
-    static func getSmsCode(phone: String, captcha: String, configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.verifyCode, params: ["captcha": captcha, "action": "signup", "mobile": phone], method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+    static func getSmsCode(phone: String, captcha: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.verifyCode, params: ["captcha": captcha, "action": "signup", "mobile": phone], method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
     /// 注册
-    static func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+    static func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
         var param = ["mobile": mobile, "smscode": smsCode, "password": password]
         if let inviteCode = inviteCode {
             param["inviteCode"] = inviteCode
         }
-        HXBNetworkManager.request(url: hxb.api.signup, params: param, method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+        HXBNetworkManager.request(url: hxb.api.signup, params: param, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
     /// 登录
-    static func signin(mobile: String, password: String, captcha: String?, configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+    static func signin(mobile: String, password: String, captcha: String?, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
         var param = ["mobile": mobile, "password": password]
         if let captcha = captcha {
             param["captcha"] = captcha
         }
         
-        HXBNetworkManager.request(url: hxb.api.signin, params: param, method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+        HXBNetworkManager.request(url: hxb.api.signin, params: param, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
     /// 登出
-    static func signout(configProgressAndToast: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.signout, method: .post, configProgressAndToast: configProgressAndToast, completionClosure: completion)
+    static func signout(configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.signout, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
 }

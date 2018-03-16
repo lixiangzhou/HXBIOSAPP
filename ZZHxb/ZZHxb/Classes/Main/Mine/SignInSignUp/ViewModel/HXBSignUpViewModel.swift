@@ -17,9 +17,9 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - mobile: 手机号
     ///   - completion: 完成回调
     func checkMobile(_ mobile: String) {
-        HXBNetwork.checkMobile(mobile, configProgressAndToast: { requestApi in
+        HXBNetwork.checkMobile(mobile, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
-        }) { (isSuccess, requestApi) in
+        }) { isSuccess, requestApi in
             if isSuccess {
                 let json = JSON(requestApi.responseObject!)
                 if json.isSuccess {
@@ -38,7 +38,7 @@ class HXBSignUpViewModel: HXBViewModel {
     ///
     /// - Parameter completion: 完成回调
     func getCaptcha(completion: @escaping (Bool, Data?) -> Void) {
-        HXBNetwork.getCaptcha { (isSuccess, requestApi) in
+        HXBNetwork.getCaptcha { isSuccess, requestApi in
             completion(isSuccess, requestApi.responseData)
         }
     }
@@ -49,9 +49,9 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - captcha: 验证码
     ///   - completion: 完成回调
     func validateCaptcha(_ captcha: String, completion: @escaping (Bool) -> Void) {
-        HXBNetwork.validateCaptcha(captcha, configProgressAndToast: { requestApi in
+        HXBNetwork.validateCaptcha(captcha, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
-        }) { (isSuccess, _) in
+        }) { isSuccess, _ in
             completion(isSuccess)
         }
     }
@@ -63,9 +63,9 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - captcha: 验证码
     ///   - completion: 完成回调
     func getSmsCode(phone: String, captcha: String, completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.getSmsCode(phone: phone, captcha: captcha, configProgressAndToast: { requestApi in
+        HXBNetwork.getSmsCode(phone: phone, captcha: captcha, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
-        }) { (isSuccess, requestApi) in
+        }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败", completion: completion)
         }
     }
@@ -79,9 +79,9 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - inviteCode: 邀请码
     ///   - completion: 完成回调
     func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.signup(mobile: mobile, smsCode: smsCode, password: password, inviteCode: inviteCode, configProgressAndToast: { requestApi in
+        HXBNetwork.signup(mobile: mobile, smsCode: smsCode, password: password, inviteCode: inviteCode, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
-        }) { (isSuccess, requestApi) in
+        }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, errorToast: "注册失败",completion: completion)
         }
     }
@@ -94,9 +94,9 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - captcha: 验证码
     ///   - completion: 完成回调 Bool 是否完成, Bool 是否需要图验
     func signin(mobile: String, password: String, captcha: String?, completion: @escaping (Bool, Bool) -> Void) {
-        HXBNetwork.signin(mobile: mobile, password: password, captcha: captcha, configProgressAndToast: { requestApi in
+        HXBNetwork.signin(mobile: mobile, password: password, captcha: captcha, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
-        }) { (isSuccess, requestApi) in
+        }) { isSuccess, requestApi in
             if isSuccess {
                 let json = JSON(requestApi.responseObject!)
                 if json.isSuccess {

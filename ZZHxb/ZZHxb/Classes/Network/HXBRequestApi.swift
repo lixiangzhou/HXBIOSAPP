@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class HXBRequestApi {
     init() { }
     
@@ -65,9 +63,6 @@ class HXBRequestApi {
     var hudShowToastType: HXBHudContainerType = .view
     /// Progress 显示容器类型
     var hudShowProgressType: HXBHudContainerType = .view
-    
-    /// 请求适配器
-    var adapter: HXBRequestAdapter?
     
     /// 响应结果的序列号方式
     var responseSerializeType = ResponseSerializeType.json

@@ -41,8 +41,12 @@ extension hxb.api {
     /// 账户内数据总览 【/account】
     static let account = "/account"
     
+    /// 开通存管账户 【/user/escrow】
+    static let open_depository = "/user/escrow"
 }
 
+
+// MARK: - 银行卡
 extension hxb.api {
     
     /// 银行卡列表 【/banklist】
@@ -53,6 +57,8 @@ extension hxb.api {
     static let bandcard = "/account/bankcard"
 }
 
+
+// MARK: - 协议
 extension hxb.api {
     
     /// 《红小宝平台授权协议》 【/agreement/authorize】

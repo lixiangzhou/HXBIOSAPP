@@ -13,15 +13,33 @@ import Result
 fileprivate let bankNoMinCount = 12
 fileprivate let inputHeight = 50
 
+
+/// 进入该页面的目的
+enum HXBDepositoryEntyType {
+    case open       // 开通存管账户
+    case modify     // 完善存管账户
+}
+
+
+/// 进入本页面后，提交成功后将要进入的页面
+enum HXBDepositoryNextTo {
+    case simpleBack     // 简单返回
+}
+
 /// 开通或修改存管账户
 class HXBDepositoryOpenOrModifyController: HXBViewController {
     
     // MARK: - Life Cycle
     
+    convenience init(entryType: HXBDepositoryEntyType = .open, nextTo: HXBDepositoryNextTo = .simpleBack) {
+        self.init(nibName: nil, bundle: nil)
+        self.entryType = entryType
+        self.title = entryType == .open ? "开通存管账户" : "完善信息"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "开通存管账户"
         setUI()
         setBindings()
         setData()
@@ -55,6 +73,8 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     fileprivate let viewModel = HXBDepositoryOpenOrModifyViewModel()
     
     fileprivate var bankInfoShowSignal: Signal<Bool, NoError>!
+    
+    fileprivate var entryType: HXBDepositoryEntyType = .open
 }
 
 // MARK: - UI
@@ -230,7 +250,9 @@ extension HXBDepositoryOpenOrModifyController {
         param["password"] = pwdView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         param["bankCard"] = bankNoView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         param["bankReservedMobile"] = phoneView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-        viewModel.bankCardSignal.observeValues { value in
+        param["bankCode"] = viewModel.bankCode ?? ""
+        
+        viewModel.openDepository(param: param, entryType: entryType) { isSuccess in
             
         }
     }

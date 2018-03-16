@@ -69,9 +69,9 @@ class HXBAccountMainViewModel: HXBViewModel {
     
     /// 登出账户
     func signOut(completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.signout(configProgressAndToast: { requestApi in
+        HXBNetwork.signout(configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
-        }) { (isSuccess, requestApi) in
+        }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, completion: completion)
         }
     }

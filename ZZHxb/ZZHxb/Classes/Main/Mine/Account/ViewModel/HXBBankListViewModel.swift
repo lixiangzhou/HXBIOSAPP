@@ -14,7 +14,7 @@ class HXBBankListViewModel: HXBViewModel {
     
     /// 获取银行列表
     func getBankList(completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.getBankList(configProgressAndToast: { requestApi in
+        HXBNetwork.getBankList(configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
         }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi) { isSuccess in

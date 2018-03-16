@@ -18,7 +18,6 @@ typealias HXBRequestCompletionCallBack = (Bool, HXBRequestApi) -> ()
 
 /// 主要用于控制 HUD
 typealias HXBRequestConfigClosrue = (HXBRequestApi) -> ()
-typealias HXBRequestAdapter = (URLRequest) -> URLRequest?
 
 class HXBNetworkManager {
     
@@ -51,11 +50,6 @@ class HXBNetworkManager {
             // 请求参数编码
             let encodedRequest = try encoding.encode(originRequest, with: requestApi.params)
             requestApi.request = encodedRequest
-            
-            // 适配请求
-            if let adaptedRequest = requestApi.adapter?(encodedRequest) {
-                requestApi.request = adaptedRequest
-            }
             
             // HUD
             requestApi.showProgress()
@@ -113,13 +107,13 @@ class HXBNetworkManager {
 
 // MARK: - Public
 extension HXBNetworkManager {
-    static func request(url: String, params: HXBRequestParam? = nil, method: HXBHttpMethod = .get, responseSerializeType: HXBRequestApi.ResponseSerializeType = .json, configProgressAndToast: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
+    static func request(url: String, params: HXBRequestParam? = nil, method: HXBHttpMethod = .get, responseSerializeType: HXBRequestApi.ResponseSerializeType = .json, configRequstClosure: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
         let requestApi = HXBRequestApi()
         requestApi.requestUrl = url
         requestApi.params = params
         requestApi.requestMethod = method
         requestApi.responseSerializeType = responseSerializeType
-        configProgressAndToast?(requestApi)
+        configRequstClosure?(requestApi)
         self.request(requestApi: requestApi, completionClosure: completionClosure)
     }
     

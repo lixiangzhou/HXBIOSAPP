@@ -149,7 +149,7 @@ extension HXBSignInController {
             HXBHUD.show(toast: "请输入8-20位数字与字母的组合", in: view)
             return
         }
-        viewModel.signin(mobile: phone, password: pwd, captcha: captcha) { (isSuccess, needCaptcha) in
+        viewModel.signin(mobile: phone, password: pwd, captcha: captcha) { isSuccess, needCaptcha in
             if isSuccess {
                 self.dismiss(animated: true, completion: nil)
             } else if needCaptcha {

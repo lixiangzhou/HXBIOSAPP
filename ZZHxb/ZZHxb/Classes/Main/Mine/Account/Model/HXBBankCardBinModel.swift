@@ -9,6 +9,7 @@
 import UIKit
 
 class HXBBankCardBinModel: HXBModel {
+    /// ---------------- /user/checkCardBin ------------
     /// 卡类型（debit：储蓄卡 credit：信用卡）
     var cardType: String = ""
     
@@ -24,11 +25,17 @@ class HXBBankCardBinModel: HXBModel {
     /// 是否是信用卡： true: 信用卡, false： 不是信用卡
     var creditCard: Bool = false
     
+    
+    /// -------------------- /account/bankcard --------------
+    
     /// 是否允许解绑
     var enableUnbind: Bool = false
     
     /// 解绑的原因
     var enableUnbindReason: String = ""
+    
+//    /// 银行编码
+//    var bankCode: String = ""
     
     /// 银行名称
     var bankType: String = ""
@@ -70,4 +77,7 @@ class HXBBankCardBinModel: HXBModel {
     
     /// 单日限额
     var day: String = ""
+    
+//    /// 银行提现限额
+//    var quota: String = ""
 }

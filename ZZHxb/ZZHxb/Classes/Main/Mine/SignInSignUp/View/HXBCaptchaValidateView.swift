@@ -162,7 +162,7 @@ extension HXBCaptchaValidateView {
 // MARK: - Other
 extension HXBCaptchaValidateView {
     @objc fileprivate func getCaptcha() {
-        viewModel.getCaptcha { (isSuccess, data) in
+        viewModel.getCaptcha { isSuccess, data in
             if let data = data {
                 self.captchaView.image = UIImage(data: data)
             }
