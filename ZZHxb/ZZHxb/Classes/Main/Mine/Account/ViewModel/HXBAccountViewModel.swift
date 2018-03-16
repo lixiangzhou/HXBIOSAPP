@@ -52,8 +52,8 @@ class HXBAccountViewModel: HXBViewModel {
     }
     
     /// 是否绑定身份证
-    var isIdBinding: Bool {
-        return hasDepositoryOpen && hasIdPassed
+    var isIdUnBinding: Bool {
+        return hasDepositoryOpen && !hasIdPassed
     }
     
     /// 是否绑定银行卡

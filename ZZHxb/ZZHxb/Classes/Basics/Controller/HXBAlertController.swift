@@ -117,17 +117,17 @@ extension HXBAlertController {
         singleBtn.backgroundColor = hxb.color.mostImport
         
         leftBtn.reactive.controlEvents(.touchUpInside).observeValues { [weak self] _ in
-            self?.dismiss(animated: false, completion: nil)
+            self?.dismiss(animated: true, completion: nil)
             self?.leftAction?()
         }
         
         rightBtn.reactive.controlEvents(.touchUpInside).observeValues { [weak self] _ in
-            self?.dismiss(animated: false, completion: nil)
+            self?.dismiss(animated: true, completion: nil)
             self?.rightAction?()
         }
         
         singleBtn.reactive.controlEvents(.touchUpInside).observeValues { [weak self] _ in
-            self?.dismiss(animated: false, completion: nil)
+            self?.dismiss(animated: true, completion: nil)
             self?.singleAction?()
         }
         
@@ -188,13 +188,14 @@ extension HXBAlertController {
 // MARK: - Helper
 extension HXBAlertController {
     static func phoneCall(phone: String = hxb.string.servicePhone, title: String?, message: String?, left: String = "取消", right: String = "拨打") {
+        print("phoneCall")
         let vc = HXBAlertController(title: title, messageText: message, leftActionName: left, rightActionName: right)
         vc.textAlignment = .center
         vc.backClickDismissEnabled = false
         vc.rightAction = {
             UIApplication.shared.open(URL(string: "telprompt://\(phone)")!, options: [:], completionHandler: nil)
         }
-        HXBRootVCManager.shared.rootVC .present(vc, animated: true, completion: nil)
+        HXBRootVCManager.shared.rootVC.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -214,7 +215,7 @@ extension HXBAlertController: UIViewControllerTransitioningDelegate {
 
 extension HXBAlertController: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.25
+        return isPresent ? 0.25 : 0.1
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -224,13 +225,14 @@ extension HXBAlertController: UIViewControllerAnimatedTransitioning {
                 return
         }
         
+        
         if isPresent {
             transitionContext.containerView.addSubview(toVC.view)
             toVC.view.alpha = 0
             UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
                 toVC.view.alpha = 1
             }, completion: { _ in
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                transitionContext.completeTransition(true)
             })
         } else {
             transitionContext.containerView.addSubview(fromVC.view)
@@ -238,7 +240,7 @@ extension HXBAlertController: UIViewControllerAnimatedTransitioning {
             UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
                 fromVC.view.alpha = 0
             }, completion: { _ in
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                transitionContext.completeTransition(true)
             })
         }
     }

@@ -19,6 +19,12 @@ class HXBAccountMainController: HXBViewController {
         title = "账户信息"
         setUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        HXBAccountViewModel.shared.updateUserInfo()
+    }
 
     // MARK: - Public Property
     
@@ -128,26 +134,24 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Helper
 extension HXBAccountMainController {
     fileprivate func clickDepositoryAccount() {
-        HXBAccountViewModel.shared.updateUserInfoSuccess {
-            if !HXBAccountViewModel.shared.isIdBinding {
-                HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
-                return
+        if HXBAccountViewModel.shared.isIdUnBinding {
+            HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
+            return
+        }
+        if !HXBAccountViewModel.shared.hasDepositoryOpen {
+            let checkVC = HXBDepositoryCheckViewController()
+            checkVC.presentFrom(controller: self, animated: false).openClosure = { [weak checkVC] in
+                checkVC?.dismiss(animated: false, completion: nil)
+                HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
             }
-            if !HXBAccountViewModel.shared.hasDepositoryOpen {
-                let checkVC = HXBDepositoryCheckViewController()
-                checkVC.presentFrom(controller: self, animated: false).openClosure = { [weak checkVC] in
-                    checkVC?.dismiss(animated: false, completion: nil)
-                    HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
-                }
-            } else if HXBAccountViewModel.shared.hasBindCard {
-                if HXBAccountViewModel.shared.hasTransitionPwd == false {
-                    HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
-                }
-            } else if HXBAccountViewModel.shared.hasTransitionPwd {
-                
-            } else {
-                
+        } else if HXBAccountViewModel.shared.hasBindCard {
+            if HXBAccountViewModel.shared.hasTransitionPwd == false {
+                HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
             }
+        } else if HXBAccountViewModel.shared.hasTransitionPwd {
+            
+        } else {
+            
         }
     }
     
