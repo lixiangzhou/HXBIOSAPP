@@ -113,6 +113,21 @@ class HXBSignUpViewModel: HXBViewModel {
             }
         }
     }
+
+    /// 检查手机号
+    func checkExistMobile(_ mobile: String) {
+        HXBNetwork.checkMobile(mobile, configRequstClosure: { requestApi in
+            requestApi.hudDelegate = self
+        }) { isSuccess, requestApi in
+            if isSuccess {
+                let json = JSON(requestApi.responseObject!)
+                if json.statusCode == hxb.code.commonError {
+                    let msg = json.message == "手机号码已存在" ? "该手机号已注册" : json.message
+                    requestApi.show(toast: msg)
+                }
+            }
+        }
+    }
 }
 
 extension HXBSignUpViewModel {

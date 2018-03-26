@@ -52,4 +52,9 @@ extension HXBNetwork {
     static func signout(configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.signout, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
+    
+    /// 校验手机号
+    static func checkExistMobile(_ mobile: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.check_exist_mobile, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
+    }
 }

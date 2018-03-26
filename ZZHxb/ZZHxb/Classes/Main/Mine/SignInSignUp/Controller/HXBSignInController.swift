@@ -45,6 +45,11 @@ extension HXBSignInController {
         
         phoneView.inputLengthLimit = hxb.size.phoneLength
         phoneView.keyboardType = .numberPad
+        phoneView.inputFieldSignal.observeValues { [weak self] text in
+            if text.count == hxb.size.phoneLength {
+                self?.viewModel.checkExistMobile(text)
+            }
+        }
         
         view.addSubview(phoneView)
         view.addSubview(pwdView)

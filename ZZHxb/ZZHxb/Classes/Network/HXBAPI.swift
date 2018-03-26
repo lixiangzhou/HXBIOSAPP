@@ -34,6 +34,8 @@ extension hxb.api {
     static let signout = "/logout"
     /// 获取用户信息 【/user/info】
     static let userinfo = "/user/info"
+    /// 校验手机号 【/checkExistMobile】
+    static let check_exist_mobile = "/checkExistMobile"
 }
 
 // MARK: - 账户
