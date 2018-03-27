@@ -12,6 +12,7 @@ import Result
 
 class HXBAccountMainViewModel: HXBViewModel {
     var dataSource = [[HXBAccountMainCellViewModel]]()
+    
     override init() {
         super.init()
         

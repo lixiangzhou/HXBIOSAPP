@@ -71,7 +71,10 @@ extension HXBMineHeaderView {
     fileprivate func setUI() {
         backgroundColor = hxb.color.white
         
+        let iconBgBtn = UIButton()
+        
         addSubview(backgroundView)
+        backgroundView.addSubview(iconBgBtn)
         backgroundView.addSubview(iconView)
         backgroundView.addSubview(holdMoneyTitleLabel)
         backgroundView.addSubview(holdMoneyLabel)
@@ -101,8 +104,7 @@ extension HXBMineHeaderView {
         
         bottomBgView.addSubview(sepLine)
         
-        iconView.isUserInteractionEnabled = true
-        iconView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(iconTap)))
+        iconBgBtn.addTarget(self, action: #selector(iconTap), for: .touchUpInside)
         
         eyeBtn.imageView?.contentMode = .scaleAspectFit
         eyeBtn.setImage(UIImage("mine_eyes"), for: .normal)
@@ -118,6 +120,13 @@ extension HXBMineHeaderView {
         backgroundView.snp.makeConstraints { (maker) in
             maker.top.left.right.equalToSuperview()
             maker.height.equalTo(self.zz_height - hxb.size.commonRowHeight)
+        }
+        
+        iconBgBtn.snp.makeConstraints { maker in
+            maker.top.equalTo(iconView).offset(-15)
+            maker.left.equalTo(iconView).offset(-15)
+            maker.bottom.equalTo(iconView).offset(15)
+            maker.right.equalTo(iconView).offset(15)
         }
         
         iconView.snp.makeConstraints { (maker) in

@@ -23,7 +23,9 @@ class HXBAccountMainController: HXBViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        HXBAccountViewModel.shared.updateUserInfo()
+        HXBAccountViewModel.shared.updateUserInfoSuccess { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - Public Property
