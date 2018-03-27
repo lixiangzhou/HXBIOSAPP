@@ -36,6 +36,7 @@ extension HXBAccountInfoController {
         tableView = HXBTableView(dataSource: self, delegate: nil)
         tableView.rowHeight = HXBAccountInfoCell.cellHeight
         tableView.register(HXBAccountInfoCell.self, forCellReuseIdentifier: HXBAccountInfoCell.identifier)
+        tableView.isScrollEnabled = false
         view.addSubview(tableView)
         
         tableView.tableHeaderView = tipLabel
@@ -44,16 +45,6 @@ extension HXBAccountInfoController {
             maker.edges.equalToSuperview()
         }
     }
-}
-
-// MARK: - Action
-extension HXBAccountInfoController {
-    
-}
-
-// MARK: - Network
-extension HXBAccountInfoController {
-    
 }
 
 // MARK: - Delegate Internal
@@ -71,22 +62,5 @@ extension HXBAccountInfoController: UITableViewDataSource {
     }
     
 }
-// MARK: - Delegate External
 
-// MARK: -
-
-// MARK: - Helper
-extension HXBAccountInfoController {
-    
-}
-
-// MARK: - Other
-extension HXBAccountInfoController {
-    
-}
-
-// MARK: - Public
-extension HXBAccountInfoController {
-    
-}
 

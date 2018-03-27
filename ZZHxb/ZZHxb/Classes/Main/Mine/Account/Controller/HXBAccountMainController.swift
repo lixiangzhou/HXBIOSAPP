@@ -70,11 +70,6 @@ extension HXBAccountMainController {
     }
 }
 
-// MARK: - Network
-extension HXBAccountMainController {
-    
-}
-
 // MARK: - Delegate Internal
 
 // MARK: - UITableViewDataSource
@@ -135,16 +130,12 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 extension HXBAccountMainController {
     fileprivate func clickDepositoryAccount() {
         if HXBAccountViewModel.shared.isIdUnBinding {
-            HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)", isAsyncMain: true)
+            infoAlert()
             return
         }
-        print(HXBAccountViewModel.shared.hasTransitionPwd)
+        
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
-            let checkVC = HXBDepositoryCheckViewController()
-            checkVC.presentFrom(controller: self, animated: false, isAsyncMain: true).openClosure = { [weak checkVC] in
-                checkVC?.dismiss(animated: false, completion: nil)
-                HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
-            }
+            checkAndOpenDepository()
         } else if HXBAccountViewModel.shared.hasBindCard {
             if HXBAccountViewModel.shared.hasTransitionPwd == false {
                 HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
@@ -154,12 +145,28 @@ extension HXBAccountMainController {
         } else if HXBAccountViewModel.shared.hasTransitionPwd {
             HXBAccountInfoController().pushFrom(controller: self, animated: true)
         } else {
-            
+            HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
         }
     }
     
     fileprivate func clickBank() {
-        
+        if HXBAccountViewModel.shared.isIdUnBinding {
+            infoAlert()
+            return
+        }
+        if HXBAccountViewModel.shared.hasBindCard {
+            if !HXBAccountViewModel.shared.hasDepositoryOpen {
+                checkAndOpenDepository()
+            } else {
+                HXBBankInfoController().pushFrom(controller: self, animated: true)
+            }
+        } else {
+            if HXBAccountViewModel.shared.hasTransitionPwd {
+                HXBBankBindingController().pushFrom(controller: self, animated: true)
+            } else {
+                HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
+            }
+        }
     }
     
     fileprivate func clickRisk() {
@@ -183,7 +190,17 @@ extension HXBAccountMainController {
 
 // MARK: - Other
 extension HXBAccountMainController {
+    fileprivate func infoAlert() {
+        HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)", isAsyncMain: true)
+    }
     
+    fileprivate func checkAndOpenDepository() {
+        let checkVC = HXBDepositoryCheckViewController()
+        checkVC.presentFrom(controller: self, animated: false, isAsyncMain: true).openClosure = { [weak checkVC] in
+            checkVC?.dismiss(animated: false, completion: nil)
+            HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
+        }
+    }
 }
 
 // MARK: - Public

@@ -58,6 +58,9 @@
 		8DA2D8692068DC7E00FFBA6B /* HXBAccountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */; };
 		8DA2D86B2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */; };
 		8DA2D86D2068DF8000FFBA6B /* HXBAccountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D86C2068DF8000FFBA6B /* HXBAccountInfoModel.swift */; };
+		8DA2D86F2068ECEC00FFBA6B /* HXBBankInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D86E2068ECEC00FFBA6B /* HXBBankInfoViewModel.swift */; };
+		8DA2D8712068ED1600FFBA6B /* HXBBankInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8702068ED1600FFBA6B /* HXBBankInfoController.swift */; };
+		8DA2D8752068EE8A00FFBA6B /* HXBBankBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8742068EE8A00FFBA6B /* HXBBankBindingController.swift */; };
 		8DA8FCDD2021C8B100C018F4 /* ZZAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */; };
 		8DA8FCDE2021C8B100C018F4 /* ZZButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB62021C8B100C018F4 /* ZZButton.swift */; };
 		8DA8FCDF2021C8B100C018F4 /* ZZCircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA8FCB72021C8B100C018F4 /* ZZCircleProgressView.swift */; };
@@ -187,6 +190,9 @@
 		8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoCell.swift; sourceTree = "<group>"; };
 		8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoViewModel.swift; sourceTree = "<group>"; };
 		8DA2D86C2068DF8000FFBA6B /* HXBAccountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoModel.swift; sourceTree = "<group>"; };
+		8DA2D86E2068ECEC00FFBA6B /* HXBBankInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankInfoViewModel.swift; sourceTree = "<group>"; };
+		8DA2D8702068ED1600FFBA6B /* HXBBankInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankInfoController.swift; sourceTree = "<group>"; };
+		8DA2D8742068EE8A00FFBA6B /* HXBBankBindingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankBindingController.swift; sourceTree = "<group>"; };
 		8DA8FCB52021C8B100C018F4 /* ZZAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAudioTool.swift; sourceTree = "<group>"; };
 		8DA8FCB62021C8B100C018F4 /* ZZButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZButton.swift; sourceTree = "<group>"; };
 		8DA8FCB72021C8B100C018F4 /* ZZCircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZCircleProgressView.swift; sourceTree = "<group>"; };
@@ -538,6 +544,8 @@
 				8D3610A7205781C7009E8505 /* HXBWithDrawController.swift */,
 				8D3610A92057A6D9009E8505 /* HXBAssetStatisticsController.swift */,
 				8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */,
+				8DA2D8702068ED1600FFBA6B /* HXBBankInfoController.swift */,
+				8DA2D8742068EE8A00FFBA6B /* HXBBankBindingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +559,7 @@
 				8DF523D9202B10BE00122190 /* HXBDepositoryOpenOrModifyViewModel.swift */,
 				8D7187A7202987810017E539 /* HXBBankListViewModel.swift */,
 				8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */,
+				8DA2D86E2068ECEC00FFBA6B /* HXBBankInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -930,6 +939,7 @@
 				8DEDB137202474A7005DA05C /* HXBDepositoryOpenOrModifyController.swift in Sources */,
 				8D69F7241FFDFC5B001A731A /* HXBHUD.swift in Sources */,
 				8DE9140C1FE22B9D00FAEE68 /* HXBMineCell.swift in Sources */,
+				8DA2D8752068EE8A00FFBA6B /* HXBBankBindingController.swift in Sources */,
 				8D2B8014202B014D00307564 /* HXBBankCardBinModel.swift in Sources */,
 				8D3E62591FE123B6008C8E67 /* HXBNetworkConfig.swift in Sources */,
 				8DA8FCE52021C8B100C018F4 /* ZZRefreshHeader.swift in Sources */,
@@ -945,6 +955,7 @@
 				8DA8FCED2021C8B100C018F4 /* DispatchQueue+ZZExtension.swift in Sources */,
 				8DCC1DB61FEA087700FEA8EF /* HXBSettingTableViewCell.swift in Sources */,
 				8D3E62201FDF7E62008C8E67 /* HXBAPI.swift in Sources */,
+				8DA2D8712068ED1600FFBA6B /* HXBBankInfoController.swift in Sources */,
 				8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */,
 				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
 				8DA8FCEE2021C8B100C018F4 /* Locale+ZZExtension.swift in Sources */,
@@ -1008,6 +1019,7 @@
 				8DA8FCEC2021C8B100C018F4 /* DateFormatter+ZZExtension.swift in Sources */,
 				8DA2D8672068D70C00FFBA6B /* HXBAccountInfoController.swift in Sources */,
 				8D3E62401FDFB8B8008C8E67 /* HXBNetworkManager.swift in Sources */,
+				8DA2D86F2068ECEC00FFBA6B /* HXBBankInfoViewModel.swift in Sources */,
 				8DA8FCFF2021C8B100C018F4 /* UIView+ZZExtension.swift in Sources */,
 				8DA8FCDE2021C8B100C018F4 /* ZZButton.swift in Sources */,
 				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,

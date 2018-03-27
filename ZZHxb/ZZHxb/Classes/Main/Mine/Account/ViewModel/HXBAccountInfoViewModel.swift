@@ -20,22 +20,11 @@ class HXBAccountInfoViewModel: HXBViewModel {
     
     private var idNo: String? {
         let idNo = HXBAccountViewModel.shared.account.userInfo.idNo
-        var showId = ""
-        showId.append(String(idNo[idNo.startIndex..<idNo.index(after: idNo.startIndex)]))
-        for _ in 1..<idNo.count - 1 {
-            showId.append("*")
-        }
-        showId.append(String(idNo[idNo.index(before: idNo.endIndex)..<idNo.endIndex]))
-        return showId
+        return idNo.zz_replace(start: 1, length: idNo.count - 2, with: "*")
     }
     
     private var realName: String? {
         let realName = HXBAccountViewModel.shared.account.userInfo.realName
-        var showName = ""
-        for _ in 0..<realName.count - 1 {
-            showName.append("*")
-        }
-        showName.append(String(realName[realName.index(before: realName.endIndex)..<realName.endIndex]))
-        return showName
+        return realName.zz_replace(start: 0, length: realName.count - 1, with: "*")
     }
 }
