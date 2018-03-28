@@ -14,16 +14,10 @@ fileprivate let bankNoMinCount = 12
 fileprivate let inputHeight = 50
 
 
-/// 进入该页面的目的
-enum HXBDepositoryEntyType {
-    case open       // 开通存管账户
-    case modify     // 完善存管账户
-}
-
-
 /// 进入本页面后，提交成功后将要进入的页面
-enum HXBDepositoryNextTo {
-    case simpleBack     // 简单返回
+enum HXBDepositoryNextTo: String {
+    case simpleBack = "简单返回"
+    case popToAccountMain = "返回账户信息页面"
 }
 
 /// 开通或修改存管账户
@@ -31,10 +25,10 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     
     // MARK: - Life Cycle
     
-    convenience init(entryType: HXBDepositoryEntyType = .open, nextTo: HXBDepositoryNextTo = .simpleBack) {
+    convenience init(nextTo: HXBDepositoryNextTo) {
         self.init(nibName: nil, bundle: nil)
-        self.entryType = entryType
-        self.title = entryType == .open ? "开通存管账户" : "完善信息"
+        
+        self.nextTo = nextTo
     }
     
     override func viewDidLoad() {
@@ -74,7 +68,7 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     
     fileprivate var bankInfoShowSignal: Signal<Bool, NoError>!
     
-    fileprivate var entryType: HXBDepositoryEntyType = .open
+    fileprivate var nextTo: HXBDepositoryNextTo = .simpleBack
 }
 
 // MARK: - UI
@@ -109,7 +103,7 @@ extension HXBDepositoryOpenOrModifyController {
         let bottomInputView = UIView()
         scrollView.addSubview(bottomInputView)
         
-        let btn = UIButton(title: "查看银行限额", font: hxb.font.transaction, titleColor: hxb.color.linkActivity, target: self, action: #selector(queryLimit))
+        let btn = UIButton(title: "查看银行限额", font: hxb.font.transaction, titleColor: hxb.color.linkActivity, target: self, action: #selector(bankList))
         btn.frame.size = btn.currentTitle!.zz_size(withLimitSize: CGSize(width: 1000, height: 1000), fontSize: 14)
         bankNoView = HXBInputFieldView.rightClickViewFieldView(leftImage: UIImage("input_bank"), placeholder: "银行卡号", clickView: btn, leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
         bankNoView.bankNoMode = true
@@ -235,7 +229,7 @@ extension HXBDepositoryOpenOrModifyController {
 
 // MARK: - Action
 extension HXBDepositoryOpenOrModifyController {
-    @objc fileprivate func queryLimit() {
+    @objc fileprivate func bankList() {
         HXBNavigationController(rootViewController: HXBBankListController()).presentFrom(controller: self, animated: true)
     }
     
@@ -252,7 +246,7 @@ extension HXBDepositoryOpenOrModifyController {
         param["bankReservedMobile"] = phoneView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         param["bankCode"] = viewModel.bankCode ?? ""
         
-        viewModel.openDepository(param: param, entryType: entryType) { isSuccess in
+        viewModel.openDepository(param: param) { isSuccess in
             
         }
     }
@@ -275,37 +269,15 @@ extension HXBDepositoryOpenOrModifyController {
 // MARK: - Helper
 extension HXBDepositoryOpenOrModifyController {
     fileprivate func checkInputsValidate() -> Bool {
-        
-        func checkInput(inputView: HXBInputFieldView, toastEmpty: String, toastCount: String, limitCount: Int = 0, min: Int = 0, max: Int = 0) -> Bool {
-            let text = inputView.text ?? ""
-            if text.isEmpty {
-                HXBHUD.show(toast: toastEmpty, in: view)
-                return false
-            }
-            if limitCount > 0 { //  具体的限制
-                if text.count != limitCount {
-                    HXBHUD.show(toast: toastCount, in: view)
-                    return false
-                }
-                return true
-            } else {    // 范围限制
-                if text.count >= min && text.count <= max {
-                    return true
-                }
-                HXBHUD.show(toast: toastCount, in: view)
-                return false
-            }
-        }
-        
         if (nameView.text ?? "").isEmpty {
             HXBHUD.show(toast: "真实姓名不能为空", in: view)
             return false
         }
         
-        guard checkInput(inputView: idcardView, toastEmpty: "身份证号不能为空", toastCount: "身份证号输入有误", limitCount: 18),
-        checkInput(inputView: pwdView, toastEmpty: "交易密码不能为空", toastCount: "交易密码为6位数字", limitCount: 6),
-        checkInput(inputView: bankNoView, toastEmpty: "银行卡号不能为空", toastCount: "银行卡号输入有误", min: 10, max: 31),
-        checkInput(inputView: phoneView, toastEmpty: "预留手机号不能为空", toastCount: "预留手机号有误", limitCount: 11) else {
+        guard checkInput(inputView: idcardView, toastEmpty: "身份证号不能为空", toastCount: "身份证号输入有误", limitCount: 18, toastView: view),
+        checkInput(inputView: pwdView, toastEmpty: "交易密码不能为空", toastCount: "交易密码为6位数字", limitCount: 6, toastView: view),
+        checkInput(inputView: bankNoView, toastEmpty: "银行卡号不能为空", toastCount: "银行卡号输入有误", min: 10, max: 31, toastView: view),
+        checkInput(inputView: phoneView, toastEmpty: "预留手机号不能为空", toastCount: "预留手机号有误", limitCount: 11, toastView: view) else {
             return false
         }
         return true
@@ -421,9 +393,3 @@ extension HXBDepositoryOpenOrModifyController {
         }
     }
 }
-
-// MARK: - Public
-extension HXBDepositoryOpenOrModifyController {
-    
-}
-

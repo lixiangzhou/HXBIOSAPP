@@ -20,11 +20,6 @@ extension HXBNetwork {
         HXBNetworkManager.request(url: hxb.api.userinfo, completionClosure: completion)
     }
     
-    /// 银行列表
-    static func getBankList(configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.banklist, configRequstClosure: configRequstClosure, completionClosure: completion)
-    }
-    
     /// 开户
     static func openDepository(params: HXBRequestParam, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.open_depository, params: params, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)

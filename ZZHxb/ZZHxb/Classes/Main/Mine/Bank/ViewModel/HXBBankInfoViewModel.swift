@@ -14,18 +14,42 @@ import SwiftyJSON
 
 class HXBBankInfoViewModel: HXBViewModel {
     let (bankInfoSignal, bankInfoObserver) = Signal<HXBBankCardBinModel, NoError>.pipe()
+    var bankModel: HXBBankCardBinModel!
     
-    func getBankInfo() {
+    override init() {
+        super.init()
+        
+        getBankInfo()
+    }
+    
+    var enableUnBind: Bool {
+        if let bankModel = bankModel {
+            return bankModel.enableUnbind
+        }
+        return false
+    }
+    
+    var enableUnBindReason: String {
+        if let bankModel = bankModel {
+            return bankModel.enableUnbindReason
+        }
+        return ""
+    }
+    
+    private func getBankInfo() {
         HXBNetwork.bandCardInfo { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, showToast: false, completion: { isSuccess in
                 if isSuccess {
                     if let data = requestApi.responseObject?["data"] as? HXBResponseObject {
                         let bankCardModel = HXBBankCardBinModel.deserialize(from: data)!
+                        self.bankModel = bankCardModel
                         self.bankInfoObserver.send(value: bankCardModel)
                     } else {
+                        self.bankModel = nil
                         self.bankInfoObserver.send(value: HXBBankCardBinModel())
                     }
                 } else {
+                    self.bankModel = nil
                     self.bankInfoObserver.send(value: HXBBankCardBinModel())
                 }
             })
@@ -39,6 +63,4 @@ class HXBBankInfoViewModel: HXBViewModel {
         let space = floor(limitWidth - width) / CGFloat(showBankNum.count - 1)
         return NSAttributedString(string: showBankNum, attributes: [NSAttributedStringKey.kern: space])
     }
-    
-    
 }

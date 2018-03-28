@@ -17,7 +17,6 @@ class HXBBankInfoController: HXBViewController {
 
         title = "银行卡信息"
         setUI()
-        getData()
         setBindings()
     }
 
@@ -130,17 +129,16 @@ extension HXBBankInfoController {
     }
 }
 
-// MARK: - Network
-extension HXBBankInfoController {
-    fileprivate func getData() {
-        viewModel.getBankInfo()
-    }
-}
-
 // MARK: - Action
 extension HXBBankInfoController {
     @objc fileprivate func unbinding() {
-        
+        if viewModel.enableUnBind {
+            HXBBankUnBindingController(bankModel: viewModel.bankModel).pushFrom(controller: self, animated: true)
+        } else {
+            if viewModel.enableUnBindReason.count > 0 {
+                HXBHUD.show(toast: viewModel.enableUnBindReason, in: view)
+            }
+        }
     }
 }
 
@@ -153,15 +151,5 @@ extension HXBBankInfoController {
             maker.bottom.equalTo(-view.safeAreaInsets.bottom - 30)
         }
     }
-}
-
-// MARK: - Other
-extension HXBBankInfoController {
-    
-}
-
-// MARK: - Public
-extension HXBBankInfoController {
-    
 }
 

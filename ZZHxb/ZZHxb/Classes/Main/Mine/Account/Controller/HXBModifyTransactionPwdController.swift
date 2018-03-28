@@ -1,21 +1,21 @@
 //
-//  HXBBankBindingController.swift
+//  HXBModifyTransactionPwdController.swift
 //  ZZHxb
 //
-//  Created by lxz on 2018/3/26.
+//  Created by lxz on 2018/3/27.
 //Copyright © 2018年 lixiangzhou. All rights reserved.
 //
 
 import UIKit
 
-class HXBBankBindingController: HXBViewController {
+class HXBModifyTransactionPwdController: HXBViewController {
 
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "绑卡"
+        title = "修改交易密码"
         setUI()
     }
 
@@ -26,19 +26,19 @@ class HXBBankBindingController: HXBViewController {
 }
 
 // MARK: - UI
-extension HXBBankBindingController {
+extension HXBModifyTransactionPwdController {
     fileprivate func setUI() {
         
     }
 }
 
 // MARK: - Action
-extension HXBBankBindingController {
+extension HXBModifyTransactionPwdController {
     
 }
 
 // MARK: - Network
-extension HXBBankBindingController {
+extension HXBModifyTransactionPwdController {
     
 }
 
@@ -51,17 +51,17 @@ extension HXBBankBindingController {
 // MARK: -
 
 // MARK: - Helper
-extension HXBBankBindingController {
+extension HXBModifyTransactionPwdController {
     
 }
 
 // MARK: - Other
-extension HXBBankBindingController {
+extension HXBModifyTransactionPwdController {
     
 }
 
 // MARK: - Public
-extension HXBBankBindingController {
+extension HXBModifyTransactionPwdController {
     
 }
 

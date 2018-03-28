@@ -139,15 +139,7 @@ extension HXBAccountMainController {
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
             checkAndOpenDepository()
         } else if HXBAccountViewModel.shared.hasBindCard {
-            if HXBAccountViewModel.shared.hasTransitionPwd == false {
-                HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
-            } else {
-                HXBAccountInfoController().pushFrom(controller: self, animated: true)
-            }
-        } else if HXBAccountViewModel.shared.hasTransitionPwd {
             HXBAccountInfoController().pushFrom(controller: self, animated: true)
-        } else {
-            HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
         }
     }
     
@@ -156,17 +148,14 @@ extension HXBAccountMainController {
             infoAlert()
             return
         }
-        if HXBAccountViewModel.shared.hasBindCard {
-            if !HXBAccountViewModel.shared.hasDepositoryOpen {
-                checkAndOpenDepository()
-            } else {
-                HXBBankInfoController().pushFrom(controller: self, animated: true)
-            }
+        
+        if !HXBAccountViewModel.shared.hasDepositoryOpen {
+            checkAndOpenDepository()
         } else {
-            if HXBAccountViewModel.shared.hasTransitionPwd {
-                HXBBankBindingController().pushFrom(controller: self, animated: true)
+            if HXBAccountViewModel.shared.hasBindCard {
+                HXBBankInfoController().pushFrom(controller: self, animated: true)
             } else {
-                HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
+                HXBBankBindingController(nextTo: .simpleBack).pushFrom(controller: self, animated: true)
             }
         }
     }

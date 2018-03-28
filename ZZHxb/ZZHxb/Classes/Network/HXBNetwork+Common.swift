@@ -13,14 +13,4 @@ extension HXBNetwork {
     static func sendVerifyCode(params: HXBRequestParam?, configRequstClosure: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.verifyCode, params: params, method: .post, configRequstClosure: configRequstClosure, completionClosure: completionClosure)
     }
-    
-    /// 检查银行卡号
-    static func checkBankNo(params: HXBRequestParam?, configRequstClosure: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.checkcardbin, params: params, method: .post, configRequstClosure: configRequstClosure, completionClosure: completionClosure)
-    }
-    
-    /// 用户获取绑定银行卡信息
-    static func bandCardInfo(configRequstClosure: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.bandcard, method: .get, configRequstClosure: configRequstClosure, completionClosure: completionClosure)
-    }
 }

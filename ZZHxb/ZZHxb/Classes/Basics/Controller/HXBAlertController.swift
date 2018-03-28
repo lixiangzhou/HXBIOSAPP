@@ -188,7 +188,6 @@ extension HXBAlertController {
 // MARK: - Helper
 extension HXBAlertController {
     static func phoneCall(phone: String = hxb.string.servicePhone, title: String?, message: String?, left: String = "取消", right: String = "拨打", isAsyncMain: Bool = false) {
-        print("phoneCall")
         let vc = HXBAlertController(title: title, messageText: message, leftActionName: left, rightActionName: right)
         vc.textAlignment = .center
         vc.backClickDismissEnabled = false
