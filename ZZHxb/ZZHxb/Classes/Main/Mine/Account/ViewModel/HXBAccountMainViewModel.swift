@@ -45,7 +45,7 @@ class HXBAccountMainViewModel: HXBViewModel {
         }
         
         let riskViewModel = HXBAccountMainCellViewModel(type: .risk)
-        let accountSecureViewModel = HXBAccountMainCellViewModel(type: .accountSecure)
+        let accountSecureViewModel = HXBAccountMainCellViewModel(type: .accountSecurity)
         let advisorViewModel = HXBAccountMainCellViewModel(type: .advisor)
         let aboutViewModel = HXBAccountMainCellViewModel(type: .about)
         

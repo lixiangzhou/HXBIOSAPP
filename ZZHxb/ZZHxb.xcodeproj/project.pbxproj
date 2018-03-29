@@ -58,6 +58,12 @@
 		8D9C8640206CC4A100FD87EB /* HXBAboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C863F206CC4A100FD87EB /* HXBAboutController.swift */; };
 		8D9C8642206CC6EB00FD87EB /* HXBAccountSecurityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8641206CC6EB00FD87EB /* HXBAccountSecurityController.swift */; };
 		8D9C8644206CC70900FD87EB /* HXBFinancialAdvisorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8643206CC70900FD87EB /* HXBFinancialAdvisorController.swift */; };
+		8D9C864B206CD24E00FD87EB /* HXBAccountSecurityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C864A206CD24E00FD87EB /* HXBAccountSecurityViewModel.swift */; };
+		8D9C864F206CD29A00FD87EB /* HXBAccountSecurityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C864E206CD29A00FD87EB /* HXBAccountSecurityCell.swift */; };
+		8D9C8651206CD2BB00FD87EB /* HXBAccountSecurityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8650206CD2BB00FD87EB /* HXBAccountSecurityModel.swift */; };
+		8D9C8653206CF22100FD87EB /* HXBMobileUnbindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8652206CF22100FD87EB /* HXBMobileUnbindingController.swift */; };
+		8D9C8655206CF8B800FD87EB /* HXBTransactionPwdModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8654206CF8B800FD87EB /* HXBTransactionPwdModifyController.swift */; };
+		8D9C8657206CFA4500FD87EB /* HXBSignInPwdModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8656206CFA4500FD87EB /* HXBSignInPwdModifyController.swift */; };
 		8DA2D8672068D70C00FFBA6B /* HXBAccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */; };
 		8DA2D8692068DC7E00FFBA6B /* HXBAccountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */; };
 		8DA2D86B2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */; };
@@ -203,6 +209,12 @@
 		8D9C863F206CC4A100FD87EB /* HXBAboutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAboutController.swift; sourceTree = "<group>"; };
 		8D9C8641206CC6EB00FD87EB /* HXBAccountSecurityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountSecurityController.swift; sourceTree = "<group>"; };
 		8D9C8643206CC70900FD87EB /* HXBFinancialAdvisorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBFinancialAdvisorController.swift; sourceTree = "<group>"; };
+		8D9C864A206CD24E00FD87EB /* HXBAccountSecurityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountSecurityViewModel.swift; sourceTree = "<group>"; };
+		8D9C864E206CD29A00FD87EB /* HXBAccountSecurityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountSecurityCell.swift; sourceTree = "<group>"; };
+		8D9C8650206CD2BB00FD87EB /* HXBAccountSecurityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountSecurityModel.swift; sourceTree = "<group>"; };
+		8D9C8652206CF22100FD87EB /* HXBMobileUnbindingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMobileUnbindingController.swift; sourceTree = "<group>"; };
+		8D9C8654206CF8B800FD87EB /* HXBTransactionPwdModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTransactionPwdModifyController.swift; sourceTree = "<group>"; };
+		8D9C8656206CFA4500FD87EB /* HXBSignInPwdModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignInPwdModifyController.swift; sourceTree = "<group>"; };
 		8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoController.swift; sourceTree = "<group>"; };
 		8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoCell.swift; sourceTree = "<group>"; };
 		8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoViewModel.swift; sourceTree = "<group>"; };
@@ -441,6 +453,7 @@
 		8D3E62221FDF7F34008C8E67 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				8D9C8645206CD1DA00FD87EB /* AccountSecurity */,
 				8DA2D882206A426900FFBA6B /* Bank */,
 				8D3EFE3B200DFF8400A54B1D /* Account */,
 				8DCC1D951FE8FF9100FEA8EF /* SignInSignUp */,
@@ -574,7 +587,6 @@
 				8DA2D87A206A2C1D00FFBA6B /* HXBModifyTransactionPwdController.swift */,
 				8D9C863D206C914C00FD87EB /* HXBRiskAssessmentController.swift */,
 				8D9C863F206CC4A100FD87EB /* HXBAboutController.swift */,
-				8D9C8641206CC6EB00FD87EB /* HXBAccountSecurityController.swift */,
 				8D9C8643206CC70900FD87EB /* HXBFinancialAdvisorController.swift */,
 			);
 			path = Controller;
@@ -591,6 +603,52 @@
 				8DA2D87C206A2C3D00FFBA6B /* HXBModifyTransactionPwdViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8D9C8645206CD1DA00FD87EB /* AccountSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				8D9C864D206CD27E00FD87EB /* View */,
+				8D9C8648206CD20700FD87EB /* Model */,
+				8D9C8647206CD1FD00FD87EB /* ViewModel */,
+				8D9C8646206CD1E600FD87EB /* Controller */,
+			);
+			path = AccountSecurity;
+			sourceTree = "<group>";
+		};
+		8D9C8646206CD1E600FD87EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D9C8641206CC6EB00FD87EB /* HXBAccountSecurityController.swift */,
+				8D9C8652206CF22100FD87EB /* HXBMobileUnbindingController.swift */,
+				8D9C8654206CF8B800FD87EB /* HXBTransactionPwdModifyController.swift */,
+				8D9C8656206CFA4500FD87EB /* HXBSignInPwdModifyController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D9C8647206CD1FD00FD87EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8D9C864A206CD24E00FD87EB /* HXBAccountSecurityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8D9C8648206CD20700FD87EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D9C8650206CD2BB00FD87EB /* HXBAccountSecurityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8D9C864D206CD27E00FD87EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D9C864E206CD29A00FD87EB /* HXBAccountSecurityCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8DA2D882206A426900FFBA6B /* Bank */ = {
@@ -1007,6 +1065,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D9C8651206CD2BB00FD87EB /* HXBAccountSecurityModel.swift in Sources */,
+				8D9C8655206CF8B800FD87EB /* HXBTransactionPwdModifyController.swift in Sources */,
 				8D3E61FA1FDF79DE008C8E67 /* AppDelegate.swift in Sources */,
 				8DE9141E1FE3C97E00FAEE68 /* HXBNetworkError.swift in Sources */,
 				8D9C8642206CC6EB00FD87EB /* HXBAccountSecurityController.swift in Sources */,
@@ -1045,6 +1105,7 @@
 				8DA8FCEE2021C8B100C018F4 /* Locale+ZZExtension.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
 				8D3610A8205781C7009E8505 /* HXBWithDrawController.swift in Sources */,
+				8D9C8653206CF22100FD87EB /* HXBMobileUnbindingController.swift in Sources */,
 				8DA8FD002021C8B100C018F4 /* ZZCollection.swift in Sources */,
 				8DA8FCFB2021C8B100C018F4 /* UISceen+ZZExtension.swift in Sources */,
 				8DFF64D41FFCB26D007D462D /* JSON+HXB.swift in Sources */,
@@ -1068,9 +1129,11 @@
 				8DCC1DB81FEA087700FEA8EF /* HXBViewModel.swift in Sources */,
 				8D3E623E1FDFB873008C8E67 /* HXBRootVCManager.swift in Sources */,
 				8DA8FCEF2021C8B100C018F4 /* NSNumber+ZZExtension.swift in Sources */,
+				8D9C864B206CD24E00FD87EB /* HXBAccountSecurityViewModel.swift in Sources */,
 				8D3EFE34200CC14500A54B1D /* HXBUserAssetsModel.swift in Sources */,
 				8DCC1DA31FE9FC3900FEA8EF /* HXBSignUpController.swift in Sources */,
 				8DA8FCFD2021C8B100C018F4 /* UITableView+ZZExtension.swift in Sources */,
+				8D9C864F206CD29A00FD87EB /* HXBAccountSecurityCell.swift in Sources */,
 				8DA8FCF42021C8B100C018F4 /* UIButton+ZZExtension.swift in Sources */,
 				8DA8FCF82021C8B100C018F4 /* UIImage+ZZExtension.swift in Sources */,
 				8DA8FCF62021C8B100C018F4 /* UIDevice+ZZExtension.swift in Sources */,
@@ -1136,6 +1199,7 @@
 				8DA2D88A206A52A700FFBA6B /* HXBBankBindingViewModel.swift in Sources */,
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 				8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */,
+				8D9C8657206CFA4500FD87EB /* HXBSignInPwdModifyController.swift in Sources */,
 				8DA2D888206A44D700FFBA6B /* UIViewController+ZZExtension.swift in Sources */,
 				8D3610A6205781BA009E8505 /* HXBChargeController.swift in Sources */,
 			);

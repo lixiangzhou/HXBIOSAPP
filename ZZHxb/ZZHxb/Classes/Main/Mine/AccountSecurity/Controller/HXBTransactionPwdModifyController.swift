@@ -1,5 +1,5 @@
 //
-//  HXBAccountSecurityController.swift
+//  HXBTransactionPwdModifyController.swift
 //  ZZHxb
 //
 //  Created by lxz on 2018/3/29.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class HXBAccountSecurityController: HXBViewController {
+class HXBTransactionPwdModifyController: HXBViewController {
 
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "账户安全"
+        title = "修改交易密码"
         setUI()
     }
 
@@ -26,19 +26,19 @@ class HXBAccountSecurityController: HXBViewController {
 }
 
 // MARK: - UI
-extension HXBAccountSecurityController {
+extension HXBTransactionPwdModifyController {
     fileprivate func setUI() {
         
     }
 }
 
 // MARK: - Action
-extension HXBAccountSecurityController {
+extension HXBTransactionPwdModifyController {
     
 }
 
 // MARK: - Network
-extension HXBAccountSecurityController {
+extension HXBTransactionPwdModifyController {
     
 }
 
@@ -51,17 +51,17 @@ extension HXBAccountSecurityController {
 // MARK: -
 
 // MARK: - Helper
-extension HXBAccountSecurityController {
+extension HXBTransactionPwdModifyController {
     
 }
 
 // MARK: - Other
-extension HXBAccountSecurityController {
+extension HXBTransactionPwdModifyController {
     
 }
 
 // MARK: - Public
-extension HXBAccountSecurityController {
+extension HXBTransactionPwdModifyController {
     
 }
 

@@ -72,22 +72,3 @@ extension HXBAccountMainCell {
     }
 }
 
-// MARK: - Action
-extension HXBAccountMainCell {
-    
-}
-
-// MARK: - Helper
-extension HXBAccountMainCell {
-    
-}
-
-// MARK: - Other
-extension HXBAccountMainCell {
-    
-}
-
-// MARK: - Public
-extension HXBAccountMainCell {
-    
-}

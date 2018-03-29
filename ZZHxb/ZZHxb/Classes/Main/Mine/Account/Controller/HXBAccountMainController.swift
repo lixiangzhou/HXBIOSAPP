@@ -131,11 +131,6 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Helper
 extension HXBAccountMainController {
     fileprivate func clickDepositoryAccount() {
-        if HXBAccountViewModel.shared.isIdUnBinding {
-            infoAlert()
-            return
-        }
-        
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
             checkAndOpenDepository()
         } else if HXBAccountViewModel.shared.hasBindCard {
@@ -144,11 +139,6 @@ extension HXBAccountMainController {
     }
     
     fileprivate func clickBank() {
-        if HXBAccountViewModel.shared.isIdUnBinding {
-            infoAlert()
-            return
-        }
-        
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
             checkAndOpenDepository()
         } else {
@@ -185,10 +175,6 @@ extension HXBAccountMainController {
 
 // MARK: - Other
 extension HXBAccountMainController {
-    fileprivate func infoAlert() {
-        HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)", isAsyncMain: true)
-    }
-    
     fileprivate func checkAndOpenDepository() {
         let checkVC = HXBDepositoryCheckViewController()
         checkVC.presentFrom(controller: self, animated: false, isAsyncMain: true).openClosure = { [weak checkVC] in
