@@ -112,8 +112,8 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
             clickBank()
         case .risk:
             clickRisk()
-        case .accountSecure:
-            clickAccountSecure()
+        case .accountSecurity:
+            clickAccountSecurity()
         case .advisor:
             clickAdvisor()
         case .about:
@@ -168,16 +168,16 @@ extension HXBAccountMainController {
         }
     }
     
-    fileprivate func clickAccountSecure() {
-        
+    fileprivate func clickAccountSecurity() {
+        HXBAccountSecurityController().pushFrom(controller: self, animated: true)
     }
     
     fileprivate func clickAdvisor() {
-        
+        HXBFinancialAdvisorController().pushFrom(controller: self, animated: true)
     }
     
     fileprivate func clickAbout() {
-        
+        HXBAboutController().pushFrom(controller: self, animated: true)
     }
     
     

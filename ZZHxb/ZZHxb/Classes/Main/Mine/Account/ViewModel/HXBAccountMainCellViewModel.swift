@@ -26,7 +26,7 @@ enum HXBAccountMainCellType: String {
     /// 风险评测
     case risk = "风险评测"
     /// 账户安全
-    case accountSecure = "账户安全"
+    case accountSecurity = "账户安全"
     /// 我的财富顾问
     case advisor = "我的财富顾问"
     /// 关于我们
