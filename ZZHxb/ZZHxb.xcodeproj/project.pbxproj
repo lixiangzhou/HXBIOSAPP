@@ -54,6 +54,7 @@
 		8D7187AC2029A4680017E539 /* HXBBankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7187AB2029A4680017E539 /* HXBBankCell.swift */; };
 		8D7F60D41FE7C383007FC57D /* HXBNetwork+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */; };
 		8D7F60D61FE7C3B6007FC57D /* HXBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */; };
+		8D9C863E206C914C00FD87EB /* HXBRiskAssessmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C863D206C914C00FD87EB /* HXBRiskAssessmentController.swift */; };
 		8DA2D8672068D70C00FFBA6B /* HXBAccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */; };
 		8DA2D8692068DC7E00FFBA6B /* HXBAccountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */; };
 		8DA2D86B2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */; };
@@ -195,6 +196,7 @@
 		8D7187AB2029A4680017E539 /* HXBBankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBBankCell.swift; sourceTree = "<group>"; };
 		8D7F60D31FE7C383007FC57D /* HXBNetwork+Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Account.swift"; sourceTree = "<group>"; };
 		8D7F60D51FE7C3B6007FC57D /* HXBNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBNetwork.swift; sourceTree = "<group>"; };
+		8D9C863D206C914C00FD87EB /* HXBRiskAssessmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBRiskAssessmentController.swift; sourceTree = "<group>"; };
 		8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoController.swift; sourceTree = "<group>"; };
 		8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoCell.swift; sourceTree = "<group>"; };
 		8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoViewModel.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				8D3610A92057A6D9009E8505 /* HXBAssetStatisticsController.swift */,
 				8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */,
 				8DA2D87A206A2C1D00FFBA6B /* HXBModifyTransactionPwdController.swift */,
+				8D9C863D206C914C00FD87EB /* HXBRiskAssessmentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/WKWebViewJavascriptBridge/WKWebViewJavascriptBridge.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -980,6 +984,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKWebViewJavascriptBridge.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1060,6 +1065,7 @@
 				8DA8FCF62021C8B100C018F4 /* UIDevice+ZZExtension.swift in Sources */,
 				8DF523DA202B10BE00122190 /* HXBDepositoryOpenOrModifyViewModel.swift in Sources */,
 				8DA8FCE42021C8B100C018F4 /* ZZRefreshFooter.swift in Sources */,
+				8D9C863E206C914C00FD87EB /* HXBRiskAssessmentController.swift in Sources */,
 				8DCC1DB31FEA087700FEA8EF /* HXBNavigationController.swift in Sources */,
 				8D7187A8202987810017E539 /* HXBBankListViewModel.swift in Sources */,
 				8D7187AC2029A4680017E539 /* HXBBankCell.swift in Sources */,

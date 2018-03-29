@@ -73,3 +73,9 @@ extension hxb.api {
     /// 《恒丰银行股份有限公司杭州分行网络交易资金账户三方协议》【/agreement/thirdpart】
     static let thirdpard = HXBNetworkConfig.shared.baseUrl + "/agreement/thirdpart"
 }
+
+// MARK: - H5
+extension hxb.api {
+    /// 风险评测 【https://m.hoomxb.com/riskvail】
+    static let risk_assessment = "https://m.hoomxb.com/riskvail"
+}

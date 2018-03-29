@@ -161,7 +161,11 @@ extension HXBAccountMainController {
     }
     
     fileprivate func clickRisk() {
-        
+        if !HXBAccountViewModel.shared.hasDepositoryOpen {
+            checkAndOpenDepository()
+        } else {
+            HXBRiskAssessmentController().pushFrom(controller: self, animated: true)
+        }
     }
     
     fileprivate func clickAccountSecure() {

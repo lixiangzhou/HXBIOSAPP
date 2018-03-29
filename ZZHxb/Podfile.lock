@@ -1,18 +1,19 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.7.0)
   - HandyJSON (4.0.0-beta.1)
-  - IQKeyboardManagerSwift (5.0.7)
+  - IQKeyboardManagerSwift (5.0.8)
   - KeychainAccess (3.1.0)
-  - Kingfisher (4.3.1)
+  - Kingfisher (4.6.4)
   - Neon (0.4.0)
-  - ReactiveCocoa (7.0.0):
-    - ReactiveSwift (~> 3.0)
-  - ReactiveSwift (3.0.0):
+  - ReactiveCocoa (7.1.0):
+    - ReactiveSwift (~> 3.1)
+  - ReactiveSwift (3.1.0):
     - Result (~> 3.2)
   - Result (3.2.4)
   - SnapKit (4.0.0)
-  - SwiftyBeaver (1.4.3)
+  - SwiftyBeaver (1.5.1)
   - SwiftyJSON (4.0.0)
+  - WKWebViewJavascriptBridge (1.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -25,21 +26,23 @@ DEPENDENCIES:
   - SnapKit
   - SwiftyBeaver
   - SwiftyJSON
+  - WKWebViewJavascriptBridge (~> 1.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   HandyJSON: 428bb18e2c34c2a77361accebf90cf64e4f74118
-  IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
-  ReactiveCocoa: 06a54796a36dfc346f082498d08e7a8fb50c4e2f
-  ReactiveSwift: d9fe0db33c1aaabecb092e8de83cf52875c0de6f
+  ReactiveCocoa: 105ad96f6b8711f1ee7d165fc96587479298053b
+  ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftyBeaver: e10b1668e0512229c36c34769b97eed3dfae2ca3
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  WKWebViewJavascriptBridge: 8da532409bc489ba2c0a69cf38e5d1cd49e3d5e4
 
-PODFILE CHECKSUM: 1ada7f861ed50b629c509236367d1f042edc534c
+PODFILE CHECKSUM: 9dacd3c39fe1db2d7f33283c94388bfcf65177ad
 
 COCOAPODS: 1.4.0.rc.1
