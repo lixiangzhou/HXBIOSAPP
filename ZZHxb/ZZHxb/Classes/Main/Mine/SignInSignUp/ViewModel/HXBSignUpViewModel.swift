@@ -63,7 +63,7 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - captcha: 验证码
     ///   - completion: 完成回调
     func getSmsCode(phone: String, captcha: String, completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.getSmsCode(phone: phone, captcha: captcha, configRequstClosure: { requestApi in
+        HXBNetwork.sendVerifyCode(params: ["captcha": captcha, "action": "signup", "mobile": phone], configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
         }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败", completion: completion)

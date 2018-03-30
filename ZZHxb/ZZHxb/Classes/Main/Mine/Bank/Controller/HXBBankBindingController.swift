@@ -15,9 +15,6 @@ enum HXBBankBindingNextTo: String {
     case popToAccountMain = "返回个人信息主页面"
 }
 
-fileprivate let bankNoMinCount = 12
-fileprivate let inputHeight = 50
-
 class HXBBankBindingController: HXBViewController {
     
     convenience init(nextTo: HXBBankBindingNextTo) {
@@ -72,12 +69,13 @@ extension HXBBankBindingController {
         
         bankNoView = HXBInputFieldView.rightClickViewFieldView(leftImage: UIImage("input_bank_red"), placeholder: "银行卡号", clickView: btn, leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
         bankNoView.inputLengthLimit = 24
+        bankNoView.keyboardType = .numberPad
         bankNoView.bankNoMode = true
         bankNoView.leftViewSize = CGSize(width: 24, height: 15)
 
         bankNoView.inputViewChangeClosure = { [weak self] textField in
             if let text = textField.text?.replacingOccurrences(of: " ", with: ""),
-                text.count >= bankNoMinCount {
+                text.count >= hxb.size.bankNoMinCount {
                 self?.viewModel.checkBankNo(text)
             }
         }
@@ -86,6 +84,7 @@ extension HXBBankBindingController {
         sepView.backgroundColor = hxb.color.background
         
         bankInfoView.alpha = 0
+        phoneView.keyboardType = .numberPad
         phoneView.inputLengthLimit = 11
         
         bottomView.addSubview(bankNoView)
@@ -105,7 +104,7 @@ extension HXBBankBindingController {
         
         bankNoView.snp.makeConstraints { maker in
             maker.top.left.right.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         bankInfoView.snp.makeConstraints { maker in
@@ -123,7 +122,7 @@ extension HXBBankBindingController {
         phoneView.snp.makeConstraints { maker in
             maker.top.equalTo(sepView.snp.bottom)
             maker.right.left.bottom.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         bindingBtn.snp.makeConstraints { maker in
@@ -163,7 +162,7 @@ extension HXBBankBindingController {
         nameLabel.reactive.text <~ viewModel.cardHolderSignal
         bankNoLabel.reactive.text <~ viewModel.bankNoSignal
         
-        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= bankNoMinCount }
+        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= hxb.size.bankNoMinCount }
         
         viewModel.bankCardSignal.producer.combineLatest(with: bankInfoShowSignal).map { ($0, $1 && $0.bankName.count > 0 && $0.bankCode.count > 0 && $0.quota.count > 0) }.startWithValues {[weak self] (bank, needShow) in
             self?.updateBankViews(bank: bank, needShow: needShow, update: false)
@@ -205,7 +204,7 @@ extension HXBBankBindingController {
 extension HXBBankBindingController {
     ///   - update: 是否是更新，false: 仅设置数据；true：更新数据
     fileprivate func updateBankViews(bank: HXBBankCardBinModel, needShow: Bool, update: Bool) {
-        let height = needShow ? inputHeight : 0
+        let height = needShow ? hxb.size.inputHeight : 0
         bankInfoView.snp.updateConstraints({ maker in
             maker.height.equalTo(height)
         })

@@ -45,6 +45,9 @@ extension hxb.api {
     
     /// 开通存管账户 【/user/escrow】
     static let open_depository = "/user/escrow"
+    
+    /// 校验身份证和短信接口 【/account/checkIdentitySms】
+    static let check_identity_sms = "/account/checkIdentitySms"
 }
 
 

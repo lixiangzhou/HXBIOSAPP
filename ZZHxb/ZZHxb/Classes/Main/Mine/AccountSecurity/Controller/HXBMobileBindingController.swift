@@ -1,21 +1,21 @@
 //
-//  HXBModifyTransactionPwdController.swift
+//  HXBMobileBindingController.swift
 //  ZZHxb
 //
-//  Created by lxz on 2018/3/27.
+//  Created by lxz on 2018/3/30.
 //Copyright © 2018年 lixiangzhou. All rights reserved.
 //
 
 import UIKit
 
-class HXBModifyTransactionPwdController: HXBViewController {
+class HXBMobileBindingController: HXBViewController {
 
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "修改交易密码"
+        title = "绑定新手机号"
         setUI()
     }
 
@@ -26,19 +26,19 @@ class HXBModifyTransactionPwdController: HXBViewController {
 }
 
 // MARK: - UI
-extension HXBModifyTransactionPwdController {
+extension HXBMobileBindingController {
     fileprivate func setUI() {
         
     }
 }
 
 // MARK: - Action
-extension HXBModifyTransactionPwdController {
+extension HXBMobileBindingController {
     
 }
 
 // MARK: - Network
-extension HXBModifyTransactionPwdController {
+extension HXBMobileBindingController {
     
 }
 
@@ -51,17 +51,17 @@ extension HXBModifyTransactionPwdController {
 // MARK: -
 
 // MARK: - Helper
-extension HXBModifyTransactionPwdController {
+extension HXBMobileBindingController {
     
 }
 
 // MARK: - Other
-extension HXBModifyTransactionPwdController {
+extension HXBMobileBindingController {
     
 }
 
 // MARK: - Public
-extension HXBModifyTransactionPwdController {
+extension HXBMobileBindingController {
     
 }
 

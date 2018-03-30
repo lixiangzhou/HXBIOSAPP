@@ -167,7 +167,7 @@ extension HXBBankUnBindingController {
 // MARK: - Action
 extension HXBBankUnBindingController {
     @objc fileprivate func forgetTransactionPwd() {
-        HXBModifyTransactionPwdController().pushFrom(controller: self, animated: true)
+        HXBTransactionPwdModifyController().pushFrom(controller: self, animated: true)
     }
     
     @objc fileprivate func unBind() {

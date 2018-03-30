@@ -17,6 +17,7 @@ class HXBAccountSecurityController: HXBViewController {
         
         title = "账户安全"
         setUI()
+        HXBAccountViewModel.shared.updateUserInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {

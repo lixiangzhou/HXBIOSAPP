@@ -77,5 +77,11 @@ extension hxb {
         
         /// HUD 的 cornerRadius 【5】
         static let hudCornerRadius: CGFloat = 5
+        
+        /// 银行卡号最小长度 【12】
+        static let bankNoMinCount = 12
+        
+        /// inputView 常用高度 【50】
+        static let inputHeight = 50
     }
 }

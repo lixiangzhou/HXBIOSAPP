@@ -10,10 +10,6 @@ import UIKit
 import ReactiveSwift
 import Result
 
-fileprivate let bankNoMinCount = 12
-fileprivate let inputHeight = 50
-
-
 /// 进入本页面后，提交成功后将要进入的页面
 enum HXBDepositoryNextTo: String {
     case simpleBack = "简单返回"
@@ -110,7 +106,7 @@ extension HXBDepositoryOpenOrModifyController {
         
         bankNoView.inputViewChangeClosure = { [weak self] textField in
             if let text = textField.text?.replacingOccurrences(of: " ", with: ""),
-                text.count >= bankNoMinCount {
+                text.count >= hxb.size.bankNoMinCount {
                 self?.checkBankNo(text)
             }
         }
@@ -153,19 +149,19 @@ extension HXBDepositoryOpenOrModifyController {
         
         nameView.snp.makeConstraints { maker in
             maker.top.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         idcardView.snp.makeConstraints { maker in
             maker.top.equalTo(nameView.snp.bottom).offset(hxb.size.view2View)
             maker.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         pwdView.snp.makeConstraints { maker in
             maker.top.equalTo(idcardView.snp.bottom).offset(hxb.size.view2View)
             maker.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
             maker.bottom.equalToSuperview()
         }
         
@@ -182,7 +178,7 @@ extension HXBDepositoryOpenOrModifyController {
         
         bankNoView.snp.makeConstraints { maker in
             maker.top.left.right.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         bankInfoView.snp.makeConstraints { maker in
@@ -194,7 +190,7 @@ extension HXBDepositoryOpenOrModifyController {
         phoneView.snp.makeConstraints { maker in
             maker.top.equalTo(bankInfoView.snp.bottom).offset(hxb.size.view2View)
             maker.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
             maker.bottom.equalToSuperview()
         }
         
@@ -206,7 +202,7 @@ extension HXBDepositoryOpenOrModifyController {
     }
     
     fileprivate func setBindings() {
-        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= bankNoMinCount }
+        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= hxb.size.bankNoMinCount }
         
         viewModel.bankCardSignal.producer.combineLatest(with: bankInfoShowSignal).map { ($0, $1 && $0.bankName.count > 0 && $0.bankCode.count > 0 && $0.quota.count > 0) }.startWithValues {[weak self] (bank, needShow) in
             self?.updateBankViews(bank: bank, needShow: needShow, update: false)
@@ -363,7 +359,7 @@ extension HXBDepositoryOpenOrModifyController {
     
     ///   - update: 是否是更新，false: 仅设置数据；true：更新数据
     fileprivate func updateBankViews(bank: HXBBankCardBinModel, needShow: Bool, update: Bool) {
-        let height = needShow ? inputHeight : 0
+        let height = needShow ? hxb.size.inputHeight : 0
         bankInfoView.snp.updateConstraints({ maker in
             maker.height.equalTo(height)
         })

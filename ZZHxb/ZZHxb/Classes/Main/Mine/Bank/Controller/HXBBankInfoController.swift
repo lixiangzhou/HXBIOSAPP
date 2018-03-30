@@ -26,12 +26,12 @@ class HXBBankInfoController: HXBViewController {
     let viewModel = HXBBankInfoViewModel()
     
     fileprivate let bankView = UIView()
-    let phoneLabel = ActiveLabel(text: "如有问题，请联系红小宝客服：\(hxb.string.servicePhone)", font: hxb.font.light, textColor: hxb.color.important, numOfLines: 0)
-    let bankIconView = UIImageView()
-    let bankNameLabel = UILabel(text: "", font: hxb.font.mainContent, textColor: UIColor(stringHexValue: "555555")!)
-    let realNameLabel = UILabel(text: "", font: hxb.font.light, textColor: UIColor(stringHexValue: "555555")!)
-    let bankNumLabel = UILabel(text: "", font: hxb.font.important, textColor: hxb.color.mostImport)
-    let bankTipLabel = UILabel(text: "", font: hxb.font.light, textColor: hxb.color.light)
+    fileprivate let phoneLabel = ActiveLabel(text: "如有问题，请联系红小宝客服：\(hxb.string.servicePhone)", font: hxb.font.light, textColor: hxb.color.important, numOfLines: 0)
+    fileprivate let bankIconView = UIImageView()
+    fileprivate let bankNameLabel = UILabel(text: "", font: hxb.font.mainContent, textColor: UIColor(stringHexValue: "555555")!)
+    fileprivate let realNameLabel = UILabel(text: "", font: hxb.font.light, textColor: UIColor(stringHexValue: "555555")!)
+    fileprivate let bankNumLabel = UILabel(text: "", font: hxb.font.important, textColor: hxb.color.mostImport)
+    fileprivate let bankTipLabel = UILabel(text: "", font: hxb.font.light, textColor: hxb.color.light)
 }
 
 // MARK: - UI
