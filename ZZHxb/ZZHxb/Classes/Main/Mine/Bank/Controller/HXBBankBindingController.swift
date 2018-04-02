@@ -29,6 +29,7 @@ class HXBBankBindingController: HXBViewController {
         super.viewDidLoad()
 
         title = "绑卡"
+        viewModel = HXBBankBindingViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
         setBindings()
     }
@@ -37,7 +38,7 @@ class HXBBankBindingController: HXBViewController {
     var nextTo: HXBBankBindingNextTo!
     
     // MARK: - Private Property
-    fileprivate let viewModel = HXBBankBindingViewModel()
+    fileprivate var viewModel: HXBBankBindingViewModel!
     fileprivate var bankInfoShowSignal: Signal<Bool, NoError>!
     
     fileprivate var topView: UIView!
@@ -68,10 +69,9 @@ extension HXBBankBindingController {
         btn.frame.size = btn.currentTitle!.zz_size(withLimitSize: CGSize(width: 1000, height: 1000), fontSize: 14)
         
         bankNoView = HXBInputFieldView.rightClickViewFieldView(leftImage: UIImage("input_bank_red"), placeholder: "银行卡号", clickView: btn, leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
-        bankNoView.inputLengthLimit = 24
+        bankNoView.inputLengthLimit = hxb.size.bankNoMaxCount
         bankNoView.keyboardType = .numberPad
         bankNoView.bankNoMode = true
-        bankNoView.leftViewSize = CGSize(width: 24, height: 15)
 
         bankNoView.inputViewChangeClosure = { [weak self] textField in
             if let text = textField.text?.replacingOccurrences(of: " ", with: ""),
@@ -85,7 +85,7 @@ extension HXBBankBindingController {
         
         bankInfoView.alpha = 0
         phoneView.keyboardType = .numberPad
-        phoneView.inputLengthLimit = 11
+        phoneView.inputLengthLimit = hxb.size.phoneLength
         
         bottomView.addSubview(bankNoView)
         bottomView.addSubview(bankInfoView)
@@ -211,7 +211,6 @@ extension HXBBankBindingController {
         
         bankNoView.hideBottomLine = !needShow
         bankInfoView.leftImage = UIImage(bank.bankCode) ?? UIImage("default_bank")
-        bankInfoView.leftViewSize = CGSize(width: 25, height: 25)
         bankInfoView.text = update ? bank.bankType + bank.quota : bank.bankName + "：" + bank.quota
         if update {
             bankNoView.text = bank.cardId

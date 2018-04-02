@@ -40,7 +40,7 @@ class HXBBankUnBindingViewModel: HXBViewModel {
             return false
         }
         
-        if idNo.count != 18 {
+        if idNo.count != hxb.size.idcardLength {
             HXBHUD.show(toast: "身份证号输入有误")
             return false
         }
@@ -50,7 +50,7 @@ class HXBBankUnBindingViewModel: HXBViewModel {
             return false
         }
         
-        if pwd.count != 6 {
+        if pwd.count != hxb.size.transactionPwdLength {
             HXBHUD.show(toast: "交易密码为6位数字")
             return false
         }

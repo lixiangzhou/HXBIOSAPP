@@ -48,6 +48,9 @@ extension hxb.api {
     
     /// 校验身份证和短信接口 【/account/checkIdentitySms】
     static let check_identity_sms = "/account/checkIdentitySms"
+    
+    /// 修改手机号
+    static let modify_mobile = "/account/mobile"
 }
 
 

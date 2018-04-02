@@ -51,6 +51,7 @@ extension HXBSignInController {
             }
         }
         
+        phoneView.text = HXBKeychain[hxb.keychain.key.phone]
         view.addSubview(phoneView)
         view.addSubview(pwdView)
         
@@ -159,7 +160,7 @@ extension HXBSignInController {
                 self.dismiss(animated: true, completion: nil)
             } else if needCaptcha {
                 self.captcha = nil
-                HXBCaptchaValidateView.showFrom(view: self.view) { captcha in
+                HXBCaptchaValidateView.show(fromView: self.view) { captcha in
                     self.captcha = captcha
                     self.signIn()
                 }

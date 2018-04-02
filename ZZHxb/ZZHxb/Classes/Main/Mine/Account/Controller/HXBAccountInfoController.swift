@@ -16,6 +16,7 @@ class HXBAccountInfoController: HXBViewController {
         super.viewDidLoad()
 
         title = "开户信息"
+        viewModel = HXBAccountInfoViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
 
@@ -23,7 +24,7 @@ class HXBAccountInfoController: HXBViewController {
     
     // MARK: - Private Property
     fileprivate var tableView: HXBTableView!
-    fileprivate var viewModel = HXBAccountInfoViewModel()
+    fileprivate var viewModel: HXBAccountInfoViewModel!
 }
 
 // MARK: - UI

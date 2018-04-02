@@ -17,6 +17,7 @@ class HXBAccountMainController: HXBViewController {
         super.viewDidLoad()
         
         title = "账户信息"
+        viewModel = HXBAccountMainViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
     
@@ -32,7 +33,7 @@ class HXBAccountMainController: HXBViewController {
     
     // MARK: - Private Property
     fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
-    fileprivate let viewModel = HXBAccountMainViewModel()
+    fileprivate var viewModel: HXBAccountMainViewModel!
 }
 
 // MARK: - UI
@@ -63,8 +64,8 @@ extension HXBAccountMainController {
         alertVC.rightAction = { [weak self] in
             self?.viewModel.signOut(completion: { isSuccess in
                 if isSuccess {
-                    self?.navigationController?.popToRootViewController(animated: false)
                     HXBRootVCManager.shared.tabBarController?.selectedIndex = 0
+                    self?.navigationController?.popToRootViewController(animated: false)
                 }
             })
         }
@@ -184,8 +185,4 @@ extension HXBAccountMainController {
     }
 }
 
-// MARK: - Public
-extension HXBAccountMainController {
-    
-}
 

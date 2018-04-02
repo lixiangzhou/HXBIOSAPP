@@ -16,6 +16,7 @@ class HXBBankInfoController: HXBViewController {
         super.viewDidLoad()
 
         title = "银行卡信息"
+        viewModel = HXBBankInfoViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
         setBindings()
     }
@@ -23,7 +24,7 @@ class HXBBankInfoController: HXBViewController {
     // MARK: - Public Property
     
     // MARK: - Private Property
-    let viewModel = HXBBankInfoViewModel()
+    fileprivate var viewModel: HXBBankInfoViewModel!
     
     fileprivate let bankView = UIView()
     fileprivate let phoneLabel = ActiveLabel(text: "如有问题，请联系红小宝客服：\(hxb.string.servicePhone)", font: hxb.font.light, textColor: hxb.color.important, numOfLines: 0)

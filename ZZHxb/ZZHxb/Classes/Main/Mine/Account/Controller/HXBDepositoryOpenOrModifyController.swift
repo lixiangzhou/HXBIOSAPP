@@ -30,6 +30,8 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "开通存管账户"
+        viewModel = HXBDepositoryOpenOrModifyViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
         setBindings()
         setData()
@@ -43,6 +45,8 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     
     
     // MARK: - Private Property
+    fileprivate var viewModel: HXBDepositoryOpenOrModifyViewModel!
+    
     fileprivate let scrollView = UIScrollView()
     
     fileprivate let nameView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_name"), placeholder: "真实姓名", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
@@ -59,8 +63,6 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     fileprivate var agreeBtn: UIButton!
     fileprivate var bottomBtn: UIButton!
     fileprivate var protocolView: UIView!
-    
-    fileprivate let viewModel = HXBDepositoryOpenOrModifyViewModel()
     
     fileprivate var bankInfoShowSignal: Signal<Bool, NoError>!
     
@@ -121,10 +123,10 @@ extension HXBDepositoryOpenOrModifyController {
         bottomInputView.addSubview(bankInfoView)
         bottomInputView.addSubview(phoneView)
         
-        idcardView.inputLengthLimit = 18
-        pwdView.inputLengthLimit = 6
-        bankNoView.inputLengthLimit = 24
-        phoneView.inputLengthLimit = 11
+        idcardView.inputLengthLimit = hxb.size.idcardLength
+        pwdView.inputLengthLimit = hxb.size.transactionPwdLength
+        bankNoView.inputLengthLimit = hxb.size.bankNoMaxCount
+        phoneView.inputLengthLimit = hxb.size.phoneLength
         
         pwdView.rightView.isHighlighted = true
         bankInfoView.editEnabled = false

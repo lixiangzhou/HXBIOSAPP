@@ -21,13 +21,14 @@ class HXBBankUnBindingController: HXBViewController {
         super.viewDidLoad()
 
         title = "解绑银行卡"
+        viewModel = HXBBankUnBindingViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
-    fileprivate let viewModel = HXBBankUnBindingViewModel()
+    fileprivate var viewModel: HXBBankUnBindingViewModel!
     
     fileprivate var bankInfoView: UIView!
     fileprivate let idCardView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_idcard_red"), placeholder: "请输入身份证号", leftSpacing: 5, rightSpacing: 5, bottomLineColor: hxb.color.sepLine)
@@ -49,8 +50,7 @@ extension HXBBankUnBindingController {
         let nameLabel = UILabel(text: "认证姓名：\(viewModel.userName)", font: hxb.font.mainContent, textColor: hxb.color.important)
         view.addSubview(nameLabel)
         
-        idCardView.leftViewSize = CGSize(width: 24, height: 15)
-        idCardView.inputLengthLimit = 18
+        idCardView.inputLengthLimit = hxb.size.idcardLength
         view.addSubview(idCardView)
         
         let transactionPwdLabel = UILabel(text: "交易密码", font: hxb.font.mainContent, textColor: hxb.color.important)
@@ -59,8 +59,7 @@ extension HXBBankUnBindingController {
         let forgetBtn =  UIButton(title: "忘记密码?", font: hxb.font.light, titleColor: hxb.color.linkActivity, target: self, action: #selector(forgetTransactionPwd))
         forgetBtn.sizeToFit()
         transactionPwdView = HXBInputFieldView.rightClickViewFieldView(leftImage: UIImage("input_password"), placeholder: "请输入交易密码", clickView: forgetBtn, leftSpacing: 5, rightSpacing: 5, bottomLineColor: hxb.color.sepLine)
-        transactionPwdView.leftViewSize = CGSize(width: 24, height: 20)
-        transactionPwdView.inputLengthLimit = 6
+        transactionPwdView.inputLengthLimit = hxb.size.transactionPwdLength
         view.addSubview(transactionPwdView)
         
         let tipIconView = UIImageView(named: "tip_blue")

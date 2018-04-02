@@ -66,6 +66,8 @@
 		8D9C8657206CFA4500FD87EB /* HXBSignInPwdModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8656206CFA4500FD87EB /* HXBSignInPwdModifyController.swift */; };
 		8D9C865B206E091C00FD87EB /* HXBMobileUnbindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C865A206E091C00FD87EB /* HXBMobileUnbindingViewModel.swift */; };
 		8D9C865D206E27E600FD87EB /* HXBMobileBindingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C865C206E27E600FD87EB /* HXBMobileBindingController.swift */; };
+		8D9C865F206E292D00FD87EB /* HXBMobileBindingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C865E206E292D00FD87EB /* HXBMobileBindingViewModel.swift */; };
+		8D9C8663206E2A8000FD87EB /* HXBTimerCountingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C8662206E2A8000FD87EB /* HXBTimerCountingTool.swift */; };
 		8DA2D8672068D70C00FFBA6B /* HXBAccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */; };
 		8DA2D8692068DC7E00FFBA6B /* HXBAccountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */; };
 		8DA2D86B2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */; };
@@ -218,6 +220,8 @@
 		8D9C8656206CFA4500FD87EB /* HXBSignInPwdModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBSignInPwdModifyController.swift; sourceTree = "<group>"; };
 		8D9C865A206E091C00FD87EB /* HXBMobileUnbindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMobileUnbindingViewModel.swift; sourceTree = "<group>"; };
 		8D9C865C206E27E600FD87EB /* HXBMobileBindingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMobileBindingController.swift; sourceTree = "<group>"; };
+		8D9C865E206E292D00FD87EB /* HXBMobileBindingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBMobileBindingViewModel.swift; sourceTree = "<group>"; };
+		8D9C8662206E2A8000FD87EB /* HXBTimerCountingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBTimerCountingTool.swift; sourceTree = "<group>"; };
 		8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoController.swift; sourceTree = "<group>"; };
 		8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoCell.swift; sourceTree = "<group>"; };
 		8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAccountInfoViewModel.swift; sourceTree = "<group>"; };
@@ -539,6 +543,7 @@
 				8DFF64D31FFCB26D007D462D /* JSON+HXB.swift */,
 				8D3EFE39200DF17300A54B1D /* NumberFormatter+HXB.swift */,
 				8DA2D88B206B98FC00FFBA6B /* HXBCommonFuncs.swift */,
+				8D9C8662206E2A8000FD87EB /* HXBTimerCountingTool.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 			children = (
 				8D9C864A206CD24E00FD87EB /* HXBAccountSecurityViewModel.swift */,
 				8D9C865A206E091C00FD87EB /* HXBMobileUnbindingViewModel.swift */,
+				8D9C865E206E292D00FD87EB /* HXBMobileBindingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1092,6 +1098,7 @@
 				8DA8FD1220231A6000C018F4 /* HXBAccountViewModel.swift in Sources */,
 				8DE914161FE2527B00FAEE68 /* UILabel+HXB.swift in Sources */,
 				8DA2D87D206A2C3D00FFBA6B /* HXBModifyTransactionPwdViewModel.swift in Sources */,
+				8D9C865F206E292D00FD87EB /* HXBMobileBindingViewModel.swift in Sources */,
 				8DA8FCF12021C8B100C018F4 /* String+ZZExtension.swift in Sources */,
 				8DEDB13520245A74005DA05C /* HXBDepositoryCheckViewController.swift in Sources */,
 				8DA8FCE92021C8B100C018F4 /* CGRect+ZZExtension.swift in Sources */,
@@ -1204,6 +1211,7 @@
 				8D3E62361FDF8016008C8E67 /* HXBInvestController.swift in Sources */,
 				8D3EFE41200DFFF300A54B1D /* HXBAccountMainController.swift in Sources */,
 				8D9C8657206CFA4500FD87EB /* HXBSignInPwdModifyController.swift in Sources */,
+				8D9C8663206E2A8000FD87EB /* HXBTimerCountingTool.swift in Sources */,
 				8DA2D888206A44D700FFBA6B /* UIViewController+ZZExtension.swift in Sources */,
 				8D3610A6205781BA009E8505 /* HXBChargeController.swift in Sources */,
 			);
