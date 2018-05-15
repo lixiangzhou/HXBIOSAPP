@@ -928,7 +928,6 @@
 				8D3E61F31FDF79DE008C8E67 /* Frameworks */,
 				8D3E61F41FDF79DE008C8E67 /* Resources */,
 				C9EF7BE30DD384D33531B9ED /* [CP] Embed Pods Frameworks */,
-				3646A8D375C1BE7EB8764F16 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -992,21 +991,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3646A8D375C1BE7EB8764F16 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZZHxb/Pods-ZZHxb-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3A3EB766B68D5DAFBE570913 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
