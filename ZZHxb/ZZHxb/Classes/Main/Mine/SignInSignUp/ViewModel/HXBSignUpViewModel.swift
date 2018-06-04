@@ -19,6 +19,7 @@ class HXBSignUpViewModel: HXBViewModel {
     func checkMobile(_ mobile: String) {
         HXBNetwork.checkMobile(mobile, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
+            requestApi.hudShowProgressType = .none
         }) { isSuccess, requestApi in
             if isSuccess {
                 let json = JSON(requestApi.responseObject!)

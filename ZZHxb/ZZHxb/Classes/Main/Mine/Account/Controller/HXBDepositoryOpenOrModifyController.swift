@@ -9,17 +9,10 @@
 import UIKit
 import ReactiveSwift
 import Result
+import XZLib
 
 fileprivate let bankNoMinCount = 12
 fileprivate let inputHeight = 50
-
-
-/// 进入该页面的目的
-enum HXBDepositoryEntyType {
-    case open       // 开通存管账户
-    case modify     // 完善存管账户
-}
-
 
 /// 进入本页面后，提交成功后将要进入的页面
 enum HXBDepositoryNextTo {
@@ -30,16 +23,10 @@ enum HXBDepositoryNextTo {
 class HXBDepositoryOpenOrModifyController: HXBViewController {
     
     // MARK: - Life Cycle
-    
-    convenience init(entryType: HXBDepositoryEntyType = .open, nextTo: HXBDepositoryNextTo = .simpleBack) {
-        self.init(nibName: nil, bundle: nil)
-        self.entryType = entryType
-        self.title = entryType == .open ? "开通存管账户" : "完善信息"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "开通存管账户"
         setUI()
         setBindings()
         setData()
@@ -55,26 +42,18 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     // MARK: - Private Property
     fileprivate let scrollView = UIScrollView()
     
-    fileprivate let nameView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_name"), placeholder: "真实姓名", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
+    fileprivate let nameView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_name"), placeholder: "请输入真实姓名", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
     
-    fileprivate let idcardView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_idcard"), placeholder: "身份证号", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
-    
-    fileprivate let pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password_blue"), placeholder: "请设置6位纯数字的交易密码", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
+    fileprivate let idcardView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_idcard"), placeholder: "请输入身份证号码", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
     
     fileprivate var bankNoView: HXBInputFieldView!
     fileprivate var bankInfoView = HXBInputFieldView.commonFieldView(leftImage: UIImage("default_bank"), placeholder: "", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
     
-    fileprivate let phoneView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone_blue"), placeholder: "银行预留手机号", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
-    
-    fileprivate var agreeBtn: UIButton!
     fileprivate var bottomBtn: UIButton!
-    fileprivate var protocolView: UIView!
     
     fileprivate let viewModel = HXBDepositoryOpenOrModifyViewModel()
     
     fileprivate var bankInfoShowSignal: Signal<Bool, NoError>!
-    
-    fileprivate var entryType: HXBDepositoryEntyType = .open
 }
 
 // MARK: - UI
@@ -83,7 +62,6 @@ extension HXBDepositoryOpenOrModifyController {
         navBgImage = UIImage("navigation_blue")!
         
         scrollView.frame = view.bounds
-        scrollView.backgroundColor = hxb.color.background
         scrollView.alwaysBounceVertical = true
         scrollView.keyboardDismissMode = .onDrag
         scrollView.contentInsetAdjustmentBehavior = .never
@@ -104,7 +82,6 @@ extension HXBDepositoryOpenOrModifyController {
         
         topInputView.addSubview(nameView)
         topInputView.addSubview(idcardView)
-        topInputView.addSubview(pwdView)
         
         let bottomInputView = UIView()
         scrollView.addSubview(bottomInputView)
@@ -122,30 +99,23 @@ extension HXBDepositoryOpenOrModifyController {
         }
         
         bottomBtn = UIButton(title: "开通恒丰银行存管账户", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: UIColor(red: 227, green: 191, blue: 128), target: self, action: #selector(createDepositoryAccount))
+        bottomBtn.layer.masksToBounds = true
+        bottomBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
         view.addSubview(bottomBtn)
-        
-        protocolView = getProtocolView()
-        scrollView.addSubview(protocolView)
         
         bottomInputView.addSubview(bankNoView)
         bottomInputView.addSubview(bankInfoView)
-        bottomInputView.addSubview(phoneView)
         
         idcardView.inputLengthLimit = 18
-        pwdView.inputLengthLimit = 6
         bankNoView.inputLengthLimit = 24
-        phoneView.inputLengthLimit = 11
         
-        pwdView.rightView.isHighlighted = true
         bankInfoView.editEnabled = false
         bankInfoView.leftViewSize = CGSize(width: 15, height: 15)
         bankInfoView.alpha = 0
         bankInfoView.textColor = hxb.color.light
         bankNoView.hideBottomLine = true
         
-        pwdView.keyboardType = .numberPad
         bankNoView.keyboardType = .numberPad
-        phoneView.keyboardType = .numberPad
         
         sectionView1.snp.makeConstraints { maker in
             maker.top.right.left.centerX.equalToSuperview()
@@ -166,12 +136,6 @@ extension HXBDepositoryOpenOrModifyController {
             maker.top.equalTo(nameView.snp.bottom).offset(hxb.size.view2View)
             maker.right.left.equalToSuperview()
             maker.height.equalTo(inputHeight)
-        }
-        
-        pwdView.snp.makeConstraints { maker in
-            maker.top.equalTo(idcardView.snp.bottom).offset(hxb.size.view2View)
-            maker.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
             maker.bottom.equalToSuperview()
         }
         
@@ -189,6 +153,7 @@ extension HXBDepositoryOpenOrModifyController {
         bankNoView.snp.makeConstraints { maker in
             maker.top.left.right.equalToSuperview()
             maker.height.equalTo(inputHeight)
+            maker.bottom.equalToSuperview()
         }
         
         bankInfoView.snp.makeConstraints { maker in
@@ -197,17 +162,11 @@ extension HXBDepositoryOpenOrModifyController {
             maker.height.equalTo(0)
         }
         
-        phoneView.snp.makeConstraints { maker in
-            maker.top.equalTo(bankInfoView.snp.bottom).offset(hxb.size.view2View)
-            maker.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
-            maker.bottom.equalToSuperview()
-        }
-        
         bottomBtn.snp.makeConstraints { maker in
-            maker.left.right.equalToSuperview()
-            maker.height.equalTo(hxb.size.tabbarHeight)
-            maker.bottom.equalTo(-view.safeAreaInsets.bottom)
+            maker.left.equalTo(35)
+            maker.right.equalTo(-35)
+            maker.height.equalTo(hxb.size.wideButtonHeight)
+            maker.top.equalTo(self.bankInfoView.snp.bottom).offset(40)
         }
     }
     
@@ -247,18 +206,12 @@ extension HXBDepositoryOpenOrModifyController {
         var param = [String: String]()
         param["realName"] = nameView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         param["identityCard"] = idcardView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-        param["password"] = pwdView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         param["bankCard"] = bankNoView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-        param["bankReservedMobile"] = phoneView.text!.trimmingCharacters(in: CharacterSet.whitespaces)
         param["bankCode"] = viewModel.bankCode ?? ""
         
-        viewModel.openDepository(param: param, entryType: entryType) { isSuccess in
+        viewModel.openDepository(param: param) { isSuccess in
             
         }
-    }
-    
-    @objc fileprivate func agreeProtocolClick() {
-        
     }
 }
 
@@ -303,9 +256,7 @@ extension HXBDepositoryOpenOrModifyController {
         }
         
         guard checkInput(inputView: idcardView, toastEmpty: "身份证号不能为空", toastCount: "身份证号输入有误", limitCount: 18),
-        checkInput(inputView: pwdView, toastEmpty: "交易密码不能为空", toastCount: "交易密码为6位数字", limitCount: 6),
-        checkInput(inputView: bankNoView, toastEmpty: "银行卡号不能为空", toastCount: "银行卡号输入有误", min: 10, max: 31),
-        checkInput(inputView: phoneView, toastEmpty: "预留手机号不能为空", toastCount: "预留手机号有误", limitCount: 11) else {
+        checkInput(inputView: bankNoView, toastEmpty: "银行卡号不能为空", toastCount: "银行卡号输入有误", min: 10, max: 31) else {
             return false
         }
         return true
@@ -337,49 +288,6 @@ extension HXBDepositoryOpenOrModifyController {
         return view
     }
     
-    fileprivate func getProtocolView() -> UIView {
-        let view = UIView(frame: getProtocolFrame())
-        
-        agreeBtn = UIButton(imageName: "depository_protocol_disagree", selectedImageName: "depository_protocol_agree", target: self, action: #selector(agreeProtocolClick))
-        agreeBtn.isSelected = true
-        
-        let protocolString1 = "《红小宝平台授权协议》"
-        let protocolString2 = "《恒丰银行股份有限公司杭州分行网络交易资金账户三方协议》"
-        let protocolLabel = ActiveLabel(text: "我已查看并同意\(protocolString1),\(protocolString2)", font: hxb.font.light, textColor: hxb.color.important, numOfLines: 0)
-        
-        let customType = ActiveType.custom(pattern: "\(protocolString1)|\(protocolString2)")
-        protocolLabel.enabledTypes.append(customType)
-        
-        protocolLabel.customize { label in
-            label.lineSpacing = 4
-            label.customColor[customType] = hxb.color.linkActivity
-            label.handleCustomTap(for: customType) { string in
-                var url = ""
-                if string == protocolString1 {
-                    url = hxb.api.authorize
-                } else if string == protocolString2 {
-                    url = hxb.api.thirdpard
-                }
-                HXBWebController(urlString: url).pushFrom(controller: self, animated: true)
-            }
-        }
-        
-        view.addSubview(agreeBtn)
-        view.addSubview(protocolLabel)
-        
-        agreeBtn.snp.makeConstraints { maker in
-            maker.top.left.equalToSuperview().offset(2)
-            maker.size.equalTo(CGSize(width: 12, height: 12))
-        }
-        
-        protocolLabel.snp.makeConstraints { maker in
-            maker.left.equalTo(agreeBtn.snp.right).offset(8)
-            maker.top.right.bottom.equalToSuperview()
-        }
-        
-        return view
-    }
-    
     fileprivate func getProtocolFrame() -> CGRect {
         let protocolX = hxb.size.edgeScreen
         let protocolW = self.scrollView.frame.width - protocolX * 2
@@ -406,20 +314,12 @@ extension HXBDepositoryOpenOrModifyController {
         UIView.animate(withDuration: 0.25, animations: {
             self.view.layoutIfNeeded()
             self.bankInfoView.alpha = needShow ? 1 : 0
-            self.protocolView.frame = self.getProtocolFrame()
         })
     }
 }
 
 // MARK: - Other
 extension HXBDepositoryOpenOrModifyController {
-    override func viewSafeAreaInsetsDidChange() {
-        super.viewSafeAreaInsetsDidChange()
-        
-        bottomBtn.snp.updateConstraints { maker in
-            maker.bottom.equalTo(-view.safeAreaInsets.bottom)
-        }
-    }
 }
 
 // MARK: - Public

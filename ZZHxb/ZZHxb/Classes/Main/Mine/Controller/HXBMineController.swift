@@ -8,6 +8,7 @@
 
 import UIKit
 import Neon
+import XZLib
 
 class HXBMineController: HXBViewController {
 

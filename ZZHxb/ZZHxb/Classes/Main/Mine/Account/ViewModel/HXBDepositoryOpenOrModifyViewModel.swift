@@ -61,7 +61,6 @@ class HXBDepositoryOpenOrModifyViewModel: HXBViewModel {
         HXBAccountViewModel.shared.updateUserInfoSuccess(completion)
     }
     
-    
     /// 获取银行卡号信息
     func getBankInfo() {
         HXBNetwork.bandCardInfo { isSuccess, requestApi in
@@ -84,14 +83,13 @@ class HXBDepositoryOpenOrModifyViewModel: HXBViewModel {
     }
     
     /// 开通存管账户
-    func openDepository(param: [String: String], entryType: HXBDepositoryEntyType, completion: @escaping (Bool) -> ()) {
+    func openDepository(param: [String: String], completion: @escaping (Bool) -> ()) {
         HXBNetwork.openDepository(params: param, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
         }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, errorToast: nil, showToast: false, completion: { isSuccess in
                 if isSuccess {
-                    let msg = entryType == .open ? "开户成功" : "提交成功"
-                    requestApi.show(toast: msg)
+                    requestApi.show(toast: "开户成功")
                 } else {
                     if let respObj = requestApi.responseObject {
                         let json = JSON(respObj)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XZLib
 
 struct HXBHUD {
     static func show(toast: String, in view: UIView = UIApplication.shared.keyWindow!) {
@@ -21,7 +22,8 @@ struct HXBHUD {
     
     static func showLoding(toView: UIView) {
         let loadingBgView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityView.startAnimating()
         
         loadingBgView.addSubview(activityView)
         activityView.center = loadingBgView.center

@@ -14,11 +14,10 @@ pod 'Kingfisher'
 pod 'ReactiveCocoa'
 pod 'KeychainAccess'
 pod 'SwiftyBeaver'
-pod 'HandyJSON','~>4.0.0-beta.1'
+pod 'HandyJSON'
 pod 'SwiftyJSON'
 pod 'IQKeyboardManagerSwift'
-pod 'WKWebViewJavascriptBridge', '~> 1.1.0'
-
-#pod 'ZZLib', :path =>'/Users/lxz/Documents/github_lib/ZZLib'
+pod 'WKWebViewJavascriptBridge'
+pod 'XZLib'
 
 end

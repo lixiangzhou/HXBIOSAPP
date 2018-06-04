@@ -12,6 +12,8 @@ import IQKeyboardManagerSwift
 
 let log = SwiftyBeaver.self
 
+import XZLib
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         console.format = "$DHH:mm:ss.SSS$d $C$L$c $N.$F$l: $M"
         log.addDestination(console)
         
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 30
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 30
         
         window = UIWindow()
         

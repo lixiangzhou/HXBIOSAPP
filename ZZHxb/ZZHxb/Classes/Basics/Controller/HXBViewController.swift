@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import XZLib
 
 class HXBViewController: UIViewController {
     

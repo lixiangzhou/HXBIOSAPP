@@ -146,7 +146,7 @@ extension HXBAccountMainController {
             }
         } else if HXBAccountViewModel.shared.hasBindCard {
             if HXBAccountViewModel.shared.hasTransitionPwd == false {
-                HXBDepositoryOpenOrModifyController(entryType: .modify).pushFrom(controller: self, animated: true)
+                HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
             }
         } else if HXBAccountViewModel.shared.hasTransitionPwd {
             
