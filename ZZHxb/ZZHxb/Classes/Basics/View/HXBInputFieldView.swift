@@ -436,6 +436,7 @@ extension HXBInputFieldView {
         fieldView.leftPadding = leftSpacing
         fieldView.rightPadding = -rightSpacing
         fieldView.hideBottomLine = false
+        fieldView.leftViewSize = CGSize(width: 25, height: 15)
         
         return fieldView
     }

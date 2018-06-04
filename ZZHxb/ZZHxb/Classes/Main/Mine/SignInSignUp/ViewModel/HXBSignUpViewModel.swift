@@ -64,7 +64,7 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - captcha: 验证码
     ///   - completion: 完成回调
     func getSmsCode(phone: String, captcha: String, completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.getSmsCode(phone: phone, captcha: captcha, configRequstClosure: { requestApi in
+        HXBNetwork.sendVerifyCode(params: ["captcha": captcha, "action": "signup", "mobile": phone], configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
         }) { isSuccess, requestApi in
             self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败", completion: completion)
@@ -111,6 +111,21 @@ class HXBSignUpViewModel: HXBViewModel {
             } else {
                 requestApi.show(toast: "登录失败")
                 completion(false, false)
+            }
+        }
+    }
+
+    /// 检查手机号
+    func checkExistMobile(_ mobile: String) {
+        HXBNetwork.checkMobile(mobile, configRequstClosure: { requestApi in
+            requestApi.hudDelegate = self
+        }) { isSuccess, requestApi in
+            if isSuccess {
+                let json = JSON(requestApi.responseObject!)
+                if json.statusCode == hxb.code.commonError {
+                    let msg = json.message == "手机号码已存在" ? "该手机号已注册" : json.message
+                    requestApi.show(toast: msg)
+                }
             }
         }
     }

@@ -75,7 +75,25 @@ extension hxb {
         /// 手机号长度 【11】
         static let phoneLength = 11
         
+        /// 身份证号长度 【18】
+        static let idcardLength = 18
+        
         /// HUD 的 cornerRadius 【5】
         static let hudCornerRadius: CGFloat = 5
+        
+        /// 银行卡号最小长度 【12】
+        static let bankNoMinCount = 12
+        
+        /// 银行卡号最长长度 【24】
+        static let bankNoMaxCount = 24
+        
+        /// 交易密码长度 【6】
+        static let transactionPwdLength = 6
+        
+        /// 短信码长度 【6】
+        static let msgCodeLength = 6
+        
+        /// inputView 常用高度 【50】
+        static let inputHeight = 50
     }
 }

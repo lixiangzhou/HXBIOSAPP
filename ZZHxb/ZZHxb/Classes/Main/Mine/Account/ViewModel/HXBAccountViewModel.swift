@@ -41,29 +41,14 @@ class HXBAccountViewModel: HXBViewModel {
     
     // MARK: -
     
-    /// 是否实名
-    var hasIdPassed: Bool {
-        return account.userInfo.isIdPassed  == "1"
-    }
-    
     /// 开通存管账户
     var hasDepositoryOpen: Bool {
         return account.userInfo.isCreateEscrowAcc == "1"
     }
     
-    /// 是否绑定身份证
-    var isIdUnBinding: Bool {
-        return hasDepositoryOpen && !hasIdPassed
-    }
-    
     /// 是否绑定银行卡
     var hasBindCard: Bool {
         return account.userInfo.hasBindCard == "1"
-    }
-    
-    /// 是否有交易密码
-    var hasTransitionPwd: Bool {
-        return account.userInfo.isCashPasswordPassed == "1"
     }
 
     private override init() {

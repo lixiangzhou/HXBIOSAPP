@@ -172,10 +172,10 @@ extension HXBCaptchaValidateView {
 
 // MARK: - Public
 extension HXBCaptchaValidateView {
-    static func showFrom(view: UIView = UIApplication.shared.keyWindow!, comfirmClosure: @escaping (String?) -> Void) {
+    static func show(fromView: UIView = UIApplication.shared.keyWindow!, comfirmClosure: @escaping (String?) -> Void) {
         let validateView = HXBCaptchaValidateView()
         validateView.frame = UIApplication.shared.keyWindow!.frame
         validateView.confirmClosure = comfirmClosure
-        view.addSubview(validateView)
+        fromView.addSubview(validateView)
     }
 }

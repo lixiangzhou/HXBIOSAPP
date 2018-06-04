@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import WKWebViewJavascriptBridge
 
 class HXBNavBarProgressView: UIView {
     var progress: CGFloat = 0 {
@@ -39,12 +40,14 @@ class HXBWebController: HXBViewController {
         super.viewDidLoad()
 
         setUI()
+        initBridge()
     }
 
     // MARK: - Public Property
     var urlString: String?
     // MARK: - Private Property
     fileprivate var webView: WKWebView!
+    var bridge: WKWebViewJavascriptBridge!
     
     fileprivate var progressView = HXBNavBarProgressView()
 }
@@ -102,6 +105,11 @@ extension HXBWebController {
 
 // MARK: - Other
 extension HXBWebController {
+    fileprivate func initBridge() {
+        bridge = WKWebViewJavascriptBridge(webView: webView)
+    }
+    
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "title" {
             title = webView.title

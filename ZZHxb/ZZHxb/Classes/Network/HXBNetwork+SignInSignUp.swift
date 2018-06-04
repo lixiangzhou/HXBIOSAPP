@@ -24,11 +24,6 @@ extension HXBNetwork {
         HXBNetworkManager.request(url: hxb.api.check_captcha, params: ["captcha": captcha], method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
     
-    /// 获取短信验证码
-    static func getSmsCode(phone: String, captcha: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.verifyCode, params: ["captcha": captcha, "action": "signup", "mobile": phone], method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
-    }
-    
     /// 注册
     static func signup(mobile: String, smsCode: String, password: String, inviteCode: String?, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
         var param = ["mobile": mobile, "smscode": smsCode, "password": password]
@@ -51,5 +46,10 @@ extension HXBNetwork {
     /// 登出
     static func signout(configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
         HXBNetworkManager.request(url: hxb.api.signout, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
+    }
+    
+    /// 校验手机号
+    static func checkExistMobile(_ mobile: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
+        HXBNetworkManager.request(url: hxb.api.check_exist_mobile, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
 }

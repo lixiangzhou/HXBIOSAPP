@@ -29,7 +29,6 @@ class HXBBankCell: UITableViewCell {
     
     var bank: HXBBankModel? {
         didSet {
-//            iconView.image
             titleLabel.text = bank?.name
             subTitleLabel.text = bank?.quota
             iconView.image = UIImage(bank?.bankCode ?? "") ?? UIImage("default_bank")

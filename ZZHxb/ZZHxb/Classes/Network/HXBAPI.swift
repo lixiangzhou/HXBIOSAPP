@@ -34,6 +34,8 @@ extension hxb.api {
     static let signout = "/logout"
     /// 获取用户信息 【/user/info】
     static let userinfo = "/user/info"
+    /// 校验手机号 【/checkExistMobile】
+    static let check_exist_mobile = "/checkExistMobile"
 }
 
 // MARK: - 账户
@@ -43,6 +45,12 @@ extension hxb.api {
     
     /// 开通存管账户 【/user/escrow】
     static let open_depository = "/user/escrow"
+    
+    /// 校验身份证和短信接口 【/account/checkIdentitySms】
+    static let check_identity_sms = "/account/checkIdentitySms"
+    
+    /// 修改手机号
+    static let modify_mobile = "/account/mobile"
 }
 
 
@@ -54,7 +62,11 @@ extension hxb.api {
     /// 银行卡校验 【/user/checkCardBin】
     static let checkcardbin = "/user/checkCardBin"
     /// 用户获取绑定银行卡信息
-    static let bandcard = "/account/bankcard"
+    static let bankcard = "/account/bankcard"
+    /// 解绑银行卡
+    static let bankcard_unbind = "/account/bankcard/unbind"
+    /// 绑定银行卡
+    static let bindcard = "/account/bindcard"
 }
 
 
@@ -66,4 +78,10 @@ extension hxb.api {
     
     /// 《恒丰银行股份有限公司杭州分行网络交易资金账户三方协议》【/agreement/thirdpart】
     static let thirdpard = HXBNetworkConfig.shared.baseUrl + "/agreement/thirdpart"
+}
+
+// MARK: - H5
+extension hxb.api {
+    /// 风险评测 【https://m.hoomxb.com/riskvail】
+    static let risk_assessment = "https://m.hoomxb.com/riskvail"
 }

@@ -187,15 +187,20 @@ extension HXBAlertController {
 
 // MARK: - Helper
 extension HXBAlertController {
-    static func phoneCall(phone: String = hxb.string.servicePhone, title: String?, message: String?, left: String = "取消", right: String = "拨打") {
-        print("phoneCall")
+    static func phoneCall(phone: String = hxb.string.servicePhone, title: String?, message: String?, left: String = "取消", right: String = "拨打", isAsyncMain: Bool = false) {
         let vc = HXBAlertController(title: title, messageText: message, leftActionName: left, rightActionName: right)
         vc.textAlignment = .center
         vc.backClickDismissEnabled = false
         vc.rightAction = {
             UIApplication.shared.open(URL(string: "telprompt://\(phone)")!, options: [:], completionHandler: nil)
         }
-        HXBRootVCManager.shared.rootVC.present(vc, animated: true, completion: nil)
+        if isAsyncMain {
+            DispatchQueue.main.async {
+                HXBRootVCManager.shared.rootVC.present(vc, animated: true, completion: nil)
+            }
+        } else {
+            HXBRootVCManager.shared.rootVC.present(vc, animated: true, completion: nil)
+        }
     }
 }
 

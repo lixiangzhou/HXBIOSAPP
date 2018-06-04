@@ -17,20 +17,23 @@ class HXBAccountMainController: HXBViewController {
         super.viewDidLoad()
         
         title = "账户信息"
+        viewModel = HXBAccountMainViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        HXBAccountViewModel.shared.updateUserInfo()
+        HXBAccountViewModel.shared.updateUserInfoSuccess { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 
     // MARK: - Public Property
     
     // MARK: - Private Property
     fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
-    fileprivate let viewModel = HXBAccountMainViewModel()
+    fileprivate var viewModel: HXBAccountMainViewModel!
 }
 
 // MARK: - UI
@@ -61,18 +64,13 @@ extension HXBAccountMainController {
         alertVC.rightAction = { [weak self] in
             self?.viewModel.signOut(completion: { isSuccess in
                 if isSuccess {
-                    self?.navigationController?.popToRootViewController(animated: false)
                     HXBRootVCManager.shared.tabBarController?.selectedIndex = 0
+                    self?.navigationController?.popToRootViewController(animated: false)
                 }
             })
         }
         alertVC.presentFrom(controller: self, animated: true)
     }
-}
-
-// MARK: - Network
-extension HXBAccountMainController {
-    
 }
 
 // MARK: - Delegate Internal
@@ -115,8 +113,8 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
             clickBank()
         case .risk:
             clickRisk()
-        case .accountSecure:
-            clickAccountSecure()
+        case .accountSecurity:
+            clickAccountSecurity()
         case .advisor:
             clickAdvisor()
         case .about:
@@ -134,45 +132,43 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 // MARK: - Helper
 extension HXBAccountMainController {
     fileprivate func clickDepositoryAccount() {
-        if HXBAccountViewModel.shared.isIdUnBinding {
-            HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)")
-            return
-        }
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
-            let checkVC = HXBDepositoryCheckViewController()
-            checkVC.presentFrom(controller: self, animated: false).openClosure = { [weak checkVC] in
-                checkVC?.dismiss(animated: false, completion: nil)
-                HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
-            }
+            checkAndOpenDepository()
         } else if HXBAccountViewModel.shared.hasBindCard {
-            if HXBAccountViewModel.shared.hasTransitionPwd == false {
-                HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
-            }
-        } else if HXBAccountViewModel.shared.hasTransitionPwd {
-            
-        } else {
-            
+            HXBAccountInfoController().pushFrom(controller: self, animated: true)
         }
     }
     
     fileprivate func clickBank() {
-        
+        if !HXBAccountViewModel.shared.hasDepositoryOpen {
+            checkAndOpenDepository()
+        } else {
+            if HXBAccountViewModel.shared.hasBindCard {
+                HXBBankInfoController().pushFrom(controller: self, animated: true)
+            } else {
+                HXBBankBindingController(nextTo: .simpleBack).pushFrom(controller: self, animated: true)
+            }
+        }
     }
     
     fileprivate func clickRisk() {
-        
+        if !HXBAccountViewModel.shared.hasDepositoryOpen {
+            checkAndOpenDepository()
+        } else {
+            HXBRiskAssessmentController().pushFrom(controller: self, animated: true)
+        }
     }
     
-    fileprivate func clickAccountSecure() {
-        
+    fileprivate func clickAccountSecurity() {
+        HXBAccountSecurityController().pushFrom(controller: self, animated: true)
     }
     
     fileprivate func clickAdvisor() {
-        
+        HXBFinancialAdvisorController().pushFrom(controller: self, animated: true)
     }
     
     fileprivate func clickAbout() {
-        
+        HXBAboutController().pushFrom(controller: self, animated: true)
     }
     
     
@@ -180,11 +176,13 @@ extension HXBAccountMainController {
 
 // MARK: - Other
 extension HXBAccountMainController {
-    
+    fileprivate func checkAndOpenDepository() {
+        let checkVC = HXBDepositoryCheckViewController()
+        checkVC.presentFrom(controller: self, animated: false, isAsyncMain: true).openClosure = { [weak checkVC] in
+            checkVC?.dismiss(animated: false, completion: nil)
+            HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
+        }
+    }
 }
 
-// MARK: - Public
-extension HXBAccountMainController {
-    
-}
 

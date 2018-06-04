@@ -47,9 +47,9 @@ extension HXBSignUpController {
         inviteCodeView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码")
         
         smsCodeView = smsOrVoiceValidView
-        smsOrVoiceValidView.inputLengthLimit = 6
+        smsOrVoiceValidView.inputLengthLimit = hxb.size.msgCodeLength
         pwdView.inputLengthLimit = 20
-        inviteCodeView.inputLengthLimit = 6
+        inviteCodeView.inputLengthLimit = hxb.size.msgCodeLength
         
         voiceBtn.addTarget(self, action: #selector(getVoiceCode), for: .touchUpInside)
         

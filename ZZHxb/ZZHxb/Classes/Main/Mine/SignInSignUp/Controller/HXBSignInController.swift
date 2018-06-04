@@ -45,7 +45,13 @@ extension HXBSignInController {
         
         phoneView.inputLengthLimit = hxb.size.phoneLength
         phoneView.keyboardType = .numberPad
+        phoneView.inputFieldSignal.observeValues { [weak self] text in
+            if text.count == hxb.size.phoneLength {
+                self?.viewModel.checkExistMobile(text)
+            }
+        }
         
+        phoneView.text = HXBKeychain[hxb.keychain.key.phone]
         view.addSubview(phoneView)
         view.addSubview(pwdView)
         
@@ -154,7 +160,7 @@ extension HXBSignInController {
                 self.dismiss(animated: true, completion: nil)
             } else if needCaptcha {
                 self.captcha = nil
-                HXBCaptchaValidateView.showFrom(view: self.view) { captcha in
+                HXBCaptchaValidateView.show(fromView: self.view) { captcha in
                     self.captcha = captcha
                     self.signIn()
                 }

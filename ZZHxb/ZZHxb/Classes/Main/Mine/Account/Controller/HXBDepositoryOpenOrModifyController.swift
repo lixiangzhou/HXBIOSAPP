@@ -14,11 +14,6 @@ import XZLib
 fileprivate let bankNoMinCount = 12
 fileprivate let inputHeight = 50
 
-/// 进入本页面后，提交成功后将要进入的页面
-enum HXBDepositoryNextTo {
-    case simpleBack     // 简单返回
-}
-
 /// 开通或修改存管账户
 class HXBDepositoryOpenOrModifyController: HXBViewController {
     
@@ -27,6 +22,8 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
         super.viewDidLoad()
         
         title = "开通存管账户"
+
+        viewModel = HXBDepositoryOpenOrModifyViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
         setBindings()
         setData()
@@ -40,18 +37,18 @@ class HXBDepositoryOpenOrModifyController: HXBViewController {
     
     
     // MARK: - Private Property
+    fileprivate var viewModel: HXBDepositoryOpenOrModifyViewModel!
+    
     fileprivate let scrollView = UIScrollView()
     
-    fileprivate let nameView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_name"), placeholder: "请输入真实姓名", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
+    fileprivate let nameView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_name"), placeholder: "请输入真实姓名", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
     
-    fileprivate let idcardView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_idcard"), placeholder: "请输入身份证号码", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
+    fileprivate let idcardView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_idcard"), placeholder: "请输入身份证号码", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
     
     fileprivate var bankNoView: HXBInputFieldView!
-    fileprivate var bankInfoView = HXBInputFieldView.commonFieldView(leftImage: UIImage("default_bank"), placeholder: "", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: UIColor.clear)
+    fileprivate var bankInfoView = HXBInputFieldView.commonFieldView(leftImage: UIImage("default_bank"), placeholder: "", leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
     
     fileprivate var bottomBtn: UIButton!
-    
-    fileprivate let viewModel = HXBDepositoryOpenOrModifyViewModel()
     
     fileprivate var bankInfoShowSignal: Signal<Bool, NoError>!
 }
@@ -75,10 +72,11 @@ extension HXBDepositoryOpenOrModifyController {
         let sectionView2 = viewTitle("银行卡", description: "实名认证与银行卡需为同一人")
         scrollView.addSubview(sectionView2)
         
-        let sectionHeight = 80
+        let sectionHeight = 100
         
         let topInputView = UIView()
         scrollView.addSubview(topInputView)
+        
         
         topInputView.addSubview(nameView)
         topInputView.addSubview(idcardView)
@@ -86,14 +84,14 @@ extension HXBDepositoryOpenOrModifyController {
         let bottomInputView = UIView()
         scrollView.addSubview(bottomInputView)
         
-        let btn = UIButton(title: "查看银行限额", font: hxb.font.transaction, titleColor: hxb.color.linkActivity, target: self, action: #selector(queryLimit))
+        let btn = UIButton(title: "查看银行限额", font: hxb.font.transaction, titleColor: hxb.color.linkActivity, target: self, action: #selector(bankList))
         btn.frame.size = btn.currentTitle!.zz_size(withLimitSize: CGSize(width: 1000, height: 1000), fontSize: 14)
         bankNoView = HXBInputFieldView.rightClickViewFieldView(leftImage: UIImage("input_bank"), placeholder: "银行卡号", clickView: btn, leftSpacing: hxb.size.edgeScreen, rightSpacing: hxb.size.edgeScreen, bottomLineColor: hxb.color.sepLine)
         bankNoView.bankNoMode = true
         
         bankNoView.inputViewChangeClosure = { [weak self] textField in
             if let text = textField.text?.replacingOccurrences(of: " ", with: ""),
-                text.count >= bankNoMinCount {
+                text.count >= hxb.size.bankNoMinCount {
                 self?.checkBankNo(text)
             }
         }
@@ -106,14 +104,12 @@ extension HXBDepositoryOpenOrModifyController {
         bottomInputView.addSubview(bankNoView)
         bottomInputView.addSubview(bankInfoView)
         
-        idcardView.inputLengthLimit = 18
-        bankNoView.inputLengthLimit = 24
+        idcardView.inputLengthLimit = hxb.size.idcardLength
         
         bankInfoView.editEnabled = false
         bankInfoView.leftViewSize = CGSize(width: 15, height: 15)
         bankInfoView.alpha = 0
         bankInfoView.textColor = hxb.color.light
-        bankNoView.hideBottomLine = true
         
         bankNoView.keyboardType = .numberPad
         
@@ -129,13 +125,13 @@ extension HXBDepositoryOpenOrModifyController {
         
         nameView.snp.makeConstraints { maker in
             maker.top.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         idcardView.snp.makeConstraints { maker in
-            maker.top.equalTo(nameView.snp.bottom).offset(hxb.size.view2View)
+            maker.top.equalTo(nameView.snp.bottom)
             maker.right.left.equalToSuperview()
-            maker.height.equalTo(inputHeight)
+            maker.height.equalTo(hxb.size.inputHeight)
             maker.bottom.equalToSuperview()
         }
         
@@ -154,6 +150,7 @@ extension HXBDepositoryOpenOrModifyController {
             maker.top.left.right.equalToSuperview()
             maker.height.equalTo(inputHeight)
             maker.bottom.equalToSuperview()
+            maker.height.equalTo(hxb.size.inputHeight)
         }
         
         bankInfoView.snp.makeConstraints { maker in
@@ -171,7 +168,7 @@ extension HXBDepositoryOpenOrModifyController {
     }
     
     fileprivate func setBindings() {
-        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= bankNoMinCount }
+        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= hxb.size.bankNoMinCount }
         
         viewModel.bankCardSignal.producer.combineLatest(with: bankInfoShowSignal).map { ($0, $1 && $0.bankName.count > 0 && $0.bankCode.count > 0 && $0.quota.count > 0) }.startWithValues {[weak self] (bank, needShow) in
             self?.updateBankViews(bank: bank, needShow: needShow, update: false)
@@ -194,7 +191,7 @@ extension HXBDepositoryOpenOrModifyController {
 
 // MARK: - Action
 extension HXBDepositoryOpenOrModifyController {
-    @objc fileprivate func queryLimit() {
+    @objc fileprivate func bankList() {
         HXBNavigationController(rootViewController: HXBBankListController()).presentFrom(controller: self, animated: true)
     }
     
@@ -228,35 +225,13 @@ extension HXBDepositoryOpenOrModifyController {
 // MARK: - Helper
 extension HXBDepositoryOpenOrModifyController {
     fileprivate func checkInputsValidate() -> Bool {
-        
-        func checkInput(inputView: HXBInputFieldView, toastEmpty: String, toastCount: String, limitCount: Int = 0, min: Int = 0, max: Int = 0) -> Bool {
-            let text = inputView.text ?? ""
-            if text.isEmpty {
-                HXBHUD.show(toast: toastEmpty, in: view)
-                return false
-            }
-            if limitCount > 0 { //  具体的限制
-                if text.count != limitCount {
-                    HXBHUD.show(toast: toastCount, in: view)
-                    return false
-                }
-                return true
-            } else {    // 范围限制
-                if text.count >= min && text.count <= max {
-                    return true
-                }
-                HXBHUD.show(toast: toastCount, in: view)
-                return false
-            }
-        }
-        
         if (nameView.text ?? "").isEmpty {
             HXBHUD.show(toast: "真实姓名不能为空", in: view)
             return false
         }
         
-        guard checkInput(inputView: idcardView, toastEmpty: "身份证号不能为空", toastCount: "身份证号输入有误", limitCount: 18),
-        checkInput(inputView: bankNoView, toastEmpty: "银行卡号不能为空", toastCount: "银行卡号输入有误", min: 10, max: 31) else {
+        guard checkInput(inputView: idcardView, toastEmpty: "身份证号不能为空", toastCount: "身份证号输入有误", limitCount: 18, toastView: view),
+            checkInput(inputView: bankNoView, toastEmpty: "银行卡号不能为空", toastCount: "银行卡号输入有误", min: 10, max: 31, toastView: view) else {
             return false
         }
         return true
@@ -267,7 +242,7 @@ extension HXBDepositoryOpenOrModifyController {
     }
     
     fileprivate func viewTitle(_ title: String, description: String) -> UIView {
-        let titleLabel = UILabel(text: "●  \(title)  ●", font: hxb.font.mainContent, textColor: hxb.color.linkActivity, textAlignment: .center)
+        let titleLabel = UILabel(text: "●  \(title)  ●", font: hxb.font.mainContent, textColor: UIColor(stringHexValue: "0x003d7e")!, textAlignment: .center)
         let descLabel = UILabel(text: description, font: hxb.font.light, textColor: hxb.color.light, textAlignment: .center)
         
         let view = UIView()
@@ -276,7 +251,7 @@ extension HXBDepositoryOpenOrModifyController {
         view.addSubview(descLabel)
         
         titleLabel.snp.makeConstraints { maker in
-            maker.top.equalTo(20)
+            maker.top.equalTo(40)
             maker.centerX.left.right.equalToSuperview()
         }
         
@@ -299,12 +274,12 @@ extension HXBDepositoryOpenOrModifyController {
     
     ///   - update: 是否是更新，false: 仅设置数据；true：更新数据
     fileprivate func updateBankViews(bank: HXBBankCardBinModel, needShow: Bool, update: Bool) {
-        let height = needShow ? inputHeight : 0
+        let height = needShow ? hxb.size.inputHeight : 0
         bankInfoView.snp.updateConstraints({ maker in
             maker.height.equalTo(height)
         })
         
-        bankNoView.hideBottomLine = !needShow
+//        bankNoView.hideBottomLine = !needShow
         bankInfoView.leftImage = UIImage(bank.bankCode) ?? UIImage("default_bank")
         bankInfoView.leftViewSize = CGSize(width: 15, height: 15)
         bankInfoView.text = update ? bank.bankType + bank.quota : bank.bankName + "：" + bank.quota
@@ -321,9 +296,3 @@ extension HXBDepositoryOpenOrModifyController {
 // MARK: - Other
 extension HXBDepositoryOpenOrModifyController {
 }
-
-// MARK: - Public
-extension HXBDepositoryOpenOrModifyController {
-    
-}
-

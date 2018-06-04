@@ -24,8 +24,14 @@ extension UIViewController {
     
     /// Present
     @discardableResult
-    func presentFrom(controller: UIViewController, animated: Bool, completion: (() -> ())? = nil) -> Self {
-        controller.present(self, animated: animated, completion: completion)
+    func presentFrom(controller: UIViewController, animated: Bool, completion: (() -> ())? = nil, isAsyncMain: Bool = false) -> Self {
+        if isAsyncMain {
+            DispatchQueue.main.async {
+                controller.present(self, animated: animated, completion: completion)
+            }
+        } else {
+            controller.present(self, animated: animated, completion: completion)
+        }
         return self
     }
 }

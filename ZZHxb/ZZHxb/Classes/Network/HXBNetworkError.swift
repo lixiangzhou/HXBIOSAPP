@@ -28,6 +28,8 @@ extension hxb {
         static let commonError = 1
         /// 开户或绑卡超过次数
         static let openCountOut = 5068
+        /// 解绑银行卡失败（跳结果页）
+        static let unbindFail = 4002
     }
 }
 
