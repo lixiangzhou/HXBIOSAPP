@@ -44,9 +44,19 @@ class HXBAccountViewModel: HXBViewModel {
     
     // MARK: -
     
+    /// 是否实名
+    var hasIdPassed: Bool {
+        return account.userInfo.isIdPassed  == "1"
+    }
+    
     /// 开通存管账户
     var hasDepositoryOpen: Bool {
         return account.userInfo.isCreateEscrowAcc == "1"
+    }
+    
+    /// 是否绑定身份证
+    var isIdUnBinding: Bool {
+        return hasDepositoryOpen && !hasIdPassed
     }
     
     /// 是否绑定银行卡
@@ -122,6 +132,18 @@ extension HXBAccountViewModel {
     
     func updateUserInfo() {
         updateUserInfo { (_) in
+        }
+    }
+    
+    func isIdUnBindingAlert() {
+        HXBAlertController.phoneCall(title: "温馨提示", message: "您的身份信息不完善，请联系客服 \(hxb.string.servicePhone)", isAsyncMain: true)
+    }
+    
+    func checkAndOpenDepository(from vc: UIViewController) {
+        let checkVC = HXBDepositoryCheckViewController()
+        checkVC.presentFrom(controller: vc, animated: false, isAsyncMain: true).openClosure = { [weak checkVC] in
+            checkVC?.dismiss(animated: false, completion: nil)
+            HXBDepositoryOpenOrModifyController().pushFrom(controller: vc, animated: true)
         }
     }
 }

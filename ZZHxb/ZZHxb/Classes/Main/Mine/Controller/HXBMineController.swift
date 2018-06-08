@@ -44,7 +44,6 @@ extension HXBMineController {
         tableView.delegate = self
         tableView.register(HXBMineCell.self, forCellReuseIdentifier: HXBMineCell.identifier)
         tableView.rowHeight = HXBMineCell.cellHeight
-        
         tableView.tableHeaderView = headerView
 
         view.addSubview(tableView)

@@ -87,7 +87,7 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HXBAccountMainCell.identifier, for: indexPath) as! HXBAccountMainCell
-        cell.viewModel = viewModel.dataSource[indexPath.section][indexPath.row]
+        cell.reactive_bind(viewModel.dataSource[indexPath.section][indexPath.row])
         return cell
     }
     
@@ -104,8 +104,13 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cellViewModel = viewModel.dataSource[indexPath.section][indexPath.row]
+        if HXBAccountViewModel.shared.isIdUnBinding {
+            HXBAccountViewModel.shared.isIdUnBindingAlert()
+            return
+        }
         
+        let cellViewModel = viewModel.dataSource[indexPath.section][indexPath.row]
+
         switch cellViewModel.type {
         case .depositoryAccount:
             clickDepositoryAccount()
@@ -133,7 +138,7 @@ extension HXBAccountMainController: UITableViewDataSource, UITableViewDelegate {
 extension HXBAccountMainController {
     fileprivate func clickDepositoryAccount() {
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
-            checkAndOpenDepository()
+            HXBAccountViewModel.shared.checkAndOpenDepository(from: self)
         } else if HXBAccountViewModel.shared.hasBindCard {
             HXBAccountInfoController().pushFrom(controller: self, animated: true)
         }
@@ -141,7 +146,7 @@ extension HXBAccountMainController {
     
     fileprivate func clickBank() {
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
-            checkAndOpenDepository()
+            HXBAccountViewModel.shared.checkAndOpenDepository(from: self)
         } else {
             if HXBAccountViewModel.shared.hasBindCard {
                 HXBBankInfoController().pushFrom(controller: self, animated: true)
@@ -153,7 +158,7 @@ extension HXBAccountMainController {
     
     fileprivate func clickRisk() {
         if !HXBAccountViewModel.shared.hasDepositoryOpen {
-            checkAndOpenDepository()
+            HXBAccountViewModel.shared.checkAndOpenDepository(from: self)
         } else {
             HXBRiskAssessmentController().pushFrom(controller: self, animated: true)
         }
@@ -176,13 +181,6 @@ extension HXBAccountMainController {
 
 // MARK: - Other
 extension HXBAccountMainController {
-    fileprivate func checkAndOpenDepository() {
-        let checkVC = HXBDepositoryCheckViewController()
-        checkVC.presentFrom(controller: self, animated: false, isAsyncMain: true).openClosure = { [weak checkVC] in
-            checkVC?.dismiss(animated: false, completion: nil)
-            HXBDepositoryOpenOrModifyController().pushFrom(controller: self, animated: true)
-        }
-    }
 }
 
 

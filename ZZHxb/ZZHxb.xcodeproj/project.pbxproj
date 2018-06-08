@@ -119,6 +119,10 @@
 		8DFF64D81FFCD5A7007D462D /* HXBCaptchaValidateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */; };
 		8DFF64DA1FFCEDDE007D462D /* HXBNetwork+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF64D91FFCEDDE007D462D /* HXBNetwork+Common.swift */; };
 		9788815520C944CD00F599A4 /* HXBReactiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788815420C944CD00F599A4 /* HXBReactiveProtocol.swift */; };
+		9788815920CA815100F599A4 /* HXBAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788815820CA815100F599A4 /* HXBAboutViewModel.swift */; };
+		9788815B20CA818300F599A4 /* HXBAboutCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788815A20CA818300F599A4 /* HXBAboutCellViewModel.swift */; };
+		9788815D20CA89DF00F599A4 /* HXBAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788815C20CA89DF00F599A4 /* HXBAboutCell.swift */; };
+		9788815F20CA951D00F599A4 /* HXBCommonProblemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788815E20CA951D00F599A4 /* HXBCommonProblemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +241,10 @@
 		8DFF64D71FFCD5A7007D462D /* HXBCaptchaValidateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBCaptchaValidateView.swift; sourceTree = "<group>"; };
 		8DFF64D91FFCEDDE007D462D /* HXBNetwork+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HXBNetwork+Common.swift"; sourceTree = "<group>"; };
 		9788815420C944CD00F599A4 /* HXBReactiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBReactiveProtocol.swift; sourceTree = "<group>"; };
+		9788815820CA815100F599A4 /* HXBAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAboutViewModel.swift; sourceTree = "<group>"; };
+		9788815A20CA818300F599A4 /* HXBAboutCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAboutCellViewModel.swift; sourceTree = "<group>"; };
+		9788815C20CA89DF00F599A4 /* HXBAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBAboutCell.swift; sourceTree = "<group>"; };
+		9788815E20CA951D00F599A4 /* HXBCommonProblemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HXBCommonProblemController.swift; sourceTree = "<group>"; };
 		F38D71056305AB893B5BCF7A /* Pods_ZZHxb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZZHxb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -504,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				8D3EFE44200E018E00A54B1D /* HXBAccountMainCell.swift */,
+				9788815C20CA89DF00F599A4 /* HXBAboutCell.swift */,
 				8DA2D8682068DC7E00FFBA6B /* HXBAccountInfoCell.swift */,
 			);
 			path = View;
@@ -521,6 +530,7 @@
 				8DA2D8662068D70C00FFBA6B /* HXBAccountInfoController.swift */,
 				8D9C863D206C914C00FD87EB /* HXBRiskAssessmentController.swift */,
 				8D9C863F206CC4A100FD87EB /* HXBAboutController.swift */,
+				9788815E20CA951D00F599A4 /* HXBCommonProblemController.swift */,
 				8D9C8643206CC70900FD87EB /* HXBFinancialAdvisorController.swift */,
 			);
 			path = Controller;
@@ -535,6 +545,8 @@
 				8DF523D9202B10BE00122190 /* HXBDepositoryOpenOrModifyViewModel.swift */,
 				8DA2D86A2068DF3D00FFBA6B /* HXBAccountInfoViewModel.swift */,
 				8DA2D87C206A2C3D00FFBA6B /* HXBModifyTransactionPwdViewModel.swift */,
+				9788815820CA815100F599A4 /* HXBAboutViewModel.swift */,
+				9788815A20CA818300F599A4 /* HXBAboutCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -948,6 +960,7 @@
 				8D9C865D206E27E600FD87EB /* HXBMobileBindingController.swift in Sources */,
 				8DA2D8712068ED1600FFBA6B /* HXBBankInfoController.swift in Sources */,
 				8DE914221FE3D59D00FAEE68 /* HXBNetActivityManager.swift in Sources */,
+				9788815F20CA951D00F599A4 /* HXBCommonProblemController.swift in Sources */,
 				8DE9141A1FE3BECB00FAEE68 /* UIImage+HXB.swift in Sources */,
 				8DE914141FE24CF700FAEE68 /* HXBMineHeaderView.swift in Sources */,
 				8D3610A8205781C7009E8505 /* HXBWithDrawController.swift in Sources */,
@@ -959,6 +972,7 @@
 				8DA2D87F206A313700FFBA6B /* HXBNetwork+Bank.swift in Sources */,
 				8D352B731FFC7E48003E5507 /* HXBStartSignUpController.swift in Sources */,
 				8DE914101FE22F9C00FAEE68 /* HXBMineCellModel.swift in Sources */,
+				9788815D20CA89DF00F599A4 /* HXBAboutCell.swift in Sources */,
 				8DFF64D61FFCC582007D462D /* HXBNetwork+SignInSignUp.swift in Sources */,
 				8D3EFE43200E009300A54B1D /* HXBAccountMainViewModel.swift in Sources */,
 				8D3BA8E520286FEC006BF5F3 /* RegexParser.swift in Sources */,
@@ -974,6 +988,7 @@
 				8D9C864F206CD29A00FD87EB /* HXBAccountSecurityCell.swift in Sources */,
 				8D9C863E206C914C00FD87EB /* HXBRiskAssessmentController.swift in Sources */,
 				8DCC1DB31FEA087700FEA8EF /* HXBNavigationController.swift in Sources */,
+				9788815920CA815100F599A4 /* HXBAboutViewModel.swift in Sources */,
 				8D7187A8202987810017E539 /* HXBBankListViewModel.swift in Sources */,
 				8D7187AC2029A4680017E539 /* HXBBankCell.swift in Sources */,
 				8DCC1DB41FEA087700FEA8EF /* HXBTabBarController.swift in Sources */,
@@ -1002,6 +1017,7 @@
 				8DE9140E1FE22EF800FAEE68 /* HXBMineViewModel.swift in Sources */,
 				8D3E62421FDFB909008C8E67 /* HXBRequestApi.swift in Sources */,
 				8DFF64DA1FFCEDDE007D462D /* HXBNetwork+Common.swift in Sources */,
+				9788815B20CA818300F599A4 /* HXBAboutCellViewModel.swift in Sources */,
 				8D3EFE49200E049300A54B1D /* HXBAccountMainCellViewModel.swift in Sources */,
 				8DE914201FE3D14000FAEE68 /* HXBNetworkHUDDelegate.swift in Sources */,
 				8DCC1DC11FEA3F5900FEA8EF /* UIButton+HXB.swift in Sources */,

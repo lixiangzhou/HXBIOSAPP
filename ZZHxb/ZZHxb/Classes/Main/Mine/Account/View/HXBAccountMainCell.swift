@@ -9,7 +9,7 @@
 import UIKit
 import ReactiveSwift
 
-class HXBAccountMainCell: HXBSettingTableViewCell {
+class HXBAccountMainCell: HXBSettingTableViewCell, HXBReactiveViewBinder {
     
     // MARK: - Life Cycle
     
@@ -26,26 +26,6 @@ class HXBAccountMainCell: HXBSettingTableViewCell {
     // MARK: - Public Property
     static let identifier = "HXBAccountMainCellIdentifier"
     static let cellHeight: CGFloat = 44
-    
-    var viewModel: HXBAccountMainCellViewModel? {
-        didSet {
-            guard let viewModel = viewModel else {
-                return
-            }
-            
-            if let signal = viewModel.titleSignal {
-                leftLabel.reactive.attributedText <~ signal
-                rightIconView.isHidden = true
-            } else {
-                leftLabel.text = viewModel.title
-                rightIconView.isHidden = false
-            }
-            
-            if let signal = viewModel.rightAccessoryStringSignal {
-                rightLabel.reactive.attributedText <~ signal
-            }
-        }
-    }
     
     // MARK: - Private Property
     let rightLabel = UILabel()
@@ -69,6 +49,21 @@ extension HXBAccountMainCell {
             maker.top.bottom.equalToSuperview()
             maker.right.equalTo(rightIconView.snp.left).offset(-hxb.size.view2View)
         }
+    }
+    
+    func reactive_bind(_ vm: HXBAccountMainCellViewModel) {
+        if let signal = vm.titleSignal {
+            leftLabel.reactive.attributedText <~ signal
+            rightIconView.isHidden = true
+        } else {
+            leftLabel.text = vm.title
+            rightIconView.isHidden = false
+        }
+        
+        if let signal = vm.rightAccessoryStringSignal {
+            rightLabel.reactive.attributedText <~ signal
+        }
+
     }
 }
 
