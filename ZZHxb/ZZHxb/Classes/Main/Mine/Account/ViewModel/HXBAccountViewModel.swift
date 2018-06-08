@@ -39,6 +39,9 @@ class HXBAccountViewModel: HXBViewModel {
     /// 是否有理财顾问
     let advisorSignal: SignalProducer<Bool, NoError>
     
+    /// 是否显示邀请好友
+    let displayInviteSignal: SignalProducer<Bool, NoError>
+    
     // MARK: -
     
     /// 开通存管账户
@@ -82,6 +85,8 @@ class HXBAccountViewModel: HXBViewModel {
         bandCardSignal = account.userInfo.reactive.producer(forKeyPath: "hasBindCard").map { $0 as! String == "1" }.skipRepeats()
         
         advisorSignal = account.userInfo.reactive.producer(forKeyPath: "isDisplayAdvisor").map { $0 as! Bool }.skipRepeats()
+        
+        displayInviteSignal = account.userInfo.reactive.producer(forKeyPath: "isDisplayInvite").map { $0 as! Bool }.skipRepeats()
         
         super.init()
     }

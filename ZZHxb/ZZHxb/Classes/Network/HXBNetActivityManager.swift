@@ -7,30 +7,38 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 class HXBNetActivityManager: NSObject {
     static let shared = HXBNetActivityManager()
     
-    var requestCount: NSInteger = 0
+    let requestCount = MutableProperty(0)
+    
     
     private override init() {
         super.init()
+        
+        UIApplication.shared.reactive.makeBindingTarget { $0.isNetworkActivityIndicatorVisible = $1 } <~ requestCount.signal.map { $0 > 0 }
     }
     
     private var lock = NSLock()
     
     func sendRequest() {
-        lock.lock()
-        requestCount += 1
-        lock.unlock()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = self.requestCount > 0
+        safeCount {
+            requestCount.value += 1
+        }
     }
     
     func finishRequest() {
+        safeCount {
+            requestCount.value -= 1
+        }
+    }
+    
+    private func safeCount(_ count: () -> Void) {
         lock.lock()
-        requestCount -= 1
+        count()
         lock.unlock()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = self.requestCount > 0
     }
     
     static func sendRequest() {

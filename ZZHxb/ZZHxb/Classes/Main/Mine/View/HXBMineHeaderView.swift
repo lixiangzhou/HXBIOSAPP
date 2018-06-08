@@ -11,7 +11,7 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
  
-class HXBMineHeaderView: UIView {
+class HXBMineHeaderView: UIView, HXBReactiveViewBinder {
     
     // MARK: - Life Cycle
     
@@ -26,20 +26,6 @@ class HXBMineHeaderView: UIView {
     }
 
     // MARK: - Public Property
-    var viewModel: HXBMineViewModel? {
-        didSet {
-            guard let viewModel = viewModel else {
-                return
-            }
-            
-            let eyeSignal = eyeBtn.reactive.controlEvents(.touchUpInside)
-            
-            holdMoneyLabel.reactive.text <~ viewModel.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
-            availableMoneyLabel.reactive.text <~ viewModel.availablePointProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
-            accumulatedMoneyLabel.reactive.text <~ viewModel.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
-        }
-    }
-    
     var iconClick: (() -> ())?
     var bgViewClick: (() -> ())?
     var chargeClick:(() -> ())?
@@ -62,8 +48,12 @@ class HXBMineHeaderView: UIView {
     
     fileprivate var accumulatedMoneyTitleLabel = UILabel(text: "累计收益(元)", font: hxb.font.light, textColor: UIColor(white: 1, alpha: 0.6))
     fileprivate var accumulatedMoneyLabel = UILabel(text: "0.00", font: hxb.font.firstClass, textColor: hxb.color.white)
-    fileprivate var eyeBtn = UIButton()//(image: UIImage("mine_eyes"), highlightedImage: UIImage("mine_eyes_colsed"))
+    fileprivate var eyeBtn = UIButton()
     
+    fileprivate let chargeBtn = UIButton(title: "充值", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_charge")
+    fileprivate let withDrawBtn = UIButton(title: "提现", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_withdraw")
+    
+    fileprivate var viewModel: HXBMineViewModel?
 }
 
 // MARK: - UI
@@ -88,8 +78,6 @@ extension HXBMineHeaderView {
         bottomBgView.isUserInteractionEnabled = true
         addSubview(bottomBgView)
         
-        let chargeBtn = UIButton(title: "充值", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_charge", target:self, action: #selector(toCharge))
-        let withDrawBtn = UIButton(title: "提现", font: hxb.font.mainContent, titleColor: hxb.color.mostImport, imageName: "mine_withdraw", target: self, action: #selector(toWithDraw))
         chargeBtn.imageEdgeInsets = UIEdgeInsets(top: 14, left: 0, bottom: 14, right: 0)
         chargeBtn.imageView?.contentMode = .scaleAspectFit
         
@@ -196,38 +184,33 @@ extension HXBMineHeaderView {
             maker.width.equalTo(hxb.size.sepLineWidth)
         }
     }
+    
+    func reactive_bind(_ vm: HXBMineViewModel) {
+        viewModel = vm
+        
+        let eyeSignal = eyeBtn.reactive.controlEvents(.touchUpInside)
+        
+        holdMoneyLabel.reactive.text <~ vm.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
+        availableMoneyLabel.reactive.text <~ vm.availablePointProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
+        accumulatedMoneyLabel.reactive.text <~ vm.holdingTotalAssetsProducer.combineLatest(with: eyeSignal).map { $1.isSelected ? hxb.string.moneySecure : $0 }
+        
+        chargeBtn.reactive.controlEvents(.touchUpInside).observeValues { (_) in
+            vm.chargeObserver.send(value: ())
+        }
+        
+        withDrawBtn.reactive.controlEvents(.touchUpInside).observeValues { (_) in
+            vm.withdrawObserver.send(value: ())
+        }
+    }
 }
 
 // MARK: - Action
 extension HXBMineHeaderView {
     @objc fileprivate func iconTap() {
-        iconClick?()
+        viewModel?.accountObserver.send(value: ())
     }
     
     @objc fileprivate func bgViewTap() {
-        bgViewClick?()
+        viewModel?.assetObserver.send(value: ())
     }
-    
-    @objc fileprivate func toCharge() {
-        chargeClick?()
-    }
-    
-    @objc fileprivate func toWithDraw() {
-        withDrawClick?()
-    }
-}
-
-// MARK: - Helper
-extension HXBMineHeaderView {
-    
-}
-
-// MARK: - Other
-extension HXBMineHeaderView {
-    
-}
-
-// MARK: - Public
-extension HXBMineHeaderView {
-    
 }

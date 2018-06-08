@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         
-        window?.backgroundColor = .white
+        window?.backgroundColor = .blue
         
         window?.rootViewController = HXBTabBarController()
         

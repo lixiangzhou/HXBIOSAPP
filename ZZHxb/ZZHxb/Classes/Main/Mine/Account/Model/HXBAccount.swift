@@ -102,6 +102,9 @@ class HXBUserInfoModel: HXBModel {
     
     /// 【未使用】
     @objc dynamic var isSales: Bool = false
+    
+    /// 【是否显示邀请好友】
+    @objc dynamic var isDisplayInvite: Bool = false
 }
 
 class HXBUserAssetModel: HXBModel {

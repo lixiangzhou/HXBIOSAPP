@@ -9,6 +9,7 @@
 import UIKit
 import Neon
 import XZLib
+import ReactiveSwift
 
 class HXBMineController: HXBViewController {
 
@@ -30,6 +31,7 @@ class HXBMineController: HXBViewController {
     
     // MARK: - Private Property
     fileprivate var tableView = HXBTableView(dataSource: nil, delegate: nil)
+    fileprivate let headerView = HXBMineHeaderView()
     fileprivate var viewModel: HXBMineViewModel!
 }
 
@@ -38,30 +40,10 @@ extension HXBMineController {
     fileprivate func setUI() {
         showBack = false
         hideNavigationBar = true
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(HXBMineCell.self, forCellReuseIdentifier: HXBMineCell.identifier)
         tableView.rowHeight = HXBMineCell.cellHeight
-        
-        let headerView = HXBMineHeaderView()
-        headerView.viewModel = viewModel
-        
-        headerView.iconClick = {
-            HXBAccountMainController().pushFrom(controller: self, animated: true)
-        }
-        
-        headerView.bgViewClick = {
-            HXBAssetStatisticsController().pushFrom(controller: self, animated: true)
-        }
-        
-        headerView.chargeClick = {
-            HXBChargeController().pushFrom(controller: self, animated: true)
-        }
-        
-        headerView.withDrawClick = {
-            HXBWithDrawController().pushFrom(controller: self, animated: true)
-        }
         
         tableView.tableHeaderView = headerView
 
@@ -74,6 +56,30 @@ extension HXBMineController {
         }
         
         tableView.header = ZZRefreshHeader(target: self, action: #selector(getAccountData))
+        
+        reactive_bind(viewModel)
+        headerView.reactive_bind(viewModel)
+    }
+    
+    func reactive_bind(_ vm: HXBMineViewModel) {
+        tableView.reactive.reloadData <~ vm.reloadDataSignal
+        
+        vm.accountSignal.observeValues { _ in
+            HXBAccountMainController().pushFrom(controller: self, animated: true)
+        }
+        
+        vm.assetSignal.observeValues {
+            HXBAssetStatisticsController().pushFrom(controller: self, animated: true)
+        }
+        
+        vm.chargeSignal.observeValues {
+            HXBChargeController().pushFrom(controller: self, animated: true)
+        }
+        
+        vm.withdrawSignal.observeValues {
+            HXBWithDrawController().pushFrom(controller: self, animated: true)
+        }
+
     }
 }
 

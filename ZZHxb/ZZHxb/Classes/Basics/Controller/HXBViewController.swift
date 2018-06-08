@@ -9,7 +9,7 @@
 import UIKit
 import XZLib
 
-class HXBViewController: UIViewController {
+class HXBViewController: UIViewController, HXBReactiveViewBinder {
     
     // MARK: - Life Cycle
     
