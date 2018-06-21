@@ -42,9 +42,9 @@ extension HXBSignUpController {
         tipLabel.attributedText = getTipString(phone: self.phoneNo)
         
         
-        let (smsOrVoiceValidView, voiceBtn) = HXBInputFieldView.smsOrVoiceValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入验证码")
+        let (smsOrVoiceValidView, voiceBtn) = HXBInputFieldView.smsOrVoiceValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入短信验证码")
         pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码为8-20位数字与字母的组合")
-        inviteCodeView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码")
+        inviteCodeView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码（选填）")
         
         smsCodeView = smsOrVoiceValidView
         smsOrVoiceValidView.inputLengthLimit = hxb.size.msgCodeLength

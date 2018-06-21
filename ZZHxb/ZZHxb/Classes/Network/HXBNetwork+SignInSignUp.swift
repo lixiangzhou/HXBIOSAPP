@@ -50,6 +50,6 @@ extension HXBNetwork {
     
     /// 校验手机号
     static func checkExistMobile(_ mobile: String, configRequstClosure: HXBRequestConfigClosrue? = nil, completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.check_exist_mobile, method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
+        HXBNetworkManager.request(url: hxb.api.check_exist_mobile, params: ["mobile": mobile], method: .post, configRequstClosure: configRequstClosure, completionClosure: completion)
     }
 }

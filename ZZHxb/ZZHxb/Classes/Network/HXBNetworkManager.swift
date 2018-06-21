@@ -34,6 +34,78 @@ class HXBNetworkManager {
     
     private init() { }
     
+    func send(requestApi: HXBRequestApi) {
+        guard let url = getUrl(requestApi: requestApi) else {
+            requestApi.error = HXBNetworkError.requestUrlNil
+            requestApi.completeCallback?(false, requestApi)
+            return
+        }
+        
+        do {
+            // 构建请求
+            var originRequest = URLRequest(url: url)
+            
+            originRequest.httpMethod = requestApi.requestMethod.rawValue
+            originRequest.timeoutInterval = requestApi.timeout
+            originRequest.httpShouldHandleCookies = false
+            originRequest.allHTTPHeaderFields = getHeaderFields(requestApi: requestApi)
+            
+            // 请求参数编码
+            let encodedRequest = try encoding.encode(originRequest, with: requestApi.params)
+            requestApi.request = encodedRequest
+            
+            // HUD
+            requestApi.showProgress()
+            HXBNetActivityManager.sendRequest()
+            
+            if requestApi.responseSerializeType == .json {
+                // 发送请求
+                sessionManager.request(requestApi.request!).responseJSON { responseData in
+                    // HUD
+                    requestApi.hideProgress()
+                    HXBNetActivityManager.finishRequest()
+                    
+                    requestApi.httpResponse = responseData.response
+                    
+                    if responseData.result.isSuccess {
+                        log.info(responseData.result.value!)
+                        requestApi.responseObject = responseData.result.value as? HXBResponseObject
+                        
+                        self.successProcess(requestApi: requestApi, withObserver: nil)
+                    } else {
+                        log.error(responseData.error!)
+                        requestApi.error = responseData.error
+                        
+                        self.errorProcess(requestApi: requestApi, withObserver: nil)
+                    }
+                }
+            } else if requestApi.responseSerializeType == .data {
+                sessionManager.request(requestApi.request!).responseData(completionHandler: { responseData in
+                    // HUD
+                    requestApi.hideProgress()
+                    HXBNetActivityManager.finishRequest()
+                    
+                    requestApi.httpResponse = responseData.response
+                    
+                    if responseData.result.isSuccess {
+                        log.info(responseData.result.value!)
+                        requestApi.responseData = responseData.result.value
+                        
+                        self.successProcess(requestApi: requestApi, withObserver: nil)
+                    } else {
+                        log.error(responseData.error!)
+                        requestApi.error = responseData.error
+                        
+                        self.errorProcess(requestApi: requestApi, withObserver: nil)
+                    }
+                })
+            }
+        } catch {
+            requestApi.error = HXBNetworkError.encodingFailed(error: error)
+            requestApi.completeCallback?(false, requestApi)
+        }
+    }
+    
     func rac_send(requestApi: HXBRequestApi) ->  SignalProducer<HXBRequestResult, NoError> {
         return SignalProducer<HXBRequestResult, NoError> { [weak self] (observer, lifetime) in
             guard let url = self!.getUrl(requestApi: requestApi) else {
@@ -108,78 +180,6 @@ class HXBNetworkManager {
             }
         }
     }
-    
-    func send(requestApi: HXBRequestApi) {
-        guard let url = getUrl(requestApi: requestApi) else {
-            requestApi.error = HXBNetworkError.requestUrlNil
-            requestApi.completeCallback?(false, requestApi)
-            return
-        }
-        
-        do {
-            // 构建请求
-            var originRequest = URLRequest(url: url)
-            
-            originRequest.httpMethod = requestApi.requestMethod.rawValue
-            originRequest.timeoutInterval = requestApi.timeout
-            originRequest.httpShouldHandleCookies = false
-            originRequest.allHTTPHeaderFields = getHeaderFields(requestApi: requestApi)
-            
-            // 请求参数编码
-            let encodedRequest = try encoding.encode(originRequest, with: requestApi.params)
-            requestApi.request = encodedRequest
-            
-            // HUD
-            requestApi.showProgress()
-            HXBNetActivityManager.sendRequest()
-            
-            if requestApi.responseSerializeType == .json {
-                // 发送请求
-                sessionManager.request(requestApi.request!).responseJSON { responseData in
-                    // HUD
-                    requestApi.hideProgress()
-                    HXBNetActivityManager.finishRequest()
-                    
-                    requestApi.httpResponse = responseData.response
-                    
-                    if responseData.result.isSuccess {
-                        log.info(responseData.result.value!)
-                        requestApi.responseObject = responseData.result.value as? HXBResponseObject
-                        
-                        self.successProcess(requestApi: requestApi, withObserver: nil)
-                    } else {
-                        log.error(responseData.error!)
-                        requestApi.error = responseData.error
-                        
-                        self.errorProcess(requestApi: requestApi, withObserver: nil)
-                    }
-                }
-            } else if requestApi.responseSerializeType == .data {
-                sessionManager.request(requestApi.request!).responseData(completionHandler: { responseData in
-                    // HUD
-                    requestApi.hideProgress()
-                    HXBNetActivityManager.finishRequest()
-                    
-                    requestApi.httpResponse = responseData.response
-                    
-                    if responseData.result.isSuccess {
-                        log.info(responseData.result.value!)
-                        requestApi.responseData = responseData.result.value
-                        
-                        self.successProcess(requestApi: requestApi, withObserver: nil)
-                    } else {
-                        log.error(responseData.error!)
-                        requestApi.error = responseData.error
-                        
-                        self.errorProcess(requestApi: requestApi, withObserver: nil)
-                    }
-                })
-            }
-        } catch {
-            requestApi.error = HXBNetworkError.encodingFailed(error: error)
-            requestApi.completeCallback?(false, requestApi)
-        }
-    }
 }
 
 
@@ -198,6 +198,20 @@ extension HXBNetworkManager {
     static func request(requestApi: HXBRequestApi, completionClosure: @escaping HXBRequestCompletionCallBack) {
         requestApi.completeCallback = completionClosure
         HXBNetworkManager.shared.send(requestApi: requestApi)
+    }
+
+    static func rac_request(url: String, params: HXBRequestParam? = nil, method: HXBHttpMethod = .get, responseSerializeType: HXBRequestApi.ResponseSerializeType = .json, configRequstClosure: HXBRequestConfigClosrue? = nil) -> SignalProducer<HXBRequestResult, NoError> {
+        let requestApi = HXBRequestApi()
+        requestApi.requestUrl = url
+        requestApi.params = params
+        requestApi.requestMethod = method
+        requestApi.responseSerializeType = responseSerializeType
+        configRequstClosure?(requestApi)
+        return rac_request(requestApi: requestApi)
+    }
+    
+    static func rac_request(requestApi: HXBRequestApi) -> SignalProducer<HXBRequestResult, NoError> {
+        return HXBNetworkManager.shared.rac_send(requestApi: requestApi)
     }
 }
 
@@ -250,18 +264,27 @@ extension HXBNetworkManager {
                     hxb.notification.notLogin.post()
                     errorFinish()
                 }
+                withObserver?.sendCompleted()
             })
         } else if requestApi.statusCode == hxb.code.notLogin {  // 未登录
             hxb.notification.notLogin.post()
             errorFinish()
+            withObserver?.sendCompleted()
         } else {
             errorFinish()
+            withObserver?.sendCompleted()
         }
     }
     
     fileprivate func successProcess(requestApi: HXBRequestApi, withObserver: Signal<HXBRequestResult, NoError>.Observer?) {
         if let observer = withObserver {
-            observer.send(value: (true, requestApi))
+            let respObj = JSON(requestApi.responseObject!)
+            if respObj.isSuccess {
+                observer.send(value: (true, requestApi))
+            } else {
+                observer.send(value: (false, requestApi))
+            }
+            observer.sendCompleted()
         } else {
             requestApi.completeCallback?(true, requestApi)
         }
