@@ -42,19 +42,19 @@ extension HXBSignUpController {
         tipLabel.attributedText = getTipString(phone: self.phoneNo)
         
         
-        let (smsOrVoiceValidView, voiceBtn) = HXBInputFieldView.smsOrVoiceValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入短信验证码")
+        let (smsValidView, smsBtn) = HXBInputFieldView.smsValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入短信验证码")
         pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码为8-20位数字与字母的组合")
         inviteCodeView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码（选填）")
         
-        smsCodeView = smsOrVoiceValidView
-        smsOrVoiceValidView.inputLengthLimit = hxb.size.msgCodeLength
+        smsCodeView = smsValidView
+        smsValidView.inputLengthLimit = hxb.size.msgCodeLength
         pwdView.inputLengthLimit = 20
         inviteCodeView.inputLengthLimit = hxb.size.msgCodeLength
         
-        voiceBtn.addTarget(self, action: #selector(getVoiceCode), for: .touchUpInside)
+        smsBtn.addTarget(self, action: #selector(getSmsCode), for: .touchUpInside)
         
         view.addSubview(tipLabel)
-        view.addSubview(smsOrVoiceValidView)
+        view.addSubview(smsValidView)
         view.addSubview(pwdView)
         view.addSubview(inviteCodeView)
         
@@ -69,7 +69,7 @@ extension HXBSignUpController {
             maker.centerX.equalTo(view)
         }
         
-        smsOrVoiceValidView.snp.makeConstraints { maker in
+        smsValidView.snp.makeConstraints { maker in
             maker.left.equalTo(hxb.size.edgeScreen)
             maker.top.equalTo(tipLabel.snp.bottom).offset(hxb.size.view2View)
             maker.right.equalTo(-hxb.size.edgeScreen)
@@ -77,12 +77,12 @@ extension HXBSignUpController {
         }
         
         pwdView.snp.makeConstraints { maker in
-            maker.left.right.height.equalTo(smsOrVoiceValidView)
-            maker.top.equalTo(smsOrVoiceValidView.snp.bottom)
+            maker.left.right.height.equalTo(smsValidView)
+            maker.top.equalTo(smsValidView.snp.bottom)
         }
         
         inviteCodeView.snp.makeConstraints { maker in
-            maker.left.right.height.equalTo(smsOrVoiceValidView)
+            maker.left.right.height.equalTo(smsValidView)
             maker.top.equalTo(pwdView.snp.bottom)
         }
         
@@ -92,12 +92,14 @@ extension HXBSignUpController {
             maker.right.equalTo(-hxb.size.wideButtonEdgeScreen)
             maker.height.equalTo(hxb.size.wideButtonHeight)
         }
+        
+        
     }
 }
 
 // MARK: - Action
 extension HXBSignUpController {
-    @objc fileprivate func getVoiceCode() {
+    @objc fileprivate func getSmsCode() {
         
     }
     

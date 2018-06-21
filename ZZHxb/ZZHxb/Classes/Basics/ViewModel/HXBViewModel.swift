@@ -75,19 +75,30 @@ extension HXBViewModel {
 
 extension HXBViewModel {
     func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String? = hxb.string.getdataErrorString, showToast: Bool = true, completion: @escaping (Bool) -> Void) {
-        
         if isSuccess {
-            let json = JSON(requestApi.responseObject!)
-            if json.isSuccess {
-                completion(true)
-            } else {
-                show(toast: json.message, canShow: showToast, requestApi: requestApi)
-                completion(false)
-            }
+            completion(true)
         } else {
-            show(toast: errorToast, canShow: showToast, requestApi: requestApi)
+            if let respObj = requestApi.responseObject {
+                let json = JSON(respObj)
+                show(toast: json.message, canShow: showToast, requestApi: requestApi)
+            } else {
+                show(toast: errorToast, canShow: showToast, requestApi: requestApi)
+            }
             completion(false)
         }
+                
+//        if isSuccess {
+//            let json = JSON(requestApi.responseObject!)
+//            if json.isSuccess {
+//                completion(true)
+//            } else {
+//                show(toast: json.message, canShow: showToast, requestApi: requestApi)
+//                completion(false)
+//            }
+//        } else {
+//            show(toast: errorToast, canShow: showToast, requestApi: requestApi)
+//            completion(false)
+//        }
     }
     
     func show(toast: String?, canShow: Bool, requestApi: HXBRequestApi) {

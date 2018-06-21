@@ -7,13 +7,20 @@
 //
 
 import Foundation
+import ReactiveSwift
+import Result
 
 extension HXBNetwork {
     
     /// 获取账户内数据
-    static func getAccountData(completion: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.account, completionClosure: completion)
+    static func rac_getAccountData() -> SignalProducer<HXBRequestResult, NoError> {
+        return HXBNetworkManager.rac_request(url: hxb.api.account)
     }
+//    static func getAccountData(completion: @escaping HXBRequestCompletionCallBack) {
+//        HXBNetworkManager.request(url: hxb.api.account, completionClosure: completion)
+//    }
+
+    
     
     /// 更新用户信息
     static func updateUserInfo(completion: @escaping HXBRequestCompletionCallBack) {

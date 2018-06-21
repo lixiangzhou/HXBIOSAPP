@@ -54,7 +54,7 @@ extension HXBMineController {
             maker.bottom.equalToSuperview().offset(view.safeAreaInsets.bottom)
         }
         
-        tableView.header = ZZRefreshHeader(target: self, action: #selector(getAccountData))
+        tableView.header = ZZRefreshHeader(target: viewModel, action: #selector(HXBMineViewModel.getAccountData))
         
         reactive_bind(viewModel)
         headerView.reactive_bind(viewModel)
@@ -62,6 +62,10 @@ extension HXBMineController {
     
     func reactive_bind(_ vm: HXBMineViewModel) {
         tableView.reactive.reloadData <~ vm.reloadDataSignal
+        
+        vm.requestOverSignal.observeValues {
+            self.tableView.header?.endRefreshing()
+        }
         
         vm.accountSignal.observeValues { _ in
             HXBAccountMainController().pushFrom(controller: self, animated: true)
@@ -84,11 +88,6 @@ extension HXBMineController {
 
 // MARK: - Action
 extension HXBMineController {
-    @objc fileprivate func getAccountData() {
-        viewModel.getAccountData { [weak self] _ in
-            self?.tableView.header?.endRefreshing()
-        }
-    }
 }
 
 // MARK: - Network

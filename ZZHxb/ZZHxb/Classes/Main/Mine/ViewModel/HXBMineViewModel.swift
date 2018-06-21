@@ -37,6 +37,8 @@ class HXBMineViewModel: HXBViewModel {
     var (chargeSignal, chargeObserver) = Signal<(), NoError>.pipe()
     /// 点击体现
     var (withdrawSignal, withdrawObserver) = Signal<(), NoError>.pipe()
+    /// 请求结束
+    var (requestOverSignal, requestOverObserver) = Signal<(), NoError>.pipe()
     
     /// 持有总资产
     var holdingTotalAssetsProducer: SignalProducer<String, NoError>
@@ -85,21 +87,31 @@ class HXBMineViewModel: HXBViewModel {
         }
     }
     
-    func getAccountData2() {
-        
-    }
-    
-    func getAccountData(completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.getAccountData { isSuccess, requestApi in
-            self.requestResult(isSuccess, requestApi, completion: { isSuccess in
-                if isSuccess {
+    @objc func getAccountData() {
+        HXBNetworkManager.rac_request(url: hxb.api.account).startWithValues { (isSuccess, requestApi) in
+            self.requestResult(isSuccess, requestApi, completion: { (isSuccess) in
+                if isSuccess {                    
                     JSONDeserializer.update(object: &self.userAssets, from: requestApi.responseObject!)
                     self.holdingTotalAssetsProperty.value = self.userAssets.holdingTotalAssets
                     self.availablePointProperty.value = self.userAssets.availablePoint
                     self.earnTotalProperty.value = self.userAssets.earnTotal
                 }
-                completion(isSuccess)
             })
+            self.requestOverObserver.send(value: ())
         }
     }
+    
+//    func getAccountData(completion: @escaping HXBCommonCompletion) {
+//        HXBNetwork.getAccountData { isSuccess, requestApi in
+//            self.requestResult(isSuccess, requestApi, completion: { isSuccess in
+//                if isSuccess {
+//                    JSONDeserializer.update(object: &self.userAssets, from: requestApi.responseObject!)
+//                    self.holdingTotalAssetsProperty.value = self.userAssets.holdingTotalAssets
+//                    self.availablePointProperty.value = self.userAssets.availablePoint
+//                    self.earnTotalProperty.value = self.userAssets.earnTotal
+//                }
+//                completion(isSuccess)
+//            })
+//        }
+//    }
 }
