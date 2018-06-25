@@ -277,16 +277,25 @@ extension HXBNetworkManager {
     }
     
     fileprivate func successProcess(requestApi: HXBRequestApi, withObserver: Signal<HXBRequestResult, NoError>.Observer?) {
-        if let observer = withObserver {
-            let respObj = JSON(requestApi.responseObject!)
-            if respObj.isSuccess {
-                observer.send(value: (true, requestApi))
+        if requestApi.responseSerializeType == .json {
+            if let observer = withObserver {
+                let respObj = JSON(requestApi.responseObject!)
+                if respObj.isSuccess {
+                    observer.send(value: (true, requestApi))
+                } else {
+                    observer.send(value: (false, requestApi))
+                }
+                observer.sendCompleted()
             } else {
-                observer.send(value: (false, requestApi))
+                requestApi.completeCallback?(true, requestApi)
             }
-            observer.sendCompleted()
         } else {
-            requestApi.completeCallback?(true, requestApi)
+            if let observer = withObserver {
+                observer.send(value: (true, requestApi))
+                observer.sendCompleted()
+            } else {
+                requestApi.completeCallback?(true, requestApi)
+            }
         }
     }
 }

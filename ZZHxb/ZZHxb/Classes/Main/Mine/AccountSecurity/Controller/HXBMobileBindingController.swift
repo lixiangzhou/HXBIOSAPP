@@ -88,7 +88,7 @@ extension HXBMobileBindingController {
             self.getCodeBtn.layer.borderColor = end ? hxb.color.mostImport.cgColor : UIColor.clear.cgColor
         }
         
-        codeView.inputFieldSignal.map { $0.count >= 6}.skipRepeats().observeValues { enabled in
+        codeView.fieldEventSignal.map { $0.count >= 6}.skipRepeats().observeValues { enabled in
             self.nextBtn.isUserInteractionEnabled = enabled
             self.nextBtn.backgroundColor = enabled ? hxb.color.mostImport : hxb.color.sepLine
         }

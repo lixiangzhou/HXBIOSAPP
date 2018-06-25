@@ -62,12 +62,12 @@ extension HXBAccountMainController {
     @objc fileprivate func signOut() {
         let alertVC = HXBAlertController(title: "提示", messageText: "您确定要退出登录吗？", leftActionName: "取消", rightActionName: "确定")
         alertVC.rightAction = { [weak self] in
-            self?.viewModel.signOut(completion: { isSuccess in
+            self?.viewModel.signOut().startWithValues { isSuccess in
                 if isSuccess {
                     HXBRootVCManager.shared.tabBarController?.selectedIndex = 0
                     self?.navigationController?.popToRootViewController(animated: false)
                 }
-            })
+            }
         }
         alertVC.presentFrom(controller: self, animated: true)
     }

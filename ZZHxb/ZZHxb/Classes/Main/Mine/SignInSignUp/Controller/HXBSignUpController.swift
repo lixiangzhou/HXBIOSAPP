@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 /// 注册
 class HXBSignUpController: HXBViewController {
-
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -22,16 +23,14 @@ class HXBSignUpController: HXBViewController {
         startTimer()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     // MARK: - Public Property
     var phoneNo = ""
+    var captcha = ""
     var smsCodeView: HXBInputFieldView!
     var smsBtn: UIButton!
     var pwdView: HXBInputFieldView!
     var inviteCodeView: HXBInputFieldView!
+    var signUpBtn: UIButton!
     weak var timer: Timer?
     var second: Int = 60
     
@@ -42,7 +41,7 @@ class HXBSignUpController: HXBViewController {
 extension HXBSignUpController {
     fileprivate func setUI() {
         hideNavigationBar = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navBgImage = UIImage.zz_image(withColor: UIColor.clear)
         
         let waveView = HXBNavWaveView()
         view.addSubview(waveView)
@@ -68,14 +67,16 @@ extension HXBSignUpController {
         view.addSubview(pwdView)
         view.addSubview(inviteCodeView)
         
-        let signUpBtn = UIButton(title: "注册", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(signUp))
+        signUpBtn = UIButton(title: "注册", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(signUp))
         
         signUpBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
         signUpBtn.layer.masksToBounds = true
+        signUpBtn.isEnabled = false
+        signUpBtn.backgroundColor = hxb.color.alertCancelBtn
         view.addSubview(signUpBtn)
         
         tipLabel.snp.makeConstraints { maker in
-            maker.top.equalTo(waveView.snp.bottom).offset(10)
+            maker.top.equalTo(waveView.snp.bottom).offset(40)
             maker.centerX.equalTo(view)
         }
         
@@ -103,30 +104,45 @@ extension HXBSignUpController {
             maker.height.equalTo(hxb.size.wideButtonHeight)
         }
         
+        reactive_bind(viewModel)
+    }
+    
+    private func reactive_bind(_ vm: HXBSignUpViewModel) {
+        let btnEnabledSignal = smsCodeView.fieldTextSignal.producer.combineLatest(with: pwdView.fieldTextSignal.producer).map{ smsText, pwdText -> Bool in
+            return (smsText ?? "").count == 6 && ((pwdText ?? "").count >= 8 && (pwdText ?? "").count <= 20)
+        }
         
+        signUpBtn.reactive.isEnabled <~ btnEnabledSignal
+        signUpBtn.reactive.backgroundColor <~ btnEnabledSignal.map { enabled -> UIColor in
+            return enabled ? hxb.color.mostImport : hxb.color.alertCancelBtn
+        }
     }
 }
 
 // MARK: - Action
 extension HXBSignUpController {
     @objc fileprivate func getSmsCode() {
-        
+        startTimer()
+        viewModel.getSmsCode(phone: phoneNo, captcha: captcha).start()
     }
     
     fileprivate func startTimer() {
         stopTimer()
         
         smsBtn.isEnabled = false
-        smsBtn.layer.borderColor = hxb.color.light.cgColor
-        smsBtn.setTitleColor(hxb.color.light, for: .normal)
+        smsBtn.layer.borderColor = hxb.color.alertCancelBtn.cgColor
+        smsBtn.setTitleColor(hxb.color.white, for: .normal)
         smsBtn.setTitle("\(second)", for: .normal)
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+        smsBtn.backgroundColor = hxb.color.alertCancelBtn
+        timer = Timer.zz_scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
     
     fileprivate func stopTimer() {
-        smsBtn.isEnabled = false
+        smsBtn.isEnabled = true
         smsBtn.layer.borderColor = hxb.color.mostImport.cgColor
         smsBtn.setTitleColor(hxb.color.mostImport, for: .normal)
+        smsBtn.setTitle("短信验证码", for: .normal)
+        smsBtn.backgroundColor = hxb.color.white
         timer?.invalidate()
     }
     
@@ -148,7 +164,7 @@ extension HXBSignUpController {
             return
         }
         
-        viewModel.signup(mobile: phoneNo, smsCode: smsCode, password: pwd, inviteCode: inviteCodeView.text) { isSuccess in
+        viewModel.signup(mobile: phoneNo, smsCode: smsCode, password: pwd, inviteCode: inviteCodeView.text).startWithValues { isSuccess in
             if isSuccess {
                 HXBKeychain[hxb.keychain.key.phone] = self.phoneNo
                 self.dismiss(animated: true, completion: nil)
@@ -157,19 +173,6 @@ extension HXBSignUpController {
     }
     
 }
-
-// MARK: - Network
-extension HXBSignUpController {
-    
-}
-
-// MARK: - Delegate Internal
-
-// MARK: -
-
-// MARK: - Delegate External
-
-// MARK: -
 
 // MARK: - Helper
 extension HXBSignUpController {
@@ -203,9 +206,3 @@ extension HXBSignUpController {
         }
     }
 }
-
-// MARK: - Public
-extension HXBSignUpController {
-    
-}
-

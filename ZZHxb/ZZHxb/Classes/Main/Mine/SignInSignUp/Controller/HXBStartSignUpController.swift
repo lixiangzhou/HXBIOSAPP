@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 /// 准备注册
 class HXBStartSignUpController: HXBViewController {
@@ -25,6 +26,7 @@ class HXBStartSignUpController: HXBViewController {
     
     // MARK: - Private Property
     fileprivate var phoneField = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_phone"), text: nil, placeholder: "请输入常用的手机号")
+    fileprivate var toSignUpBtn: UIButton!
     fileprivate var viewModel: HXBSignUpViewModel!
 }
 
@@ -32,7 +34,7 @@ class HXBStartSignUpController: HXBViewController {
 extension HXBStartSignUpController {
     fileprivate func setUI() {
         hideNavigationBar = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navBgImage = UIImage.zz_image(withColor: UIColor.clear)
         
         let waveView = HXBNavWaveView()
         view.addSubview(waveView)
@@ -47,9 +49,11 @@ extension HXBStartSignUpController {
         }
         view.addSubview(phoneField)
         
-        let toSignUpBtn = UIButton(title: "下一步", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(toSignUp))
+        toSignUpBtn = UIButton(title: "下一步", font: hxb.font.firstClass, titleColor: hxb.color.white, backgroundColor: hxb.color.mostImport, target: self, action: #selector(toSignUp))
         toSignUpBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
         toSignUpBtn.layer.masksToBounds = true
+        toSignUpBtn.backgroundColor = hxb.color.alertCancelBtn
+        toSignUpBtn.isEnabled = false
         view.addSubview(toSignUpBtn)
         
         let toSignInBtn = UIButton(title: "我有账户，去登录", font: hxb.font.light, titleColor: hxb.color.light, target: self, action: #selector(toSignIn))
@@ -73,6 +77,14 @@ extension HXBStartSignUpController {
             maker.top.equalTo(toSignUpBtn.snp.bottom).offset(30)
             maker.centerX.equalToSuperview()
         }
+        
+        reactive_bind(viewModel)
+    }
+    
+    func reactive_bind(_ vm: HXBSignUpViewModel) {
+        let enabledSignal = phoneField.fieldTextSignal.map { ($0 ?? "").count == hxb.size.phoneLength }
+        toSignUpBtn.reactive.isEnabled <~ enabledSignal
+        toSignUpBtn.reactive.backgroundColor <~ enabledSignal.map { $0 ? hxb.color.mostImport : hxb.color.alertCancelBtn }
     }
 }
 
@@ -85,6 +97,7 @@ extension HXBStartSignUpController {
                 if isSuccess {
                     let signUpVC = HXBSignUpController()
                     signUpVC.phoneNo = phone
+                    signUpVC.captcha = captcha!
                     signUpVC.pushFrom(controller: self, animated: true)
                 }
             }

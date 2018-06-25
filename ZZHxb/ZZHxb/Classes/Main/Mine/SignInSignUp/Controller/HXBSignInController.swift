@@ -36,7 +36,7 @@ class HXBSignInController: HXBViewController {
 extension HXBSignInController {
     fileprivate func setUI() {
         hideNavigationBar = false
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navBgImage = UIImage.zz_image(withColor: UIColor.clear)
         
         showBack = true
         
@@ -45,7 +45,7 @@ extension HXBSignInController {
         
         phoneView.inputLengthLimit = hxb.size.phoneLength
         phoneView.keyboardType = .numberPad
-        phoneView.inputFieldSignal.observeValues { [weak self] text in
+        phoneView.fieldEventSignal.observeValues { [weak self] text in
             if text.count == hxb.size.phoneLength {
                 self?.viewModel.checkExistMobile(text)
             }
@@ -155,7 +155,8 @@ extension HXBSignInController {
             HXBHUD.show(toast: "请输入8-20位数字与字母的组合", in: view)
             return
         }
-        viewModel.signin(mobile: phone, password: pwd, captcha: captcha) { isSuccess, needCaptcha in
+        
+        viewModel.signin(mobile: phone, password: pwd, captcha: captcha).startWithValues { (isSuccess, needCaptcha) in
             if isSuccess {
                 self.dismiss(animated: true, completion: nil)
             } else if needCaptcha {

@@ -73,11 +73,11 @@ class HXBAccountMainViewModel: HXBViewModel {
     }
     
     /// 登出账户
-    func signOut(completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.signout(configRequstClosure: { requestApi in
+    func signOut() -> SignalProducer<Bool, NoError> {
+        return HXBNetwork.signout() { requestApi in
             requestApi.hudDelegate = self
-        }) { isSuccess, requestApi in
-            self.requestResult(isSuccess, requestApi, completion: completion)
-        }
+            }.map { (isSuccess, requestApi) -> (Bool) in
+                return self.requestResult(isSuccess, requestApi)
+            }
     }
 }

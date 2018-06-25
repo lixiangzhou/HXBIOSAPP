@@ -168,7 +168,7 @@ extension HXBDepositoryOpenOrModifyController {
     }
     
     fileprivate func setBindings() {
-        bankInfoShowSignal = bankNoView.inputFieldSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= hxb.size.bankNoMinCount }
+        bankInfoShowSignal = bankNoView.fieldEventSignal.map { $0.replacingOccurrences(of: " ", with: "").count >= hxb.size.bankNoMinCount }
         
         viewModel.bankCardSignal.producer.combineLatest(with: bankInfoShowSignal).map { ($0, $1 && $0.bankName.count > 0 && $0.bankCode.count > 0 && $0.quota.count > 0) }.startWithValues {[weak self] (bank, needShow) in
             self?.updateBankViews(bank: bank, needShow: needShow, update: false)

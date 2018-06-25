@@ -25,7 +25,9 @@ class HXBCaptchaValidateView: UIView {
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         
-        getCaptcha()
+        if newSuperview != nil {
+            getCaptcha()
+        }
     }
 
     // MARK: - Public Property
@@ -131,7 +133,7 @@ extension HXBCaptchaValidateView {
     
     @objc fileprivate func confirm() {
         let code = inputField.text ?? ""
-        viewModel.validateCaptcha(code) { isSuccess in
+        viewModel.validateCaptcha(code).startWithValues { isSuccess, _ in
             if isSuccess {
                 self.confirmClosure?(code)
                 self.cancel()
@@ -162,7 +164,7 @@ extension HXBCaptchaValidateView {
 // MARK: - Other
 extension HXBCaptchaValidateView {
     @objc fileprivate func getCaptcha() {
-        viewModel.getCaptcha { isSuccess, data in
+        viewModel.getCaptcha().startWithValues { (isSuccess, data) in
             if let data = data {
                 self.captchaView.image = UIImage(data: data)
             }

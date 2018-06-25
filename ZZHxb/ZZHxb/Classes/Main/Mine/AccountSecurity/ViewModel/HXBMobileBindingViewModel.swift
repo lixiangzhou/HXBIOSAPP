@@ -21,10 +21,9 @@ class HXBMobileBindingViewModel: HXBViewModel {
     
     @objc func getCode(mobile: String) {
         timerCountingTool.startTimer()
-        
-        HXBNetwork.checkMobile(mobile) { isSuccess, requestApi in
+        HXBNetwork.checkMobile(mobile).startWithValues { isSuccess, requestApi in
             if isSuccess {
-                HXBCaptchaValidateView.show(comfirmClosure: { captcha in
+                HXBCaptchaValidateView.show { captcha in
                     if captcha != nil {
                         let params = [
                             "mobile": mobile,
@@ -34,13 +33,13 @@ class HXBMobileBindingViewModel: HXBViewModel {
                         
                         HXBNetwork.sendVerifyCode(params: params, configRequstClosure: { requestApi in
                             requestApi.hudDelegate = self
-                        }).startWithValues({ (isSuccess, requestApi) in
+                        }).startWithValues{ (isSuccess, requestApi) in
                             if isSuccess {
                                 self.captcha = captcha
                             }
-                        })
+                        }
                     }
-                })
+                }
             }
         }
     }

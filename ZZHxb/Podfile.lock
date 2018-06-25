@@ -14,7 +14,7 @@ PODS:
   - SwiftyBeaver (1.6.0)
   - SwiftyJSON (4.1.0)
   - WKWebViewJavascriptBridge (1.1.0)
-  - XZLib (0.0.4)
+  - XZLib (0.0.5)
 
 DEPENDENCIES:
   - Alamofire
@@ -61,7 +61,7 @@ SPEC CHECKSUMS:
   SwiftyBeaver: e45759613e50b522b0e6f53b1f0f14389b45ca34
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   WKWebViewJavascriptBridge: 8da532409bc489ba2c0a69cf38e5d1cd49e3d5e4
-  XZLib: f8372f063ed19ec7f24958124c25ad86311967d7
+  XZLib: 369ee95e9c9c7887123a0d971cb16057d08e22ca
 
 PODFILE CHECKSUM: a0b4d0dfc84b3ac7907c01e4323440045d886567
 
