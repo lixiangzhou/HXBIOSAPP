@@ -67,7 +67,7 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - captcha: 验证码
     ///   - completion: 完成回调
     func getSmsCode(phone: String, captcha: String) -> SignalProducer<Bool, NoError> {
-        return HXBNetwork.rac_sendVerifyCode(params: ["captcha": captcha, "action": "signup", "mobile": phone]) { requestApi in
+        return HXBNetwork.sendVerifyCode(params: ["captcha": captcha, "action": "signup", "mobile": phone]) { requestApi in
             requestApi.hudDelegate = self
             }.map({ (isSuccess, requestApi) -> Bool in
                 return self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败")

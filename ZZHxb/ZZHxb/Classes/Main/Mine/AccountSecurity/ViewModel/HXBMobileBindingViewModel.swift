@@ -31,9 +31,10 @@ class HXBMobileBindingViewModel: HXBViewModel {
                             "captcha": captcha!,
                             "action": "newmobile"
                         ]
+                        
                         HXBNetwork.sendVerifyCode(params: params, configRequstClosure: { requestApi in
                             requestApi.hudDelegate = self
-                        }, completionClosure: { isSuccess, requestApi in
+                        }).startWithValues({ (isSuccess, requestApi) in
                             if isSuccess {
                                 self.captcha = captcha
                             }

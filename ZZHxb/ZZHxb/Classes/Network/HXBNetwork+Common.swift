@@ -12,11 +12,8 @@ import Result
 
 extension HXBNetwork {
     /// 发送验证码
-    static func rac_sendVerifyCode(params: HXBRequestParam?, configRequstClosure: HXBRequestConfigClosrue? = nil) -> SignalProducer<HXBRequestResult, NoError> {
+    static func sendVerifyCode(params: HXBRequestParam?, configRequstClosure: HXBRequestConfigClosrue? = nil) -> SignalProducer<HXBRequestResult, NoError> {
         return HXBNetworkManager.rac_request(url: hxb.api.verifyCode, params: params, method: .post, configRequstClosure: configRequstClosure)
-    }
-    static func sendVerifyCode(params: HXBRequestParam?, configRequstClosure: HXBRequestConfigClosrue? = nil, completionClosure: @escaping HXBRequestCompletionCallBack) {
-        HXBNetworkManager.request(url: hxb.api.verifyCode, params: params, method: .post, configRequstClosure: configRequstClosure, completionClosure: completionClosure)
     }
     
     /// 校验身份证和短信

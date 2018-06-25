@@ -51,15 +51,13 @@ class HXBMobileUnbindingViewModel: HXBViewModel {
     @objc func getCode() {
         timerCountingTool.startTimer()
         
-        HXBNetwork.sendVerifyCode(params: ["action": "oldmobile"], configRequstClosure: { requestApi in
+        HXBNetwork.sendVerifyCode(params: ["action": "oldmobile"]) { requestApi in
             requestApi.hudDelegate = self
-        }) { isSuccess, requestApi in
-            self.requestResult(isSuccess, requestApi, completion: { isSuccess in
-                if !isSuccess {
+            }.startWithValues { isSuccess, requestApi in
+                if !self.requestResult(isSuccess, requestApi) {
                     self.timerCountingTool.timerObserver.send(value: 0)
                     self.timerCountingTool.stopTimer()
                 }
-            })
         }
     }
     

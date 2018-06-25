@@ -95,32 +95,3 @@ extension HXBStartSignUpController {
         pop(animated: true)
     }
 }
-
-// MARK: - Network
-extension HXBStartSignUpController {
-    
-}
-
-// MARK: - Delegate Internal
-
-// MARK: -
-
-// MARK: - Delegate External
-
-// MARK: -
-
-// MARK: - Helper
-extension HXBStartSignUpController {
-    
-}
-
-// MARK: - Other
-extension HXBStartSignUpController {
-    
-}
-
-// MARK: - Public
-extension HXBStartSignUpController {
-    
-}
-
