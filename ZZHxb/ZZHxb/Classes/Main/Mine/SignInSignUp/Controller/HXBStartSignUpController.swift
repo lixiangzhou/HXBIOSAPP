@@ -81,13 +81,13 @@ extension HXBStartSignUpController {
     @objc fileprivate func toSignUp() {
         HXBCaptchaValidateView.show(fromView: view) { captcha in
             let phone = self.phoneField.text ?? ""
-            self.viewModel.getSmsCode(phone: phone, captcha: captcha ?? "", completion: { isSuccess in
+            self.viewModel.getSmsCode(phone: phone, captcha: captcha ?? "").startWithValues { isSuccess in
                 if isSuccess {
                     let signUpVC = HXBSignUpController()
                     signUpVC.phoneNo = phone
                     signUpVC.pushFrom(controller: self, animated: true)
                 }
-            })
+            }
         }
     }
     

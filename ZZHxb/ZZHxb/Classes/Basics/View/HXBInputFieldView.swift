@@ -442,14 +442,14 @@ extension HXBInputFieldView {
     }
     
     static func smsValidFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> (HXBInputFieldView, UIButton) {
-        let voiceBtn = UIButton(title: "短信验证码", font: hxb.font.transaction, titleColor: hxb.color.mostImport)
-        voiceBtn.layer.borderColor = hxb.color.mostImport.cgColor
-        voiceBtn.layer.borderWidth = hxb.size.sepLineWidth
-        voiceBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
-        voiceBtn.frame = CGRect(origin: .zero, size: CGSize(width: 80, height: 30))
+        let smsBtn = UIButton(title: "短信验证码", font: hxb.font.transaction, titleColor: hxb.color.mostImport)
+        smsBtn.layer.borderColor = hxb.color.mostImport.cgColor
+        smsBtn.layer.borderWidth = hxb.size.sepLineWidth
+        smsBtn.layer.cornerRadius = hxb.size.wideButtonCornerRadius
+        smsBtn.frame = CGRect(origin: .zero, size: CGSize(width: 80, height: 30))
         
-        let fieldView = HXBInputFieldView.rightClickViewFieldView(leftImage: leftImage, placeholder: placeholder, clickView: voiceBtn, leftSpacing: leftSpacing, rightSpacing: rightSpacing, bottomLineColor: bottomLineColor)
-        return (fieldView, voiceBtn)
+        let fieldView = HXBInputFieldView.rightClickViewFieldView(leftImage: leftImage, placeholder: placeholder, clickView: smsBtn, leftSpacing: leftSpacing, rightSpacing: rightSpacing, bottomLineColor: bottomLineColor)
+        return (fieldView, smsBtn)
     }
     
     static func rightClickViewFieldView(leftImage: UIImage?, text: String? = nil, placeholder: String?, clickView: UIButton, leftSpacing: CGFloat = 0, rightSpacing: CGFloat = 0, bottomLineColor: UIColor = hxb.color.mostImport) -> HXBInputFieldView {

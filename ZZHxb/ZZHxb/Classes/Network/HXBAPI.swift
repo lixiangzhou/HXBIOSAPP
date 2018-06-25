@@ -82,6 +82,13 @@ extension hxb.api {
 
 // MARK: - H5
 extension hxb.api {
-    /// 风险评测 【https://m.hoomxb.com/riskvail】
-    static let risk_assessment = "https://m.hoomxb.com/riskvail"
+    /// 风险评测 【/riskvail】
+    static let risk_assessment = h5("/riskvail")
+    /// 用户协议 【/agreement/signup】
+    static let sign_up_agreement = h5("/agreement/signup")
+    
+    
+    private static func h5(_ url: String) -> String {
+        return "https://m.hoomxb.com" + url
+    }
 }

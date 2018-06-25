@@ -86,6 +86,20 @@ extension HXBViewModel {
             }
             completion(false)
         }
+    }
+    
+    func requestResult(_ isSuccess: Bool, _ requestApi: HXBRequestApi, errorToast: String? = hxb.string.getdataErrorString, showToast: Bool = true) -> Bool {
+        if isSuccess {
+            return true
+        } else {
+            if let respObj = requestApi.responseObject {
+                let json = JSON(respObj)
+                show(toast: json.message, canShow: showToast, requestApi: requestApi)
+            } else {
+                show(toast: errorToast, canShow: showToast, requestApi: requestApi)
+            }
+            return false
+        }
                 
 //        if isSuccess {
 //            let json = JSON(requestApi.responseObject!)

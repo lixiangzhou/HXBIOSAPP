@@ -173,7 +173,7 @@ extension HXBSignInController {
     }
     
     @objc fileprivate func toUserProtocol() {
-        
+        HXBWebController(urlString: hxb.api.sign_up_agreement).pushFrom(controller: self, animated: true)
     }
     
     @objc fileprivate func toForgetPwd() {

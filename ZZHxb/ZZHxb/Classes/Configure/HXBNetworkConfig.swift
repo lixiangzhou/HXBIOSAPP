@@ -20,6 +20,7 @@ class HXBNetworkConfig {
     var baseUrl = hxb.string.storedBaseUrl ?? "http://192.168.1.36:3100"
     
     static let tokenKey = "X-Hxb-Auth-Token"
+    static let userAgent = "X-Hxb-User-Agent"
     static let baseHeaderFields = ["X-Request-Id": UIDevice.current.identifierForVendor?.uuidString ?? "",
                                    "X-Hxb-Auth-Timestamp": Double(Date().timeIntervalSince1970 * 1000).description,
                                    "IDFA": ASIdentifierManager.shared().advertisingIdentifier.uuidString,

@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import ReactiveSwift
+import Result
 
 class HXBSignUpViewModel: HXBViewModel {
     
@@ -17,6 +19,7 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - mobile: 手机号
     ///   - completion: 完成回调
     func checkMobile(_ mobile: String) {
+        
         HXBNetwork.checkMobile(mobile, configRequstClosure: { requestApi in
             requestApi.hudDelegate = self
             requestApi.hudShowProgressType = .none
@@ -63,12 +66,12 @@ class HXBSignUpViewModel: HXBViewModel {
     ///   - phone: 手机号
     ///   - captcha: 验证码
     ///   - completion: 完成回调
-    func getSmsCode(phone: String, captcha: String, completion: @escaping HXBCommonCompletion) {
-        HXBNetwork.sendVerifyCode(params: ["captcha": captcha, "action": "signup", "mobile": phone], configRequstClosure: { requestApi in
+    func getSmsCode(phone: String, captcha: String) -> SignalProducer<Bool, NoError> {
+        return HXBNetwork.rac_sendVerifyCode(params: ["captcha": captcha, "action": "signup", "mobile": phone]) { requestApi in
             requestApi.hudDelegate = self
-        }) { isSuccess, requestApi in
-            self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败", completion: completion)
-        }
+            }.map({ (isSuccess, requestApi) -> Bool in
+                return self.requestResult(isSuccess, requestApi, errorToast: "获取验证码失败")
+            })
     }
     
     /// 注册

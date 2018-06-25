@@ -19,12 +19,21 @@ class HXBSignUpController: HXBViewController {
         title = "注册"
         viewModel = HXBSignUpViewModel(progressContainerView: view, toastContainerView: view)
         setUI()
+        startTimer()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     // MARK: - Public Property
     var phoneNo = ""
     var smsCodeView: HXBInputFieldView!
+    var smsBtn: UIButton!
     var pwdView: HXBInputFieldView!
     var inviteCodeView: HXBInputFieldView!
+    weak var timer: Timer?
+    var second: Int = 60
     
     fileprivate var viewModel: HXBSignUpViewModel!
 }
@@ -41,20 +50,21 @@ extension HXBSignUpController {
         let tipLabel = UILabel()
         tipLabel.attributedText = getTipString(phone: self.phoneNo)
         
+        let (_smsCodeView, _smsBtn) = HXBInputFieldView.smsValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入短信验证码")
+        self.smsBtn = _smsBtn
+        self.smsCodeView = _smsCodeView
         
-        let (smsValidView, smsBtn) = HXBInputFieldView.smsValidFieldView(leftImage: UIImage("input_security_code"), placeholder: "请输入短信验证码")
         pwdView = HXBInputFieldView.eyeFieldView(leftImage: UIImage("input_password"), placeholder: "密码为8-20位数字与字母的组合")
         inviteCodeView = HXBInputFieldView.commonFieldView(leftImage: UIImage("input_invite_code"), placeholder: "请输入邀请码（选填）")
         
-        smsCodeView = smsValidView
-        smsValidView.inputLengthLimit = hxb.size.msgCodeLength
+        smsCodeView.inputLengthLimit = hxb.size.msgCodeLength
         pwdView.inputLengthLimit = 20
         inviteCodeView.inputLengthLimit = hxb.size.msgCodeLength
         
         smsBtn.addTarget(self, action: #selector(getSmsCode), for: .touchUpInside)
         
         view.addSubview(tipLabel)
-        view.addSubview(smsValidView)
+        view.addSubview(smsCodeView)
         view.addSubview(pwdView)
         view.addSubview(inviteCodeView)
         
@@ -69,7 +79,7 @@ extension HXBSignUpController {
             maker.centerX.equalTo(view)
         }
         
-        smsValidView.snp.makeConstraints { maker in
+        smsCodeView.snp.makeConstraints { maker in
             maker.left.equalTo(hxb.size.edgeScreen)
             maker.top.equalTo(tipLabel.snp.bottom).offset(hxb.size.view2View)
             maker.right.equalTo(-hxb.size.edgeScreen)
@@ -77,12 +87,12 @@ extension HXBSignUpController {
         }
         
         pwdView.snp.makeConstraints { maker in
-            maker.left.right.height.equalTo(smsValidView)
-            maker.top.equalTo(smsValidView.snp.bottom)
+            maker.left.right.height.equalTo(smsCodeView)
+            maker.top.equalTo(smsCodeView.snp.bottom)
         }
         
         inviteCodeView.snp.makeConstraints { maker in
-            maker.left.right.height.equalTo(smsValidView)
+            maker.left.right.height.equalTo(smsCodeView)
             maker.top.equalTo(pwdView.snp.bottom)
         }
         
@@ -101,6 +111,23 @@ extension HXBSignUpController {
 extension HXBSignUpController {
     @objc fileprivate func getSmsCode() {
         
+    }
+    
+    fileprivate func startTimer() {
+        stopTimer()
+        
+        smsBtn.isEnabled = false
+        smsBtn.layer.borderColor = hxb.color.light.cgColor
+        smsBtn.setTitleColor(hxb.color.light, for: .normal)
+        smsBtn.setTitle("\(second)", for: .normal)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+    }
+    
+    fileprivate func stopTimer() {
+        smsBtn.isEnabled = false
+        smsBtn.layer.borderColor = hxb.color.mostImport.cgColor
+        smsBtn.setTitleColor(hxb.color.mostImport, for: .normal)
+        timer?.invalidate()
     }
     
     @objc fileprivate func signUp() {
@@ -168,7 +195,13 @@ extension HXBSignUpController {
 
 // MARK: - Other
 extension HXBSignUpController {
-    
+    @objc fileprivate func tick() {
+        second -= 1
+        smsBtn.setTitle(String(format: "%02d", second), for: .normal)
+        if second <= 0 {
+            stopTimer()
+        }
+    }
 }
 
 // MARK: - Public
